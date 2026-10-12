@@ -22,6 +22,7 @@ from src.agents.user_understanding import UserUnderstandingAgent, FEATURE_DIM
 from src.agents.safety_agent import SafetyAgent
 from src.agents.recommender import RecommenderAgent
 from src.agents.narrator_agent import NarratorAgent
+from src.agents.narrator import Narrator          # P1 — v1.3.2 Narrator
 from src.memory import UserMemory
 from src.simulator import UserSimulator
 
@@ -102,7 +103,19 @@ class NarraCarePipeline:
         self.user_understanding = UserUnderstandingAgent(self.config, mode="simulation")
         self.safety_agent = SafetyAgent(self.config)
         self.recommender = RecommenderAgent(self.config)
-        self.narrator = NarratorAgent(self.config, mode="simulation")
+        # Old narrator — kept for backward compatibility (interactive mode)
+        self.narrator_agent = NarratorAgent(self.config, mode="simulation")
+        # P2 — New Narrator v1.3.2
+        self.narrator = Narrator(
+            arcs_path=str(self.project_root / "data" / "narrative_arcs.json"),
+            templates_path=str(self.project_root / "data" / "narrator_tone_templates.json"),
+            seed=seed,
+        )
+        # P5 — prompt-level log for experiment analysis
+        self._prompt_level_log: List[dict] = []
+        # P3 — Mutex flags: prevent double narrator calls within same turn/day
+        self._narrator_spoke_this_turn: bool = False
+        self._narrator_closed_this_turn: bool = False
 
         # ── Memory & Simulator ───────────────────────────────────────
         self.memory = UserMemory(self.config)
@@ -124,12 +137,16 @@ class NarraCarePipeline:
             t["task_id"]: t for t in self.task_library
         }
 
+        # P10 — Sanity check
+        self._narrator_sanity_check()
+
         logger.info(
-            "Pipeline ready — %d tasks, algorithm=%s, safety=%s, narrator=%s",
+            "Pipeline ready — %d tasks, algorithm=%s, safety=%s, narrator=%s, narrator_v2=%s",
             len(self.task_library),
             self.config.get("recommender", {}).get("algorithm", "linucb"),
             self.safety_agent.enabled,
             self.config.get("narrator", {}).get("enable", True),
+            self.config.get("narrator_v2", {}).get("enable", True),
         )
 
     # ── Helpers ───────────────────────────────────────────────────────
@@ -173,6 +190,73 @@ class NarraCarePipeline:
             self.memory.get_consecutive_high_intensity(user_id),
         )
 
+    # ── P12 — Boundary helper ────────────────────────────────────────
+
+    def _narrator_user_state(self, state: dict) -> dict:
+        """Ensure narrator gets pain_level/fatigue_level regardless of field names."""
+        return {
+            "pain_level": state.get("pain_level", state.get("pain", 0)),
+            "fatigue_level": state.get("fatigue_level", state.get("fatigue", 0)),
+        }
+
+    # ── P2 — Emotional override (difficulty cap) ─────────────────────
+
+    def _apply_emotional_override(
+        self,
+        state: dict,
+        profile: dict,
+        candidates: List[dict],
+        day: int,
+    ) -> Tuple[List[dict], str]:
+        """Red/yellow light emotional check — cap difficulty if needed.
+
+        Called AFTER safety pre-filter, BEFORE recommender ranking.
+        """
+        pain = state.get("pain_level", 0)
+        fatigue = state.get("fatigue_level", 0)
+        original_candidates = list(candidates)
+
+        # Red light: pain > 7 or fatigue > 8 → cap difficulty at 1
+        if pain > 7 or fatigue > 8:
+            capped = [t for t in original_candidates if t.get("difficulty", 1) <= 1]
+            if not capped:
+                # Fallback: allow difficulty ≤ 2
+                capped = [t for t in original_candidates if t.get("difficulty", 1) <= 2]
+            return capped if capped else original_candidates, "red_light"
+
+        # Yellow light: pain > 5 or fatigue > 6 → cap difficulty at 2
+        if pain > 5 or fatigue > 6:
+            capped = [t for t in original_candidates if t.get("difficulty", 1) <= 2]
+            if not capped:
+                capped = [t for t in original_candidates if t.get("difficulty", 1) <= 3]
+            return capped if capped else original_candidates, "yellow_light"
+
+        return candidates, "green"
+
+    # ── P10 — Sanity check ───────────────────────────────────────────
+
+    def _narrator_sanity_check(self) -> bool:
+        """Verify narrator v2 is properly initialized.
+
+        Checks:
+          1. Narrator instance exists
+          2. Arc data is loaded
+          3. Template data is loaded
+        """
+        try:
+            assert self.narrator is not None, "Narrator not initialized"
+            assert hasattr(self.narrator, "arcs") and self.narrator.arcs, (
+                "Arc data not loaded"
+            )
+            assert hasattr(self.narrator, "templates") and self.narrator.templates, (
+                "Template data not loaded"
+            )
+            logger.info("Narrator v2 sanity check passed.")
+            return True
+        except AssertionError as e:
+            logger.warning("Narrator v2 sanity check failed: %s", e)
+            return False
+
     # ── Single turn ──────────────────────────────────────────────────
 
     def run_single_turn(
@@ -199,8 +283,11 @@ class NarraCarePipeline:
         -------
         dict
             Keys: ``recommended``, ``narrative``, ``feature_vector``,
-            ``candidates``, ``state``, ``profile``.
+            ``candidates``, ``state``, ``profile``, plus narrator v2 fields.
         """
+        # P3 — Reset per-turn mutex flag
+        self._narrator_spoke_this_turn = False
+
         profile = self.memory.get_profile(user_id)
         if not profile:
             raw = self.simulator.get_profile(user_id)
@@ -238,6 +325,15 @@ class NarraCarePipeline:
         if not safe_candidates:
             safe_candidates = self.task_library[:3]
 
+        # 3b. Emotional override — cap difficulty if pain/fatigue is high (P2)
+        safe_candidates, emotional_level = self._apply_emotional_override(
+            state, profile, safe_candidates, day,
+        )
+        if not safe_candidates:
+            safe_candidates = [t for t in self.task_library if t.get("category") == "rest"][:3]
+            if not safe_candidates:
+                safe_candidates = self.task_library[:3]
+
         # 4. Recommender — rank on safe candidates
         recommended = self.recommender.recommend(fv.to_numpy(), safe_candidates)
 
@@ -259,13 +355,66 @@ class NarraCarePipeline:
         if not recommended:
             recommended = safe_candidates[: self.recommender.top_k]
 
-        # 6. Narrator
+        # 6. Narrator (old — backward compatibility)
         narrative = ""
         if self.config.get("narrator", {}).get("enable", True):
-            narrative = self.narrator.wrap(
+            narrative = self.narrator_agent.wrap(
                 recommended, state, profile,
                 day=day, completion_rate_7d=cr7,
             )
+
+        # 6b. Narrator v2 — speak() for the chosen recommendation (P5)
+        narrator_result: Dict[str, Any] = {}
+        narrator_scenario = ""
+        narrator_tone = ""
+        try:
+            if (self.config.get("narrator_v2", {}).get("enable", True)
+                    and recommended
+                    and mode == "simulation"):
+                # P4 — assert no double-call within same turn
+                assert not self._narrator_spoke_this_turn, (
+                    "narrator.speak() already called this turn"
+                )
+                narrator_user_state = self._narrator_user_state(state)
+                user_history = {"consecutive_skips": 0}
+                chosen_task = recommended[0]
+                narrator_scenario = "recommendation_framing"
+                speak_context = {
+                    "name": profile.get("name", "friend"),
+                    "day": day,
+                    "task_name": chosen_task.get(
+                        "name", chosen_task.get("task_id", "")
+                    ),
+                    "difficulty": chosen_task.get("difficulty", 1),
+                    "reason_from_bandit": "matched to your current recovery state",
+                    "body_part": chosen_task.get("body_part", ""),
+                    "rehab_stage": profile.get(
+                        "current_stage", profile.get("stage", "")
+                    ),
+                }
+                prompt_text, prompt_meta = self.narrator.speak(
+                    scenario=narrator_scenario,
+                    context=speak_context,
+                    user_profile=profile,
+                    day=day,
+                    user_state=narrator_user_state,
+                    user_history=user_history,
+                )
+                narrator_result = dict(prompt_meta)
+                narrator_result["prompt_text"] = prompt_text
+                narrator_tone = prompt_meta.get("tone_actually_used", "")
+                self._narrator_spoke_this_turn = True
+                # Append to prompt-level log
+                prompt_meta_log = dict(prompt_meta)
+                prompt_meta_log["day"] = day
+                prompt_meta_log["user_id"] = user_id
+                self._prompt_level_log.append(prompt_meta_log)
+                # Override narrative with v2 text if available
+                if prompt_text:
+                    narrative = prompt_text
+        except Exception as e:
+            logger.warning("Narrator v2 speak() failed, falling back: %s", e)
+            narrator_result = {}
 
         return {
             "recommended": recommended,
@@ -278,6 +427,11 @@ class NarraCarePipeline:
             "safe_candidate_ids": list(safe_candidate_ids),
             "infeasible_in_top_k": infeasible_in_top_k,
             "ier": len(infeasible_in_top_k) / len(raw_top_k_ids) if raw_top_k_ids else 0.0,
+            # P7 — narrator v2 fields
+            "narrator_result": narrator_result,
+            "narrator_scenario": narrator_scenario,
+            "narrator_tone": narrator_tone,
+            "emotional_level": emotional_level,
         }
 
     # ── Feedback processing ──────────────────────────────────────────
@@ -383,14 +537,32 @@ class NarraCarePipeline:
 
         for day in range(n_days):
             for uid in user_ids:
+                # P3 — Day-level tracking for narrator closing
+                _day_accepted = False
+                _day_skipped = False
+                _day_had_interaction = False
+                _day_safety_blocked = False
+                _day_last_state: Optional[dict] = None
+                _day_prev_pain: Optional[float] = None
+                _day_last_post_state: Optional[dict] = None
+                # P3 — Reset per-day mutex flag for daily closing
+                self._narrator_closed_this_turn = False
+
                 for turn in range(interactions_per_day):
                     state = self.simulator.simulate_daily_state(uid, day)
+                    if _day_prev_pain is None:
+                        _day_prev_pain = state.get("pain_level", 0)
+                    _day_last_state = state
+
                     result = self.run_single_turn(
                         uid, state, mode="simulation", day=day, turn=turn,
                     )
                     recommended = result["recommended"]
+                    profile = result.get("profile", {})
                     if not recommended:
                         continue
+
+                    _day_had_interaction = True
 
                     # User choice
                     chosen_id, choice_meta = self.simulator.simulate_choice(
@@ -398,6 +570,7 @@ class NarraCarePipeline:
                     )
 
                     if not chosen_id:
+                        _day_skipped = True
                         logs.append(self._build_log(
                             uid, day, turn, state, result, "", "skip", 0.0,
                             state, {}, result.get("narrative", ""),
@@ -408,6 +581,11 @@ class NarraCarePipeline:
                         "chosen_task", self.task_lookup.get(chosen_id, {}),
                     )
                     action_raw = choice_meta.get("action", "completed")
+
+                    if action_raw == "completed":
+                        _day_accepted = True
+                    else:
+                        _day_skipped = True
 
                     # Feedback
                     feedback = self.simulator.simulate_feedback(uid, chosen_task, state)
@@ -422,10 +600,22 @@ class NarraCarePipeline:
 
                     # Lagrangian safety penalty: give negative reward to
                     # infeasible tasks that the bandit wanted to recommend.
-                    # This teaches the bandit to avoid unsafe tasks on its own.
+                    # P8 — multiply by arc-level safety_lambda_multiplier
                     safety_lambda = self.config.get("reward", {}).get("safety_lambda", 1.0)
+                    try:
+                        _act_key, _arc_meta = self.narrator._get_arc_context(
+                            profile, day,
+                        )
+                        arc_multiplier = _arc_meta.get("safety_lambda_multiplier", 1.0)
+                        effective_lambda = safety_lambda * arc_multiplier
+                    except Exception:
+                        effective_lambda = safety_lambda
                     for bad_id in result.get("infeasible_in_top_k", []):
-                        self.recommender.update(ctx, bad_id, -safety_lambda)
+                        self.recommender.update(ctx, bad_id, -effective_lambda)
+
+                    # Track safety blocks for day-level log
+                    if result.get("infeasible_in_top_k"):
+                        _day_safety_blocked = True
 
                     post_state = dict(state)
                     post_state["pain_level"] = feedback.get(
@@ -434,6 +624,7 @@ class NarraCarePipeline:
                     post_state["fatigue_level"] = feedback.get(
                         "post_fatigue", state.get("fatigue_level")
                     )
+                    _day_last_post_state = post_state
 
                     action_label = "accept" if action_raw == "completed" else "skip"
                     logs.append(self._build_log(
@@ -442,10 +633,101 @@ class NarraCarePipeline:
                         result.get("narrative", ""),
                     ))
 
+                # ── End of day for this user: narrator daily closing (P5.2) ──
+                try:
+                    if (self.config.get("narrator_v2", {}).get("enable", True)
+                            and _day_last_state is not None):
+                        # P4 — assert no double-call for closing within same day
+                        assert not self._narrator_closed_this_turn, (
+                            "narrator.say_daily_closing() already called this day"
+                        )
+                        profile = self.memory.get_profile(uid)
+                        effective_post = _day_last_post_state or _day_last_state
+                        pain_delta = (
+                            (effective_post.get("pain_level", 0) - _day_prev_pain)
+                            if _day_prev_pain is not None else 0
+                        )
+
+                        # P3 — Mutual-exclusion flags
+                        no_interaction = not _day_had_interaction
+                        user_accepted = _day_accepted
+                        user_skipped = _day_skipped and not _day_accepted
+
+                        # P4 — Mutual-exclusion invariant
+                        mutex_sum = (
+                            int(no_interaction) + int(user_skipped) + int(user_accepted)
+                        )
+                        if mutex_sum != 1:
+                            # Fallback: force to most reasonable state
+                            if _day_had_interaction:
+                                if _day_accepted:
+                                    no_interaction, user_skipped, user_accepted = (
+                                        False, False, True,
+                                    )
+                                else:
+                                    no_interaction, user_skipped, user_accepted = (
+                                        False, True, False,
+                                    )
+                            else:
+                                no_interaction, user_skipped, user_accepted = (
+                                    True, False, False,
+                                )
+
+                        adherence = 1.0 if _day_accepted else 0.0
+
+                        # P7 — day_log for variant selection
+                        day_log_closing: Dict[str, Any] = {
+                            "day": day,
+                            "no_interaction": no_interaction,
+                            "user_skipped": user_skipped,
+                            "user_accepted": user_accepted,
+                            "safety_blocked_today": _day_safety_blocked,
+                            "pain_delta": pain_delta,
+                            "fatigue_level": effective_post.get("fatigue_level", 0),
+                        }
+
+                        # P5.2 — closing_context for template rendering
+                        narrator_us = self._narrator_user_state(effective_post)
+                        closing_context: Dict[str, Any] = {
+                            "name": profile.get("name", "friend"),
+                            "pain_level": narrator_us["pain_level"],
+                            "fatigue_level": narrator_us["fatigue_level"],
+                            "streak_count": profile.get("streak", 0),
+                            "streak": profile.get("streak", 0),
+                            "target": 7,
+                            "adherence": adherence,
+                            "pain_delta": pain_delta,
+                            "next_focus": "recovery",
+                            "personal_moment_from_today": "Another day done",
+                        }
+
+                        closing_text, closing_meta = self.narrator.say_daily_closing(
+                            day_log=day_log_closing,
+                            user_profile=profile,
+                            context=closing_context,
+                        )
+                        self._narrator_closed_this_turn = True
+                        closing_meta["day"] = day
+                        closing_meta["user_id"] = uid
+                        self._prompt_level_log.append(closing_meta)
+                except Exception as e:
+                    logger.warning(
+                        "Narrator daily closing failed for user %s day %d: %s",
+                        uid, day, e,
+                    )
+
             if (day + 1) % 10 == 0:
                 logger.info(
                     "Day %d/%d — %d interactions so far.", day + 1, n_days, len(logs),
                 )
+
+        # P6 — Export narrator aggregate counters
+        try:
+            narrator_counters = self.narrator.export_aggregate_counters()
+            logger.info("Narrator counters: %s", narrator_counters)
+        except Exception as e:
+            logger.warning("Failed to export narrator counters: %s", e)
+            narrator_counters = {}
 
         logger.info("Simulation finished: %d interactions.", len(logs))
         return logs
@@ -471,6 +753,8 @@ class NarraCarePipeline:
             if t.get("task_id") == chosen_id:
                 chosen_task = t
                 break
+        # P7 — extract narrator v2 result for log fields
+        narrator_result = result.get("narrator_result", {})
         return {
             "user_id": uid,
             "day": day,
@@ -504,6 +788,11 @@ class NarraCarePipeline:
             "raw_top_k_ids": result.get("raw_top_k_ids", []),
             "infeasible_in_top_k": result.get("infeasible_in_top_k", []),
             "ier": result.get("ier", 0.0),
+            # P7 / P11 — narrator v2 fields (Figure 4.3 convention)
+            "prompt_level_log": narrator_result.get("all_override_reasons", []),
+            "narrator_tone": narrator_result.get("tone_actually_used", ""),
+            "narrator_scenario": result.get("narrator_scenario", ""),
+            "emotional_level": result.get("emotional_level", "green"),
         }
 
     # ── Interactive session ──────────────────────────────────────────
@@ -518,7 +807,7 @@ class NarraCarePipeline:
         """
         # Switch agents to interactive mode
         self.user_understanding = UserUnderstandingAgent(self.config, mode="interactive")
-        self.narrator = NarratorAgent(self.config, mode="interactive")
+        self.narrator_agent = NarratorAgent(self.config, mode="interactive")
 
         profile_raw = self.simulator.get_profile(user_id)
         if not profile_raw:
