@@ -535,6 +535,36 @@ class NarraCarePipeline:
 
         logs: List[dict] = []
 
+        # ── Safety-informed warm-start for NeuralUCB ─────────────────────
+        # Pre-populate per-arm stats so that tasks flagged as unsafe for
+        # the majority of user profiles start with a negative prior,
+        # drastically reducing cold-start IER.
+        model = getattr(self.recommender, "model", None)
+        if callable(getattr(model, "warm_start_safety", None)):
+            all_ids = {t["task_id"] for t in self.task_library}
+            # Intersection of safe tasks across all users' initial states:
+            # only tasks safe for EVERY user are considered globally safe.
+            intersect_safe: Optional[set] = None
+            for uid in user_ids:
+                init_state = self.simulator.simulate_daily_state(uid, 0)
+                profile = self.memory.get_profile(uid) or {}
+                if self.safety_agent.enabled:
+                    safe = self.safety_agent.pre_filter(
+                        self.task_library, init_state, profile,
+                    )
+                    user_safe = {t["task_id"] for t in safe}
+                    if intersect_safe is None:
+                        intersect_safe = user_safe
+                    else:
+                        intersect_safe &= user_safe
+                else:
+                    intersect_safe = all_ids
+                    break
+            if intersect_safe is None:
+                intersect_safe = all_ids
+            penalty = -self.config.get("reward", {}).get("safety_lambda", 1.0)
+            model.warm_start_safety(intersect_safe, all_ids, penalty=penalty)
+
         for day in range(n_days):
             for uid in user_ids:
                 # P3 — Day-level tracking for narrator closing

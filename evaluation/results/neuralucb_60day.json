@@ -1,0 +1,20 @@
+{
+  "method": "NeuralUCB",
+  "n_days": 60,
+  "n_users": 20,
+  "n_interactions": 1200,
+  "wall_time_s": 85.5,
+  "cum_reward_mean": 39.16,
+  "ier_mean": 0.003,
+  "acceptance_rate_mean": 0.5233,
+  "settings": {
+    "hidden_dim": 32,
+    "training_epochs": 5,
+    "alpha": 0.01,
+    "safety_lambda": 3.0
+  },
+  "verification": {
+    "cum_reward_in_range": true,
+    "ier_below_threshold": true
+  }
+}
