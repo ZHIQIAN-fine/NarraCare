@@ -1,0 +1,62 @@
+{
+  "Q2_R3_R5_root_cause": {
+    "R3_high_pain_difficulty": {
+      "root_cause": "emotional_override_masks_R3",
+      "explanation": "Emotional override (red_light: pain>7 \u2192 cap difficulty at 1) runs EVEN when safety is OFF. All 45 accepted tasks at pain\u22657 have difficulty \u2264 2 (R3 requires difficulty\u22654). R3 is structurally unreachable.",
+      "states_with_pain_gte_threshold": 72,
+      "accepted_at_high_pain": 45,
+      "max_difficulty_at_high_pain": 2,
+      "difficulty_distribution": {
+        "1": 44,
+        "2": 1
+      },
+      "synthetic_test": "PASS \u2014 pre_filter correctly blocks (pain=8, diff=5)",
+      "section_7_2_impact": "R3 cannot contribute to SVR delta in robustness grid because emotional override pre-empts it. Report \u00a77.2 should note this redundancy."
+    },
+    "R5_low_rom": {
+      "root_cause": "simulator_does_not_produce_rom_below_60",
+      "explanation": "Simulator ROM range: [83.9, 180.0]. R5 threshold is ROM<60. Zero states meet precondition.",
+      "rom_min": 83.9,
+      "rom_max": 180.0,
+      "rom_mean": 130.71,
+      "states_below_60": 0,
+      "synthetic_test": "PASS \u2014 pre_filter correctly blocks (rom=45, diff=3)",
+      "section_7_2_impact": "R5 is untestable with current EU simulator. Report \u00a77.2 should list ROM<60 as an uncovered boundary. Adding a severe-injury persona would fix this."
+    }
+  },
+  "Q3_I1_corrected": {
+    "I1_corrected": {
+      "total_prompts": 2400,
+      "speak_prompts": 1200,
+      "closing_prompts": 1200,
+      "tone_present_total": 2400,
+      "tone_present_speak": 1200,
+      "tone_present_closing": 1200,
+      "tone_missing_total": 0,
+      "fallback_rate": 0.0,
+      "passed": true,
+      "note": "Both speak() and say_daily_closing() go through _REQUIRED_KEYS validation. I1 covers all 2400 prompts."
+    }
+  },
+  "Q4_I3_corrected": {
+    "I3_corrected": {
+      "method": "daily_closing_variant == 'safety_followup' \u2194 safety_blocked_today",
+      "n_user_days": 1200,
+      "blocked_days": 88,
+      "safety_followup_days": 88,
+      "true_positive": 88,
+      "false_positive": 0,
+      "false_negative": 0,
+      "true_negative": 1112,
+      "precision": 1.0,
+      "recall": 1.0,
+      "pearson_r": 1.0,
+      "pearson_p": 0.0,
+      "passed": true,
+      "note": "The original I3 checked interaction-level narrator_tone for 'safety' substring. This is wrong: safety_hybrid is a SCENARIO, not an arc-based tone. The correct signal is the daily closing VARIANT: say_daily_closing() selects 'safety_followup' iff day_log['safety_blocked_today']=True. Bijection is perfect: precision=1.0, recall=1.0, Pearson r=1.0."
+    },
+    "original_I3_diagnosis": {
+      "why_88_false_negatives": "The 88 'false negatives' in the original I3 check were not failures. speak() generates recommendation-framing prompts using arc-based tones (doctor/coach/companion) \u2014 it NEVER uses safety_hybrid because safety_hybrid is a daily-closing variant, not a speak() scenario. The safety acknowledgment is conveyed via say_daily_closing(variant='safety_followup'), which correctly fires on all 88 blocked days."
+    }
+  }
+}
