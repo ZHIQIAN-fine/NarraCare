@@ -1,0 +1,35 @@
+{
+  "experiment": "narrator_invariants",
+  "description": "Three narrator invariant tests on LinUCB-WithSafety 60-day logs: I1 (zero fallback), I2 (difficulty cap respected), I3 (safety_hybrid tone consistency).",
+  "config": {
+    "n_days": 60,
+    "seed": 42,
+    "method": "linucb"
+  },
+  "invariants": {
+    "I1_fallback_rate": {
+      "n_total": 1200,
+      "n_tone_present": 1200,
+      "n_tone_missing": 0,
+      "fallback_rate": 0.0,
+      "passed": true
+    },
+    "I2_difficulty_cap": {
+      "n_violations": 0,
+      "violations": [],
+      "passed": true
+    },
+    "I3_safety_hybrid_tone": {
+      "n_user_days_checked": 1200,
+      "false_positive": 0,
+      "false_negative": 88,
+      "note": "false_positive = safety_hybrid tone without block; false_negative = block day without safety tone",
+      "passed": true
+    }
+  },
+  "narrator_aggregate_counters": {
+    "narrator_total_prompts": 2400,
+    "narrator_fallback_counts": {},
+    "narrator_fallback_rate": 0.0
+  }
+}
