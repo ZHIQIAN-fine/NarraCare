@@ -1,0 +1,105 @@
+# NarraCare Configuration
+# ========================
+
+# System
+system:
+  seed: 42
+  verbose: true
+  log_level: INFO
+
+# LLM Settings
+llm:
+  model: "gpt-4o-mini"
+  temperature: 0.7
+  max_tokens: 1024
+  # Set OPENAI_API_KEY environment variable
+
+# Recommender
+recommender:
+  algorithm: "linucb"  # linucb | neural_ucb | random | popularity | rule_based | epsilon_greedy
+  top_k: 3
+  
+  linucb:
+    alpha: 1.0  # exploration parameter
+    feature_dim: 15
+  
+  neural_ucb:
+    hidden_dim: 64
+    n_layers: 2
+    learning_rate: 0.001
+    alpha: 0.1
+    training_epochs: 10
+  
+  epsilon_greedy:
+    epsilon: 0.1
+
+# Safety Agent
+safety:
+  enable: true
+  max_consecutive_high_intensity: 3
+  pain_threshold_high: 7        # pain >= this -> no medium/high intensity
+  fatigue_threshold_high: 8     # fatigue >= this -> only stretching/breathing
+  crisis_keywords:
+    - "sudden sharp pain"
+    - "swelling"
+    - "popping sound"
+    - "numbness"
+    - "cannot move"
+    - "剧痛"
+    - "肿胀"
+    - "异响"
+    - "麻木"
+
+# Narrator Agent  
+narrator:
+  enable: true
+  style: "rehabilitation_camp"  # rehabilitation_camp | clinical | casual
+  language: "en"  # en | zh
+
+# Simulation
+simulation:
+  n_users: 15
+  n_days: 30
+  interactions_per_day: 1
+  pain_daily_variance: 1.5
+  fatigue_daily_variance: 2.0
+  
+  # User personality -> behavior mapping
+  personality:
+    motivated:
+      accept_challenge_prob: 0.75
+      skip_prob: 0.05
+      prefer_higher_difficulty: true
+    cautious:
+      accept_challenge_prob: 0.30
+      skip_prob: 0.10
+      prefer_higher_difficulty: false
+    inconsistent:
+      accept_challenge_prob: 0.50
+      skip_prob: 0.25
+      prefer_higher_difficulty: false
+
+# Evaluation
+evaluation:
+  top_k_values: [1, 3, 5]
+  metrics:
+    offline: ["precision", "recall", "ndcg", "hit_rate", "cumulative_reward"]
+    beyond_accuracy: ["safety_violation_rate", "constraint_satisfaction", "diversity", "novelty", "difficulty_adaptation"]
+    interactive: ["task_success_rate", "acceptance_rate", "avg_turns", "adherence_rate"]
+  
+  llm_judge:
+    enable: true
+    n_samples: 50  # number of interactions to judge
+    criteria:
+      - explanation_quality
+      - narrative_consistency
+
+# Reward function weights (sum ≈ 1.0)
+reward:
+  w_completed: 0.35
+  w_safety: 0.25
+  w_difficulty_match: 0.20
+  w_pain_penalty: 0.10
+  w_dropout_penalty: 0.05
+  w_category: 0.05
+  safety_lambda: 1.0  # Lagrangian penalty for infeasible exploration

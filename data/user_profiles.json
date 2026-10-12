@@ -1,0 +1,594 @@
+[
+  {
+    "user_id": "U001",
+    "name": "Alex Chen",
+    "age": 28,
+    "gender": "M",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2026-08-15",
+    "current_stage": "mid_rehab",
+    "contraindications": [
+      "deep_squat",
+      "jumping",
+      "pivoting",
+      "high_impact"
+    ],
+    "pain_baseline": 3,
+    "fatigue_baseline": 3,
+    "rom_current": 112,
+    "rom_target": 135,
+    "preference": [
+      "strength",
+      "balance"
+    ],
+    "disliked_categories": [
+      "rest"
+    ],
+    "adherence_history": 0.82,
+    "personality": "motivated",
+    "description": "28yo male, 7 weeks post ACL reconstruction, former college basketball player, eager to return to sports. Pushes himself hard but responds well to structured plans."
+  },
+  {
+    "user_id": "U002",
+    "name": "Maria Santos",
+    "age": 35,
+    "gender": "F",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2026-09-18",
+    "current_stage": "early_rehab",
+    "contraindications": [
+      "deep_squat",
+      "jumping",
+      "pivoting",
+      "high_impact",
+      "running"
+    ],
+    "pain_baseline": 5,
+    "fatigue_baseline": 5,
+    "rom_current": 72,
+    "rom_target": 135,
+    "preference": [
+      "flexibility",
+      "balance"
+    ],
+    "disliked_categories": [
+      "heavy_strength"
+    ],
+    "adherence_history": 0.55,
+    "personality": "cautious",
+    "description": "35yo female, 2 weeks post ACL reconstruction from a skiing accident, nervous about re-injury. Tends to underperform exercises out of fear. Needs reassurance and gentle progression."
+  },
+  {
+    "user_id": "U003",
+    "name": "James Okafor",
+    "age": 22,
+    "gender": "M",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2026-07-10",
+    "current_stage": "late_rehab",
+    "contraindications": [
+      "competitive_sport",
+      "uncontrolled_pivoting"
+    ],
+    "pain_baseline": 2,
+    "fatigue_baseline": 3,
+    "rom_current": 130,
+    "rom_target": 140,
+    "preference": [
+      "strength",
+      "plyometrics",
+      "cardio"
+    ],
+    "disliked_categories": [
+      "flexibility"
+    ],
+    "adherence_history": 0.88,
+    "personality": "motivated",
+    "description": "22yo male, 12 weeks post ACL reconstruction, university soccer player desperate to return to the team. Very athletic, sometimes skips stretching. Needs to be reminded about flexibility."
+  },
+  {
+    "user_id": "U004",
+    "name": "Linda Park",
+    "age": 52,
+    "gender": "F",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2026-09-05",
+    "current_stage": "early_rehab",
+    "contraindications": [
+      "deep_squat",
+      "jumping",
+      "pivoting",
+      "high_impact",
+      "open_chain_extension"
+    ],
+    "pain_baseline": 5,
+    "fatigue_baseline": 6,
+    "rom_current": 65,
+    "rom_target": 130,
+    "preference": [
+      "flexibility",
+      "light_cardio"
+    ],
+    "disliked_categories": [
+      "strength",
+      "plyometrics"
+    ],
+    "adherence_history": 0.45,
+    "personality": "inconsistent",
+    "description": "52yo female, 4 weeks post ACL reconstruction from a fall at home. Struggles with motivation due to slow progress and work stress. Completes exercises sporadically."
+  },
+  {
+    "user_id": "U005",
+    "name": "Wei Zhang",
+    "age": 40,
+    "gender": "M",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2026-08-01",
+    "current_stage": "mid_rehab",
+    "contraindications": [
+      "jumping",
+      "pivoting",
+      "high_impact",
+      "lateral_agility"
+    ],
+    "pain_baseline": 4,
+    "fatigue_baseline": 4,
+    "rom_current": 105,
+    "rom_target": 135,
+    "preference": [
+      "balance",
+      "cardio"
+    ],
+    "disliked_categories": [
+      "plyometrics"
+    ],
+    "adherence_history": 0.72,
+    "personality": "cautious",
+    "description": "40yo male, 9 weeks post ACL reconstruction, recreational runner. Cautious and methodical, follows instructions precisely but rarely pushes beyond prescribed limits."
+  },
+  {
+    "user_id": "U006",
+    "name": "Sarah Mitchell",
+    "age": 58,
+    "gender": "F",
+    "condition": "rotator_cuff_repair",
+    "surgery_date": "2026-09-10",
+    "current_stage": "early_rehab",
+    "contraindications": [
+      "overhead_press",
+      "heavy_lifting",
+      "push_up",
+      "active_shoulder_abduction",
+      "active_rom"
+    ],
+    "pain_baseline": 6,
+    "fatigue_baseline": 5,
+    "rom_current": 85,
+    "rom_target": 170,
+    "preference": [
+      "flexibility",
+      "breathing"
+    ],
+    "disliked_categories": [
+      "strength",
+      "cardio"
+    ],
+    "adherence_history": 0.6,
+    "personality": "cautious",
+    "description": "58yo female, 3 weeks post rotator cuff repair, retired teacher. Experiences significant pain and is very careful with movements. Prefers guided, gentle exercises."
+  },
+  {
+    "user_id": "U007",
+    "name": "David Kim",
+    "age": 45,
+    "gender": "M",
+    "condition": "rotator_cuff_repair",
+    "surgery_date": "2026-08-05",
+    "current_stage": "mid_rehab",
+    "contraindications": [
+      "heavy_lifting",
+      "overhead_throwing",
+      "bench_press",
+      "high_resistance_pull"
+    ],
+    "pain_baseline": 3,
+    "fatigue_baseline": 4,
+    "rom_current": 140,
+    "rom_target": 175,
+    "preference": [
+      "strength",
+      "flexibility"
+    ],
+    "disliked_categories": [
+      "rest"
+    ],
+    "adherence_history": 0.78,
+    "personality": "motivated",
+    "description": "45yo male, 8 weeks post rotator cuff repair, office worker and weekend tennis player. Motivated to get back to tennis, compliant with exercises, asks good questions."
+  },
+  {
+    "user_id": "U008",
+    "name": "Priya Sharma",
+    "age": 33,
+    "gender": "F",
+    "condition": "rotator_cuff_repair",
+    "surgery_date": "2026-06-20",
+    "current_stage": "late_rehab",
+    "contraindications": [
+      "max_effort_throw",
+      "heavy_bench_press",
+      "overhead_snatch"
+    ],
+    "pain_baseline": 2,
+    "fatigue_baseline": 3,
+    "rom_current": 162,
+    "rom_target": 175,
+    "preference": [
+      "strength",
+      "balance",
+      "cardio"
+    ],
+    "disliked_categories": [
+      "breathing"
+    ],
+    "adherence_history": 0.91,
+    "personality": "motivated",
+    "description": "33yo female, 15 weeks post rotator cuff repair, CrossFit enthusiast. Highly disciplined, eager to return to overhead movements. Needs to be reminded of limits."
+  },
+  {
+    "user_id": "U009",
+    "name": "Robert Taylor",
+    "age": 62,
+    "gender": "M",
+    "condition": "rotator_cuff_repair",
+    "surgery_date": "2026-09-01",
+    "current_stage": "early_rehab",
+    "contraindications": [
+      "overhead_press",
+      "heavy_lifting",
+      "push_up",
+      "active_shoulder_abduction",
+      "resistance_band"
+    ],
+    "pain_baseline": 5,
+    "fatigue_baseline": 6,
+    "rom_current": 70,
+    "rom_target": 160,
+    "preference": [
+      "flexibility"
+    ],
+    "disliked_categories": [
+      "strength",
+      "cardio",
+      "plyometrics"
+    ],
+    "adherence_history": 0.4,
+    "personality": "inconsistent",
+    "description": "62yo male, 4 weeks post rotator cuff repair, retired carpenter with decades of shoulder wear. Frustrated with limited mobility, inconsistent with home exercises, sometimes skips days."
+  },
+  {
+    "user_id": "U010",
+    "name": "Emily Nguyen",
+    "age": 48,
+    "gender": "F",
+    "condition": "rotator_cuff_repair",
+    "surgery_date": "2026-07-25",
+    "current_stage": "mid_rehab",
+    "contraindications": [
+      "heavy_lifting",
+      "overhead_throwing",
+      "explosive_movement"
+    ],
+    "pain_baseline": 4,
+    "fatigue_baseline": 5,
+    "rom_current": 132,
+    "rom_target": 170,
+    "preference": [
+      "flexibility",
+      "balance"
+    ],
+    "disliked_categories": [
+      "heavy_strength"
+    ],
+    "adherence_history": 0.65,
+    "personality": "inconsistent",
+    "description": "48yo female, 10 weeks post rotator cuff repair, yoga instructor who can no longer do overhead poses. Motivated some days, discouraged on others when progress feels slow."
+  },
+  {
+    "user_id": "U011",
+    "name": "Tom Williams",
+    "age": 55,
+    "gender": "M",
+    "condition": "chronic_lower_back_pain",
+    "surgery_date": null,
+    "current_stage": "early_rehab",
+    "contraindications": [
+      "heavy_deadlift",
+      "spinal_twist_loaded",
+      "sit_up",
+      "high_impact"
+    ],
+    "pain_baseline": 6,
+    "fatigue_baseline": 5,
+    "rom_current": null,
+    "rom_target": null,
+    "preference": [
+      "flexibility",
+      "breathing"
+    ],
+    "disliked_categories": [
+      "strength",
+      "cardio"
+    ],
+    "adherence_history": 0.38,
+    "personality": "inconsistent",
+    "description": "55yo male, chronic lower back pain for 8 years, long-haul truck driver. Skeptical about exercise helping, inconsistent attendance, prefers quick fixes. Needs convincing and small wins."
+  },
+  {
+    "user_id": "U012",
+    "name": "Yuki Tanaka",
+    "age": 30,
+    "gender": "F",
+    "condition": "chronic_lower_back_pain",
+    "surgery_date": null,
+    "current_stage": "mid_rehab",
+    "contraindications": [
+      "heavy_deadlift",
+      "barbell_squat",
+      "high_impact_jumping"
+    ],
+    "pain_baseline": 4,
+    "fatigue_baseline": 4,
+    "rom_current": null,
+    "rom_target": null,
+    "preference": [
+      "strength",
+      "flexibility",
+      "balance"
+    ],
+    "disliked_categories": [
+      "rest"
+    ],
+    "adherence_history": 0.75,
+    "personality": "cautious",
+    "description": "30yo female, chronic lower back pain for 2 years from desk work, software engineer. Proactive but very cautious about her health, meticulously tracks everything, avoids any exercise she hasn't researched first. Responds well to data-driven feedback and evidence-based progression."
+  },
+  {
+    "user_id": "U013",
+    "name": "Carlos Rivera",
+    "age": 42,
+    "gender": "M",
+    "condition": "chronic_lower_back_pain",
+    "surgery_date": null,
+    "current_stage": "late_rehab",
+    "contraindications": [
+      "max_effort_deadlift",
+      "loaded_hyperextension"
+    ],
+    "pain_baseline": 3,
+    "fatigue_baseline": 3,
+    "rom_current": null,
+    "rom_target": null,
+    "preference": [
+      "strength",
+      "cardio",
+      "balance"
+    ],
+    "disliked_categories": [
+      "breathing"
+    ],
+    "adherence_history": 0.85,
+    "personality": "motivated",
+    "description": "42yo male, chronic lower back pain for 5 years, construction supervisor who has significantly improved through consistent exercise. Confident and self-driven, approaching maintenance phase."
+  },
+  {
+    "user_id": "U014",
+    "name": "Helen O'Brien",
+    "age": 68,
+    "gender": "F",
+    "condition": "chronic_lower_back_pain",
+    "surgery_date": null,
+    "current_stage": "early_rehab",
+    "contraindications": [
+      "heavy_deadlift",
+      "spinal_twist_loaded",
+      "sit_up",
+      "high_impact",
+      "forward_flexion_loaded"
+    ],
+    "pain_baseline": 7,
+    "fatigue_baseline": 7,
+    "rom_current": null,
+    "rom_target": null,
+    "preference": [
+      "flexibility",
+      "balance"
+    ],
+    "disliked_categories": [
+      "strength",
+      "cardio",
+      "plyometrics"
+    ],
+    "adherence_history": 0.32,
+    "personality": "cautious",
+    "description": "68yo female, chronic lower back pain worsened by osteoarthritis, retired nurse. Very fearful of pain, avoids most exercises. Needs extra encouragement and extremely gentle start."
+  },
+  {
+    "user_id": "U015",
+    "name": "Marcus Johnson",
+    "age": 38,
+    "gender": "M",
+    "condition": "chronic_lower_back_pain",
+    "surgery_date": null,
+    "current_stage": "mid_rehab",
+    "contraindications": [
+      "heavy_deadlift",
+      "barbell_squat",
+      "plyometrics"
+    ],
+    "pain_baseline": 4,
+    "fatigue_baseline": 5,
+    "rom_current": null,
+    "rom_target": null,
+    "preference": [
+      "cardio",
+      "flexibility"
+    ],
+    "disliked_categories": [
+      "balance"
+    ],
+    "adherence_history": 0.5,
+    "personality": "inconsistent",
+    "description": "38yo male, chronic lower back pain for 3 years, warehouse manager. Enthusiastic when pain is low but skips sessions after flare-ups. Boom-bust exercise pattern needs smoothing out."
+  },
+  {
+    "user_id": "U016",
+    "name": "Kevin Zhao",
+    "age": 32,
+    "gender": "M",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2024-09-15",
+    "current_stage": "early_rehab",
+    "contraindications": [
+      "deep_squat",
+      "jumping",
+      "pivoting",
+      "high_impact",
+      "weight_bearing",
+      "post_op_week_0_6"
+    ],
+    "pain_baseline": 4,
+    "fatigue_baseline": 5,
+    "rom_current": 95,
+    "rom_target": 135,
+    "preference": [
+      "flexibility",
+      "strength"
+    ],
+    "disliked_categories": [
+      "cardio"
+    ],
+    "adherence_history": 0.85,
+    "personality": "motivated",
+    "description": "32yo male, 4 weeks post ACL reconstruction, former recreational soccer player. Eager but cautious about reinjury, responds well to clear progression milestones."
+  },
+  {
+    "user_id": "U017",
+    "name": "Diana Foster",
+    "age": 48,
+    "gender": "F",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2024-10-01",
+    "current_stage": "early_rehab",
+    "contraindications": [
+      "deep_squat",
+      "jumping",
+      "pivoting",
+      "high_impact",
+      "weight_bearing",
+      "post_op_week_0_4",
+      "heavy_lifting"
+    ],
+    "pain_baseline": 5,
+    "fatigue_baseline": 6,
+    "rom_current": 92,
+    "rom_target": 130,
+    "preference": [
+      "flexibility",
+      "rest"
+    ],
+    "disliked_categories": [
+      "strength"
+    ],
+    "adherence_history": 0.52,
+    "personality": "cautious",
+    "description": "48yo female, 2 weeks post ACL reconstruction, office worker with sedentary lifestyle. Anxious about pain, needs gentle encouragement. Tends to skip sessions when pain flares."
+  },
+  {
+    "user_id": "U018",
+    "name": "Marcus Williams",
+    "age": 27,
+    "gender": "M",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2024-08-10",
+    "current_stage": "mid_rehab",
+    "contraindications": [
+      "deep_squat",
+      "jumping",
+      "pivoting",
+      "high_impact"
+    ],
+    "pain_baseline": 2,
+    "fatigue_baseline": 3,
+    "rom_current": 118,
+    "rom_target": 140,
+    "preference": [
+      "strength",
+      "balance"
+    ],
+    "disliked_categories": [
+      "rest"
+    ],
+    "adherence_history": 0.78,
+    "personality": "motivated",
+    "description": "27yo male, 9 weeks post ACL reconstruction, college basketball player aiming to return to competitive play. Low pain, pushing hard on strengthening and proprioception."
+  },
+  {
+    "user_id": "U019",
+    "name": "Patricia Henderson",
+    "age": 55,
+    "gender": "F",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2024-07-20",
+    "current_stage": "mid_rehab",
+    "contraindications": [
+      "deep_squat",
+      "jumping",
+      "pivoting",
+      "high_impact",
+      "heavy_lifting"
+    ],
+    "pain_baseline": 6,
+    "fatigue_baseline": 5,
+    "rom_current": 100,
+    "rom_target": 125,
+    "preference": [
+      "flexibility",
+      "balance"
+    ],
+    "disliked_categories": [
+      "cardio",
+      "strength"
+    ],
+    "adherence_history": 0.45,
+    "personality": "cautious",
+    "description": "55yo female, 12 weeks post ACL reconstruction, gardening enthusiast. Higher baseline pain due to mild osteoarthritis. Prefers low-impact exercises and needs frequent reassurance."
+  },
+  {
+    "user_id": "U020",
+    "name": "Jake Nguyen",
+    "age": 38,
+    "gender": "M",
+    "condition": "ACL_reconstruction",
+    "surgery_date": "2024-07-05",
+    "current_stage": "late_rehab",
+    "contraindications": [
+      "deep_squat",
+      "pivoting",
+      "high_impact"
+    ],
+    "pain_baseline": 3,
+    "fatigue_baseline": 4,
+    "rom_current": 128,
+    "rom_target": 140,
+    "preference": [
+      "balance",
+      "cardio",
+      "strength"
+    ],
+    "disliked_categories": [],
+    "adherence_history": 0.65,
+    "personality": "inconsistent",
+    "description": "38yo male, 14 weeks post ACL reconstruction, weekend hiker. Good physical condition but inconsistent attendance — skips when work gets busy. Responds to gamification elements."
+  }
+]
