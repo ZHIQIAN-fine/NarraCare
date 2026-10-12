@@ -1,0 +1,198 @@
+{
+  "method": "epsilon_greedy",
+  "n_days": 60,
+  "n_users": 20,
+  "n_interactions": 1200,
+  "seed": 42,
+  "wall_time_s": 0.7,
+  "aggregate_metrics": {
+    "cum_reward_mean": 40.9481,
+    "cum_reward_std": 3.1558,
+    "ier_mean": 0.0503,
+    "acceptance_rate": 0.5825,
+    "svr": 0.0,
+    "diversity_mean": 0.2317
+  },
+  "per_user_metrics": [
+    {
+      "user_id": "U001",
+      "cum_reward": 43.8417,
+      "ier": 0.01,
+      "acceptance_rate": 0.7667,
+      "svr": 0.0,
+      "task_success_rate": 0.7333,
+      "diversity": 0.2833
+    },
+    {
+      "user_id": "U002",
+      "cum_reward": 40.9068,
+      "ier": 0.07,
+      "acceptance_rate": 0.5167,
+      "svr": 0.0,
+      "task_success_rate": 0.5167,
+      "diversity": 0.2
+    },
+    {
+      "user_id": "U003",
+      "cum_reward": 41.1233,
+      "ier": 0.0467,
+      "acceptance_rate": 0.6667,
+      "svr": 0.0,
+      "task_success_rate": 0.6667,
+      "diversity": 0.2833
+    },
+    {
+      "user_id": "U004",
+      "cum_reward": 42.2541,
+      "ier": 0.08,
+      "acceptance_rate": 0.6333,
+      "svr": 0.0,
+      "task_success_rate": 0.55,
+      "diversity": 0.2167
+    },
+    {
+      "user_id": "U005",
+      "cum_reward": 37.4237,
+      "ier": 0.03,
+      "acceptance_rate": 0.4333,
+      "svr": 0.0,
+      "task_success_rate": 0.4167,
+      "diversity": 0.3
+    },
+    {
+      "user_id": "U006",
+      "cum_reward": 40.9882,
+      "ier": 0.1367,
+      "acceptance_rate": 0.4667,
+      "svr": 0.0,
+      "task_success_rate": 0.4667,
+      "diversity": 0.1833
+    },
+    {
+      "user_id": "U007",
+      "cum_reward": 39.403,
+      "ier": 0.0267,
+      "acceptance_rate": 0.5667,
+      "svr": 0.0,
+      "task_success_rate": 0.5667,
+      "diversity": 0.2333
+    },
+    {
+      "user_id": "U008",
+      "cum_reward": 42.5998,
+      "ier": 0.0267,
+      "acceptance_rate": 0.7167,
+      "svr": 0.0,
+      "task_success_rate": 0.7167,
+      "diversity": 0.2833
+    },
+    {
+      "user_id": "U009",
+      "cum_reward": 41.5198,
+      "ier": 0.0667,
+      "acceptance_rate": 0.5833,
+      "svr": 0.0,
+      "task_success_rate": 0.5333,
+      "diversity": 0.2
+    },
+    {
+      "user_id": "U010",
+      "cum_reward": 35.8091,
+      "ier": 0.0333,
+      "acceptance_rate": 0.4333,
+      "svr": 0.0,
+      "task_success_rate": 0.35,
+      "diversity": 0.2
+    },
+    {
+      "user_id": "U011",
+      "cum_reward": 42.2866,
+      "ier": 0.1,
+      "acceptance_rate": 0.6667,
+      "svr": 0.0,
+      "task_success_rate": 0.5333,
+      "diversity": 0.2
+    },
+    {
+      "user_id": "U012",
+      "cum_reward": 35.5427,
+      "ier": 0.02,
+      "acceptance_rate": 0.4,
+      "svr": 0.0,
+      "task_success_rate": 0.3667,
+      "diversity": 0.2333
+    },
+    {
+      "user_id": "U013",
+      "cum_reward": 42.43,
+      "ier": 0.02,
+      "acceptance_rate": 0.7,
+      "svr": 0.0,
+      "task_success_rate": 0.7,
+      "diversity": 0.2167
+    },
+    {
+      "user_id": "U014",
+      "cum_reward": 47.9709,
+      "ier": 0.05,
+      "acceptance_rate": 0.6833,
+      "svr": 0.0,
+      "task_success_rate": 0.6833,
+      "diversity": 0.2167
+    },
+    {
+      "user_id": "U015",
+      "cum_reward": 38.7098,
+      "ier": 0.04,
+      "acceptance_rate": 0.5,
+      "svr": 0.0,
+      "task_success_rate": 0.4333,
+      "diversity": 0.2667
+    },
+    {
+      "user_id": "U016",
+      "cum_reward": 45.1043,
+      "ier": 0.03,
+      "acceptance_rate": 0.7333,
+      "svr": 0.0,
+      "task_success_rate": 0.7167,
+      "diversity": 0.25
+    },
+    {
+      "user_id": "U017",
+      "cum_reward": 41.6366,
+      "ier": 0.0967,
+      "acceptance_rate": 0.5333,
+      "svr": 0.0,
+      "task_success_rate": 0.5333,
+      "diversity": 0.1833
+    },
+    {
+      "user_id": "U018",
+      "cum_reward": 38.4473,
+      "ier": 0.0467,
+      "acceptance_rate": 0.55,
+      "svr": 0.0,
+      "task_success_rate": 0.55,
+      "diversity": 0.2333
+    },
+    {
+      "user_id": "U019",
+      "cum_reward": 44.5333,
+      "ier": 0.0433,
+      "acceptance_rate": 0.65,
+      "svr": 0.0,
+      "task_success_rate": 0.6333,
+      "diversity": 0.2167
+    },
+    {
+      "user_id": "U020",
+      "cum_reward": 36.4309,
+      "ier": 0.0333,
+      "acceptance_rate": 0.45,
+      "svr": 0.0,
+      "task_success_rate": 0.4333,
+      "diversity": 0.2333
+    }
+  ]
+}
