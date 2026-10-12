@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environment
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+evaluation/results/*.json
+evaluation/results/*.csv
+evaluation/results/*.png
+report/figures/*.png
+*.log
+
+# API keys
+.env
+.openai_key

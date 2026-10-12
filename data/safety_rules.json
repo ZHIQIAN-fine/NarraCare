@@ -1,0 +1,494 @@
+{
+  "contraindication_rules": [
+    {
+      "rule_id": "CR001",
+      "condition": "ACL_reconstruction",
+      "stage": "early_rehab",
+      "weeks_post_op": [0, 6],
+      "forbidden_tags": ["deep_squat", "jumping", "pivoting", "high_impact"],
+      "max_difficulty": 2,
+      "description": "ACL reconstruction early rehab: no deep squats, jumping, or pivoting"
+    },
+    {
+      "rule_id": "CR002",
+      "condition": "ACL_reconstruction",
+      "stage": "mid_rehab",
+      "weeks_post_op": [6, 12],
+      "forbidden_tags": ["jumping", "pivoting", "high_impact", "full_sprint"],
+      "max_difficulty": 4,
+      "description": "ACL reconstruction mid rehab: no jumping, pivoting, sprinting, or high-impact activities"
+    },
+    {
+      "rule_id": "CR003",
+      "condition": "ACL_reconstruction",
+      "stage": "late_rehab",
+      "weeks_post_op": [12, 24],
+      "forbidden_tags": ["competitive_sport", "uncontrolled_pivoting"],
+      "max_difficulty": 6,
+      "description": "ACL reconstruction late rehab: no competitive sports or uncontrolled direction changes"
+    },
+    {
+      "rule_id": "CR004",
+      "condition": "ACL_reconstruction",
+      "stage": "early_rehab",
+      "weeks_post_op": [0, 4],
+      "forbidden_tags": ["open_chain_extension", "resisted_extension", "heavy_resistance"],
+      "max_difficulty": 1,
+      "description": "ACL early phase: no open-chain knee extension or heavy resistance in first 4 weeks"
+    },
+    {
+      "rule_id": "CR005",
+      "condition": "ACL_reconstruction",
+      "stage": "mid_rehab",
+      "weeks_post_op": [6, 10],
+      "forbidden_tags": ["lateral_agility", "plyometrics", "single_leg_jump"],
+      "max_difficulty": 3,
+      "description": "ACL mid rehab early phase: no lateral agility drills, plyometrics, or single-leg jumps"
+    },
+    {
+      "rule_id": "CR006",
+      "condition": "rotator_cuff_repair",
+      "stage": "early_rehab",
+      "weeks_post_op": [0, 6],
+      "forbidden_tags": ["overhead_press", "heavy_lifting", "push_up", "active_shoulder_abduction"],
+      "max_difficulty": 1,
+      "description": "Rotator cuff early rehab: no overhead pressing, heavy lifting, push-ups, or active shoulder abduction"
+    },
+    {
+      "rule_id": "CR007",
+      "condition": "rotator_cuff_repair",
+      "stage": "mid_rehab",
+      "weeks_post_op": [6, 12],
+      "forbidden_tags": ["heavy_lifting", "overhead_throwing", "bench_press", "high_resistance_pull"],
+      "max_difficulty": 3,
+      "description": "Rotator cuff mid rehab: no heavy lifting, overhead throwing, bench press, or high-resistance pulling"
+    },
+    {
+      "rule_id": "CR008",
+      "condition": "rotator_cuff_repair",
+      "stage": "late_rehab",
+      "weeks_post_op": [12, 24],
+      "forbidden_tags": ["max_effort_throw", "heavy_bench_press", "overhead_snatch"],
+      "max_difficulty": 5,
+      "description": "Rotator cuff late rehab: no max-effort throwing, heavy bench press, or overhead snatch"
+    },
+    {
+      "rule_id": "CR009",
+      "condition": "rotator_cuff_repair",
+      "stage": "early_rehab",
+      "weeks_post_op": [0, 4],
+      "forbidden_tags": ["active_rom", "resistance_band", "weight_bearing_arm"],
+      "max_difficulty": 1,
+      "description": "Rotator cuff first 4 weeks: only passive ROM, no active ROM or resistance exercises"
+    },
+    {
+      "rule_id": "CR010",
+      "condition": "rotator_cuff_repair",
+      "stage": "mid_rehab",
+      "weeks_post_op": [6, 10],
+      "forbidden_tags": ["overhead_weight", "lateral_raise_heavy", "explosive_movement"],
+      "max_difficulty": 3,
+      "description": "Rotator cuff mid rehab early: no overhead weights, heavy lateral raises, or explosive movements"
+    },
+    {
+      "rule_id": "CR011",
+      "condition": "chronic_lower_back_pain",
+      "stage": "early_rehab",
+      "weeks_post_op": [0, 4],
+      "forbidden_tags": ["heavy_deadlift", "spinal_twist_loaded", "sit_up", "high_impact"],
+      "max_difficulty": 2,
+      "description": "Chronic lower back early rehab: no heavy deadlifts, loaded spinal twists, sit-ups, or high-impact activities"
+    },
+    {
+      "rule_id": "CR012",
+      "condition": "chronic_lower_back_pain",
+      "stage": "mid_rehab",
+      "weeks_post_op": [4, 10],
+      "forbidden_tags": ["heavy_deadlift", "barbell_squat", "high_impact_jumping"],
+      "max_difficulty": 4,
+      "description": "Chronic lower back mid rehab: no heavy deadlifts, barbell squats, or high-impact jumping"
+    },
+    {
+      "rule_id": "CR013",
+      "condition": "chronic_lower_back_pain",
+      "stage": "late_rehab",
+      "weeks_post_op": [10, 24],
+      "forbidden_tags": ["max_effort_deadlift", "loaded_hyperextension"],
+      "max_difficulty": 6,
+      "description": "Chronic lower back late rehab: no max-effort deadlifts or loaded hyperextensions"
+    },
+    {
+      "rule_id": "CR014",
+      "condition": "chronic_lower_back_pain",
+      "stage": "early_rehab",
+      "weeks_post_op": [0, 2],
+      "forbidden_tags": ["forward_flexion_loaded", "rotation_under_load", "prolonged_sitting_exercise", "leg_press_heavy"],
+      "max_difficulty": 1,
+      "description": "Chronic lower back acute phase: no loaded forward flexion, rotation under load, prolonged sitting exercises, or heavy leg press"
+    },
+    {
+      "rule_id": "CR015",
+      "condition": "chronic_lower_back_pain",
+      "stage": "mid_rehab",
+      "weeks_post_op": [4, 8],
+      "forbidden_tags": ["plyometrics", "box_jump", "heavy_overhead_press"],
+      "max_difficulty": 3,
+      "description": "Chronic lower back mid rehab: no plyometrics, box jumps, or heavy overhead pressing"
+    },
+    {
+      "rule_id": "CR016",
+      "condition": "ACL_reconstruction",
+      "stage": "early_rehab",
+      "weeks_post_op": [0, 6],
+      "forbidden_tags": ["running", "stair_running", "agility_ladder"],
+      "max_difficulty": 2,
+      "description": "ACL early rehab: no running, stair running, or agility ladder drills"
+    }
+  ],
+  "dosage_rules": [
+    {
+      "rule_id": "DR001",
+      "trigger": "pain_level >= 7",
+      "action": "restrict_to_low_intensity",
+      "max_difficulty": 2,
+      "allowed_categories": ["flexibility", "rest"],
+      "description": "High pain: restrict to gentle stretching and rest only"
+    },
+    {
+      "rule_id": "DR002",
+      "trigger": "pain_level >= 5 and pain_level < 7",
+      "action": "reduce_intensity",
+      "max_difficulty": 3,
+      "allowed_categories": ["flexibility", "balance", "light_cardio"],
+      "description": "Moderate pain: reduce intensity, allow light cardio, balance, and stretching"
+    },
+    {
+      "rule_id": "DR003",
+      "trigger": "pain_increase_since_last >= 3",
+      "action": "reduce_and_reassess",
+      "max_difficulty": 2,
+      "allowed_categories": ["flexibility", "rest", "balance"],
+      "description": "Pain spike (+3 from last session): step back to gentle exercises and reassess"
+    },
+    {
+      "rule_id": "DR004",
+      "trigger": "fatigue_level >= 6 and pain_level >= 4",
+      "action": "restrict_to_gentle",
+      "max_difficulty": 2,
+      "allowed_categories": ["flexibility", "rest", "breathing"],
+      "description": "Combined moderate fatigue and pain: restrict to gentle activities and breathing exercises"
+    },
+    {
+      "rule_id": "DR005",
+      "trigger": "pain_level >= 4 and swelling_reported == true",
+      "action": "restrict_to_rice",
+      "max_difficulty": 1,
+      "allowed_categories": ["rest", "ice_protocol"],
+      "description": "Pain with swelling: RICE protocol only, no active exercises"
+    },
+    {
+      "rule_id": "DR006",
+      "trigger": "pain_level < 3 and fatigue_level < 3",
+      "action": "allow_progression",
+      "max_difficulty": 8,
+      "allowed_categories": ["strength", "balance", "flexibility", "cardio", "plyometrics"],
+      "description": "Low pain and low fatigue: allow full progression including higher-intensity exercises"
+    },
+    {
+      "rule_id": "DR007",
+      "trigger": "sleep_quality <= 3",
+      "action": "reduce_volume",
+      "max_difficulty": 4,
+      "allowed_categories": ["flexibility", "balance", "light_strength"],
+      "description": "Poor sleep quality: reduce exercise volume, focus on lighter activities"
+    },
+    {
+      "rule_id": "DR008",
+      "trigger": "consecutive_high_pain_days >= 3",
+      "action": "mandatory_rest_and_refer",
+      "max_difficulty": 1,
+      "allowed_categories": ["rest"],
+      "description": "3+ consecutive high pain days: mandatory rest and recommend consulting provider"
+    },
+    {
+      "rule_id": "DR009",
+      "trigger": "pain_level >= 5 and stage == 'early_rehab'",
+      "action": "restrict_to_passive",
+      "max_difficulty": 1,
+      "allowed_categories": ["rest", "passive_rom", "ice_protocol"],
+      "description": "Moderate pain in early rehab: restrict to passive ROM and rest protocols"
+    }
+  ],
+  "fatigue_rules": [
+    {
+      "rule_id": "FR001",
+      "trigger": "fatigue_level >= 8",
+      "action": "restrict_to_rest",
+      "allowed_categories": ["rest", "flexibility"],
+      "max_difficulty": 1,
+      "description": "Severe fatigue: only rest and gentle stretching"
+    },
+    {
+      "rule_id": "FR002",
+      "trigger": "fatigue_level >= 6 and fatigue_level < 8",
+      "action": "reduce_volume",
+      "allowed_categories": ["flexibility", "balance", "breathing"],
+      "max_difficulty": 3,
+      "description": "Moderate fatigue: reduce volume, allow stretching, balance, and breathing exercises"
+    },
+    {
+      "rule_id": "FR003",
+      "trigger": "fatigue_level >= 5 and consecutive_exercise_days >= 4",
+      "action": "mandatory_rest_day",
+      "allowed_categories": ["rest"],
+      "max_difficulty": 1,
+      "description": "Accumulated fatigue with 4+ consecutive exercise days: mandatory rest day"
+    },
+    {
+      "rule_id": "FR004",
+      "trigger": "fatigue_level >= 7 and age >= 60",
+      "action": "extended_rest",
+      "allowed_categories": ["rest", "gentle_flexibility"],
+      "max_difficulty": 1,
+      "description": "High fatigue in older adults (60+): extended rest period with only gentle mobility"
+    },
+    {
+      "rule_id": "FR005",
+      "trigger": "fatigue_increase_since_last >= 4",
+      "action": "reduce_and_reassess",
+      "allowed_categories": ["rest", "flexibility", "breathing"],
+      "max_difficulty": 2,
+      "description": "Fatigue spike (+4 from last session): reduce load and reassess recovery capacity"
+    },
+    {
+      "rule_id": "FR006",
+      "trigger": "fatigue_level >= 6 and pain_level >= 5",
+      "action": "restrict_to_rest",
+      "allowed_categories": ["rest"],
+      "max_difficulty": 1,
+      "description": "Combined high fatigue and moderate pain: complete rest recommended"
+    }
+  ],
+  "crisis_rules": [
+    {
+      "rule_id": "XR001",
+      "keywords": ["sudden sharp pain", "突然剧痛"],
+      "action": "stop_and_refer",
+      "message": "This sounds concerning. Please stop all exercises and consult your healthcare provider immediately.",
+      "message_zh": "这听起来令人担忧。请立即停止所有运动，并尽快联系您的医疗保健提供者。",
+      "description": "Crisis detection: sudden sharp pain"
+    },
+    {
+      "rule_id": "XR002",
+      "keywords": ["can't move", "unable to move", "无法活动", "动不了"],
+      "action": "stop_and_refer",
+      "message": "Loss of movement is a serious symptom. Please stop exercising and seek medical attention immediately.",
+      "message_zh": "活动能力丧失是严重症状。请立即停止运动并寻求医疗帮助。",
+      "description": "Crisis detection: loss of movement"
+    },
+    {
+      "rule_id": "XR003",
+      "keywords": ["numbness", "tingling", "pins and needles", "麻木", "针刺感", "手脚发麻"],
+      "action": "stop_and_refer",
+      "message": "Numbness or tingling may indicate nerve involvement. Please stop all exercises and contact your healthcare provider.",
+      "message_zh": "麻木或针刺感可能表明神经受到影响。请停止所有运动并联系您的医疗保健提供者。",
+      "description": "Crisis detection: neurological symptoms (numbness/tingling)"
+    },
+    {
+      "rule_id": "XR004",
+      "keywords": ["popping sound", "heard a pop", "关节弹响", "听到响声", "咔嚓一声"],
+      "action": "stop_and_refer",
+      "message": "A popping sound during exercise could indicate a structural issue. Please stop immediately and seek medical evaluation.",
+      "message_zh": "运动中出现弹响声可能表明结构性问题。请立即停止并寻求医学评估。",
+      "description": "Crisis detection: joint popping sound during exercise"
+    },
+    {
+      "rule_id": "XR005",
+      "keywords": ["severe swelling", "rapid swelling", "严重肿胀", "迅速肿胀", "肿得很厉害"],
+      "action": "stop_and_refer",
+      "message": "Severe or rapid swelling requires immediate medical attention. Please stop all activities and apply ice while seeking care.",
+      "message_zh": "严重或快速的肿胀需要立即医疗关注。请停止所有活动，冰敷并尽快就医。",
+      "description": "Crisis detection: severe or rapid swelling"
+    },
+    {
+      "rule_id": "XR006",
+      "keywords": ["chest pain", "difficulty breathing", "shortness of breath", "胸痛", "呼吸困难", "喘不上气"],
+      "action": "emergency_stop",
+      "message": "Chest pain or difficulty breathing is a medical emergency. Please call emergency services (120/911) immediately.",
+      "message_zh": "胸痛或呼吸困难属于医疗紧急情况。请立即拨打急救电话（120/911）。",
+      "description": "Crisis detection: cardiopulmonary symptoms"
+    },
+    {
+      "rule_id": "XR007",
+      "keywords": ["dizziness", "feel faint", "blacking out", "头晕", "要晕倒", "眼前发黑"],
+      "action": "stop_and_refer",
+      "message": "Dizziness or feeling faint during exercise is concerning. Please sit or lie down safely and contact your healthcare provider.",
+      "message_zh": "运动中头晕或感觉要晕倒令人担忧。请安全地坐下或躺下，并联系您的医疗保健提供者。",
+      "description": "Crisis detection: dizziness or syncope"
+    },
+    {
+      "rule_id": "XR008",
+      "keywords": ["giving way", "knee buckled", "knee gave out", "膝盖打软", "腿软", "关节不稳"],
+      "action": "stop_and_refer",
+      "message": "Joint instability or giving way could indicate a serious issue. Please stop all weight-bearing exercises and consult your surgeon.",
+      "message_zh": "关节不稳或打软可能表明严重问题。请停止所有负重运动并咨询您的外科医生。",
+      "description": "Crisis detection: joint instability/giving way"
+    },
+    {
+      "rule_id": "XR009",
+      "keywords": ["want to give up", "can't do this anymore", "不想练了", "坚持不下去", "想放弃"],
+      "action": "emotional_support",
+      "message": "It's completely understandable to feel this way. Recovery is tough, and it's okay to take a step back. Would you like to talk about what's making this difficult, or shall we adjust your plan?",
+      "message_zh": "有这种感觉完全可以理解。康复过程很艰难，暂时退一步也没关系。您愿意聊聊是什么让您觉得困难吗，还是我们来调整一下您的计划？",
+      "description": "Crisis detection: emotional distress / motivation crisis"
+    },
+    {
+      "rule_id": "XR010",
+      "keywords": ["wound opening", "incision bleeding", "伤口裂开", "切口出血", "刀口渗血"],
+      "action": "emergency_stop",
+      "message": "If your surgical wound is opening or bleeding, please stop all activity immediately. Apply gentle pressure with a clean cloth and seek emergency medical care.",
+      "message_zh": "如果您的手术伤口裂开或出血，请立即停止所有活动。用干净的布轻轻按压并寻求紧急医疗救助。",
+      "description": "Crisis detection: surgical wound complication"
+    }
+  ],
+  "progression_gates": [
+    {
+      "rule_id": "PG001",
+      "from_stage": "early_rehab",
+      "to_stage": "mid_rehab",
+      "condition": "ACL_reconstruction",
+      "requirements": {
+        "min_days": 42,
+        "min_rom": 90,
+        "max_pain_avg_7d": 4,
+        "min_completion_rate_7d": 0.6
+      },
+      "description": "ACL early->mid: 6+ weeks, ROM >= 90°, avg pain <= 4, completion >= 60%"
+    },
+    {
+      "rule_id": "PG002",
+      "from_stage": "mid_rehab",
+      "to_stage": "late_rehab",
+      "condition": "ACL_reconstruction",
+      "requirements": {
+        "min_days": 84,
+        "min_rom": 120,
+        "max_pain_avg_7d": 3,
+        "min_completion_rate_7d": 0.7,
+        "min_strength_ratio": 0.6
+      },
+      "description": "ACL mid->late: 12+ weeks, ROM >= 120°, avg pain <= 3, completion >= 70%, quad strength ratio >= 60%"
+    },
+    {
+      "rule_id": "PG003",
+      "from_stage": "late_rehab",
+      "to_stage": "return_to_sport",
+      "condition": "ACL_reconstruction",
+      "requirements": {
+        "min_days": 168,
+        "min_rom": 135,
+        "max_pain_avg_7d": 2,
+        "min_completion_rate_7d": 0.8,
+        "min_strength_ratio": 0.85,
+        "hop_test_symmetry": 0.9
+      },
+      "description": "ACL late->return to sport: 24+ weeks, full ROM, avg pain <= 2, completion >= 80%, strength ratio >= 85%, hop test >= 90%"
+    },
+    {
+      "rule_id": "PG004",
+      "from_stage": "early_rehab",
+      "to_stage": "mid_rehab",
+      "condition": "rotator_cuff_repair",
+      "requirements": {
+        "min_days": 42,
+        "min_rom": 120,
+        "max_pain_avg_7d": 4,
+        "min_completion_rate_7d": 0.6,
+        "passive_rom_achieved": true
+      },
+      "description": "Rotator cuff early->mid: 6+ weeks, passive ROM >= 120° flexion, avg pain <= 4, completion >= 60%"
+    },
+    {
+      "rule_id": "PG005",
+      "from_stage": "mid_rehab",
+      "to_stage": "late_rehab",
+      "condition": "rotator_cuff_repair",
+      "requirements": {
+        "min_days": 84,
+        "min_rom": 150,
+        "max_pain_avg_7d": 3,
+        "min_completion_rate_7d": 0.7,
+        "active_rom_achieved": true
+      },
+      "description": "Rotator cuff mid->late: 12+ weeks, active ROM >= 150° flexion, avg pain <= 3, completion >= 70%"
+    },
+    {
+      "rule_id": "PG006",
+      "from_stage": "late_rehab",
+      "to_stage": "return_to_activity",
+      "condition": "rotator_cuff_repair",
+      "requirements": {
+        "min_days": 168,
+        "min_rom": 170,
+        "max_pain_avg_7d": 2,
+        "min_completion_rate_7d": 0.8,
+        "strength_manual_test": 4
+      },
+      "description": "Rotator cuff late->return to activity: 24+ weeks, near-full ROM, avg pain <= 2, manual muscle test >= 4/5"
+    },
+    {
+      "rule_id": "PG007",
+      "from_stage": "early_rehab",
+      "to_stage": "mid_rehab",
+      "condition": "chronic_lower_back_pain",
+      "requirements": {
+        "min_days": 21,
+        "max_pain_avg_7d": 5,
+        "min_completion_rate_7d": 0.5,
+        "able_to_walk_30min": true
+      },
+      "description": "Chronic LBP early->mid: 3+ weeks, avg pain <= 5, completion >= 50%, able to walk 30 min"
+    },
+    {
+      "rule_id": "PG008",
+      "from_stage": "mid_rehab",
+      "to_stage": "late_rehab",
+      "condition": "chronic_lower_back_pain",
+      "requirements": {
+        "min_days": 56,
+        "max_pain_avg_7d": 4,
+        "min_completion_rate_7d": 0.6,
+        "core_endurance_test": 60
+      },
+      "description": "Chronic LBP mid->late: 8+ weeks, avg pain <= 4, completion >= 60%, core endurance >= 60s plank"
+    },
+    {
+      "rule_id": "PG009",
+      "from_stage": "late_rehab",
+      "to_stage": "maintenance",
+      "condition": "chronic_lower_back_pain",
+      "requirements": {
+        "min_days": 84,
+        "max_pain_avg_7d": 3,
+        "min_completion_rate_7d": 0.7,
+        "functional_score_improvement": 0.3
+      },
+      "description": "Chronic LBP late->maintenance: 12+ weeks, avg pain <= 3, completion >= 70%, functional score improved >= 30%"
+    },
+    {
+      "rule_id": "PG010",
+      "from_stage": "early_rehab",
+      "to_stage": "mid_rehab",
+      "condition": "ACL_reconstruction",
+      "requirements": {
+        "min_days": 42,
+        "min_rom": 90,
+        "max_pain_avg_7d": 4,
+        "min_completion_rate_7d": 0.5,
+        "full_extension_achieved": true,
+        "quad_activation": true
+      },
+      "description": "ACL early->mid (strict): 6+ weeks, ROM >= 90°, full extension, quad activation present, avg pain <= 4"
+    }
+  ]
+}
