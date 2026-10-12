@@ -1,0 +1,521 @@
+{
+  "summary": {
+    "json_rules_total": 51,
+    "prefilter_rules_total": 5,
+    "grand_total": 56,
+    "report_claimed": "42-rule base",
+    "actual": "51 JSON definitions + 5 runtime pre-filter checks = 56",
+    "fact_fix_needed": true,
+    "recommended_phrasing": "5 runtime safety rules (pre-filter) backed by 51 clinical rule definitions"
+  },
+  "json_rules_by_category": {
+    "contraindication_rules": 16,
+    "dosage_rules": 9,
+    "fatigue_rules": 6,
+    "crisis_rules": 10,
+    "progression_gates": 10
+  },
+  "prefilter_rules": [
+    {
+      "rule_id": "PF_R1",
+      "category": "pre_filter_hardcoded",
+      "description": "Contraindication tag match (user \u2229 task tags)",
+      "runtime_role": "Active at every recommendation \u2014 blocks task if overlap",
+      "trigger_count_nosafety": 26,
+      "trigger_rate_nosafety": 0.033679
+    },
+    {
+      "rule_id": "PF_R2",
+      "category": "pre_filter_hardcoded",
+      "description": "Stage mismatch (task not applicable to user's rehab stage)",
+      "runtime_role": "Active at every recommendation \u2014 blocks task if stage mismatch",
+      "trigger_count_nosafety": 154,
+      "trigger_rate_nosafety": 0.199482
+    },
+    {
+      "rule_id": "PF_R3",
+      "category": "pre_filter_hardcoded",
+      "description": "High pain (\u22657) + high difficulty (\u22654)",
+      "runtime_role": "Active at every recommendation \u2014 blocks task if both conditions met",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0
+    },
+    {
+      "rule_id": "PF_R4",
+      "category": "pre_filter_hardcoded",
+      "description": "Severe fatigue (\u22658) + non-rest/flexibility category",
+      "runtime_role": "Active at every recommendation \u2014 blocks task if both conditions met",
+      "trigger_count_nosafety": 14,
+      "trigger_rate_nosafety": 0.018135
+    },
+    {
+      "rule_id": "PF_R5",
+      "category": "pre_filter_hardcoded",
+      "description": "Low ROM (<60\u00b0) + difficulty\u22653 or cardio category",
+      "runtime_role": "Active at every recommendation \u2014 blocks task if both conditions met",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0
+    }
+  ],
+  "json_rules": [
+    {
+      "rule_id": "CR001",
+      "category": "contraindication_rules",
+      "description": "ACL reconstruction early rehab: no deep squats, jumping, or pivoting",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR002",
+      "category": "contraindication_rules",
+      "description": "ACL reconstruction mid rehab: no jumping, pivoting, sprinting, or high-impact activities",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR003",
+      "category": "contraindication_rules",
+      "description": "ACL reconstruction late rehab: no competitive sports or uncontrolled direction changes",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR004",
+      "category": "contraindication_rules",
+      "description": "ACL early phase: no open-chain knee extension or heavy resistance in first 4 weeks",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR005",
+      "category": "contraindication_rules",
+      "description": "ACL mid rehab early phase: no lateral agility drills, plyometrics, or single-leg jumps",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR006",
+      "category": "contraindication_rules",
+      "description": "Rotator cuff early rehab: no overhead pressing, heavy lifting, push-ups, or active shoulder abduction",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR007",
+      "category": "contraindication_rules",
+      "description": "Rotator cuff mid rehab: no heavy lifting, overhead throwing, bench press, or high-resistance pulling",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR008",
+      "category": "contraindication_rules",
+      "description": "Rotator cuff late rehab: no max-effort throwing, heavy bench press, or overhead snatch",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR009",
+      "category": "contraindication_rules",
+      "description": "Rotator cuff first 4 weeks: only passive ROM, no active ROM or resistance exercises",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR010",
+      "category": "contraindication_rules",
+      "description": "Rotator cuff mid rehab early: no overhead weights, heavy lateral raises, or explosive movements",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR011",
+      "category": "contraindication_rules",
+      "description": "Chronic lower back early rehab: no heavy deadlifts, loaded spinal twists, sit-ups, or high-impact activities",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR012",
+      "category": "contraindication_rules",
+      "description": "Chronic lower back mid rehab: no heavy deadlifts, barbell squats, or high-impact jumping",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR013",
+      "category": "contraindication_rules",
+      "description": "Chronic lower back late rehab: no max-effort deadlifts or loaded hyperextensions",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR014",
+      "category": "contraindication_rules",
+      "description": "Chronic lower back acute phase: no loaded forward flexion, rotation under load, prolonged sitting exercises, or heavy leg press",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR015",
+      "category": "contraindication_rules",
+      "description": "Chronic lower back mid rehab: no plyometrics, box jumps, or heavy overhead pressing",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "CR016",
+      "category": "contraindication_rules",
+      "description": "ACL early rehab: no running, stair running, or agility ladder drills",
+      "runtime_role": "Defines forbidden tags per condition/stage \u2192 parameterizes pre_filter R1",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR001",
+      "category": "dosage_rules",
+      "description": "High pain: restrict to gentle stretching and rest only",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR002",
+      "category": "dosage_rules",
+      "description": "Moderate pain: reduce intensity, allow light cardio, balance, and stretching",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR003",
+      "category": "dosage_rules",
+      "description": "Pain spike (+3 from last session): step back to gentle exercises and reassess",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR004",
+      "category": "dosage_rules",
+      "description": "Combined moderate fatigue and pain: restrict to gentle activities and breathing exercises",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR005",
+      "category": "dosage_rules",
+      "description": "Pain with swelling: RICE protocol only, no active exercises",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR006",
+      "category": "dosage_rules",
+      "description": "Low pain and low fatigue: allow full progression including higher-intensity exercises",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR007",
+      "category": "dosage_rules",
+      "description": "Poor sleep quality: reduce exercise volume, focus on lighter activities",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR008",
+      "category": "dosage_rules",
+      "description": "3+ consecutive high pain days: mandatory rest and recommend consulting provider",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "DR009",
+      "category": "dosage_rules",
+      "description": "Moderate pain in early rehab: restrict to passive ROM and rest protocols",
+      "runtime_role": "Defines pain/fatigue thresholds \u2192 parameterizes pre_filter R3/R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "FR001",
+      "category": "fatigue_rules",
+      "description": "Severe fatigue: only rest and gentle stretching",
+      "runtime_role": "Defines fatigue restrictions \u2192 parameterizes pre_filter R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "FR002",
+      "category": "fatigue_rules",
+      "description": "Moderate fatigue: reduce volume, allow stretching, balance, and breathing exercises",
+      "runtime_role": "Defines fatigue restrictions \u2192 parameterizes pre_filter R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "FR003",
+      "category": "fatigue_rules",
+      "description": "Accumulated fatigue with 4+ consecutive exercise days: mandatory rest day",
+      "runtime_role": "Defines fatigue restrictions \u2192 parameterizes pre_filter R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "FR004",
+      "category": "fatigue_rules",
+      "description": "High fatigue in older adults (60+): extended rest period with only gentle mobility",
+      "runtime_role": "Defines fatigue restrictions \u2192 parameterizes pre_filter R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "FR005",
+      "category": "fatigue_rules",
+      "description": "Fatigue spike (+4 from last session): reduce load and reassess recovery capacity",
+      "runtime_role": "Defines fatigue restrictions \u2192 parameterizes pre_filter R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "FR006",
+      "category": "fatigue_rules",
+      "description": "Combined high fatigue and moderate pain: complete rest recommended",
+      "runtime_role": "Defines fatigue restrictions \u2192 parameterizes pre_filter R4",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR001",
+      "category": "crisis_rules",
+      "description": "Crisis detection: sudden sharp pain",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR002",
+      "category": "crisis_rules",
+      "description": "Crisis detection: loss of movement",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR003",
+      "category": "crisis_rules",
+      "description": "Crisis detection: neurological symptoms (numbness/tingling)",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR004",
+      "category": "crisis_rules",
+      "description": "Crisis detection: joint popping sound during exercise",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR005",
+      "category": "crisis_rules",
+      "description": "Crisis detection: severe or rapid swelling",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR006",
+      "category": "crisis_rules",
+      "description": "Crisis detection: cardiopulmonary symptoms",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR007",
+      "category": "crisis_rules",
+      "description": "Crisis detection: dizziness or syncope",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR008",
+      "category": "crisis_rules",
+      "description": "Crisis detection: joint instability/giving way",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR009",
+      "category": "crisis_rules",
+      "description": "Crisis detection: emotional distress / motivation crisis",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "XR010",
+      "category": "crisis_rules",
+      "description": "Crisis detection: surgical wound complication",
+      "runtime_role": "Crisis detection keywords \u2014 triggered by user text, not task recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG001",
+      "category": "progression_gates",
+      "description": "ACL early->mid: 6+ weeks, ROM >= 90\u00b0, avg pain <= 4, completion >= 60%",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG002",
+      "category": "progression_gates",
+      "description": "ACL mid->late: 12+ weeks, ROM >= 120\u00b0, avg pain <= 3, completion >= 70%, quad strength ratio >= 60%",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG003",
+      "category": "progression_gates",
+      "description": "ACL late->return to sport: 24+ weeks, full ROM, avg pain <= 2, completion >= 80%, strength ratio >= 85%, hop test >= 90%",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG004",
+      "category": "progression_gates",
+      "description": "Rotator cuff early->mid: 6+ weeks, passive ROM >= 120\u00b0 flexion, avg pain <= 4, completion >= 60%",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG005",
+      "category": "progression_gates",
+      "description": "Rotator cuff mid->late: 12+ weeks, active ROM >= 150\u00b0 flexion, avg pain <= 3, completion >= 70%",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG006",
+      "category": "progression_gates",
+      "description": "Rotator cuff late->return to activity: 24+ weeks, near-full ROM, avg pain <= 2, manual muscle test >= 4/5",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG007",
+      "category": "progression_gates",
+      "description": "Chronic LBP early->mid: 3+ weeks, avg pain <= 5, completion >= 50%, able to walk 30 min",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG008",
+      "category": "progression_gates",
+      "description": "Chronic LBP mid->late: 8+ weeks, avg pain <= 4, completion >= 60%, core endurance >= 60s plank",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG009",
+      "category": "progression_gates",
+      "description": "Chronic LBP late->maintenance: 12+ weeks, avg pain <= 3, completion >= 70%, functional score improved >= 30%",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    },
+    {
+      "rule_id": "PG010",
+      "category": "progression_gates",
+      "description": "ACL early->mid (strict): 6+ weeks, ROM >= 90\u00b0, full extension, quad activation present, avg pain <= 4",
+      "runtime_role": "Stage advancement criteria \u2014 checked at progression, not recommendation",
+      "trigger_count_nosafety": 0,
+      "trigger_rate_nosafety": 0.0,
+      "note": "Design-time rule; not individually evaluated at recommendation pre-filter"
+    }
+  ]
+}
