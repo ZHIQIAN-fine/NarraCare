@@ -1,0 +1,203 @@
+{
+  "experiment": "neuralucb_prefix_ablation",
+  "description": "Pre-fix NeuralUCB (commit 957e70f architecture): select() produces ONE scalar prediction for all arms, ranks by noise only. Effectively a random policy.",
+  "config": {
+    "n_days": 60,
+    "n_users": 20,
+    "seed": 42,
+    "hidden_dim": 32,
+    "training_epochs": 5,
+    "alpha": 0.01,
+    "safety_lambda": 3.0
+  },
+  "aggregate_metrics": {
+    "cum_reward_mean": 46.6709,
+    "cum_reward_std": 2.8561,
+    "ier_mean": 0.4057,
+    "acceptance_rate_mean": 0.7283,
+    "svr": 0.0
+  },
+  "per_user_metrics": [
+    {
+      "user_id": "U001",
+      "cum_reward": 50.1093,
+      "ier": 0.22,
+      "acceptance_rate": 0.8833,
+      "svr": 0.0,
+      "task_success_rate": 0.8833
+    },
+    {
+      "user_id": "U002",
+      "cum_reward": 43.7717,
+      "ier": 0.6233,
+      "acceptance_rate": 0.6333,
+      "svr": 0.0,
+      "task_success_rate": 0.6
+    },
+    {
+      "user_id": "U003",
+      "cum_reward": 51.8597,
+      "ier": 0.24,
+      "acceptance_rate": 0.9,
+      "svr": 0.0,
+      "task_success_rate": 0.8833
+    },
+    {
+      "user_id": "U004",
+      "cum_reward": 43.3178,
+      "ier": 0.6467,
+      "acceptance_rate": 0.6,
+      "svr": 0.0,
+      "task_success_rate": 0.5333
+    },
+    {
+      "user_id": "U005",
+      "cum_reward": 44.8155,
+      "ier": 0.27,
+      "acceptance_rate": 0.6,
+      "svr": 0.0,
+      "task_success_rate": 0.5833
+    },
+    {
+      "user_id": "U006",
+      "cum_reward": 47.747,
+      "ier": 0.5933,
+      "acceptance_rate": 0.75,
+      "svr": 0.0,
+      "task_success_rate": 0.7333
+    },
+    {
+      "user_id": "U007",
+      "cum_reward": 48.6754,
+      "ier": 0.2267,
+      "acceptance_rate": 0.85,
+      "svr": 0.0,
+      "task_success_rate": 0.8
+    },
+    {
+      "user_id": "U008",
+      "cum_reward": 49.6756,
+      "ier": 0.18,
+      "acceptance_rate": 0.8667,
+      "svr": 0.0,
+      "task_success_rate": 0.8167
+    },
+    {
+      "user_id": "U009",
+      "cum_reward": 41.6662,
+      "ier": 0.5967,
+      "acceptance_rate": 0.55,
+      "svr": 0.0,
+      "task_success_rate": 0.5
+    },
+    {
+      "user_id": "U010",
+      "cum_reward": 42.2203,
+      "ier": 0.2733,
+      "acceptance_rate": 0.5667,
+      "svr": 0.0,
+      "task_success_rate": 0.4833
+    },
+    {
+      "user_id": "U011",
+      "cum_reward": 44.0948,
+      "ier": 0.6267,
+      "acceptance_rate": 0.7,
+      "svr": 0.0,
+      "task_success_rate": 0.5833
+    },
+    {
+      "user_id": "U012",
+      "cum_reward": 45.9957,
+      "ier": 0.24,
+      "acceptance_rate": 0.7167,
+      "svr": 0.0,
+      "task_success_rate": 0.65
+    },
+    {
+      "user_id": "U013",
+      "cum_reward": 49.8242,
+      "ier": 0.18,
+      "acceptance_rate": 0.7833,
+      "svr": 0.0,
+      "task_success_rate": 0.7833
+    },
+    {
+      "user_id": "U014",
+      "cum_reward": 48.3329,
+      "ier": 0.6933,
+      "acceptance_rate": 0.7167,
+      "svr": 0.0,
+      "task_success_rate": 0.6833
+    },
+    {
+      "user_id": "U015",
+      "cum_reward": 45.6601,
+      "ier": 0.3533,
+      "acceptance_rate": 0.6667,
+      "svr": 0.0,
+      "task_success_rate": 0.6
+    },
+    {
+      "user_id": "U016",
+      "cum_reward": 45.2416,
+      "ier": 0.6067,
+      "acceptance_rate": 0.7167,
+      "svr": 0.0,
+      "task_success_rate": 0.7167
+    },
+    {
+      "user_id": "U017",
+      "cum_reward": 45.8262,
+      "ier": 0.6167,
+      "acceptance_rate": 0.6667,
+      "svr": 0.0,
+      "task_success_rate": 0.6667
+    },
+    {
+      "user_id": "U018",
+      "cum_reward": 46.0185,
+      "ier": 0.2467,
+      "acceptance_rate": 0.7833,
+      "svr": 0.0,
+      "task_success_rate": 0.7167
+    },
+    {
+      "user_id": "U019",
+      "cum_reward": 50.7998,
+      "ier": 0.3733,
+      "acceptance_rate": 0.8167,
+      "svr": 0.0,
+      "task_success_rate": 0.7833
+    },
+    {
+      "user_id": "U020",
+      "cum_reward": 47.7667,
+      "ier": 0.3067,
+      "acceptance_rate": 0.8,
+      "svr": 0.0,
+      "task_success_rate": 0.7
+    }
+  ],
+  "ablation_stats": {
+    "comparison": "post-fix (260508a) vs pre-fix (957e70f architecture)",
+    "n_pairs": 20,
+    "seed": 42,
+    "reward": {
+      "postfix_mean": 39.1635,
+      "prefix_mean": 46.6709,
+      "delta": -7.5075,
+      "t_statistic": -8.2465,
+      "p_value": 0.0
+    },
+    "ier": {
+      "postfix_mean": 0.003,
+      "prefix_mean": 0.4057,
+      "delta": -0.4027,
+      "t_statistic": -9.5679,
+      "p_value": 0.0
+    }
+  },
+  "wall_time_s": 255.9,
+  "n_interactions": 1200
+}
