@@ -292,6 +292,7 @@ _MODEL_REGISTRY: Dict[str, type] = {
     "popularity": PopularityModel,
     "epsilon_greedy": EpsilonGreedyModel,
     "rule_based": RuleBasedModel,
+    # SAPS is handled specially in _build_model (not a BanditModel subclass)
 }
 
 
@@ -348,6 +349,17 @@ class RecommenderAgent:
             return EpsilonGreedyModel(epsilon=params.get("epsilon", 0.1), seed=seed)
         elif algo == "rule_based":
             return RuleBasedModel()
+        elif algo == "saps":
+            from src.policies.saps import SAPSModel
+            params = rec_cfg.get("saps", {})
+            return SAPSModel(
+                feature_dim=params.get("feature_dim", 15),
+                alpha_ucb=params.get("alpha_ucb", 1.0),
+                tau_safe=params.get("tau_safe", 2.0),
+                alpha_prior=params.get("alpha_prior", 1.0),
+                beta_prior=params.get("beta_prior", 1.0),
+                seed=seed,
+            )
         else:
             raise ValueError(f"Unknown recommender algorithm: {algo}")
 

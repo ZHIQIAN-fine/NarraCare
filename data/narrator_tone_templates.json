@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.3.1",
+  "comment": "NarraCare Narrator tone templates. 8 scenarios x 3 tones + Safety hybrid + Daily Closing 6 variants + fallback. Consumed by src/agents/narrator.py (_render_prompt).",
+  "tones": {
+    "doctor":    {"person": "third_plus_we", "sentence_length": "medium_long", "medical_density": "high",  "emotional_distance": "far",  "default_act": "act1"},
+    "coach":     {"person": "second",         "sentence_length": "short",       "medical_density": "medium","emotional_distance": "mid",  "default_act": "act2"},
+    "companion": {"person": "first_we",       "sentence_length": "mixed",       "medical_density": "low",   "emotional_distance": "near", "default_act": "act3"}
+  },
+  "scenarios": {
+    "daily_opening": {
+      "doctor":    "Good morning, {name}. Today is Day {day} of your {condition} recovery. Based on your current pain level ({pain}/10) and ROM progress, we'll focus on {category}. Please remember: {safety_note}.",
+      "coach":     "Hey {name}, Day {day} already — look how far you've come. Yesterday you crushed {prev_task}. Today? Let's keep that momentum. Ready?",
+      "companion": "Morning, {name}. Remember Day 1, when even {act1_milestone} felt impossible? Today's just another step on this road we've been walking together."
+    },
+    "recommendation_framing": {
+      "doctor":    "I'm recommending {task_name} today. This targets {body_part} and is appropriate for your current {rehab_stage} phase. Difficulty: {difficulty}/5. Clinical rationale: {reason_from_bandit}.",
+      "coach":     "Today's challenge: {task_name}. It's a {difficulty}/5 — tougher than Monday, but you're ready. {reason_from_bandit}.",
+      "companion": "I thought of {task_name} for you today, {name}. It reminds me of what helped around this time. Up for it?"
+    },
+    "user_rejection_response": {
+      "doctor":    "That's valid. Pain at {pain}/10 is a signal we should respect. Let me suggest an alternative with lower intensity: {alt_task}.",
+      "coach":     "Fair call. Not every day is a PR day. Let's downshift: {alt_task}. Still counts.",
+      "companion": "Totally hear you, {name}. Some days the body says no, and that's part of the story too. How about {alt_task} — gentler, still ours?"
+    },
+    "safety_agent_trigger": {
+      "doctor":    "I had suggested {blocked_task}, but the safety protocol flagged it: {rule_name} — {rule_clinical_reason}. Switching to {safe_task}, which targets {same_body_part} without triggering {risk_factor}.",
+      "coach":     "Scratched {blocked_task} — not safe for where you are yet. {safe_task} instead. We'll earn the hard stuff.",
+      "companion": "I almost suggested {blocked_task}, but something stopped me — the rule we agreed on. Let's do {safe_task} instead, {name}.",
+      "hybrid_doctor_companion": {
+        "doctor_part":    "I had suggested {blocked_task}, but the safety protocol flagged it: {rule_name} — {rule_clinical_reason}. Switching to {safe_task}, which targets {same_body_part} without triggering {risk_factor}.",
+        "companion_part": "I know you wanted to push today, {name}. {empathy_line}. We'll earn {blocked_task} — just not today."
+      },
+      "empathy_line_by_personality": {
+        "motivated":    "I see the drive — it's what's gotten you this far. Channeling it into something your body can take today.",
+        "cautious":     "Your instinct to be careful is right — the protocol just confirms it. We're on the same team here.",
+        "inconsistent": "Showing up today already matters. Doesn't have to be the hardest thing — it has to be something."
+      }
+    },
+    "turning_point": {
+      "doctor":    "{name}, you've reached a clinical milestone: {milestone}. Based on your trajectory, we can now progress to {next_phase_summary}.",
+      "coach":     "Day {day}. STOP. Look back. {milestone}. That's not luck — that's work. Next phase starts now: {next_phase_summary}.",
+      "companion": "Something to notice today, {name}: {milestone}. Remember when you doubted this would happen? I remember. Next, we move toward {next_phase_summary}."
+    },
+    "weekly_reflection": {
+      "doctor":    "Weekly summary — Week {week}: Adherence {adherence}%, average pain {avg_pain}/10, ROM gain {rom_delta} degrees. Overall trajectory: {trend}.",
+      "coach":     "Week {week} in the books, {name}. {trend}. Adherence {adherence}%. One more week, one more layer.",
+      "companion": "Another week down, {name}. Average pain {avg_pain}/10, ROM gain {rom_delta}. We're doing this — together."
+    },
+    "final_farewell": {
+      "doctor":    "{name}, this concludes the structured {duration}-day program. Clinical summary: {final_metrics}. Recommended long-term protocol: {maintenance_plan}.",
+      "coach":     "Day 60. {name}. You started scared. You're ending stronger. That's the whole thing. Maintenance plan: {maintenance_plan}. Go.",
+      "companion": "{name}, this is our last session on this journey. Remember Day 1? You didn't quit. Your plan from here: {maintenance_plan}. See you on the other side."
+    },
+    "daily_closing": {
+      "no_interaction": {
+        "companion": "Didn't hear from you today, {name}. No judgment — just checking in. Tomorrow's a clean slate. One small thing, and we're back on track."
+      },
+      "safety_followup": {
+        "companion": "Today the safety rule had the last word, {name}. That's okay — this phase is about protection. We'll push again when the body says yes."
+      },
+      "skip_recovery": {
+        "companion": "Rest day today, {name}. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+      },
+      "concern": {
+        "companion": "Today took something out of you, {name}. Pain was at {pain_level}, fatigue at {fatigue_level}. I'll make tomorrow's plan lighter — rest tonight."
+      },
+      "celebration": {
+        "coach": "Done for today, {name}. {streak_count}-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+      },
+      "neutral": {
+        "doctor":    "Session complete. Today's adherence: {adherence}%. Pain delta: {pain_delta}. Next session's focus: {next_focus}. Rest well.",
+        "coach":     "Done for today, {name}. Tomorrow we go again — same time.",
+        "companion": "That's another day behind us, {name}. {personal_moment_from_today}. I'll be here tomorrow — rest easy."
+      },
+      "inconsistent_streak_suffix": {
+        "coach":     "Streak: {streak}/{target}. One more day locks the week.",
+        "companion": "{streak} days in a row now, {name}. I noticed. That matters."
+      }
+    }
+  },
+  "transition_rules": {
+    "priority_order": ["safety_trigger", "red_light", "base_tone", "yellow_light"],
+    "priority_order_comment": "safety_trigger and red_light are hard overrides; yellow_light mixes on top of base_tone (which already contains transition-zone mixing between acts).",
+    "act1_to_act2": {"days": [13, 17], "mix": {"doctor": 0.7, "coach": 0.3}},
+    "act2_to_act3": {"days": [38, 42], "mix": {"coach": 0.7, "companion": 0.3}},
+    "emotional_override": {
+      "yellow": {
+        "trigger_conditions": {"pain_gte": 7, "fatigue_gte": 7, "consecutive_skips_gte": 2},
+        "tone_mix": {"base_tone": 0.5, "companion": 0.5},
+        "difficulty_cap_rule": "max(1, current_safety_cap - 1)",
+        "offer_alternative_task": true
+      },
+      "red": {
+        "trigger_conditions": {"pain_gte": 8, "fatigue_gte": 8, "consecutive_skips_gte": 3},
+        "forced_tone": "companion",
+        "difficulty_cap_rule": "max(1, current_safety_cap - 2)",
+        "safety_recheck": true,
+        "narrator_frequency_bonus": 1,
+        "offer_rest_day": true
+      }
+    }
+  }
+}

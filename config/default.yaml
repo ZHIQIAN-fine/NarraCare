@@ -50,11 +50,21 @@ safety:
     - "异响"
     - "麻木"
 
-# Narrator Agent  
+# Narrator Agent (legacy v1)
 narrator:
   enable: true
   style: "rehabilitation_camp"  # rehabilitation_camp | clinical | casual
   language: "en"  # en | zh
+
+# Narrator v2 (v1.3.2 — 3-Act arc + tone templates)
+narrator_v2:
+  enable: true
+  fallback_mode: "safe_template"
+
+# Narrative arc + template paths (consumed by Narrator v2)
+narrative:
+  arcs_path: "data/narrative_arcs.json"
+  templates_path: "data/narrator_tone_templates.json"
 
 # Simulation
 simulation:

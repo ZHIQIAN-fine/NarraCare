@@ -1,0 +1,228 @@
+{
+  "schema_version": "1.3.1",
+  "comment": "NarraCare 3-Act narrative arc metadata. Maps rehab_stage + day -> Act + narrative/tone/recommender biases. Consumed by src/agents/narrator.py (_get_arc_context) and src/pipeline.py (safety_lambda_multiplier, recommender_bias).",
+  "arcs": {
+    "ACL": {
+      "act1": {
+        "day_range": [1, 15],
+        "name": "Protection & Trust",
+        "psychological_theme": "Fear to Trust",
+        "default_tone": "doctor",
+        "turning_point_day": 7,
+        "turning_point_milestone": "First complete session without stopping",
+        "recommender_bias": {"flexibility": 0.70, "rest": 0.20, "strength": 0.10, "balance": 0.00, "cardio": 0.00},
+        "safety_lambda_multiplier": 1.5,
+        "narrator_frequency_per_day": 2,
+        "narrative_events": [
+          "First standing without crutches",
+          "Managing pain with ice",
+          "Relearning to trust the knee"
+        ],
+        "clinical_milestones": [
+          "ROM recovery to 90 degrees",
+          "No weight bearing / crutch dependent",
+          "Swelling management"
+        ]
+      },
+      "act2": {
+        "day_range": [16, 40],
+        "name": "Plateau & Negotiation",
+        "psychological_theme": "Frustration to Recalibration",
+        "default_tone": "coach",
+        "turning_point_day": 28,
+        "turning_point_milestone": "Breaking through the strength plateau / second clinical assessment",
+        "recommender_bias": {"strength": 0.40, "flexibility": 0.30, "balance": 0.20, "cardio": 0.10, "rest": 0.00},
+        "safety_lambda_multiplier": 1.0,
+        "narrator_frequency_per_day": 1,
+        "narrative_events": [
+          "First time climbing stairs",
+          "Reaching 60-degree squat",
+          "Colleagues asking what you've been up to"
+        ],
+        "clinical_milestones": [
+          "ROM recovery to 120 degrees",
+          "Progressive weight bearing",
+          "Quad strength returning"
+        ]
+      },
+      "act3": {
+        "day_range": [41, 60],
+        "name": "Autonomy & Farewell",
+        "psychological_theme": "Confidence to Independence",
+        "default_tone": "companion",
+        "turning_point_day": 55,
+        "turning_point_milestone": "Final functional test / return-to-activity decision",
+        "recommender_bias": {"strength": 0.35, "cardio": 0.30, "balance": 0.25, "flexibility": 0.10, "rest": 0.00},
+        "safety_lambda_multiplier": 0.7,
+        "narrator_frequency_per_day": 1,
+        "narrative_events": [
+          "First light jog",
+          "Thinking about returning to sport / activity",
+          "Writing a rehab journal as a farewell"
+        ],
+        "clinical_milestones": [
+          "Single-leg weight bearing",
+          "Functional training integration",
+          "Return-to-sport screening"
+        ]
+      }
+    },
+    "RotatorCuff": {
+      "act1": {
+        "day_range": [1, 15],
+        "name": "Protection & Trust",
+        "psychological_theme": "Fear to Trust",
+        "default_tone": "doctor",
+        "turning_point_day": 7,
+        "turning_point_milestone": "First passive full-range motion without pain spike",
+        "recommender_bias": {"flexibility": 0.80, "rest": 0.20, "strength": 0.00, "balance": 0.00, "cardio": 0.00},
+        "safety_lambda_multiplier": 1.5,
+        "narrator_frequency_per_day": 2,
+        "narrative_events": [
+          "Small victories while getting dressed",
+          "Learning not to shrug",
+          "Accepting you cannot lift heavy objects yet"
+        ],
+        "clinical_milestones": [
+          "Sling immobilization",
+          "Passive ROM only",
+          "Avoiding active abduction"
+        ]
+      },
+      "act2": {
+        "day_range": [16, 40],
+        "name": "Plateau & Negotiation",
+        "psychological_theme": "Frustration to Recalibration",
+        "default_tone": "coach",
+        "turning_point_day": 28,
+        "turning_point_milestone": "First active overhead reach with control",
+        "recommender_bias": {"strength": 0.40, "flexibility": 0.40, "balance": 0.20, "cardio": 0.00, "rest": 0.00},
+        "safety_lambda_multiplier": 1.0,
+        "narrator_frequency_per_day": 1,
+        "narrative_events": [
+          "First time reaching overhead",
+          "Combing hair again",
+          "Breakthrough on external rotation"
+        ],
+        "clinical_milestones": [
+          "Active ROM + light resistance",
+          "Scapular stabilization",
+          "External rotation progression"
+        ]
+      },
+      "act3": {
+        "day_range": [41, 60],
+        "name": "Autonomy & Farewell",
+        "psychological_theme": "Confidence to Independence",
+        "default_tone": "companion",
+        "turning_point_day": 55,
+        "turning_point_milestone": "Full functional loading without compensatory patterns",
+        "recommender_bias": {"strength": 0.50, "cardio": 0.25, "flexibility": 0.25, "balance": 0.00, "rest": 0.00},
+        "safety_lambda_multiplier": 0.7,
+        "narrator_frequency_per_day": 1,
+        "narrative_events": [
+          "Lifting boxes without fear",
+          "Deciding about swimming or throwing",
+          "Saying goodbye to the physiotherapist"
+        ],
+        "clinical_milestones": [
+          "Full active ROM",
+          "Functional loading",
+          "Return-to-activity screening"
+        ]
+      }
+    },
+    "BackPain": {
+      "act1": {
+        "day_range": [1, 15],
+        "name": "Protection & Trust",
+        "psychological_theme": "Fear to Trust",
+        "default_tone": "doctor",
+        "turning_point_day": 7,
+        "turning_point_milestone": "First pain-free full workday",
+        "recommender_bias": {"flexibility": 0.50, "rest": 0.30, "strength": 0.20, "balance": 0.00, "cardio": 0.00},
+        "safety_lambda_multiplier": 1.5,
+        "narrator_frequency_per_day": 2,
+        "narrative_events": [
+          "Finding a pain-free posture",
+          "Learning diaphragmatic breathing to stabilize the core",
+          "Accepting the chronic nature of back pain"
+        ],
+        "clinical_milestones": [
+          "Acute phase management",
+          "Core activation (deep stabilizers)",
+          "Avoiding flexion/rotation under load"
+        ]
+      },
+      "act2": {
+        "day_range": [16, 40],
+        "name": "Plateau & Negotiation",
+        "psychological_theme": "Frustration to Recalibration",
+        "default_tone": "coach",
+        "turning_point_day": 28,
+        "turning_point_milestone": "First prolonged sit without pain",
+        "recommender_bias": {"strength": 0.50, "flexibility": 0.25, "cardio": 0.15, "balance": 0.10, "rest": 0.00},
+        "safety_lambda_multiplier": 1.0,
+        "narrator_frequency_per_day": 1,
+        "narrative_events": [
+          "First full workday pain-free",
+          "Fear of lifting heavy things again",
+          "Adjusting the work chair"
+        ],
+        "clinical_milestones": [
+          "Progressive loading",
+          "Return to work tasks",
+          "Hip-hinge pattern retraining"
+        ]
+      },
+      "act3": {
+        "day_range": [41, 60],
+        "name": "Autonomy & Farewell",
+        "psychological_theme": "Confidence to Independence",
+        "default_tone": "companion",
+        "turning_point_day": 55,
+        "turning_point_milestone": "Designing a self-maintained long-term plan",
+        "recommender_bias": {"strength": 0.40, "flexibility": 0.25, "cardio": 0.25, "balance": 0.10, "rest": 0.00},
+        "safety_lambda_multiplier": 0.7,
+        "narrator_frequency_per_day": 1,
+        "narrative_events": [
+          "Designing a lifelong training plan",
+          "Accepting that this is a companion, not an enemy",
+          "Writing a letter to your future self"
+        ],
+        "clinical_milestones": [
+          "Recurrence prevention",
+          "Lifelong management habits",
+          "Self-screening literacy"
+        ]
+      }
+    }
+  },
+  "personality_modifiers": {
+    "motivated": {
+      "act1_strength_bonus": 0.05,
+      "act2_turning_point_shift": 0,
+      "act3_novelty_bonus": 0.10,
+      "narrator_frequency_bonus": 0
+    },
+    "cautious": {
+      "act1_safety_bonus": 0.10,
+      "act2_turning_point_shift": 4,
+      "act3_flexibility_retention": 0.15,
+      "narrator_frequency_bonus": 0
+    },
+    "inconsistent": {
+      "act1_safety_bonus": 0.0,
+      "act2_turning_point_shift": 0,
+      "act2_streak_reward": true,
+      "act3_habit_focus": true,
+      "narrator_frequency_bonus": 1
+    }
+  },
+  "stage_to_act_mapping": {
+    "early_rehab": "act1",
+    "mid_rehab": "act2",
+    "late_rehab": "act3",
+    "note": "Fallback mapping if day-based lookup fails. Day-based lookup via day_range is the primary resolver."
+  }
+}
