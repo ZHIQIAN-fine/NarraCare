@@ -88,7 +88,12 @@ class LinUCBModel(BanditModel):
 # ═══════════════════════════════════════════════════════════════════════════
 
 class NeuralUCBModel(BanditModel):
-    """Simple Neural UCB using a small feed-forward network.
+    """Neural UCB with per-arm statistics and shared context network.
+
+    The neural network learns a context representation, while per-arm
+    running statistics (mean reward, pull count) capture arm-specific
+    quality — including Lagrangian safety penalties that push unsafe
+    arms' means negative.  UCB exploration bonus decays with sqrt(n).
 
     Falls back to LinUCB if PyTorch is unavailable.
     """
@@ -128,8 +133,10 @@ class NeuralUCBModel(BanditModel):
             self._fallback = LinUCBModel(feature_dim, alpha)
             self._has_torch = False
 
-        # Replay buffer for periodic re-training
+        # Replay buffer for periodic re-training (context, arm, reward)
         self._buffer: List[Tuple[np.ndarray, str, float]] = []
+        # Per-arm running stats: arm_id -> [sum_reward, count]
+        self._arm_stats: Dict[str, List[float]] = {}
 
     def select(
         self,
@@ -144,15 +151,23 @@ class NeuralUCBModel(BanditModel):
         self.net.eval()
         x_tensor = torch.tensor(context, dtype=torch.float32).unsqueeze(0)
 
-        scores: List[Tuple[str, float]] = []
         with torch.no_grad():
-            pred = self.net(x_tensor).item()
+            ctx_pred = self.net(x_tensor).item()
 
-        # Use prediction + exploration bonus (simplified: noise proportional to alpha)
         rng = np.random.default_rng()
+        scores: List[Tuple[str, float]] = []
         for arm_id in candidate_ids:
-            exploration_bonus = self.alpha * rng.standard_normal()
-            scores.append((arm_id, pred + exploration_bonus))
+            stats = self._arm_stats.get(arm_id)
+            if stats and stats[1] > 0:
+                arm_mean = stats[0] / stats[1]
+                n_pulls = stats[1]
+            else:
+                arm_mean = 0.0
+                n_pulls = 0
+            # UCB exploration bonus decays with pulls
+            exploration = self.alpha * rng.standard_normal() / np.sqrt(n_pulls + 1)
+            score = ctx_pred + arm_mean + exploration
+            scores.append((arm_id, score))
 
         scores.sort(key=lambda t: t[1], reverse=True)
         return scores[:top_k]
@@ -164,7 +179,13 @@ class NeuralUCBModel(BanditModel):
 
         self._buffer.append((context, task_id, reward))
 
-        # Retrain periodically
+        # Update per-arm running stats
+        if task_id not in self._arm_stats:
+            self._arm_stats[task_id] = [0.0, 0.0]
+        self._arm_stats[task_id][0] += reward
+        self._arm_stats[task_id][1] += 1
+
+        # Retrain network periodically
         if len(self._buffer) % self.training_epochs == 0:
             self._retrain()
 
@@ -184,6 +205,26 @@ class NeuralUCBModel(BanditModel):
                 total_loss += loss.item()
         logger.debug("NeuralUCB retrained on %d samples, avg loss=%.4f",
                       len(self._buffer[-100:]), total_loss / max(len(self._buffer[-100:]), 1))
+
+    # ── Safety-informed warm-start ───────────────────────────────────────
+    def warm_start_safety(
+        self,
+        safe_ids: set,
+        all_ids: set,
+        penalty: float = -1.0,
+    ) -> None:
+        """Pre-populate arm stats so unsafe arms start with a negative prior.
+
+        Called once before the bandit loop begins (e.g., by the pipeline).
+        Safe arms keep default 0; unsafe arms receive *penalty* as a single
+        pseudo-observation, discouraging the model from ranking them in the
+        initial top-k and reducing cold-start IER.
+        """
+        if not self._has_torch:
+            return  # fallback LinUCB does not use _arm_stats
+        for arm_id in all_ids:
+            if arm_id not in safe_ids and arm_id not in self._arm_stats:
+                self._arm_stats[arm_id] = [penalty, 1.0]
 
 
 # ═══════════════════════════════════════════════════════════════════════════

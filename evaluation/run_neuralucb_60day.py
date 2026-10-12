@@ -22,13 +22,17 @@ overrides = {
     "recommender": {
         "algorithm": "neural_ucb",
         "neural_ucb": {
-            "hidden_dim": 16,
-            "training_epochs": 2,
+            "hidden_dim": 32,
+            "training_epochs": 5,
+            "alpha": 0.01,
         },
+    },
+    "reward": {
+        "safety_lambda": 3.0,   # stronger Lagrangian penalty for unsafe arms
     },
 }
 
-print(f"[T3] NeuralUCB 60-day run (hidden_dim=16, epochs=2)")
+print(f"[T3] NeuralUCB 60-day run (hidden_dim=32, epochs=5, alpha=0.05)")
 print(f"     Start: {time.strftime('%Y-%m-%d %H:%M:%S')}")
 print("=" * 60)
 
@@ -89,12 +93,12 @@ result = {
     "cum_reward_mean": round(mean_cr, 2),
     "ier_mean": round(mean_ier, 4),
     "acceptance_rate_mean": round(mean_acc, 4),
-    "settings": {"hidden_dim": 16, "training_epochs": 2},
+    "settings": {"hidden_dim": 32, "training_epochs": 5, "alpha": 0.01, "safety_lambda": 3.0},
     "verification": {"cum_reward_in_range": v1, "ier_below_threshold": v2},
 }
 
 with open(results_dir / "neuralucb_60day.json", "w") as f:
-    json.dump(result, f, indent=2)
+    json.dump(result, f, indent=2, default=lambda o: bool(o) if isinstance(o, (np.bool_,)) else float(o) if isinstance(o, (np.floating, np.integer)) else str(o))
 
 # Save logs
 with open(results_dir / "logs" / "NeuralUCB_60day_logs.json", "w") as f:
