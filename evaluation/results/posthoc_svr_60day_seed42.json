@@ -1,0 +1,66 @@
+{
+  "experiment": "posthoc_svr_replay",
+  "description": "Post-hoc safety violation rate: accepted tasks from LinUCB-NoSafety replayed against the full SafetyAgent pre-filter (5 rules). LinUCB-WithSafety included as sanity control (expect SVR=0).",
+  "config": {
+    "n_days": 60,
+    "seed": 42
+  },
+  "linucb_with_safety": {
+    "label": "LinUCB-WithSafety (sanity)",
+    "n_accepted": 743,
+    "n_total": 1200,
+    "svr": 0.0,
+    "violations": 0,
+    "per_rule": {
+      "R1_contraindication": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "R2_stage_mismatch": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "R3_high_pain_difficulty": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "R4_severe_fatigue": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "R5_low_rom": {
+        "count": 0,
+        "rate": 0.0
+      }
+    }
+  },
+  "linucb_no_safety": {
+    "label": "LinUCB-NoSafety",
+    "n_accepted": 772,
+    "n_total": 1200,
+    "svr": 0.221503,
+    "violations": 171,
+    "per_rule": {
+      "R1_contraindication": {
+        "count": 26,
+        "rate": 0.033679
+      },
+      "R2_stage_mismatch": {
+        "count": 154,
+        "rate": 0.199482
+      },
+      "R3_high_pain_difficulty": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "R4_severe_fatigue": {
+        "count": 14,
+        "rate": 0.018135
+      },
+      "R5_low_rom": {
+        "count": 0,
+        "rate": 0.0
+      }
+    }
+  }
+}
