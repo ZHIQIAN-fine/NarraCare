@@ -63,3 +63,25 @@ bash scripts/reproduce_coldstart.sh
 # LLM-as-Judge (requires OpenAI key, run in Colab)
 # See evaluation/llm_judge_colab.ipynb
 ```
+
+## Schema provenance
+
+Two artifacts in this directory were originally hand-assembled from real
+pipeline outputs during the R2.6→R2.8 rapid-iteration phase, rather than
+written by their generator scripts:
+
+- `saps_60day.json` (committed in `d6b0d22`): assembled from an ad-hoc
+  inline Python script that drove `NarraCarePipeline.run_simulation()`
+  and read posteriors directly off the model. Core metrics
+  (cum_reward=46.2927, posteriors 96-arm Beta values) were
+  cross-verified against an independent run dump in `smoke_saps_posterior`
+  (bit-identical). CI95 endpoints were refreshed by 2e-14 to match
+  the deterministic scipy output (original in-memory array was GC'd).
+- `robustness_grid_5row.json` (committed in `dd052f8`): post-hoc patched
+  to add `solo_hit_count` + `note` fields and to replace `NaN` with `null`.
+  The `solo_hit_count` values are exactly derivable from
+  `nosafety_svr_posthoc_full.json` via `per_rule_hits − overlap_matrix`.
+
+R2.8-rev2 ported both manual steps into the generator scripts
+(`run_saps_60day.py`, `robustness_grid.py`). `reproduce_all.sh` is now
+bit-identical for all deterministic artifacts. No core metric was altered.
