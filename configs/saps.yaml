@@ -1,0 +1,8 @@
+# SAPS policy configuration (overrides default.yaml)
+recommender:
+  algorithm: "saps"
+  saps:
+    alpha_ucb: 1.0
+    tau_safe: 2.0
+    alpha_prior: 1.0
+    beta_prior: 1.0
