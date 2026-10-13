@@ -2,8 +2,9 @@
 
 For each rule, drops it from the pre-filter and runs LinUCB 60-day (seed=42).
 Computes IER / post-hoc SVR delta vs baseline + paired t-test.
+Enriches grid rows with solo_hit_count + note from nosafety_svr_posthoc_full.json.
 """
-import sys, json, time, csv, logging
+import sys, json, time, csv, logging, argparse, math
 from pathlib import Path
 from collections import defaultdict, Counter
 from typing import Dict, List, Optional
@@ -163,13 +164,13 @@ for rule in RULES:
         "rule": rule,
         "ier": r["agg"]["ier"],
         "ier_delta": round(d_ier, 6),
-        "ier_p": round(float(p_ier), 6),
+        "ier_p": None if math.isnan(p_ier) else round(float(p_ier), 6),
         "svr": r["agg"]["svr"],
         "svr_delta": round(d_svr, 6),
-        "svr_p": round(float(p_svr), 6),
+        "svr_p": None if math.isnan(p_svr) else round(float(p_svr), 6),
         "reward": r["agg"]["cum_reward"],
         "reward_delta": round(d_rew, 4),
-        "reward_p": round(float(p_rew), 6),
+        "reward_p": None if math.isnan(p_rew) else round(float(p_rew), 6),
         "acceptance": r["agg"]["acceptance_rate"],
     })
 
@@ -178,8 +179,59 @@ print(f"  {'baseline':<12} {baseline['agg']['ier']:>8.4f} {'—':>8} {'—':>10}
 print("=" * 64)
 
 # ═════════════════════════════════════════════════════════════════════════
+#  Enrich with solo_hit_count + note from nosafety_svr_posthoc_full.json
+# ═════════════════════════════════════════════════════════════════════════
+nosafety_path = RESULTS_DIR / "nosafety_svr_posthoc_full.json"
+if nosafety_path.exists():
+    with open(nosafety_path) as f:
+        nosafety = json.load(f)
+    per_rule_hits = nosafety.get("per_rule_hits", {})
+    overlap_matrix = nosafety.get("overlap_matrix", {})
+
+    for row in grid_rows:
+        rule = row["rule"]
+        total = per_rule_hits.get(rule, 0)
+        # Sum all pairwise overlaps involving this rule
+        overlap_sum = 0
+        for pair_key, count in overlap_matrix.items():
+            if rule in pair_key.split("&"):
+                overlap_sum += count
+        solo = total - overlap_sum
+        row["solo_hit_count"] = solo
+
+        # Generate note matching committed format
+        if total == 0:
+            row["note"] = "0 catches (structural zero, see \u00a77.2.1)"
+        elif overlap_sum == 0:
+            row["note"] = f"{total} catches, 0 overlap -> solo={solo}"
+        else:
+            # Find which rules overlap
+            partners = []
+            for pair_key, count in overlap_matrix.items():
+                if count > 0 and rule in pair_key.split("&"):
+                    other = [r for r in pair_key.split("&") if r != rule][0]
+                    partners.append((other, count))
+            partner_str = ", ".join(f"{c} overlap with {r}" for r, c in partners)
+            if solo <= 3:
+                suffix = "(redundantly protected)"
+            elif solo >= 100:
+                suffix = "(dominant unique source)"
+            else:
+                suffix = ""
+            row["note"] = f"{total} total catches, {partner_str} -> solo={solo}" + (f" {suffix}" if suffix else "")
+
+    print(f"\n✓ Enriched grid with solo_hit_count + note from {nosafety_path.name}")
+else:
+    print(f"\n⚠ {nosafety_path.name} not found — skipping solo_hit_count enrichment")
+
+# ═════════════════════════════════════════════════════════════════════════
 #  Save
 # ═════════════════════════════════════════════════════════════════════════
+parser = argparse.ArgumentParser(description="Robustness grid")
+parser.add_argument("--out", type=str, default=None,
+                    help="Override output path for robustness_grid_5row.json")
+cli_args, _ = parser.parse_known_args()
+
 result = {
     "experiment": "robustness_grid_one_drop",
     "n_days": N_DAYS,
@@ -192,12 +244,12 @@ result = {
     },
 }
 
-out_path = RESULTS_DIR / "robustness_grid_5row.json"
+out_path = Path(cli_args.out) if cli_args.out else RESULTS_DIR / "robustness_grid_5row.json"
 with open(out_path, "w") as f:
     json.dump(result, f, indent=2,
               default=lambda o: bool(o) if isinstance(o, (np.bool_,))
               else float(o) if isinstance(o, (np.floating, np.integer)) else str(o))
-print(f"\n✓ Saved: {out_path.name}")
+print(f"\n✓ Saved: {out_path}")
 
 # CSV for easy copy-paste into report table
 csv_path = RESULTS_DIR / "robustness_grid_5row.csv"
