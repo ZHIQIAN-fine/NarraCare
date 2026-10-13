@@ -119,12 +119,12 @@ overrides = {
 print("=" * 64)
 print("[§5.4 ablation] NeuralUCB PRE-FIX 60-day run")
 print(f"  Config: hidden_dim=32, epochs=5, alpha=0.01, safety_lambda=3.0")
-print(f"  Seed:   42 (from config/default.yaml)")
+print(f"  Seed:   42 (from configs/default.yaml)")
 print(f"  Start:  {time.strftime('%Y-%m-%d %H:%M:%S')}")
 print("=" * 64)
 
 t0 = time.time()
-pipe = NarraCarePipeline("config/default.yaml", config_overrides=overrides)
+pipe = NarraCarePipeline("configs/default.yaml", config_overrides=overrides)
 
 # Confirm the model is actually the pre-fix variant
 model = pipe.recommender.model

@@ -1,0 +1,48 @@
+# Coldstart transfer experiment (§7.4)
+# Train on ACL + RC cohort, freeze posteriors, rollout on Back-Pain
+
+system:
+  seed: 42
+  verbose: false
+  log_level: WARNING
+
+recommender:
+  algorithm: "saps"   # or "linucb" — overridden by run_coldstart.py
+  top_k: 3
+  linucb:
+    alpha: 1.0
+    feature_dim: 15
+  saps:
+    alpha_ucb: 1.0
+    tau_safe: 2.0
+    alpha_prior: 1.0
+    beta_prior: 1.0
+
+safety:
+  enable: true
+
+coldstart:
+  train_ids:
+    - U001
+    - U002
+    - U003
+    - U004
+    - U005
+    - U006
+    - U007
+    - U008
+    - U009
+    - U010
+    - U016
+    - U017
+    - U018
+    - U019
+    - U020
+  rollout_ids:
+    - U011
+    - U012
+    - U013
+    - U014
+    - U015
+  n_days: 60
+  freeze_posteriors: true

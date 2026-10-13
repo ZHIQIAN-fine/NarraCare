@@ -37,7 +37,7 @@ print(f"     Start: {time.strftime('%Y-%m-%d %H:%M:%S')}")
 print("=" * 60)
 
 t0 = time.time()
-pipe = NarraCarePipeline("config/default.yaml", config_overrides=overrides)
+pipe = NarraCarePipeline("configs/default.yaml", config_overrides=overrides)
 logs = pipe.run_simulation(n_days=N_DAYS)
 elapsed = time.time() - t0
 

@@ -31,13 +31,13 @@ print("=" * 64)
 
 # LinUCB + safety ON (for T2 narrator + sanity SVR)
 print("\n▶ LinUCB (safety ON)...")
-pipe_on = NarraCarePipeline("config/default.yaml")
+pipe_on = NarraCarePipeline("configs/default.yaml")
 logs_on = pipe_on.run_simulation(n_days=N_DAYS)
 prompt_log_on = getattr(pipe_on, "_prompt_level_log", [])
 
 # LinUCB + safety OFF (for T1 SVR)
 print("▶ LinUCB (safety OFF)...")
-pipe_off = NarraCarePipeline("config/default.yaml",
+pipe_off = NarraCarePipeline("configs/default.yaml",
     config_overrides={"recommender": {"algorithm": "linucb"},
                       "safety": {"enable": False}})
 logs_off = pipe_off.run_simulation(n_days=N_DAYS)

@@ -79,7 +79,7 @@ class NarraCarePipeline:
 
     def __init__(
         self,
-        config_path: str = "config/default.yaml",
+        config_path: str = "configs/default.yaml",
         config_overrides: Optional[dict] = None,
         use_memory: bool = True,
     ) -> None:

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this project in academic work, please cite it as below."
+title: "NarraCare: A Safety-Aware Narrative Recommender for 60-Day Rehabilitation"
+abstract: >
+  NarraCare is a 5-component pipeline — Expected-Utility simulator,
+  contextual-bandit recommender (SAPS novel + 6 baselines), 56-rule
+  Safety Agent, 3-Act Narrator, Reward Composer — evaluated over a
+  60-day × 20-user protocol. SAPS Pareto-dominates LinUCB on both
+  Infeasible Exploration Rate and Cumulative Reward.
+authors:
+  - family-names: "NarraCare Group"
+    given-names: "CA6124 2026S1"
+date-released: 2026-10-17
+version: "1.0.0"
+license: MIT
+repository-code: "<fill-in-at-push>"
+keywords:
+  - recommender-systems
+  - contextual-bandits
+  - safety-aware-ai
+  - rehabilitation
+  - narrative-generation
+  - thompson-sampling

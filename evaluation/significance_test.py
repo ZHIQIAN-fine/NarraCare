@@ -201,7 +201,7 @@ def main():
     for name, overrides in method_configs.items():
         t0 = time.time()
         print(f"  Running {name}...", end=" ", flush=True)
-        pipe = NarraCarePipeline("config/default.yaml", config_overrides=overrides)
+        pipe = NarraCarePipeline("configs/default.yaml", config_overrides=overrides)
         logs = pipe.run_simulation(n_days=n_days)
         per_user = _per_user_metrics(logs, n_days)
         method_user_metrics[name] = per_user

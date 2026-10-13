@@ -23,7 +23,7 @@ def run_method(algo: str, extra_overrides: dict | None = None) -> dict:
     overrides = {"recommender": {"algorithm": algo}}
     if extra_overrides:
         overrides.update(extra_overrides)
-    pipe = NarraCarePipeline("config/default.yaml", config_overrides=overrides)
+    pipe = NarraCarePipeline("configs/default.yaml", config_overrides=overrides)
     logs = pipe.run_simulation(n_days=N_DAYS)
 
     user_logs = defaultdict(list)
