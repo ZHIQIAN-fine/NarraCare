@@ -17,7 +17,7 @@ engine** to deliver personalised, safe, and motivating 60-day rehabilitation
 plans through simulated conversational interaction.
 
 The system supports patients recovering from ACL reconstruction, rotator cuff
-repair, and chronic lower back pain. It recommends exercises from a 1,602-task
+repair, and chronic lower back pain. It recommends exercises from a 100-task
 catalogue while enforcing clinical safety constraints in real time.
 
 **Key contributions:**
@@ -62,7 +62,7 @@ NarraCare/
 │   └── coldstart.yaml     # Cold-start experiment config
 ├── data/                  # Static data assets (project root)
 │   ├── user_profiles.json # 20 user personas (ACL/RC/Back-Pain)
-│   ├── task_library.json  # 1,602 rehabilitation tasks
+│   ├── task_library.json  # 100 rehabilitation tasks
 │   ├── safety_rules.json  # 51 clinical safety definitions
 │   ├── narrative_arcs.json
 │   └── narrator_tone_templates.json
