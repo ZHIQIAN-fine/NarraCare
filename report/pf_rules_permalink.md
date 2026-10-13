@@ -1,21 +1,21 @@
 # Layer A Pre-Filter Rules — Permanent Reference
 
 > **Source of truth**: `src/agents/safety_agent.py`, lines 144–173
-> **Commit frozen at**: d6b0d22
+> **Commit frozen at**: edf6221
 
 These 5 hardcoded rules run at recommendation time on every (user, task) pair.
 A task that triggers **any** rule is removed from the candidate set before the
 bandit sees it.
 
-### Permalinks (relative to repo root, pinned at `d6b0d22`)
+### Permalinks (relative to repo root, pinned at `edf6221`)
 
 | ID | Line Range | Permalink |
 |----|-----------|-----------|
-| **PF_R1** | L144–L149 | `src/agents/safety_agent.py#L144-L149` @ `d6b0d22` |
-| **PF_R2** | L152–L156 | `src/agents/safety_agent.py#L152-L156` @ `d6b0d22` |
-| **PF_R3** | L158–L162 | `src/agents/safety_agent.py#L158-L162` @ `d6b0d22` |
-| **PF_R4** | L164–L168 | `src/agents/safety_agent.py#L164-L168` @ `d6b0d22` |
-| **PF_R5** | L170–L174 | `src/agents/safety_agent.py#L170-L174` @ `d6b0d22` |
+| **PF_R1** | L144–L149 | [src/agents/safety_agent.py#L144-L149](https://github.com/ZHIQIAN-fine/NarraCare/blob/edf6221/src/agents/safety_agent.py#L144-L149) |
+| **PF_R2** | L152–L156 | [src/agents/safety_agent.py#L152-L156](https://github.com/ZHIQIAN-fine/NarraCare/blob/edf6221/src/agents/safety_agent.py#L152-L156) |
+| **PF_R3** | L158–L162 | [src/agents/safety_agent.py#L158-L162](https://github.com/ZHIQIAN-fine/NarraCare/blob/edf6221/src/agents/safety_agent.py#L158-L162) |
+| **PF_R4** | L164–L168 | [src/agents/safety_agent.py#L164-L168](https://github.com/ZHIQIAN-fine/NarraCare/blob/edf6221/src/agents/safety_agent.py#L164-L168) |
+| **PF_R5** | L170–L174 | [src/agents/safety_agent.py#L170-L174](https://github.com/ZHIQIAN-fine/NarraCare/blob/edf6221/src/agents/safety_agent.py#L170-L174) |
 
 | ID | Condition Expression | Semantic | NoSafety SVR Hits |
 |----|---------------------|----------|-------------------|
