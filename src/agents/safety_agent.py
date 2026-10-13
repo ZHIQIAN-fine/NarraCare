@@ -32,10 +32,18 @@ class SafetyAgent:
         self,
         config: dict,
         rules_path: Optional[str] = None,
+        drop_rule: Optional[str] = None,
     ) -> None:
         self.config = config
         self.safety_cfg = config.get("safety", {})
         self.enabled = self.safety_cfg.get("enable", True)
+
+        # One-drop ablation: skip a single pre-filter rule
+        _VALID_DROPS = {None, "PF_R1", "PF_R2", "PF_R3", "PF_R4", "PF_R5"}
+        assert drop_rule in _VALID_DROPS, (
+            f"drop_rule must be one of {_VALID_DROPS}, got {drop_rule!r}"
+        )
+        self.drop_rule: Optional[str] = drop_rule
 
         # Resolve rules path
         if rules_path is None:
@@ -134,30 +142,35 @@ class SafetyAgent:
             reason = ""
 
             # Rule 1: Contraindication match
-            overlap = user_contras & task_contras
-            if overlap:
-                blocked = True
-                reason = f"contraindication overlap: {overlap}"
+            if self.drop_rule != "PF_R1":
+                overlap = user_contras & task_contras
+                if overlap:
+                    blocked = True
+                    reason = f"contraindication overlap: {overlap}"
 
             # Rule 2: Stage mismatch
-            if task_stages and user_stage and user_stage not in task_stages:
-                blocked = True
-                reason = f"stage mismatch: user={user_stage}, task={task_stages}"
+            if self.drop_rule != "PF_R2":
+                if task_stages and user_stage and user_stage not in task_stages:
+                    blocked = True
+                    reason = f"stage mismatch: user={user_stage}, task={task_stages}"
 
             # Rule 3: High pain → block high difficulty
-            if pain >= self.pain_threshold_high and difficulty >= 4:
-                blocked = True
-                reason = f"pain {pain} >= {self.pain_threshold_high} + difficulty {difficulty}"
+            if self.drop_rule != "PF_R3":
+                if pain >= self.pain_threshold_high and difficulty >= 4:
+                    blocked = True
+                    reason = f"pain {pain} >= {self.pain_threshold_high} + difficulty {difficulty}"
 
             # Rule 4: Severe fatigue → only rest/flexibility
-            if fatigue >= self.fatigue_threshold_high and category not in ("rest", "flexibility"):
-                blocked = True
-                reason = f"fatigue {fatigue} >= {self.fatigue_threshold_high} + category={category}"
+            if self.drop_rule != "PF_R4":
+                if fatigue >= self.fatigue_threshold_high and category not in ("rest", "flexibility"):
+                    blocked = True
+                    reason = f"fatigue {fatigue} >= {self.fatigue_threshold_high} + category={category}"
 
             # Rule 5: Limited ROM → block difficult/high-impact tasks
-            if rom < 60 and (difficulty >= 3 or category == "cardio"):
-                blocked = True
-                reason = f"low ROM {rom} + difficulty {difficulty}"
+            if self.drop_rule != "PF_R5":
+                if rom < 60 and (difficulty >= 3 or category == "cardio"):
+                    blocked = True
+                    reason = f"low ROM {rom} + difficulty {difficulty}"
 
             if blocked:
                 logger.debug("Blocked %s — %s", task.get("task_id"), reason)

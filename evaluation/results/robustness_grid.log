@@ -1,0 +1,36 @@
+================================================================
+[R2.6 T1] Robustness Grid — 5-row one-drop ablation
+  Start: 2026-10-13 07:27:35
+================================================================
+
+▶ [baseline] drop=none (baseline)
+  1200 interactions, 5.9s
+
+▶ [drop_PF_R1] drop=PF_R1
+  1200 interactions, 4.3s
+
+▶ [drop_PF_R2] drop=PF_R2
+  1200 interactions, 4.7s
+
+▶ [drop_PF_R3] drop=PF_R3
+  1200 interactions, 4.4s
+
+▶ [drop_PF_R4] drop=PF_R4
+  1200 interactions, 4.3s
+
+▶ [drop_PF_R5] drop=PF_R5
+  1200 interactions, 4.3s
+
+================================================================
+  Row               IER     ΔIER     p(IER)       SVR     ΔSVR     p(SVR)
+----------------------------------------------------------------
+  PF_R1          0.0233  +0.0000    1.0000 ns    0.0000  +0.0000       nan ns
+  PF_R2          0.0180  -0.0053    0.1612 ns    0.1596  +0.1596    0.0000 ***
+  PF_R3          0.0233  +0.0000       nan ns    0.0000  +0.0000       nan ns
+  PF_R4          0.0215  -0.0018    0.4468 ns    0.0153  +0.0153    0.0021 **
+  PF_R5          0.0233  +0.0000       nan ns    0.0000  +0.0000       nan ns
+  baseline       0.0233        —          —    0.0000        —          —
+================================================================
+
+✓ Saved: robustness_grid_5row.json
+✓ Saved: robustness_grid_5row.csv
