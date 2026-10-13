@@ -209,7 +209,48 @@ full artefact index.
 
 ---
 
-## 7. Key Results
+## 7. Hyperparameter Settings
+
+All key hyperparameters are set in `configs/*.yaml`. The table below summarises
+the values used in the main 60-day experiments (seed 42). See the report §4.6
+for the full design rationale.
+
+| Policy | Parameter | Value | Source / rationale |
+|--------|-----------|-------|--------------------|
+| **SAPS** | `alpha_ucb` (exploration) | 1.0 | Same as LinUCB for fair comparison |
+| | `tau_safe` (safety-explore weight) | 2.0 | Grid-searched {0.5, 1, 2, 5}; 2.0 balances IER elimination vs reward |
+| | `alpha_prior` / `beta_prior` (Beta init) | 1.0 / 1.0 | Uniform prior — no arm is presumed safe/unsafe before data |
+| | `SAPS_PAIN_SAFE_THRESHOLD` | 1.0 | S2 signal: `pain_change ≤ 1.0` → safe; see `src/policies/saps.py` |
+| **LinUCB** | `alpha` (exploration) | 1.0 | Li et al. (2010) default |
+| | `feature_dim` | 15 | Matches user-understanding feature vector length |
+| **NeuralUCB** | `hidden_dim` | 32 | Reduced from default 64 for stability (see §5.4) |
+| | `training_epochs` | 5 | Reduced from 10 to avoid overfitting on small per-arm data |
+| | `alpha` (exploration) | 0.01 | Low exploration — network confidence used instead |
+| | `safety_lambda` | 3.0 | Stronger Lagrangian penalty for unsafe arms |
+| **ε-Greedy** | `epsilon` | 0.1 | Standard value (Sutton & Barto 2018) |
+| **Popularity** | — | — | No tuneable parameter; ranks by historical acceptance count |
+| **RuleBased** | `top_k` | 3 | Stage-matched + category-preference scoring |
+| **Random** | — | — | Uniform random from safe candidate set |
+
+**Reward composer weights** (in `configs/default.yaml → reward:`):
+
+| Weight | Value | Component |
+|--------|-------|-----------|
+| `w_completed` | 0.35 | Task completion signal |
+| `w_safety` | 0.25 | Safety compliance bonus |
+| `w_difficulty_match` | 0.20 | Difficulty-fit to user state |
+| `w_pain_penalty` | 0.10 | Pain increase penalty |
+| `w_dropout_penalty` | 0.05 | Session dropout penalty |
+| `w_category` | 0.05 | Category preference match |
+| `safety_lambda` | 1.0 | Lagrangian multiplier (base; scaled by narrative arc) |
+
+**Narrative arc safety multiplier**: `safety_lambda_multiplier` =
+{1.5, 1.0, 0.7} for {Act 1, Act 2, Act 3} respectively
+(configured in `data/narrative_arcs.json`).
+
+---
+
+## 8. Key Results
 
 ### §5.2 — SAPS vs LinUCB (60-day, 20 users)
 
@@ -233,7 +274,7 @@ for 67% IER reduction (p = 0.053).
 
 ---
 
-## 8. Citation
+## 9. Citation
 
 ```bibtex
 @software{narracare2026,
