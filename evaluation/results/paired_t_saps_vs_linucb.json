@@ -1,0 +1,35 @@
+{
+  "comparison": "SAPS vs LinUCB",
+  "pairing_unit": "user",
+  "sample_size_users": 20,
+  "seed": 42,
+  "reward": {
+    "saps_mean": 46.292696,
+    "linucb_mean": 41.939528,
+    "mean_diff": 4.353167,
+    "std_diff": 2.331122,
+    "t_statistic": 8.351322,
+    "df": 19,
+    "p_value_two_sided": 8.800358273420974e-08,
+    "ci_95_lower": 3.262168,
+    "ci_95_upper": 5.444166,
+    "cohen_d_paired": 1.867412
+  },
+  "ier": {
+    "saps_mean": 0.0,
+    "linucb_mean": 0.023333,
+    "mean_diff": -0.023333,
+    "std_diff": 0.01451,
+    "t_statistic": -7.191816,
+    "df": 19,
+    "p_value_two_sided": 7.84964953369502e-07,
+    "ci_95_lower": -0.030124,
+    "ci_95_upper": -0.016543,
+    "cohen_d_paired": -1.608139
+  },
+  "source_files": [
+    "evaluation/results/saps_60day_per_user.json"
+  ],
+  "computed_at": "2026-10-13T16:36:22.447963Z",
+  "script": "evaluation/scripts/paired_t_test.py"
+}
