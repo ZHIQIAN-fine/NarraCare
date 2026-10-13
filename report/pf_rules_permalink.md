@@ -1,11 +1,21 @@
 # Layer A Pre-Filter Rules — Permanent Reference
 
 > **Source of truth**: `src/agents/safety_agent.py`, lines 144–173
-> **Commit frozen at**: dd052f8
+> **Commit frozen at**: d6b0d22
 
 These 5 hardcoded rules run at recommendation time on every (user, task) pair.
 A task that triggers **any** rule is removed from the candidate set before the
 bandit sees it.
+
+### Permalinks (relative to repo root, pinned at `d6b0d22`)
+
+| ID | Line Range | Permalink |
+|----|-----------|-----------|
+| **PF_R1** | L144–L149 | `src/agents/safety_agent.py#L144-L149` @ `d6b0d22` |
+| **PF_R2** | L152–L156 | `src/agents/safety_agent.py#L152-L156` @ `d6b0d22` |
+| **PF_R3** | L158–L162 | `src/agents/safety_agent.py#L158-L162` @ `d6b0d22` |
+| **PF_R4** | L164–L168 | `src/agents/safety_agent.py#L164-L168` @ `d6b0d22` |
+| **PF_R5** | L170–L174 | `src/agents/safety_agent.py#L170-L174` @ `d6b0d22` |
 
 | ID | Condition Expression | Semantic | NoSafety SVR Hits |
 |----|---------------------|----------|-------------------|
