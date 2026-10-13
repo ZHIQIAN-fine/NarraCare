@@ -66,7 +66,7 @@ print(f"  Start: {time.strftime('%Y-%m-%d %H:%M:%S')}")
 print("=" * 64)
 
 t0 = time.time()
-pipe = NarraCarePipeline("config/default.yaml", config_overrides={
+pipe = NarraCarePipeline("configs/default.yaml", config_overrides={
     "recommender": {"algorithm": "linucb"},
     "safety": {"enable": False},
 })

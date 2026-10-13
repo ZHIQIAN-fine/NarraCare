@@ -54,7 +54,7 @@ def run_one(label: str, drop_rule: Optional[str]) -> dict:
     overrides = {"recommender": {"algorithm": "linucb"}}
     if drop_rule:
         overrides["safety"] = {"drop_rule": drop_rule}
-    pipe = NarraCarePipeline("config/default.yaml", config_overrides=overrides)
+    pipe = NarraCarePipeline("configs/default.yaml", config_overrides=overrides)
     logs = pipe.run_simulation(n_days=N_DAYS)
     elapsed = time.time() - t0
     print(f"  {len(logs)} interactions, {elapsed:.1f}s")

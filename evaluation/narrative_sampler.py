@@ -30,7 +30,7 @@ print("=" * 64)
 
 # ── Run pipeline to get full prompt_level_log ────────────────────────
 print("\n▶ Running LinUCB (safety ON) 60-day...")
-pipe = NarraCarePipeline("config/default.yaml")
+pipe = NarraCarePipeline("configs/default.yaml")
 logs = pipe.run_simulation(n_days=N_DAYS)
 prompt_log = getattr(pipe, "_prompt_level_log", [])
 print(f"  {len(logs)} interactions, {len(prompt_log)} prompt log entries")

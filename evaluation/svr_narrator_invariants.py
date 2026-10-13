@@ -34,7 +34,7 @@ RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 def run_full_logs(label: str, overrides: dict) -> List[dict]:
     print(f"\n▶ Running {label} ...")
     t0 = time.time()
-    pipe = NarraCarePipeline("config/default.yaml", config_overrides=overrides)
+    pipe = NarraCarePipeline("configs/default.yaml", config_overrides=overrides)
     logs = pipe.run_simulation(n_days=N_DAYS)
     print(f"  Done in {time.time()-t0:.1f}s  ({len(logs)} interactions)")
     return logs
@@ -271,7 +271,7 @@ svr_safety_off = compute_svr(logs_safety_off, safety_agent,
 narrator_results = check_narrator_invariants(logs_safety_on)
 
 # ── Also get narrator aggregate counters from a fresh pipeline ───────
-pipe_for_counters = NarraCarePipeline("config/default.yaml")
+pipe_for_counters = NarraCarePipeline("configs/default.yaml")
 pipe_for_counters.run_simulation(n_days=N_DAYS)
 narrator_counters = {}
 if hasattr(pipe_for_counters, 'narrator') and pipe_for_counters.narrator:

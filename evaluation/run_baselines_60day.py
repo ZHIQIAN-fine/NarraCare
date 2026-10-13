@@ -23,7 +23,7 @@ def run_and_save(label: str, algo: str, overrides: dict, filename_stem: str):
     """Run one method, compute per-user metrics, save JSON + CSV."""
     print(f"\n▶ [{label}] running {algo} 60-day ...")
     t0 = time.time()
-    pipe = NarraCarePipeline("config/default.yaml", config_overrides=overrides)
+    pipe = NarraCarePipeline("configs/default.yaml", config_overrides=overrides)
     logs = pipe.run_simulation(n_days=N_DAYS)
     elapsed = time.time() - t0
     print(f"  Done in {elapsed:.1f}s  ({len(logs)} interactions)")

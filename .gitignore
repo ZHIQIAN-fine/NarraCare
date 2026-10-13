@@ -22,13 +22,14 @@ env/
 .DS_Store
 Thumbs.db
 
-# Project specific
+# Project specific — evaluation result artefacts
+# These are force-added per experiment commit; the ignore prevents
+# accidental inclusion of stale / partial result files.
 evaluation/results/*.json
 evaluation/results/*.csv
 evaluation/results/*.png
 report/figures/*.png
 *.log
 
-# API keys
-.env
-.openai_key
+# Posteriors (large numpy serialisations)
+evaluation/results/coldstart_posteriors_*.json

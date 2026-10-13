@@ -1,0 +1,284 @@
+{
+  "experiment": "coldstart_transfer",
+  "train_ids": [
+    "U001",
+    "U002",
+    "U003",
+    "U004",
+    "U005",
+    "U006",
+    "U007",
+    "U008",
+    "U009",
+    "U010",
+    "U016",
+    "U017",
+    "U018",
+    "U019",
+    "U020"
+  ],
+  "rollout_ids": [
+    "U011",
+    "U012",
+    "U013",
+    "U014",
+    "U015"
+  ],
+  "n_days": 60,
+  "seed": 42,
+  "note": "Train={U001-U010,U016-U020} 10ACL+5RC; Rollout={U011-U015} 5 Back-Pain",
+  "arms": {
+    "saps": {
+      "train": {
+        "metrics": {
+          "n_users": 15,
+          "n_interactions": 900,
+          "cum_reward_mean": 44.07295565879884,
+          "cum_reward_std": 3.6387900711284726,
+          "ier_mean": 0.0,
+          "acceptance_rate_mean": 0.6466666666666667
+        },
+        "wall_time_s": 4.8
+      },
+      "frozen_rollout": {
+        "metrics": {
+          "n_users": 5,
+          "n_interactions": 300,
+          "cum_reward_mean": 43.3498589316695,
+          "cum_reward_std": 4.661096294788004,
+          "ier_mean": 0.0,
+          "acceptance_rate_mean": 0.5800000000000001,
+          "per_user": [
+            {
+              "user_id": "U011",
+              "cum_reward": 41.12099301141276,
+              "ier": 0.0,
+              "acceptance_rate": 0.5166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U012",
+              "cum_reward": 38.61091034193916,
+              "ier": 0.0,
+              "acceptance_rate": 0.4166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U013",
+              "cum_reward": 49.82569151912225,
+              "ier": 0.0,
+              "acceptance_rate": 0.8,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U014",
+              "cum_reward": 46.54715188051702,
+              "ier": 0.0,
+              "acceptance_rate": 0.6166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U015",
+              "cum_reward": 40.64454790535632,
+              "ier": 0.0,
+              "acceptance_rate": 0.55,
+              "n_interactions": 60
+            }
+          ]
+        },
+        "wall_time_s": 1.1
+      },
+      "retrained_rollout": {
+        "metrics": {
+          "n_users": 5,
+          "n_interactions": 300,
+          "cum_reward_mean": 43.3498589316695,
+          "cum_reward_std": 4.661096294788004,
+          "ier_mean": 0.0,
+          "acceptance_rate_mean": 0.5800000000000001,
+          "per_user": [
+            {
+              "user_id": "U011",
+              "cum_reward": 41.12099301141276,
+              "ier": 0.0,
+              "acceptance_rate": 0.5166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U012",
+              "cum_reward": 38.61091034193916,
+              "ier": 0.0,
+              "acceptance_rate": 0.4166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U013",
+              "cum_reward": 49.82569151912225,
+              "ier": 0.0,
+              "acceptance_rate": 0.8,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U014",
+              "cum_reward": 46.54715188051702,
+              "ier": 0.0,
+              "acceptance_rate": 0.6166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U015",
+              "cum_reward": 40.64454790535632,
+              "ier": 0.0,
+              "acceptance_rate": 0.55,
+              "n_interactions": 60
+            }
+          ]
+        },
+        "wall_time_s": 1.1
+      },
+      "ttest_frozen_vs_retrained": {
+        "reward": {
+          "label": "frozen_vs_retrained_reward",
+          "mean_diff": 0.0,
+          "t_stat": NaN,
+          "p_value": NaN,
+          "n": 5
+        },
+        "ier": {
+          "label": "frozen_vs_retrained_ier",
+          "mean_diff": 0.0,
+          "t_stat": NaN,
+          "p_value": NaN,
+          "n": 5
+        }
+      },
+      "posteriors_file": "coldstart_posteriors_saps.json"
+    },
+    "linucb": {
+      "train": {
+        "metrics": {
+          "n_users": 15,
+          "n_interactions": 900,
+          "cum_reward_mean": 41.13600188183738,
+          "cum_reward_std": 2.2780169367665195,
+          "ier_mean": 0.027333333333333334,
+          "acceptance_rate_mean": 0.5933333333333334
+        },
+        "wall_time_s": 3.2
+      },
+      "frozen_rollout": {
+        "metrics": {
+          "n_users": 5,
+          "n_interactions": 300,
+          "cum_reward_mean": 41.89999881534378,
+          "cum_reward_std": 3.48867246356893,
+          "ier_mean": 0.02133333333333333,
+          "acceptance_rate_mean": 0.6033333333333333,
+          "per_user": [
+            {
+              "user_id": "U011",
+              "cum_reward": 39.45107619977858,
+              "ier": 0.06333333333333332,
+              "acceptance_rate": 0.5166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U012",
+              "cum_reward": 39.84534587107439,
+              "ier": 0.0033333333333333335,
+              "acceptance_rate": 0.5333333333333333,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U013",
+              "cum_reward": 44.12629018890074,
+              "ier": 0.02333333333333333,
+              "acceptance_rate": 0.75,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U014",
+              "cum_reward": 46.97025232247849,
+              "ier": 0.0,
+              "acceptance_rate": 0.6666666666666666,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U015",
+              "cum_reward": 39.10702949448668,
+              "ier": 0.016666666666666666,
+              "acceptance_rate": 0.55,
+              "n_interactions": 60
+            }
+          ]
+        },
+        "wall_time_s": 1.1
+      },
+      "retrained_rollout": {
+        "metrics": {
+          "n_users": 5,
+          "n_interactions": 300,
+          "cum_reward_mean": 43.218454625875815,
+          "cum_reward_std": 3.0724317727125348,
+          "ier_mean": 0.06399999999999999,
+          "acceptance_rate_mean": 0.63,
+          "per_user": [
+            {
+              "user_id": "U011",
+              "cum_reward": 42.72093356959358,
+              "ier": 0.09666666666666668,
+              "acceptance_rate": 0.6166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U012",
+              "cum_reward": 41.303369833199206,
+              "ier": 0.05,
+              "acceptance_rate": 0.5666666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U013",
+              "cum_reward": 46.08873185607708,
+              "ier": 0.05,
+              "acceptance_rate": 0.8,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U014",
+              "cum_reward": 46.56040653062432,
+              "ier": 0.1,
+              "acceptance_rate": 0.6333333333333333,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U015",
+              "cum_reward": 39.41883133988488,
+              "ier": 0.02333333333333333,
+              "acceptance_rate": 0.5333333333333333,
+              "n_interactions": 60
+            }
+          ]
+        },
+        "wall_time_s": 1.1
+      },
+      "ttest_frozen_vs_retrained": {
+        "reward": {
+          "label": "frozen_vs_retrained_reward",
+          "mean_diff": -1.3184558105320376,
+          "t_stat": -2.053761207072012,
+          "p_value": 0.10922293704152752,
+          "n": 5
+        },
+        "ier": {
+          "label": "frozen_vs_retrained_ier",
+          "mean_diff": -0.04266666666666667,
+          "t_stat": -2.714204574975907,
+          "p_value": 0.05330505632134267,
+          "n": 5
+        }
+      },
+      "posteriors_file": "coldstart_posteriors_linucb.json"
+    }
+  }
+}
