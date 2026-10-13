@@ -1,75 +1,51 @@
 {
-  "n_total_samples": 60,
-  "n_valid_scores": 60,
   "overall": {
-    "Ax1": {
-      "label": "Tone Consistency",
-      "mean": 3.55,
-      "std": 0.59,
-      "ci95_low": 3.4,
-      "ci95_high": 3.7,
+    "coherence": {
+      "mean": 4.82,
+      "ci95_hw": 0.11,
       "n": 60
     },
-    "Ax2": {
-      "label": "Context Grounding",
-      "mean": 1.6,
-      "std": 0.49,
-      "ci95_low": 1.47,
-      "ci95_high": 1.73,
+    "empathy": {
+      "mean": 4.15,
+      "ci95_hw": 0.14,
       "n": 60
     },
-    "Ax3": {
-      "label": "Empathy",
-      "mean": 2.32,
-      "std": 1.16,
-      "ci95_low": 2.02,
-      "ci95_high": 2.62,
-      "n": 60
-    },
-    "Ax4": {
-      "label": "Actionability",
-      "mean": 3.5,
-      "std": 0.5,
-      "ci95_low": 3.37,
-      "ci95_high": 3.63,
+    "clinical": {
+      "mean": 4.72,
+      "ci95_hw": 0.15,
       "n": 60
     }
   },
-  "per_stream": {
+  "by_stream_label": {
     "closing:safety_followup": {
-      "Ax1": 4.0,
-      "Ax2": 1.67,
-      "Ax3": 3.67,
-      "Ax4": 3.0,
-      "n": 12
+      "n": 12,
+      "coherence": 5.0,
+      "empathy": 5.0,
+      "clinical": 5.0
     },
     "speak:coach": {
-      "Ax1": 3.0,
-      "Ax2": 1.0,
-      "Ax3": 2.0,
-      "Ax4": 4.0,
-      "n": 12
+      "n": 12,
+      "coherence": 4.83,
+      "empathy": 4.0,
+      "clinical": 4.75
     },
     "speak:companion": {
-      "Ax1": 4.0,
-      "Ax2": 2.0,
-      "Ax3": 3.5,
-      "Ax4": 3.5,
-      "n": 12
+      "n": 12,
+      "coherence": 4.75,
+      "empathy": 4.0,
+      "clinical": 4.42
     },
     "speak:doctor": {
-      "Ax1": 4.0,
-      "Ax2": 2.0,
-      "Ax3": 1.0,
-      "Ax4": 4.0,
-      "n": 12
+      "n": 12,
+      "coherence": 4.92,
+      "empathy": 4.0,
+      "clinical": 4.92
     },
     "speak:yellow-mixed": {
-      "Ax1": 2.75,
-      "Ax2": 1.33,
-      "Ax3": 1.42,
-      "Ax4": 3.0,
-      "n": 12
+      "n": 12,
+      "coherence": 4.58,
+      "empathy": 3.75,
+      "clinical": 4.5
     }
   }
 }
