@@ -101,7 +101,11 @@ class NarraCarePipeline:
 
         # ── Agents ───────────────────────────────────────────────────
         self.user_understanding = UserUnderstandingAgent(self.config, mode="simulation")
-        self.safety_agent = SafetyAgent(self.config)
+        self.safety_agent = SafetyAgent(
+            self.config,
+            drop_rule=config_overrides.get("safety", {}).get("drop_rule")
+            if config_overrides else None,
+        )
         self.recommender = RecommenderAgent(self.config)
         # Old narrator — kept for backward compatibility (interactive mode)
         self.narrator_agent = NarratorAgent(self.config, mode="simulation")
@@ -739,6 +743,7 @@ class NarraCarePipeline:
                         self._narrator_closed_this_turn = True
                         closing_meta["day"] = day
                         closing_meta["user_id"] = uid
+                        closing_meta["prompt_text"] = closing_text
                         self._prompt_level_log.append(closing_meta)
                 except Exception as e:
                     logger.warning(
