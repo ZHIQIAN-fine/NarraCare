@@ -1,0 +1,31 @@
+{
+  "saps": {
+    "method": "saps",
+    "n_days": 60,
+    "n_users": 20,
+    "n_interactions": 1200,
+    "cum_reward_mean": 43.33390339751945,
+    "cum_reward_std": 3.345326190075677,
+    "ier_mean": 0.0,
+    "acceptance_rate": 0.6000000000000001,
+    "svr": 0.0
+  },
+  "linucb_baseline": {
+    "method": "linucb",
+    "n_days": 60,
+    "n_users": 20,
+    "n_interactions": 1200,
+    "cum_reward_mean": 41.93952848883593,
+    "cum_reward_std": 3.001503049144294,
+    "ier_mean": 0.02333333333333333,
+    "acceptance_rate": 0.6191666666666666,
+    "svr": 0.0
+  },
+  "verification": {
+    "ier_leq_linucb": true,
+    "reward_gap_lt_1": false,
+    "reward_gap": 1.3944,
+    "svr_zero": true
+  },
+  "wall_time_s": 10.2
+}
