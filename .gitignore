@@ -33,3 +33,4 @@ report/figures/*.png
 
 # Posteriors (large numpy serialisations)
 evaluation/results/coldstart_posteriors_*.json
+evaluation/results/logs/
