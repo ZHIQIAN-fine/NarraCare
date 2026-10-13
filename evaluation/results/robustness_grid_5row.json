@@ -16,11 +16,13 @@
       "ier_p": 1.0,
       "svr": 0.0,
       "svr_delta": 0.0,
-      "svr_p": NaN,
+      "svr_p": null,
       "reward": 41.9395,
       "reward_delta": 0.0,
-      "reward_p": NaN,
-      "acceptance": 0.6192
+      "reward_p": null,
+      "acceptance": 0.6192,
+      "solo_hit_count": 3,
+      "note": "26 total catches, 23 overlap with PF_R2 -> solo=3 (redundantly protected)"
     },
     {
       "rule": "PF_R2",
@@ -33,20 +35,24 @@
       "reward": 42.818,
       "reward_delta": 0.8785,
       "reward_p": 0.156996,
-      "acceptance": 0.6392
+      "acceptance": 0.6392,
+      "solo_hit_count": 131,
+      "note": "154 total catches, 23 overlap with PF_R1 -> solo=131 (dominant unique source)"
     },
     {
       "rule": "PF_R3",
       "ier": 0.02334,
       "ier_delta": 0.0,
-      "ier_p": NaN,
+      "ier_p": null,
       "svr": 0.0,
       "svr_delta": 0.0,
-      "svr_p": NaN,
+      "svr_p": null,
       "reward": 41.9395,
       "reward_delta": 0.0,
-      "reward_p": NaN,
-      "acceptance": 0.6192
+      "reward_p": null,
+      "acceptance": 0.6192,
+      "solo_hit_count": 0,
+      "note": "0 catches (structural zero, see \u00a77.2.1)"
     },
     {
       "rule": "PF_R4",
@@ -59,20 +65,24 @@
       "reward": 41.7249,
       "reward_delta": -0.2146,
       "reward_p": 0.667819,
-      "acceptance": 0.6158
+      "acceptance": 0.6158,
+      "solo_hit_count": 14,
+      "note": "14 catches, 0 overlap -> solo=14"
     },
     {
       "rule": "PF_R5",
       "ier": 0.02334,
       "ier_delta": 0.0,
-      "ier_p": NaN,
+      "ier_p": null,
       "svr": 0.0,
       "svr_delta": 0.0,
-      "svr_p": NaN,
+      "svr_p": null,
       "reward": 41.9395,
       "reward_delta": 0.0,
-      "reward_p": NaN,
-      "acceptance": 0.6192
+      "reward_p": null,
+      "acceptance": 0.6192,
+      "solo_hit_count": 0,
+      "note": "0 catches (structural zero, see \u00a77.2.1)"
     }
   ],
   "per_user_data": {
