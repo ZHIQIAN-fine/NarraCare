@@ -1,0 +1,8 @@
+# NeuralUCB policy configuration (overrides default.yaml)
+recommender:
+  algorithm: "neural_ucb"
+  neural_ucb:
+    hidden_dim: 32
+    training_epochs: 5
+    alpha: 0.01
+    safety_lambda: 3.0

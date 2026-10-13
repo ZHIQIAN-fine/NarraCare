@@ -1,0 +1,6 @@
+# LinUCB policy configuration (overrides default.yaml)
+recommender:
+  algorithm: "linucb"
+  linucb:
+    alpha: 1.0
+    feature_dim: 15

@@ -939,17 +939,54 @@ class NarraCarePipeline:
 
 if __name__ == "__main__":
     import sys
+    import argparse
 
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s  %(name)-28s  %(levelname)-7s  %(message)s",
     )
 
-    pipeline = NarraCarePipeline()
+    parser = argparse.ArgumentParser(description="NarraCare Pipeline")
+    parser.add_argument("--user", type=str, default=None,
+                        help="Single user ID for mini demo (e.g. U003)")
+    parser.add_argument("--day", type=int, default=None,
+                        help="Number of days for mini demo")
+    parser.add_argument("--policy", type=str, default=None,
+                        help="Algorithm: saps, linucb, neural_ucb, etc.")
+    parser.add_argument("mode", nargs="?", default=None,
+                        help="Legacy mode: 'interactive'")
+    args = parser.parse_args()
 
-    if len(sys.argv) > 1 and sys.argv[1] == "interactive":
-        uid = sys.argv[2] if len(sys.argv) > 2 else "U001"
+    overrides = {}
+    if args.policy:
+        overrides["recommender"] = {"algorithm": args.policy}
+
+    pipeline = NarraCarePipeline("configs/default.yaml",
+                                  config_overrides=overrides if overrides else None)
+
+    if args.mode == "interactive":
+        uid = args.user or "U001"
         pipeline.interactive_session(uid)
+    elif args.user and args.day:
+        # Mini demo: single user, N days
+        pipeline.simulator.profiles = {
+            k: v for k, v in pipeline.simulator.profiles.items()
+            if k == args.user
+        }
+        logs = pipeline.run_simulation(n_days=args.day)
+        if logs:
+            last = logs[-1]
+            task = last.get("chosen_task_id", "?")
+            narration = last.get("narrative", last.get("narrator_tone", ""))
+            reward = last.get("reward", 0)
+            print(f"\n✅ Mini demo: {args.user}, day {args.day}, "
+                  f"policy={args.policy or 'linucb'}")
+            print(f"   Last recommendation: task={task}")
+            print(f"   Narrative tone: {narration}")
+            print(f"   Reward: {reward:.4f}")
+            print(f"   Total interactions: {len(logs)}")
+        else:
+            print("No interactions generated.")
     else:
         logs = pipeline.run_simulation()
         print(f"\n✅ Simulation complete — {len(logs)} interactions logged.")
