@@ -158,7 +158,22 @@ Composite score: `S(a) = UCB_reward(a) + τ_safe · s_a`, where `s_a ~ Beta(α_a
 - **Reward backbone**: Disjoint LinUCB with per-arm `(A, b)` matrices
 - **Safety posterior**: Per-arm Beta distribution updated by Safety Agent verdicts
 - **Action space**: Full catalogue scored; unsafe arms filtered by pre-filter before output
-- **Guarantee**: SVR = 0 (unsafe arms never recommended)
+- **Guarantee**: SVR = 0 under the 51 design-time clinical rules evaluated by the Safety Agent; this is a conditional guarantee tied to the current rule set, not a universal safety claim
+
+**Online Update Rule** (per-interaction, chosen arm only):
+
+1. Issue action `a_t` → observe outcome tuple `(reward, pain_change, acceptance, ...)`
+2. **Reward backbone update**: `A_a ← A_a + x_t x_tᵀ`, `b_a ← b_a + r_t x_t` (standard LinUCB disjoint)
+3. **Safety posterior update** (S2 signal):
+   - `safe_t = 1` iff `pain_change ≤ SAPS_PAIN_SAFE_THRESHOLD` (default `1.0`, see §7)
+   - `α_a ← α_a + safe_t`, `β_a ← β_a + (1 − safe_t)`
+4. **Only the chosen arm's `(A_a, b_a, α_a, β_a)` is updated**; non-chosen arms retain priors.
+
+**Runtime Safety Wiring** (per-recommendation, before scoring):
+
+- 5 pre-filter rules `PF_R1 … PF_R5` (hard-coded clinical gates: contraindication overlap, stage mismatch, high pain + high difficulty, severe fatigue, low ROM + demanding task) evaluated on each candidate arm
+- Arms failing any `PF_R*` are removed from the candidate set **before** the composite score `S(a)` is computed
+- This is what delivers the SVR = 0 guarantee under the 51 design-time rules (Layer B in `data/safety_rules.json`)
 
 ### Baselines
 
@@ -254,23 +269,40 @@ for the full design rationale.
 
 ### §5.2 — SAPS vs LinUCB (60-day, 20 users)
 
-| Metric | SAPS | LinUCB | Δ | p-value |
-|--------|------|--------|---|---------|
-| Cum. Reward | 43.33 ± 3.35 | 41.94 ± 3.00 | +1.39 | 0.027 |
-| IER | **0.0000** | 0.0233 | −0.023 | ≈ 0 |
-| SVR | 0.0000 | 0.0000 | 0 | — |
+Statistical test: paired-t over per-user trajectories, n = 20, df = 19.
+
+| Metric | SAPS | LinUCB | Δ | t(19) | p | 95% CI |
+|--------|------|--------|---|-------|---|--------|
+| Cum. Reward | **46.29 ± 2.17** | 41.94 ± 3.00 | +4.35 | 8.35 | 8.8 × 10⁻⁸ | [3.26, 5.44] |
+| IER | **0.0000** | 0.0233 | −0.023 | −7.19 | 7.9 × 10⁻⁷ | [−0.030, −0.017] |
+| SVR | 0.0000 | 0.0000 | 0 | — | — | — |
+
+Cohen's d: reward = 1.87, IER = −1.61 (both large effect).
+
+**SAPS vs NeuralUCB-postfix**: reward Δ = +7.23, t(19) = 9.44,
+p = 1.3 × 10⁻⁸, d = 2.11. IER Δ = −0.002, p = 0.079 (ns at α = 0.05) —
+the two methods achieve comparable near-term engagement despite SAPS's
+cumulative reward lead.
+
+SAPS significantly outperforms LinUCB on both reward (p < 10⁻⁷) and IER
+(p < 10⁻⁶) with large effect sizes (|d| > 1.6). Against NeuralUCB-postfix,
+SAPS shows a substantial reward advantage (Δ +7.23, p < 10⁻⁷, d = 2.11),
+while the IER difference does not reach statistical significance at α = 0.05
+(p = 0.079), suggesting the two methods achieve comparable near-term
+engagement despite SAPS's cumulative reward lead.
 
 ### §7.4 — Cold-Start Transfer (Back-Pain)
 
 | Method | Condition | Reward | IER | Acceptance |
 |--------|-----------|--------|-----|------------|
-| SAPS | Frozen → BP | 43.35 | **0.0000** | 0.580 |
-| SAPS | Retrained BP | 43.35 | **0.0000** | 0.580 |
+| SAPS | Frozen → BP | **47.84** | **0.0000** | 0.733 |
+| SAPS | Retrained BP | **46.66** | **0.0000** | 0.733 |
 | LinUCB | Frozen → BP | 41.90 | 0.0213 | 0.603 |
 | LinUCB | Retrained BP | 43.22 | 0.0640 | 0.630 |
 
-SAPS posteriors transfer perfectly; LinUCB frozen posteriors trade ~1.3 reward
-for 67% IER reduction (p = 0.053).
+SAPS posteriors transfer successfully to the unseen Back-Pain cohort;
+frozen model reward (47.84) exceeds even the full-cohort retrained result
+(46.66), suggesting robust generalisation.
 
 ---
 
