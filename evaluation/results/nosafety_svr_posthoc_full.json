@@ -1,0 +1,34 @@
+{
+  "source_run": "linucb_nosafety_60day.json",
+  "commit": "7c17d4c",
+  "total_accepted": 772,
+  "total_violating": 171,
+  "svr": 0.221503,
+  "per_rule_hits": {
+    "PF_R1": 26,
+    "PF_R2": 154,
+    "PF_R3": 0,
+    "PF_R4": 14,
+    "PF_R5": 0
+  },
+  "any_rule_hits": 171,
+  "overlap_matrix": {
+    "PF_R1&PF_R2": 23,
+    "PF_R1&PF_R3": 0,
+    "PF_R1&PF_R4": 0,
+    "PF_R1&PF_R5": 0,
+    "PF_R2&PF_R3": 0,
+    "PF_R2&PF_R4": 0,
+    "PF_R2&PF_R5": 0,
+    "PF_R3&PF_R4": 0,
+    "PF_R3&PF_R5": 0,
+    "PF_R4&PF_R5": 0
+  },
+  "rule_definitions": {
+    "PF_R1": "user_contras & task_contras (contraindication tag overlap)",
+    "PF_R2": "user_stage not in task_stages (stage mismatch)",
+    "PF_R3": "pain >= 7 and difficulty >= 4",
+    "PF_R4": "fatigue >= 8 and category not in {rest, flexibility}",
+    "PF_R5": "rom < 60 and (difficulty >= 3 or category == 'cardio')"
+  }
+}
