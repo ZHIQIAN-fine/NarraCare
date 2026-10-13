@@ -51,6 +51,12 @@ _DIFFICULTY_TO_INTENSITY: Dict[int, str] = {
 }
 
 
+# ── SAPS safety-posterior S2 signal threshold ─────────────────────────────
+# Aligned with r_safety threshold in simulator.py (compute_reward).
+# DO NOT tune post-hoc based on results — honest-outcome guardrail.
+SAPS_PAIN_SAFE_THRESHOLD = 1.0
+
+
 def _resolve_project_root() -> Path:
     """Return the NarraCare project root directory."""
     return Path(__file__).resolve().parent.parent
@@ -339,6 +345,11 @@ class NarraCarePipeline:
                 safe_candidates = self.task_library[:3]
 
         # 4. Recommender — rank on safe candidates
+        #    SAPS needs to know which arms passed pre-filter so its internal
+        #    safe-arm gate works; other models ignore set_safe_ids.
+        _rec_model = getattr(self.recommender, "model", None)
+        if _rec_model is not None and hasattr(_rec_model, "set_safe_ids"):
+            _rec_model.set_safe_ids({t["task_id"] for t in safe_candidates})
         recommended = self.recommender.recommend(fv.to_numpy(), safe_candidates)
 
         # 4b. IER: also rank on ALL candidates (before safety) to measure
@@ -631,6 +642,18 @@ class NarraCarePipeline:
                     reward = self.process_feedback(
                         uid, chosen_id, feedback, state, ctx, day=day,
                     )
+
+                    # ── SAPS Beta-posterior update (S2 signal: post-hoc
+                    # pain outcome).  Only the *chosen* arm receives an
+                    # observation; pre-filter blocked arms have no post-hoc
+                    # signal and their Beta stays at the prior — the hard-
+                    # filter layer handles blocked arms separately.
+                    # Two-layer safety division is explicit by design.
+                    _model = getattr(self.recommender, "model", None)
+                    if _model is not None and hasattr(_model, "update_safety"):
+                        _pain_change = feedback.get("pain_change", 0)
+                        _was_safe = _pain_change <= SAPS_PAIN_SAFE_THRESHOLD
+                        _model.update_safety(chosen_id, _was_safe)
 
                     # Lagrangian safety penalty: give negative reward to
                     # infeasible tasks that the bandit wanted to recommend.
