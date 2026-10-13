@@ -1,0 +1,1456 @@
+{
+  "config": {
+    "model": "gpt-4o-mini",
+    "temperature": 0,
+    "seed": 42,
+    "samples_evaluated": 60,
+    "failed": 0
+  },
+  "cost": {
+    "prompt_tokens": 22547,
+    "completion_tokens": 5937,
+    "usd_estimate": 0.0069
+  },
+  "scores": [
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's early rehabilitation phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more encouragement given the patient's fatigue level."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's early rehabilitation phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more encouragement given the patient's fatigue level.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 380,
+      "completion_tokens": 101,
+      "sample_id": "U016_d16_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's early rehabilitation phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more acknowledgment of the patient's pain and fatigue."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's early rehabilitation phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more acknowledgment of the patient's pain and fatigue.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 379,
+      "completion_tokens": 102,
+      "sample_id": "U002_d4_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's current rehabilitation phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more encouragement."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the exercise and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's current rehabilitation phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more encouragement.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the exercise and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 380,
+      "completion_tokens": 96,
+      "sample_id": "U012_d1_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's recovery phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more acknowledgment of the patient's fatigue."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its appropriateness for the patient's current condition."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's recovery phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more acknowledgment of the patient's fatigue.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its appropriateness for the patient's current condition.\"}\n}",
+      "prompt_tokens": 384,
+      "completion_tokens": 101,
+      "sample_id": "U004_d8_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's recovery phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more acknowledgment of the patient's fatigue."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's current condition."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's recovery phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more acknowledgment of the patient's fatigue.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's current condition.\"}\n}",
+      "prompt_tokens": 379,
+      "completion_tokens": 100,
+      "sample_id": "U008_d7_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is professional and supportive, matching the patient's normal emotional state."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is professional and supportive, matching the patient's normal emotional state.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 384,
+      "completion_tokens": 97,
+      "sample_id": "U018_d6_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could acknowledge the patient's fatigue more explicitly."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could acknowledge the patient's fatigue more explicitly.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 379,
+      "completion_tokens": 100,
+      "sample_id": "U001_d5_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The recommendation aligns with the patient's current recovery phase, but the task category does not match the suggested activity."
+        },
+        "empathy": {
+          "score": 3,
+          "reason": "The tone is neutral, which may not fully acknowledge the patient's fatigue level."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery, but the task type may not align with the flexibility focus."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The recommendation aligns with the patient's current recovery phase, but the task category does not match the suggested activity.\"},\n  \"empathy\": {\"score\": 3, \"reason\": \"The tone is neutral, which may not fully acknowledge the patient's fatigue level.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery, but the task type may not align with the flexibility focus.\"}\n}",
+      "prompt_tokens": 382,
+      "completion_tokens": 111,
+      "sample_id": "U020_d3_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's current recovery phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more acknowledgment of the patient's pain and fatigue."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's rehabilitation."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's current recovery phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more acknowledgment of the patient's pain and fatigue.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's rehabilitation.\"}\n}",
+      "prompt_tokens": 381,
+      "completion_tokens": 102,
+      "sample_id": "U020_d17_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more encouragement."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more encouragement.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 385,
+      "completion_tokens": 97,
+      "sample_id": "U001_d14_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more encouragement given the patient's pain and fatigue levels."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more encouragement given the patient's pain and fatigue levels.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 384,
+      "completion_tokens": 104,
+      "sample_id": "U012_d3_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's early rehabilitation phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, though it could include more acknowledgment of the patient's pain and fatigue."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's early rehabilitation phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, though it could include more acknowledgment of the patient's pain and fatigue.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 380,
+      "completion_tokens": 102,
+      "sample_id": "U009_d15_speak_doctor",
+      "stream_label": "speak:doctor"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task that matches the patient's recovery state."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its difficulty level in relation to the patient's current state."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task that matches the patient's recovery state.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its difficulty level in relation to the patient's current state.\"}\n}",
+      "prompt_tokens": 370,
+      "completion_tokens": 103,
+      "sample_id": "U020_d35_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a flexibility task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and acknowledges the patient's readiness, though it could be slightly more supportive given the pain level."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its difficulty level in relation to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a flexibility task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and acknowledges the patient's readiness, though it could be slightly more supportive given the pain level.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its difficulty level in relation to the patient's recovery.\"}\n}",
+      "prompt_tokens": 370,
+      "completion_tokens": 101,
+      "sample_id": "U005_d18_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The message logically follows from the context, but it could clarify the reason for the exercise choice."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and acknowledges the patient's current state, though it could be more supportive given the fatigue level."
+        },
+        "clinical": {
+          "score": 3,
+          "reason": "The exercise is appropriate, but the difficulty rating may not fully consider the patient's fatigue level."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The message logically follows from the context, but it could clarify the reason for the exercise choice.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and acknowledges the patient's current state, though it could be more supportive given the fatigue level.\"},\n  \"clinical\": {\"score\": 3, \"reason\": \"The exercise is appropriate, but the difficulty rating may not fully consider the patient's fatigue level.\"}\n}",
+      "prompt_tokens": 371,
+      "completion_tokens": 108,
+      "sample_id": "U003_d18_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's recovery state."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and supportive, though it could acknowledge the patient's fatigue level more explicitly."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The task described is appropriate for the patient's current condition and aligns with the recommended flexibility category."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's recovery state.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and supportive, though it could acknowledge the patient's fatigue level more explicitly.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The task described is appropriate for the patient's current condition and aligns with the recommended flexibility category.\"}\n}",
+      "prompt_tokens": 374,
+      "completion_tokens": 103,
+      "sample_id": "U006_d21_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's recovery state."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and supportive, though it could acknowledge the patient's low fatigue level more explicitly."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its difficulty level in relation to the patient's current state."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's recovery state.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and supportive, though it could acknowledge the patient's low fatigue level more explicitly.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its difficulty level in relation to the patient's current state.\"}\n}",
+      "prompt_tokens": 374,
+      "completion_tokens": 104,
+      "sample_id": "U007_d26_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task that matches the patient's recovery state."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive given the fatigue level."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its difficulty level in relation to the patient's current state."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task that matches the patient's recovery state.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive given the fatigue level.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its difficulty level in relation to the patient's current state.\"}\n}",
+      "prompt_tokens": 370,
+      "completion_tokens": 107,
+      "sample_id": "U007_d27_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's recovery state."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is supportive and encouraging, though it could acknowledge the patient's pain level more explicitly."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes a task that is suitable for pain management and aligns with the patient's current condition."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's recovery state.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is supportive and encouraging, though it could acknowledge the patient's pain level more explicitly.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes a task that is suitable for pain management and aligns with the patient's current condition.\"}\n}",
+      "prompt_tokens": 372,
+      "completion_tokens": 105,
+      "sample_id": "U005_d40_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's recovery state."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive given the pain level."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its difficulty level in relation to the patient's current state."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's recovery state.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive given the pain level.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its difficulty level in relation to the patient's current state.\"}\n}",
+      "prompt_tokens": 375,
+      "completion_tokens": 107,
+      "sample_id": "U001_d18_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The message logically follows from the context of recommending a task for recovery."
+        },
+        "empathy": {
+          "score": 3,
+          "reason": "The tone is somewhat encouraging, but could better acknowledge the patient's pain and fatigue levels."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "The task described is appropriate for the patient's condition, though it could clarify the application method."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The message logically follows from the context of recommending a task for recovery.\"},\n  \"empathy\": {\"score\": 3, \"reason\": \"The tone is somewhat encouraging, but could better acknowledge the patient's pain and fatigue levels.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"The task described is appropriate for the patient's condition, though it could clarify the application method.\"}\n}",
+      "prompt_tokens": 373,
+      "completion_tokens": 98,
+      "sample_id": "U011_d25_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task that matches the patient's recovery state."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its difficulty level in relation to the patient's current state."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task that matches the patient's recovery state.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its difficulty level in relation to the patient's current state.\"}\n}",
+      "prompt_tokens": 372,
+      "completion_tokens": 103,
+      "sample_id": "U018_d42_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a flexibility task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive given the fatigue level."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its difficulty level in relation to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a flexibility task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is encouraging and acknowledges the patient's progress, though it could be slightly more supportive given the fatigue level.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its difficulty level in relation to the patient's recovery.\"}\n}",
+      "prompt_tokens": 371,
+      "completion_tokens": 101,
+      "sample_id": "U018_d35_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task that matches the patient's recovery state."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is encouraging and supportive, appropriate for the patient's normal emotional state."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its difficulty level in relation to the patient's progress."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task that matches the patient's recovery state.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is encouraging and supportive, appropriate for the patient's normal emotional state.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its difficulty level in relation to the patient's progress.\"}\n}",
+      "prompt_tokens": 371,
+      "completion_tokens": 99,
+      "sample_id": "U008_d26_speak_coach",
+      "stream_label": "speak:coach"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could be slightly more encouraging."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The Bird-Dog Exercise is an appropriate recommendation for strength training at this stage."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could be slightly more encouraging.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The Bird-Dog Exercise is an appropriate recommendation for strength training at this stage.\"}\n}",
+      "prompt_tokens": 370,
+      "completion_tokens": 92,
+      "sample_id": "U015_d49_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The message logically follows from the context of recommending a task related to pain management."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, acknowledging the patient's experience."
+        },
+        "clinical": {
+          "score": 3,
+          "reason": "While the suggestion is relevant, it lacks specificity regarding the task and its appropriateness for the patient's current condition."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The message logically follows from the context of recommending a task related to pain management.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, acknowledging the patient's experience.\"},\n  \"clinical\": {\"score\": 3, \"reason\": \"While the suggestion is relevant, it lacks specificity regarding the task and its appropriateness for the patient's current condition.\"}\n}",
+      "prompt_tokens": 372,
+      "completion_tokens": 99,
+      "sample_id": "U007_d52_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a flexibility task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could acknowledge the patient's pain and fatigue more explicitly."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The task suggested is appropriate for the patient's current stage in rehabilitation."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a flexibility task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could acknowledge the patient's pain and fatigue more explicitly.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The task suggested is appropriate for the patient's current stage in rehabilitation.\"}\n}",
+      "prompt_tokens": 368,
+      "completion_tokens": 94,
+      "sample_id": "U009_d46_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a flexibility task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could be slightly more attuned to the patient's current pain and fatigue levels."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The Bird-Dog Exercise is an appropriate recommendation for flexibility at this stage of rehabilitation."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a flexibility task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could be slightly more attuned to the patient's current pain and fatigue levels.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The Bird-Dog Exercise is an appropriate recommendation for flexibility at this stage of rehabilitation.\"}\n}",
+      "prompt_tokens": 370,
+      "completion_tokens": 103,
+      "sample_id": "U020_d56_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task for flexibility."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could be slightly more encouraging."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The task mentioned is appropriate for the patient's current status and aligns with the recommended task."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task for flexibility.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could be slightly more encouraging.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The task mentioned is appropriate for the patient's current status and aligns with the recommended task.\"}\n}",
+      "prompt_tokens": 372,
+      "completion_tokens": 95,
+      "sample_id": "U008_d58_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The message logically follows from the context of recommending a task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, acknowledging the patient's experience."
+        },
+        "clinical": {
+          "score": 3,
+          "reason": "The exercise suggested is appropriate, but the message lacks specific safety considerations given the blocked status."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The message logically follows from the context of recommending a task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, acknowledging the patient's experience.\"},\n  \"clinical\": {\"score\": 3, \"reason\": \"The exercise suggested is appropriate, but the message lacks specific safety considerations given the blocked status.\"}\n}",
+      "prompt_tokens": 369,
+      "completion_tokens": 91,
+      "sample_id": "U002_d0_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a flexibility task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could be slightly more attuned to the patient's fatigue level."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes a suitable task for the patient's current condition."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a flexibility task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could be slightly more attuned to the patient's fatigue level.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes a suitable task for the patient's current condition.\"}\n}",
+      "prompt_tokens": 373,
+      "completion_tokens": 96,
+      "sample_id": "U010_d55_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a flexibility task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could be slightly more attuned to the patient's fatigue level."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes a suitable task for the patient's current state."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a flexibility task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could be slightly more attuned to the patient's fatigue level.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes a suitable task for the patient's current state.\"}\n}",
+      "prompt_tokens": 373,
+      "completion_tokens": 96,
+      "sample_id": "U015_d56_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task related to rest."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could acknowledge the patient's pain and fatigue more explicitly."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "Diaphragmatic Breathing is a relevant technique, but the message could clarify its benefits in relation to the patient's current state."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task related to rest.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could acknowledge the patient's pain and fatigue more explicitly.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"Diaphragmatic Breathing is a relevant technique, but the message could clarify its benefits in relation to the patient's current state.\"}\n}",
+      "prompt_tokens": 373,
+      "completion_tokens": 110,
+      "sample_id": "U017_d43_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a flexibility task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could be slightly more attuned to the patient's fatigue level."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The Cat-Cow Stretch is an appropriate and safe flexibility exercise for the patient's current status."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a flexibility task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could be slightly more attuned to the patient's fatigue level.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The Cat-Cow Stretch is an appropriate and safe flexibility exercise for the patient's current status.\"}\n}",
+      "prompt_tokens": 370,
+      "completion_tokens": 101,
+      "sample_id": "U006_d54_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The message suggests a relevant exercise based on the context of the patient's rehabilitation."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, acknowledging the patient's journey."
+        },
+        "clinical": {
+          "score": 3,
+          "reason": "While Child's Pose is generally beneficial, the message lacks specific guidance on its appropriateness for the patient's current pain and fatigue levels."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The message suggests a relevant exercise based on the context of the patient's rehabilitation.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, acknowledging the patient's journey.\"},\n  \"clinical\": {\"score\": 3, \"reason\": \"While Child's Pose is generally beneficial, the message lacks specific guidance on its appropriateness for the patient's current pain and fatigue levels.\"}\n}",
+      "prompt_tokens": 369,
+      "completion_tokens": 102,
+      "sample_id": "U004_d49_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task for the patient."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could be slightly more attuned to the patient's current pain and fatigue levels."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes a relevant exercise for the patient's rehabilitation."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task for the patient.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could be slightly more attuned to the patient's current pain and fatigue levels.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes a relevant exercise for the patient's rehabilitation.\"}\n}",
+      "prompt_tokens": 371,
+      "completion_tokens": 100,
+      "sample_id": "U015_d47_speak_companion",
+      "stream_label": "speak:companion"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a flexibility task."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could acknowledge the patient's pain level more explicitly."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "Child's Pose is an appropriate flexibility exercise for the patient's current task."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a flexibility task.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could acknowledge the patient's pain level more explicitly.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"Child's Pose is an appropriate flexibility exercise for the patient's current task.\"}\n}",
+      "prompt_tokens": 372,
+      "completion_tokens": 94,
+      "sample_id": "U014_d15_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, but could include more acknowledgment of the patient's pain and fatigue."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, but could include more acknowledgment of the patient's pain and fatigue.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 387,
+      "completion_tokens": 102,
+      "sample_id": "U018_d7_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, but could include more acknowledgment of the patient's pain and fatigue levels."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery phase."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's mid-rehab phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, but could include more acknowledgment of the patient's pain and fatigue levels.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery phase.\"}\n}",
+      "prompt_tokens": 386,
+      "completion_tokens": 104,
+      "sample_id": "U019_d11_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task for rest."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could acknowledge the patient's pain and fatigue more explicitly."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "The suggestion of a gentle stretching routine is appropriate, but it could specify how it relates to the patient's current pain and fatigue levels."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task for rest.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could acknowledge the patient's pain and fatigue more explicitly.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"The suggestion of a gentle stretching routine is appropriate, but it could specify how it relates to the patient's current pain and fatigue levels.\"}\n}",
+      "prompt_tokens": 375,
+      "completion_tokens": 108,
+      "sample_id": "U009_d58_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context by suggesting a relevant task based on the patient's progress."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, though it could be slightly more attuned to the patient's current pain and fatigue levels."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The task suggested is appropriate for the patient's flexibility category and aligns with their rehabilitation goals."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context by suggesting a relevant task based on the patient's progress.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, though it could be slightly more attuned to the patient's current pain and fatigue levels.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The task suggested is appropriate for the patient's flexibility category and aligns with their rehabilitation goals.\"}\n}",
+      "prompt_tokens": 376,
+      "completion_tokens": 108,
+      "sample_id": "U006_d45_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's recovery state."
+        },
+        "empathy": {
+          "score": 3,
+          "reason": "The tone is somewhat encouraging, but it could better acknowledge the patient's fatigue and pain levels."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "The task described is appropriate for the patient's current state, though the difficulty rating could be clearer."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's recovery state.\"},\n  \"empathy\": {\"score\": 3, \"reason\": \"The tone is somewhat encouraging, but it could better acknowledge the patient's fatigue and pain levels.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"The task described is appropriate for the patient's current state, though the difficulty rating could be clearer.\"}\n}",
+      "prompt_tokens": 377,
+      "completion_tokens": 104,
+      "sample_id": "U004_d19_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task for pain management."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is supportive and acknowledges the patient's experience, though it could be slightly more attuned to their current emotional state."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "The suggestion is appropriate for pain management, but it could specify how it relates to the recommended task."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task for pain management.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is supportive and acknowledges the patient's experience, though it could be slightly more attuned to their current emotional state.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"The suggestion is appropriate for pain management, but it could specify how it relates to the recommended task.\"}\n}",
+      "prompt_tokens": 373,
+      "completion_tokens": 108,
+      "sample_id": "U019_d4_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's current rehabilitation phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, but could include more acknowledgment of the patient's pain and fatigue levels."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's current rehabilitation phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, but could include more acknowledgment of the patient's pain and fatigue levels.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 386,
+      "completion_tokens": 102,
+      "sample_id": "U013_d4_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's recovery state."
+        },
+        "empathy": {
+          "score": 3,
+          "reason": "The tone is somewhat encouraging, but it could better acknowledge the patient's pain and fatigue levels."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "The task described is appropriate for flexibility and aligns with the patient's current capabilities."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's recovery state.\"},\n  \"empathy\": {\"score\": 3, \"reason\": \"The tone is somewhat encouraging, but it could better acknowledge the patient's pain and fatigue levels.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"The task described is appropriate for flexibility and aligns with the patient's current capabilities.\"}\n}",
+      "prompt_tokens": 377,
+      "completion_tokens": 100,
+      "sample_id": "U014_d21_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of recommending a task appropriate for the patient's early rehabilitation phase."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is professional and supportive, but could include more acknowledgment of the patient's fatigue."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately describes the task and its relevance to the patient's recovery."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of recommending a task appropriate for the patient's early rehabilitation phase.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is professional and supportive, but could include more acknowledgment of the patient's fatigue.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately describes the task and its relevance to the patient's recovery.\"}\n}",
+      "prompt_tokens": 382,
+      "completion_tokens": 99,
+      "sample_id": "U016_d4_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 3,
+          "reason": "The message introduces a new task but does not clearly connect it to the patient's current pain and fatigue levels."
+        },
+        "empathy": {
+          "score": 3,
+          "reason": "The tone is somewhat encouraging, but it lacks acknowledgment of the patient's current pain and fatigue."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "The task is appropriate for the patient's recovery state, but the difficulty rating may not fully reflect their current condition."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 3, \"reason\": \"The message introduces a new task but does not clearly connect it to the patient's current pain and fatigue levels.\"},\n  \"empathy\": {\"score\": 3, \"reason\": \"The tone is somewhat encouraging, but it lacks acknowledgment of the patient's current pain and fatigue.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"The task is appropriate for the patient's recovery state, but the difficulty rating may not fully reflect their current condition.\"}\n}",
+      "prompt_tokens": 374,
+      "completion_tokens": 110,
+      "sample_id": "U007_d20_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 4,
+          "reason": "The message logically follows from the context of recommending a task related to rest."
+        },
+        "empathy": {
+          "score": 4,
+          "reason": "The tone is friendly and supportive, acknowledging the patient's experience."
+        },
+        "clinical": {
+          "score": 4,
+          "reason": "The recommendation is appropriate for managing pain, though it could be more specific about the task."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 4, \"reason\": \"The message logically follows from the context of recommending a task related to rest.\"},\n  \"empathy\": {\"score\": 4, \"reason\": \"The tone is friendly and supportive, acknowledging the patient's experience.\"},\n  \"clinical\": {\"score\": 4, \"reason\": \"The recommendation is appropriate for managing pain, though it could be more specific about the task.\"}\n}",
+      "prompt_tokens": 371,
+      "completion_tokens": 94,
+      "sample_id": "U006_d51_speak_yellow-mixed",
+      "stream_label": "speak:yellow-mixed"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety during rehabilitation."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's need for protection."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety during rehabilitation.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's need for protection.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 376,
+      "completion_tokens": 88,
+      "sample_id": "U020_d5_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety during rehabilitation."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's current emotional and physical state."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety during rehabilitation.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's current emotional and physical state.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 377,
+      "completion_tokens": 90,
+      "sample_id": "U002_d36_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety during rehabilitation."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's need for protection."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety during rehabilitation.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's need for protection.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 377,
+      "completion_tokens": 88,
+      "sample_id": "U008_d2_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety during rehabilitation."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's need for protection."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety during rehabilitation.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's need for protection.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 377,
+      "completion_tokens": 88,
+      "sample_id": "U008_d0_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety during rehabilitation."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's need for protection."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety during rehabilitation.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's need for protection.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 376,
+      "completion_tokens": 88,
+      "sample_id": "U007_d17_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety during rehabilitation."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's current limitations and emotional state."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety during rehabilitation.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's current limitations and emotional state.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 377,
+      "completion_tokens": 90,
+      "sample_id": "U013_d26_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety in the rehabilitation process."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's situation while encouraging patience."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in rehabilitation and the need to listen to the body."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety in the rehabilitation process.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's situation while encouraging patience.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in rehabilitation and the need to listen to the body.\"}\n}",
+      "prompt_tokens": 376,
+      "completion_tokens": 97,
+      "sample_id": "U020_d0_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety during rehabilitation."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's need for protection."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety during rehabilitation.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's need for protection.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 376,
+      "completion_tokens": 88,
+      "sample_id": "U016_d9_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety and protection."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's current emotional and physical state."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety and protection.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's current emotional and physical state.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 378,
+      "completion_tokens": 90,
+      "sample_id": "U014_d0_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety and protection."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's need for safety."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety and protection.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's need for safety.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 376,
+      "completion_tokens": 88,
+      "sample_id": "U002_d29_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety during rehabilitation."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's current emotional and physical state."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety during rehabilitation.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's current emotional and physical state.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 378,
+      "completion_tokens": 90,
+      "sample_id": "U014_d2_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    },
+    {
+      "judge_failed": false,
+      "retries": 0,
+      "retries_log": [],
+      "scores": {
+        "coherence": {
+          "score": 5,
+          "reason": "The message logically follows from the context of prioritizing safety and protection."
+        },
+        "empathy": {
+          "score": 5,
+          "reason": "The tone is supportive and acknowledges the patient's current emotional state."
+        },
+        "clinical": {
+          "score": 5,
+          "reason": "The message accurately reflects the importance of safety in the rehabilitation process."
+        }
+      },
+      "raw": "{\n  \"coherence\": {\"score\": 5, \"reason\": \"The message logically follows from the context of prioritizing safety and protection.\"},\n  \"empathy\": {\"score\": 5, \"reason\": \"The tone is supportive and acknowledges the patient's current emotional state.\"},\n  \"clinical\": {\"score\": 5, \"reason\": \"The message accurately reflects the importance of safety in the rehabilitation process.\"}\n}",
+      "prompt_tokens": 377,
+      "completion_tokens": 88,
+      "sample_id": "U010_d43_closing_safety_followup",
+      "stream_label": "closing:safety_followup"
+    }
+  ]
+}
