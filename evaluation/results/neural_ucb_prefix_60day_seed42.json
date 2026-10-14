@@ -11,172 +11,172 @@
     "safety_lambda": 3.0
   },
   "aggregate_metrics": {
-    "cum_reward_mean": 46.6709,
-    "cum_reward_std": 2.8561,
-    "ier_mean": 0.4057,
-    "acceptance_rate_mean": 0.7283,
+    "cum_reward_mean": 46.3831,
+    "cum_reward_std": 2.7104,
+    "ier_mean": 0.408,
+    "acceptance_rate_mean": 0.7158,
     "svr": 0.0
   },
   "per_user_metrics": [
     {
       "user_id": "U001",
-      "cum_reward": 50.1093,
-      "ier": 0.22,
-      "acceptance_rate": 0.8833,
+      "cum_reward": 48.62,
+      "ier": 0.2533,
+      "acceptance_rate": 0.85,
       "svr": 0.0,
-      "task_success_rate": 0.8833
+      "task_success_rate": 0.8167
     },
     {
       "user_id": "U002",
-      "cum_reward": 43.7717,
-      "ier": 0.6233,
-      "acceptance_rate": 0.6333,
+      "cum_reward": 42.4627,
+      "ier": 0.59,
+      "acceptance_rate": 0.6,
       "svr": 0.0,
-      "task_success_rate": 0.6
+      "task_success_rate": 0.5667
     },
     {
       "user_id": "U003",
-      "cum_reward": 51.8597,
-      "ier": 0.24,
-      "acceptance_rate": 0.9,
+      "cum_reward": 50.6367,
+      "ier": 0.2167,
+      "acceptance_rate": 0.8833,
       "svr": 0.0,
-      "task_success_rate": 0.8833
+      "task_success_rate": 0.85
     },
     {
       "user_id": "U004",
-      "cum_reward": 43.3178,
-      "ier": 0.6467,
-      "acceptance_rate": 0.6,
+      "cum_reward": 42.4136,
+      "ier": 0.62,
+      "acceptance_rate": 0.6333,
       "svr": 0.0,
-      "task_success_rate": 0.5333
+      "task_success_rate": 0.5167
     },
     {
       "user_id": "U005",
-      "cum_reward": 44.8155,
-      "ier": 0.27,
-      "acceptance_rate": 0.6,
+      "cum_reward": 44.848,
+      "ier": 0.28,
+      "acceptance_rate": 0.65,
       "svr": 0.0,
       "task_success_rate": 0.5833
     },
     {
       "user_id": "U006",
-      "cum_reward": 47.747,
-      "ier": 0.5933,
-      "acceptance_rate": 0.75,
+      "cum_reward": 44.882,
+      "ier": 0.6267,
+      "acceptance_rate": 0.65,
       "svr": 0.0,
-      "task_success_rate": 0.7333
+      "task_success_rate": 0.6333
     },
     {
       "user_id": "U007",
-      "cum_reward": 48.6754,
-      "ier": 0.2267,
-      "acceptance_rate": 0.85,
+      "cum_reward": 49.1426,
+      "ier": 0.2633,
+      "acceptance_rate": 0.8167,
       "svr": 0.0,
       "task_success_rate": 0.8
     },
     {
       "user_id": "U008",
-      "cum_reward": 49.6756,
-      "ier": 0.18,
-      "acceptance_rate": 0.8667,
+      "cum_reward": 49.3076,
+      "ier": 0.1533,
+      "acceptance_rate": 0.85,
       "svr": 0.0,
-      "task_success_rate": 0.8167
+      "task_success_rate": 0.8333
     },
     {
       "user_id": "U009",
-      "cum_reward": 41.6662,
-      "ier": 0.5967,
-      "acceptance_rate": 0.55,
+      "cum_reward": 42.9852,
+      "ier": 0.6367,
+      "acceptance_rate": 0.6167,
       "svr": 0.0,
-      "task_success_rate": 0.5
+      "task_success_rate": 0.55
     },
     {
       "user_id": "U010",
-      "cum_reward": 42.2203,
-      "ier": 0.2733,
-      "acceptance_rate": 0.5667,
+      "cum_reward": 42.002,
+      "ier": 0.29,
+      "acceptance_rate": 0.55,
       "svr": 0.0,
       "task_success_rate": 0.4833
     },
     {
       "user_id": "U011",
-      "cum_reward": 44.0948,
+      "cum_reward": 45.1223,
       "ier": 0.6267,
-      "acceptance_rate": 0.7,
+      "acceptance_rate": 0.65,
       "svr": 0.0,
-      "task_success_rate": 0.5833
+      "task_success_rate": 0.6
     },
     {
       "user_id": "U012",
-      "cum_reward": 45.9957,
-      "ier": 0.24,
+      "cum_reward": 45.3709,
+      "ier": 0.21,
+      "acceptance_rate": 0.65,
+      "svr": 0.0,
+      "task_success_rate": 0.6167
+    },
+    {
+      "user_id": "U013",
+      "cum_reward": 51.6279,
+      "ier": 0.2367,
+      "acceptance_rate": 0.85,
+      "svr": 0.0,
+      "task_success_rate": 0.85
+    },
+    {
+      "user_id": "U014",
+      "cum_reward": 48.313,
+      "ier": 0.72,
+      "acceptance_rate": 0.6833,
+      "svr": 0.0,
+      "task_success_rate": 0.6667
+    },
+    {
+      "user_id": "U015",
+      "cum_reward": 46.5672,
+      "ier": 0.3033,
       "acceptance_rate": 0.7167,
       "svr": 0.0,
       "task_success_rate": 0.65
     },
     {
-      "user_id": "U013",
-      "cum_reward": 49.8242,
-      "ier": 0.18,
-      "acceptance_rate": 0.7833,
-      "svr": 0.0,
-      "task_success_rate": 0.7833
-    },
-    {
-      "user_id": "U014",
-      "cum_reward": 48.3329,
-      "ier": 0.6933,
-      "acceptance_rate": 0.7167,
-      "svr": 0.0,
-      "task_success_rate": 0.6833
-    },
-    {
-      "user_id": "U015",
-      "cum_reward": 45.6601,
-      "ier": 0.3533,
-      "acceptance_rate": 0.6667,
-      "svr": 0.0,
-      "task_success_rate": 0.6
-    },
-    {
       "user_id": "U016",
-      "cum_reward": 45.2416,
-      "ier": 0.6067,
-      "acceptance_rate": 0.7167,
+      "cum_reward": 47.9967,
+      "ier": 0.6467,
+      "acceptance_rate": 0.8,
       "svr": 0.0,
-      "task_success_rate": 0.7167
+      "task_success_rate": 0.8
     },
     {
       "user_id": "U017",
-      "cum_reward": 45.8262,
-      "ier": 0.6167,
-      "acceptance_rate": 0.6667,
+      "cum_reward": 45.7748,
+      "ier": 0.6133,
+      "acceptance_rate": 0.65,
       "svr": 0.0,
-      "task_success_rate": 0.6667
+      "task_success_rate": 0.65
     },
     {
       "user_id": "U018",
-      "cum_reward": 46.0185,
-      "ier": 0.2467,
-      "acceptance_rate": 0.7833,
+      "cum_reward": 46.1466,
+      "ier": 0.2567,
+      "acceptance_rate": 0.7667,
       "svr": 0.0,
-      "task_success_rate": 0.7167
+      "task_success_rate": 0.7333
     },
     {
       "user_id": "U019",
-      "cum_reward": 50.7998,
-      "ier": 0.3733,
-      "acceptance_rate": 0.8167,
+      "cum_reward": 48.1441,
+      "ier": 0.3633,
+      "acceptance_rate": 0.7,
       "svr": 0.0,
-      "task_success_rate": 0.7833
+      "task_success_rate": 0.7
     },
     {
       "user_id": "U020",
-      "cum_reward": 47.7667,
-      "ier": 0.3067,
-      "acceptance_rate": 0.8,
+      "cum_reward": 45.2987,
+      "ier": 0.2533,
+      "acceptance_rate": 0.75,
       "svr": 0.0,
-      "task_success_rate": 0.7
+      "task_success_rate": 0.6167
     }
   ],
   "ablation_stats": {
@@ -184,20 +184,20 @@
     "n_pairs": 20,
     "seed": 42,
     "reward": {
-      "postfix_mean": 39.1635,
-      "prefix_mean": 46.6709,
-      "delta": -7.5075,
-      "t_statistic": -8.2465,
+      "postfix_mean": 38.3137,
+      "prefix_mean": 46.3831,
+      "delta": -8.0695,
+      "t_statistic": -9.7177,
       "p_value": 0.0
     },
     "ier": {
-      "postfix_mean": 0.003,
-      "prefix_mean": 0.4057,
-      "delta": -0.4027,
-      "t_statistic": -9.5679,
+      "postfix_mean": 0.0022,
+      "prefix_mean": 0.408,
+      "delta": -0.4058,
+      "t_statistic": -9.3609,
       "p_value": 0.0
     }
   },
-  "wall_time_s": 255.9,
+  "wall_time_s": 250.3,
   "n_interactions": 1200
 }
