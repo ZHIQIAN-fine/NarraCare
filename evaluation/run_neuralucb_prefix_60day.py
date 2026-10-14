@@ -67,9 +67,8 @@ class _NeuralUCBModelPreFix(_OriginalNeuralUCBModel):
             pred = self.net(x_tensor).item()
 
         # BUG: same pred for every arm; ranking = pure noise
-        rng = np.random.default_rng()
         for arm_id in candidate_ids:
-            exploration_bonus = self.alpha * rng.standard_normal()
+            exploration_bonus = self.alpha * self._rng.standard_normal()
             scores.append((arm_id, pred + exploration_bonus))
 
         scores.sort(key=lambda t: t[1], reverse=True)

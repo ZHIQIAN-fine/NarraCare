@@ -100,6 +100,8 @@ TIMING_ARTIFACTS=(
     "evaluation/results/epsilon_greedy_60day_seed42.json"
     "evaluation/results/random_60day.json"
     "evaluation/results/coldstart_60day_seed42.json"
+    "evaluation/results/neuralucb_60day.json"
+    "evaluation/results/neural_ucb_prefix_60day_seed42.json"
 )
 
 for f in "${TIMING_ARTIFACTS[@]}"; do
@@ -119,43 +121,12 @@ for f in "${TIMING_ARTIFACTS[@]}"; do
     fi
 done
 
-# NeuralUCB — nondeterministic (PyTorch CPU); check within tolerance
-NEURAL_ARTIFACTS=(
-    "evaluation/results/neuralucb_60day.json"
-    "evaluation/results/neural_ucb_prefix_60day_seed42.json"
-)
-
-for f in "${NEURAL_ARTIFACTS[@]}"; do
-    if [ ! -f "$f" ]; then
-        echo "  ⚠️  SKIP  $f (not found)"
-        WARN=$((WARN + 1))
-        continue
-    fi
-    python3 -c "
-import json, sys
-with open('$f') as fh:
-    regen = json.load(fh)
-regen_r = regen.get('cum_reward_mean', regen.get('aggregate_metrics',{}).get('cum_reward_mean', 0))
-# Read committed version
-import subprocess
-committed = json.loads(subprocess.check_output(['git', 'show', 'HEAD:$f']))
-comm_r = committed.get('cum_reward_mean', committed.get('aggregate_metrics',{}).get('cum_reward_mean', 0))
-delta = abs(regen_r - comm_r)
-if delta <= 1.0:
-    print(f'  ✅ PASS  $f (Δ reward = {delta:.2f}, within ±1.0 tolerance)')
-else:
-    print(f'  ❌ FAIL  $f (Δ reward = {delta:.2f}, exceeds ±1.0 tolerance)')
-    sys.exit(1)
-" && PASS=$((PASS + 1)) || FAIL=$((FAIL + 1))
-done
-
 TOTAL=$((PASS + FAIL + WARN))
 echo ""
 echo "========================================"
 echo " Verification Summary: $PASS/$TOTAL passed, $FAIL failed, $WARN skipped"
 if [ "$FAIL" -eq 0 ]; then
-    echo " ✓ All deterministic artifacts bit-identical."
-    echo "   NeuralUCB within CPU nondeterminism tolerance."
+    echo " ✓ All artifacts reproduce at seed=42 (5 bit-identical + 8 timing-only)."
 else
     echo " ✗ $FAIL artifact(s) have unexpected diffs — inspect above."
 fi

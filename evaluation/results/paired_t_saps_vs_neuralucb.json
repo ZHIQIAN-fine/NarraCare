@@ -5,32 +5,32 @@
   "seed": 42,
   "reward": {
     "saps_mean": 46.292696,
-    "neuralucb_mean": 39.062623,
-    "mean_diff": 7.230072,
-    "std_diff": 3.424402,
-    "t_statistic": 9.442193,
+    "neuralucb_mean": 38.313659,
+    "mean_diff": 7.979036,
+    "std_diff": 3.287281,
+    "t_statistic": 10.854969,
     "df": 19,
-    "p_value_two_sided": 1.3158514550765584e-08,
-    "ci_95_lower": 5.627403,
-    "ci_95_upper": 8.832742,
-    "cohen_d_paired": 2.111339
+    "p_value_two_sided": 1.3818504426700596e-09,
+    "ci_95_lower": 6.440541,
+    "ci_95_upper": 9.517531,
+    "cohen_d_paired": 2.427245
   },
   "ier": {
     "saps_mean": 0.0,
-    "neuralucb_mean": 0.002333,
-    "mean_diff": -0.002333,
-    "std_diff": 0.00563,
-    "t_statistic": -1.85349,
+    "neuralucb_mean": 0.002167,
+    "mean_diff": -0.002167,
+    "std_diff": 0.004623,
+    "t_statistic": -2.095856,
     "df": 19,
-    "p_value_two_sided": 0.07940637989065637,
-    "ci_95_lower": -0.004968,
-    "ci_95_upper": 0.000302,
-    "cohen_d_paired": -0.414453
+    "p_value_two_sided": 0.04972062869966618,
+    "ci_95_lower": -0.00433,
+    "ci_95_upper": -3e-06,
+    "cohen_d_paired": -0.468648
   },
   "source_files": [
     "evaluation/results/saps_60day_per_user.json",
     "evaluation/results/logs/NeuralUCB_60day_logs.json"
   ],
-  "computed_at": "2026-10-13T16:36:22.459326Z",
+  "computed_at": "2026-10-14T18:12:37.797467Z",
   "script": "evaluation/scripts/paired_t_test.py"
 }

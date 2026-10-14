@@ -43,9 +43,11 @@ class BanditModel(ABC):
 class LinUCBModel(BanditModel):
     """Disjoint linear UCB (Li et al., 2010)."""
 
-    def __init__(self, feature_dim: int, alpha: float = 1.0) -> None:
+    def __init__(self, feature_dim: int, alpha: float = 1.0, seed: int = 42) -> None:
         self.d = feature_dim
         self.alpha = alpha
+        # defensive: seed accepted for API symmetry with NeuralUCBModel; no RNG consumption in current implementation
+        self.seed = seed
         # Per-arm parameters (lazily initialised)
         self.A: Dict[str, np.ndarray] = {}  # d×d
         self.b: Dict[str, np.ndarray] = {}  # d×1
@@ -106,16 +108,20 @@ class NeuralUCBModel(BanditModel):
         learning_rate: float = 1e-3,
         alpha: float = 0.1,
         training_epochs: int = 10,
+        seed: int = 42,
     ) -> None:
         self.d = feature_dim
         self.alpha = alpha
         self.training_epochs = training_epochs
         self.lr = learning_rate
+        self.seed = seed
+        self._rng = np.random.default_rng(seed)
 
         try:
             import torch
             import torch.nn as nn
 
+            torch.manual_seed(seed)
             layers: list = []
             in_dim = feature_dim
             for _ in range(n_layers):
@@ -154,7 +160,6 @@ class NeuralUCBModel(BanditModel):
         with torch.no_grad():
             ctx_pred = self.net(x_tensor).item()
 
-        rng = np.random.default_rng()
         scores: List[Tuple[str, float]] = []
         for arm_id in candidate_ids:
             stats = self._arm_stats.get(arm_id)
@@ -165,7 +170,7 @@ class NeuralUCBModel(BanditModel):
                 arm_mean = 0.0
                 n_pulls = 0
             # UCB exploration bonus decays with pulls
-            exploration = self.alpha * rng.standard_normal() / np.sqrt(n_pulls + 1)
+            exploration = self.alpha * self._rng.standard_normal() / np.sqrt(n_pulls + 1)
             score = ctx_pred + arm_mean + exploration
             scores.append((arm_id, score))
 
@@ -370,6 +375,7 @@ class RecommenderAgent:
             return LinUCBModel(
                 feature_dim=params.get("feature_dim", 15),
                 alpha=params.get("alpha", 1.0),
+                seed=seed,
             )
         elif algo == "neural_ucb":
             params = rec_cfg.get("neural_ucb", {})
@@ -380,6 +386,7 @@ class RecommenderAgent:
                 learning_rate=params.get("learning_rate", 1e-3),
                 alpha=params.get("alpha", 0.1),
                 training_epochs=params.get("training_epochs", 10),
+                seed=seed,
             )
         elif algo == "random":
             return RandomModel(seed=seed)

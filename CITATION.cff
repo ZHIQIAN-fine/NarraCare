@@ -13,7 +13,7 @@ authors:
 date-released: 2026-10-17
 version: "1.0.0"
 license: MIT
-repository-code: "<fill-in-at-push>"
+repository-code: "https://github.com/ZHIQIAN-fine/NarraCare"
 keywords:
   - recommender-systems
   - contextual-bandits
