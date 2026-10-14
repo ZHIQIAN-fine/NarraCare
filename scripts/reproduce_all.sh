@@ -12,6 +12,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+# ── Save reference copies BEFORE experiments overwrite them ──────────
+REF_DIR=$(mktemp -d)
+trap "rm -rf $REF_DIR" EXIT
+for f in evaluation/results/*.json; do
+    [ -f "$f" ] && cp "$f" "$REF_DIR/$(basename "$f")"
+done
+
 echo "========================================"
 echo " NarraCare — Full Reproduction Pipeline"
 echo " Seed: 42 | Days: 60 | Users: 20"
@@ -62,18 +69,39 @@ echo "========================================"
 echo ""
 
 # ──────────────────────────────────────────────────────────────
-#  Verification: diff regenerated vs committed artefacts
+#  Verification: diff regenerated vs reference artefacts
+#  Works in both git-repo and tarball-unpack scenarios.
 # ──────────────────────────────────────────────────────────────
 echo "========================================"
-echo " Verification: diff regenerated vs committed"
+echo " Verification: diff regenerated vs reference"
 echo "========================================"
 echo ""
+
+# Helper: strip wall_time_s for timing-tolerant comparison (jq preferred, python3 fallback)
+strip_timing() {
+    if command -v jq >/dev/null 2>&1; then
+        jq -S 'del(.wall_time_s) | walk(if type=="object" then del(.wall_time_s) else . end)' "$1"
+    else
+        python3 -c "
+import json, sys
+def strip(o):
+    if isinstance(o, dict):
+        o.pop('wall_time_s', None)
+        for v in o.values(): strip(v)
+    elif isinstance(o, list):
+        for v in o: strip(v)
+with open(sys.argv[1]) as f: d = json.load(f)
+strip(d)
+print(json.dumps(d, sort_keys=True, indent=2))
+" "$1"
+    fi
+}
 
 PASS=0
 FAIL=0
 WARN=0
 
-# Deterministic artifacts — must be bit-identical after JSON normalisation
+# Deterministic artifacts — must be bit-identical
 DETERMINISTIC_ARTIFACTS=(
     "evaluation/results/saps_60day.json"
     "evaluation/results/saps_60day_per_user.json"
@@ -83,7 +111,13 @@ DETERMINISTIC_ARTIFACTS=(
 )
 
 for f in "${DETERMINISTIC_ARTIFACTS[@]}"; do
-    if git diff --exit-code -- "$f" > /dev/null 2>&1; then
+    REF="$REF_DIR/$(basename "$f")"
+    if [ ! -f "$REF" ]; then
+        echo "  ⚠️  SKIP  $f (no reference copy)"
+        WARN=$((WARN + 1))
+        continue
+    fi
+    if diff "$REF" "$f" > /dev/null 2>&1; then
         echo "  ✅ PASS  $f"
         PASS=$((PASS + 1))
     else
@@ -105,14 +139,18 @@ TIMING_ARTIFACTS=(
 )
 
 for f in "${TIMING_ARTIFACTS[@]}"; do
+    REF="$REF_DIR/$(basename "$f")"
     if [ ! -f "$f" ]; then
-        echo "  ⚠️  SKIP  $f (not found)"
+        echo "  ⚠️  SKIP  $f (not regenerated)"
         WARN=$((WARN + 1))
         continue
     fi
-    # Check if only wall_time_s differs
-    DIFF_LINES=$(git diff -- "$f" | grep '^[+-]' | grep -v '^[+-][+-][+-]' | grep -cv 'wall_time_s' || true)
-    if [ "$DIFF_LINES" -eq 0 ]; then
+    if [ ! -f "$REF" ]; then
+        echo "  ⚠️  SKIP  $f (no reference copy)"
+        WARN=$((WARN + 1))
+        continue
+    fi
+    if diff <(strip_timing "$REF") <(strip_timing "$f") > /dev/null 2>&1; then
         echo "  ✅ PASS  $f (timing-only diff OK)"
         PASS=$((PASS + 1))
     else
