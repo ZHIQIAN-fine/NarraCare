@@ -69,7 +69,7 @@ narrative:
 # Simulation
 simulation:
   n_users: 20
-  n_days: 30
+  n_days: 60
   interactions_per_day: 1
   pain_daily_variance: 1.5
   fatigue_daily_variance: 2.0
