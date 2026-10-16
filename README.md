@@ -178,8 +178,8 @@ are in `evaluation/scripts/paired_t_test.py`.
 
 Verification uses exact comparison for five files and removes only
 `wall_time_s` before comparing eight others. There is no numeric tolerance.
-The repaired version passed **13/13 comparisons, 0 FAIL, 0 SKIP** on two
-successive runs in the review environment. This is a same-environment result:
+A repeated run against regenerated references passed **13/13 comparisons,
+0 FAIL, 0 SKIP** in the review environment. This is a same-environment result:
 cross-machine BLAS differences around 1e-14 can still fail exact comparison.
 Inspect the printed summary because comparison failures do not currently force
 a nonzero script exit. Random and cold-start PASS lines compare existing files;

@@ -91,7 +91,7 @@ def run_and_save(label: str, algo: str, overrides: dict, filename_stem: str):
     # CSV
     cp = RESULTS_DIR / f"{filename_stem}.csv"
     with open(cp, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=per_user[0].keys())
+        w = csv.DictWriter(f, fieldnames=per_user[0].keys(), lineterminator="\n")
         w.writeheader()
         w.writerows(per_user)
 

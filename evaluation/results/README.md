@@ -80,7 +80,7 @@ in its module header. The NeuralUCB runner creates
 comparison. This generated log is excluded from Git and from the submission
 archive; run the producer before running that comparison.
 
-The repaired core passed 13/13 listed comparisons on successive local runs.
+A repeated core run passed 13/13 listed comparisons against regenerated references.
 Five comparisons are exact; eight strip `wall_time_s` only. This is not a
 cross-machine byte identity guarantee. A printed FAIL currently does not force
 a nonzero script exit, so inspect the summary. Random/cold-start comparison PASS
