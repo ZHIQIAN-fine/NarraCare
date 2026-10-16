@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "source_commit": "660e85aa2929ffa1c8a1a7fcbd05506a571945b9",
+  "fresh_extraction": true,
+  "dependencies": "Reused validated isolated agent environment; no claim of fresh dependency installation",
+  "agent_cli_help": "PASS",
+  "gradio_entry_help": "PASS",
+  "legacy_inspect": "PASS",
+  "legacy_60day_run": "PASS",
+  "legacy_60day_stdout_deterministic": "PASS",
+  "legacy_stdout_sha256": "330a2dee59c17a0d7424eac46402e835c39f07c9db378db14e10e95c58023af9",
+  "real_provider_cli_clarification_and_recommendation": "PASS",
+  "protected_files_unchanged_in_original_and_extracted": 91,
+  "frozen_result_files_unchanged": 36,
+  "tarball_sha256": "c0bb0b1001d7e681fcc5590ad450e160041b9b3bcd742328cdbec64b4a3252da"
+}

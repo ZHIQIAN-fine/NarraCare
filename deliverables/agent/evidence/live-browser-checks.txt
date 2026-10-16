@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "mode": "REAL gpt-4o-mini production Gradio",
+  "checks": [
+    {
+      "case": "clarification",
+      "result": "PASS",
+      "seconds": 1.395
+    },
+    {
+      "case": "flexibility recommendation",
+      "result": "PASS",
+      "seconds": 4.865
+    },
+    {
+      "case": "grounded explanation",
+      "result": "PASS",
+      "seconds": 1.356
+    },
+    {
+      "case": "preference changes actual retrieval and task",
+      "result": "PASS",
+      "seconds": 3.901
+    },
+    {
+      "case": "intention creates no reward or completion",
+      "result": "PASS",
+      "seconds": 1.387
+    },
+    {
+      "case": "actual reported feedback updates learning and trail",
+      "result": "PASS",
+      "seconds": 3.905
+    },
+    {
+      "case": "camp advances day without invented reward or trail step",
+      "result": "PASS",
+      "seconds": 1.405
+    }
+  ],
+  "pageErrors": []
+}
