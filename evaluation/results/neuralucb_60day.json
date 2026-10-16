@@ -3,10 +3,11 @@
   "n_days": 60,
   "n_users": 20,
   "n_interactions": 1200,
-  "wall_time_s": 84.1,
+  "wall_time_s": 53.7,
   "cum_reward_mean": 38.31,
   "ier_mean": 0.0022,
   "acceptance_rate_mean": 0.4942,
+  "svr": 0.0,
   "settings": {
     "hidden_dim": 32,
     "training_epochs": 5,

@@ -1,12 +1,15 @@
 {
   "method": "random",
   "n_days": 60,
-  "seed": 42,
   "n_users": 20,
   "n_interactions": 1200,
+  "seed": 42,
   "aggregate_metrics": {
     "cum_reward_mean": 45.93987746848399,
-    "cum_reward_std": 2.6202210054204382,
-    "ier_mean": 0.4081666666666667
+    "cum_reward_std": 2.6202210054204356,
+    "ier_mean": 0.4081666666666667,
+    "acceptance_rate": 0.7033333333333334,
+    "svr": 0.0,
+    "diversity_mean": 0.6308333333333334
   }
 }

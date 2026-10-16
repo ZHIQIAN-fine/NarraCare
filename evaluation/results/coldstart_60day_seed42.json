@@ -33,55 +33,55 @@
         "metrics": {
           "n_users": 15,
           "n_interactions": 900,
-          "cum_reward_mean": 45.83337319561943,
-          "cum_reward_std": 2.8854980807406734,
-          "ier_mean": 0.0,
-          "acceptance_rate_mean": 0.7022222222222222
+          "cum_reward_mean": 41.54729873579823,
+          "cum_reward_std": 2.8760912397346794,
+          "ier_mean": 0.02666666666666667,
+          "acceptance_rate_mean": 0.61
         },
-        "wall_time_s": 4.8
+        "wall_time_s": 3.6
       },
       "frozen_rollout": {
         "metrics": {
           "n_users": 5,
           "n_interactions": 300,
-          "cum_reward_mean": 47.84021626483069,
-          "cum_reward_std": 3.025155548504604,
-          "ier_mean": 0.0,
-          "acceptance_rate_mean": 0.7333333333333333,
+          "cum_reward_mean": 42.009242124473644,
+          "cum_reward_std": 3.389151879725572,
+          "ier_mean": 0.008,
+          "acceptance_rate_mean": 0.6133333333333333,
           "per_user": [
             {
               "user_id": "U011",
-              "cum_reward": 45.07095120551537,
+              "cum_reward": 42.108841405335866,
+              "ier": 0.013333333333333334,
+              "acceptance_rate": 0.6166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U012",
+              "cum_reward": 39.25256905237926,
+              "ier": 0.0,
+              "acceptance_rate": 0.5166666666666667,
+              "n_interactions": 60
+            },
+            {
+              "user_id": "U013",
+              "cum_reward": 43.11493124458331,
               "ier": 0.0,
               "acceptance_rate": 0.7166666666666667,
               "n_interactions": 60
             },
             {
-              "user_id": "U012",
-              "cum_reward": 46.01656796174625,
-              "ier": 0.0,
-              "acceptance_rate": 0.65,
-              "n_interactions": 60
-            },
-            {
-              "user_id": "U013",
-              "cum_reward": 52.41551675583963,
-              "ier": 0.0,
-              "acceptance_rate": 0.9,
-              "n_interactions": 60
-            },
-            {
               "user_id": "U014",
-              "cum_reward": 49.378436408268264,
-              "ier": 0.0,
-              "acceptance_rate": 0.7333333333333333,
+              "cum_reward": 47.02228562456003,
+              "ier": 0.02666666666666667,
+              "acceptance_rate": 0.6666666666666666,
               "n_interactions": 60
             },
             {
               "user_id": "U015",
-              "cum_reward": 46.31960899278391,
+              "cum_reward": 38.547583295509746,
               "ier": 0.0,
-              "acceptance_rate": 0.6666666666666666,
+              "acceptance_rate": 0.55,
               "n_interactions": 60
             }
           ]
@@ -92,63 +92,63 @@
         "metrics": {
           "n_users": 5,
           "n_interactions": 300,
-          "cum_reward_mean": 46.6560731047652,
-          "cum_reward_std": 2.102941011654319,
-          "ier_mean": 0.0,
-          "acceptance_rate_mean": 0.7333333333333334,
+          "cum_reward_mean": 43.351206983340816,
+          "cum_reward_std": 3.4023138482503428,
+          "ier_mean": 0.06266666666666668,
+          "acceptance_rate_mean": 0.6533333333333333,
           "per_user": [
             {
               "user_id": "U011",
-              "cum_reward": 43.872426995260156,
-              "ier": 0.0,
-              "acceptance_rate": 0.7,
+              "cum_reward": 41.837937192872765,
+              "ier": 0.09666666666666668,
+              "acceptance_rate": 0.6166666666666667,
               "n_interactions": 60
             },
             {
               "user_id": "U012",
-              "cum_reward": 45.585036185177906,
-              "ier": 0.0,
-              "acceptance_rate": 0.65,
+              "cum_reward": 41.094062794262356,
+              "ier": 0.013333333333333334,
+              "acceptance_rate": 0.5666666666666667,
               "n_interactions": 60
             },
             {
               "user_id": "U013",
-              "cum_reward": 48.42104789258564,
-              "ier": 0.0,
-              "acceptance_rate": 0.8333333333333334,
+              "cum_reward": 44.32670299136858,
+              "ier": 0.05333333333333334,
+              "acceptance_rate": 0.75,
               "n_interactions": 60
             },
             {
               "user_id": "U014",
-              "cum_reward": 49.02286927773315,
-              "ier": 0.0,
-              "acceptance_rate": 0.7166666666666667,
+              "cum_reward": 48.87546236845848,
+              "ier": 0.11999999999999998,
+              "acceptance_rate": 0.7333333333333333,
               "n_interactions": 60
             },
             {
               "user_id": "U015",
-              "cum_reward": 46.37898517306913,
-              "ier": 0.0,
-              "acceptance_rate": 0.7666666666666667,
+              "cum_reward": 40.62186956974191,
+              "ier": 0.030000000000000002,
+              "acceptance_rate": 0.6,
               "n_interactions": 60
             }
           ]
         },
-        "wall_time_s": 1.2
+        "wall_time_s": 1.1
       },
       "ttest_frozen_vs_retrained": {
         "reward": {
           "label": "frozen_vs_retrained_reward",
-          "mean_diff": 1.1841431600654886,
-          "t_stat": 1.6191209114928902,
-          "p_value": 0.1807338380714012,
+          "mean_diff": -1.3419648588671762,
+          "t_stat": -3.1346712682199755,
+          "p_value": 0.035027115624193486,
           "n": 5
         },
         "ier": {
           "label": "frozen_vs_retrained_ier",
-          "mean_diff": 0.0,
-          "t_stat": NaN,
-          "p_value": NaN,
+          "mean_diff": -0.054666666666666676,
+          "t_stat": -3.590762624072398,
+          "p_value": 0.02294621258772065,
           "n": 5
         }
       },
@@ -159,19 +159,19 @@
         "metrics": {
           "n_users": 15,
           "n_interactions": 900,
-          "cum_reward_mean": 41.13600188183738,
-          "cum_reward_std": 2.2780169367665195,
+          "cum_reward_mean": 41.136001881837366,
+          "cum_reward_std": 2.278016936766513,
           "ier_mean": 0.027333333333333334,
           "acceptance_rate_mean": 0.5933333333333334
         },
-        "wall_time_s": 3.2
+        "wall_time_s": 2.5
       },
       "frozen_rollout": {
         "metrics": {
           "n_users": 5,
           "n_interactions": 300,
-          "cum_reward_mean": 41.89999881534378,
-          "cum_reward_std": 3.48867246356893,
+          "cum_reward_mean": 41.89999881534377,
+          "cum_reward_std": 3.488672463568927,
           "ier_mean": 0.02133333333333333,
           "acceptance_rate_mean": 0.6033333333333333,
           "per_user": [
@@ -191,7 +191,7 @@
             },
             {
               "user_id": "U013",
-              "cum_reward": 44.12629018890074,
+              "cum_reward": 44.12629018890071,
               "ier": 0.02333333333333333,
               "acceptance_rate": 0.75,
               "n_interactions": 60
@@ -205,48 +205,48 @@
             },
             {
               "user_id": "U015",
-              "cum_reward": 39.10702949448668,
+              "cum_reward": 39.107029494486675,
               "ier": 0.016666666666666666,
               "acceptance_rate": 0.55,
               "n_interactions": 60
             }
           ]
         },
-        "wall_time_s": 1.1
+        "wall_time_s": 0.8
       },
       "retrained_rollout": {
         "metrics": {
           "n_users": 5,
           "n_interactions": 300,
           "cum_reward_mean": 43.218454625875815,
-          "cum_reward_std": 3.0724317727125348,
+          "cum_reward_std": 3.0724317727125343,
           "ier_mean": 0.06399999999999999,
           "acceptance_rate_mean": 0.63,
           "per_user": [
             {
               "user_id": "U011",
-              "cum_reward": 42.72093356959358,
+              "cum_reward": 42.720933569593576,
               "ier": 0.09666666666666668,
               "acceptance_rate": 0.6166666666666667,
               "n_interactions": 60
             },
             {
               "user_id": "U012",
-              "cum_reward": 41.303369833199206,
+              "cum_reward": 41.30336983319921,
               "ier": 0.05,
               "acceptance_rate": 0.5666666666666667,
               "n_interactions": 60
             },
             {
               "user_id": "U013",
-              "cum_reward": 46.08873185607708,
+              "cum_reward": 46.088731856077075,
               "ier": 0.05,
               "acceptance_rate": 0.8,
               "n_interactions": 60
             },
             {
               "user_id": "U014",
-              "cum_reward": 46.56040653062432,
+              "cum_reward": 46.56040653062433,
               "ier": 0.1,
               "acceptance_rate": 0.6333333333333333,
               "n_interactions": 60
@@ -260,21 +260,21 @@
             }
           ]
         },
-        "wall_time_s": 1.1
+        "wall_time_s": 0.9
       },
       "ttest_frozen_vs_retrained": {
         "reward": {
           "label": "frozen_vs_retrained_reward",
-          "mean_diff": -1.3184558105320376,
-          "t_stat": -2.053761207072012,
-          "p_value": 0.10922293704152752,
+          "mean_diff": -1.3184558105320447,
+          "t_stat": -2.0537612070720277,
+          "p_value": 0.10922293704152561,
           "n": 5
         },
         "ier": {
           "label": "frozen_vs_retrained_ier",
           "mean_diff": -0.04266666666666667,
           "t_stat": -2.714204574975907,
-          "p_value": 0.05330505632134267,
+          "p_value": 0.05330505632134268,
           "n": 5
         }
       },

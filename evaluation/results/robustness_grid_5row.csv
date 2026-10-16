@@ -1,6 +1,6 @@
-rule,ier,ier_delta,ier_p,svr,svr_delta,svr_p,reward,reward_delta,reward_p,acceptance
-PF_R1,0.02334,0.0,1.0,0.0,0.0,nan,41.9395,0.0,nan,0.6192
-PF_R2,0.018,-0.00534,0.161158,0.159585,0.159585,0.0,42.818,0.8785,0.156996,0.6392
-PF_R3,0.02334,0.0,nan,0.0,0.0,nan,41.9395,0.0,nan,0.6192
-PF_R4,0.021495,-0.001845,0.446753,0.01531,0.01531,0.002082,41.7249,-0.2146,0.667819,0.6158
-PF_R5,0.02334,0.0,nan,0.0,0.0,nan,41.9395,0.0,nan,0.6192
+rule,ier,ier_delta,ier_p,svr,svr_delta,svr_p,reward,reward_delta,reward_p,acceptance,solo_hit_count,note
+PF_R1,0.02334,0.0,1.0,0.0,0.0,,41.9395,0.0,,0.6192,3,"26 total catches, 23 overlap with PF_R2 -> solo=3 (redundantly protected)"
+PF_R2,0.018,-0.00534,0.161158,0.159585,0.159585,0.0,42.818,0.8785,0.156996,0.6392,131,"154 total catches, 23 overlap with PF_R1 -> solo=131 (dominant unique source)"
+PF_R3,0.02334,0.0,,0.0,0.0,,41.9395,0.0,,0.6192,0,"0 catches (structural zero, see §7.2.1)"
+PF_R4,0.021495,-0.001845,0.446753,0.01531,0.01531,0.002082,41.7249,-0.2146,0.667819,0.6158,14,"14 catches, 0 overlap -> solo=14"
+PF_R5,0.02334,0.0,,0.0,0.0,,41.9395,0.0,,0.6192,0,"0 catches (structural zero, see §7.2.1)"

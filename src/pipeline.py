@@ -112,6 +112,11 @@ class NarraCarePipeline:
             drop_rule=config_overrides.get("safety", {}).get("drop_rule")
             if config_overrides else None,
         )
+        # Observe all five runtime predicates even in NoSafety/one-drop runs.
+        # This auditor never filters recommendations or changes model state.
+        audit_config = copy.deepcopy(self.config)
+        audit_config.setdefault("safety", {})["enable"] = True
+        self._safety_auditor = SafetyAgent(audit_config)
         self.recommender = RecommenderAgent(self.config)
         # Old narrator — kept for backward compatibility (interactive mode)
         self.narrator_agent = NarratorAgent(self.config, mode="simulation")
@@ -355,10 +360,18 @@ class NarraCarePipeline:
         # 4b. IER: also rank on ALL candidates (before safety) to measure
         #     how many of bandit's top-K would have been blocked
         ier_k = 5
-        raw_top_k_all = self.recommender.recommend(
-            fv.to_numpy(), all_candidates, top_k_override=ier_k,
-        )
-        raw_top_k_ids = [t["task_id"] for t in raw_top_k_all]
+        if callable(getattr(_rec_model, "select_raw_topk", None)):
+            # SAPS.select applies its safe-arm gate even on all_candidates.
+            # Use the ungated ranking for both IER and the existing penalty
+            # updates below; do not add a second stochastic scoring pass.
+            raw_top_k_ids = _rec_model.select_raw_topk(
+                fv.to_numpy(), [t["task_id"] for t in all_candidates], ier_k,
+            )
+        else:
+            raw_top_k_all = self.recommender.recommend(
+                fv.to_numpy(), all_candidates, top_k_override=ier_k,
+            )
+            raw_top_k_ids = [t["task_id"] for t in raw_top_k_all]
         safe_candidate_ids = {t["task_id"] for t in safe_candidates}
         infeasible_in_top_k = [tid for tid in raw_top_k_ids if tid not in safe_candidate_ids]
 
@@ -790,8 +803,8 @@ class NarraCarePipeline:
         logger.info("Simulation finished: %d interactions.", len(logs))
         return logs
 
-    @staticmethod
     def _build_log(
+        self,
         uid: str,
         day: int,
         turn: int,
@@ -811,6 +824,15 @@ class NarraCarePipeline:
             if t.get("task_id") == chosen_id:
                 chosen_task = t
                 break
+        # SVR counts accepted tasks, not blocked candidates or skipped offers.
+        # Reuse the full five-rule pre-filter independently of runtime enable /
+        # drop_rule. Emotional caps and post-check dosage limits are not PF_R1-5.
+        if action == "accept" and not chosen_task:
+            raise ValueError(f"Accepted task {chosen_id!r} is absent from recommendations")
+        safety_violation = bool(
+            action == "accept"
+            and not self._safety_auditor.pre_filter([chosen_task], state, profile)
+        )
         # P7 — extract narrator v2 result for log fields
         narrator_result = result.get("narrator_result", {})
         return {
@@ -836,6 +858,7 @@ class NarraCarePipeline:
                 "applicable_stages": chosen_task.get("applicable_stages", []),
             },
             "action": action,
+            "safety_violation": safety_violation,
             "reward": reward,
             "post_state": dict(post_state),
             "feedback": dict(feedback) if feedback else {},

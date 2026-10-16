@@ -18,6 +18,8 @@ from typing import Any, Dict, List, Optional, Set
 
 import numpy as np
 
+from src.agents.safety_agent import SafetyAgent
+
 logger = logging.getLogger(__name__)
 
 
@@ -147,6 +149,11 @@ def safety_violation_rate(
            difficulty ≥ 4.
       V4 – **Severe-fatigue + non-rest**: user fatigue ≥ 8 and chosen task
            category is not ``rest`` or ``flexibility``.
+      V5 – **Limited ROM**: ROM < 60 and difficulty ≥ 3 or category ``cardio``.
+
+    New pipeline logs carry the five-rule ``safety_violation`` observation,
+    using the run's configured thresholds. Legacy logs are replayed through
+    SafetyAgent with default thresholds; the rule chain is not duplicated.
     """
     if not interactions:
         return 0.0
@@ -155,17 +162,18 @@ def safety_violation_rate(
 
     violations = 0
     accepted = 0
+    legacy_auditor = None
 
     for ix in interactions:
         if ix.get("action") != "accept":
             continue
         accepted += 1
 
+        if "safety_violation" in ix:
+            violations += bool(ix["safety_violation"])
+            continue
+
         state = ix.get("state", {})
-        pain = state.get("pain_level", 0)
-        fatigue = state.get("fatigue_level", 0)
-        user_contras = set(ix.get("user_contraindications", []))
-        user_stage = ix.get("user_stage", "")
         chosen_id = ix.get("chosen_task_id", "")
 
         if not chosen_id:
@@ -176,30 +184,13 @@ def safety_violation_rate(
         if not chosen or not chosen.get("task_id"):
             chosen = task_lookup.get(chosen_id, {})
 
-        task_contras = set(chosen.get("contraindications", []))
-        task_stages = chosen.get("applicable_stages", [])
-        difficulty = chosen.get("difficulty", 1)
-        category = chosen.get("category", "")
-
-        violated = False
-
-        # V1: Contraindication match
-        if user_contras & task_contras:
-            violated = True
-
-        # V2: Stage mismatch
-        if task_stages and user_stage and user_stage not in task_stages:
-            violated = True
-
-        # V3: High pain + high difficulty
-        if pain >= 7 and difficulty >= 4:
-            violated = True
-
-        # V4: Severe fatigue + non-rest
-        if fatigue >= 8 and category not in ("rest", "flexibility"):
-            violated = True
-
-        if violated:
+        if legacy_auditor is None:
+            legacy_auditor = SafetyAgent({"safety": {"enable": True}})
+        profile = {
+            "current_stage": ix.get("user_stage", ""),
+            "contraindications": ix.get("user_contraindications", []),
+        }
+        if not legacy_auditor.pre_filter([chosen], state, profile):
             violations += 1
 
     return violations / accepted if accepted > 0 else 0.0

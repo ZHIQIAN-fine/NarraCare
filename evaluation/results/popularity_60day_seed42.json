@@ -4,7 +4,7 @@
   "n_users": 20,
   "n_interactions": 1200,
   "seed": 42,
-  "wall_time_s": 1.8,
+  "wall_time_s": 1.4,
   "aggregate_metrics": {
     "cum_reward_mean": 39.0332,
     "cum_reward_std": 2.8777,

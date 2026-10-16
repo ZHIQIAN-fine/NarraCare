@@ -1,101 +1,92 @@
-# evaluation/results/ — Artifact Index
+# Evaluation artifact index
 
-> Auto-generated reference for all reproducible evaluation artefacts.
-> Each file is force-committed (bypassing `.gitignore`) when its producing
-> experiment is frozen.
+Current numerical results use ungated SAPS IER and explicit accepted-task
+five-rule SVR observations. They supersede the earlier gated-IER comparison.
+Static input data and narrator templates are unchanged. All current result
+claims in README and the report refer to the regenerated files below.
 
-## Main Method Comparison (§5.2)
+## Measurement
 
-| File | Commit | Description |
-|------|--------|-------------|
-| `saps_60day.json` | 469fd31 | SAPS vs LinUCB 60-day formal verification |
-| `neuralucb_60day.json` | 260508a | Post-fix NeuralUCB 60-day results |
-| `neural_ucb_prefix_60day_seed42.json` | 4703c37 | Pre-fix NeuralUCB ablation baseline |
-| `neural_ucb_prefix_60day_seed42_metrics.csv` | 4703c37 | Pre-fix per-user CSV |
+IER is the ungated all-candidate top-5 infeasible fraction. The feasible set
+also includes the emotional difficulty cap. The same infeasible set drives
+existing negative reward updates, so the repair changes SAPS learning.
+SVR checks accepted tasks against PF_R1-PF_R5. Main summary runners retain
+per-person macro averaging; pooled post-hoc replay uses all accepted tasks.
+NoSafety is therefore 0.2181 in its formal macro summary and 171/772 = 0.2215
+in pooled replay. These are different weights, not conflicting rule decisions.
 
-## Baseline Reruns (§5.2 Table 5.1)
+## Current policy comparisons
 
-| File | Commit | Description |
-|------|--------|-------------|
-| `popularity_60day_seed42.json` | 7c17d4c | Popularity baseline |
-| `rule_based_60day_seed42.json` | 7c17d4c | RuleBased baseline |
-| `epsilon_greedy_60day_seed42.json` | 7c17d4c | ε-Greedy baseline |
-| `linucb_nosafety_60day_seed42.json` | 7c17d4c | LinUCB with safety disabled |
+| File | Generator or source | Scope |
+|---|---|---|
+| `saps_60day.json` | `evaluation/run_saps_60day.py` | Current ungated IER / five-rule SVR |
+| `saps_60day_per_user.json` | `evaluation/run_saps_60day.py` | Current SAPS and LinUCB per-person arrays |
+| `linucb_60day.json` | `evaluation/run_60day.py --method linucb` | Separate LinUCB summary |
+| `random_60day.json` | `evaluation/run_60day.py --method random` | Separately regenerated Random summary |
+| `neuralucb_60day.json` | `evaluation/run_neuralucb_60day.py` | Modified neural reference, including observed SVR |
+| `neural_ucb_prefix_60day_seed42.json` | `evaluation/run_neuralucb_prefix_60day.py` | Historical architecture rerun, not current NeuralUCB |
+| `neural_ucb_prefix_60day_seed42_metrics.csv` | `evaluation/run_neuralucb_prefix_60day.py` | Historical architecture per-person data |
+| `popularity_60day_seed42.json` | `evaluation/run_baselines_60day.py` | Mean-reward popularity |
+| `popularity_60day_seed42.csv` | `evaluation/run_baselines_60day.py` | Per-person data |
+| `rule_based_60day_seed42.json` | `evaluation/run_baselines_60day.py` | Stable input-order reference |
+| `rule_based_60day_seed42.csv` | `evaluation/run_baselines_60day.py` | Per-person data |
+| `epsilon_greedy_60day_seed42.json` | `evaluation/run_baselines_60day.py` | Epsilon 0.1 reference |
+| `epsilon_greedy_60day_seed42.csv` | `evaluation/run_baselines_60day.py` | Per-person data |
+| `linucb_nosafety_60day_seed42.json` | `evaluation/run_baselines_60day.py` | Per-person mean SVR, 0.2181 |
+| `linucb_nosafety_60day_seed42.csv` | `evaluation/run_baselines_60day.py` | Per-person SVR uses accepted denominator |
+| `paired_t_saps_vs_linucb.json` | `evaluation/scripts/paired_t_test.py` | Regenerated fixed-cohort comparison |
+| `paired_t_saps_vs_neuralucb.json` | `evaluation/scripts/paired_t_test.py` | Regenerated fixed-cohort comparison |
 
-## Safety Analysis (§5.4)
+## Safety and narrative diagnostics
 
-| File | Commit | Description |
-|------|--------|-------------|
-| `posthoc_svr_60day_seed42.json` | 965802c | Post-hoc SVR replay (per-rule breakdown) |
-| `nosafety_svr_posthoc_full.json` | 897f4e9 | Full breakdown with overlap matrix |
-| `svr_posthoc_rule_full.json` | 37cd39f | Q1–Q4 fact-check comprehensive |
-| `robustness_grid_5row.json` | aa8ada2 | One-drop robustness grid (with solo_hit) |
-| `robustness_grid_5row.csv` | aa8ada2 | Grid CSV for Table import |
-| `robustness_grid_summary.json` | dd052f8 | Grid + solo-hit summary |
+| File | Generator or source | Scope |
+|---|---|---|
+| `posthoc_svr_60day_seed42.json` | `evaluation/svr_narrator_invariants.py` | Pooled accepted-task replay |
+| `nosafety_svr_posthoc_full.json` | `evaluation/nosafety_svr_full.py` | 171/772 unique accepted-task violations |
+| `svr_posthoc_rule_full.json` | `evaluation/q1q4_factcheck.py` | Rule inventory and replay |
+| `robustness_grid_5row.json` | `evaluation/robustness_grid.py` | One-rule-drop grid |
+| `robustness_grid_5row.csv` | `evaluation/robustness_grid.py` | Grid table data |
+| `robustness_grid_summary.json` | `retained derived summary` | Same LinUCB grid, unchanged numeric results |
+| `narrator_invariants_60day_seed42.json` | `evaluation/svr_narrator_invariants.py` | Initial diagnostic, superseded by v2 for I3 |
+| `narrator_invariants_v2_60day_seed42.json` | `evaluation/q1q4_factcheck.py` | Corrected slot/closing wiring audit |
+| `narrative_samples_60.json` | `evaluation/narrative_sampler.py` | Regenerated, identical LinUCB sample texts |
+| `narrative_eval_scores_run2_colab_3axis.json` | `retained external judge run` | No new API call; scores remain attached to sample texts |
+| `narrative_eval_summary.json` | `offline aggregation of retained judge scores` | Descriptive ratings, no patient efficacy claim |
 
-## Narrator Analysis (§5.5)
+## Cold start and measurement provenance
 
-| File | Commit | Description |
-|------|--------|-------------|
-| `narrator_invariants_60day_seed42.json` | 965802c | Initial diagnostic; superseded by v2 for I3 |
-| `narrator_invariants_v2_60day_seed42.json` | 37cd39f | Corrected I1/I3 invariants |
-| `narrative_samples_60.json` | aa8ada2 | 60 stratified narrative samples |
-| `narrative_eval_scores_run2_colab_3axis.json` | aa8ada2 | LLM-as-Judge per-sample scores (gpt-4o-mini, 3-axis) |
-| `narrative_eval_summary.json` | aa8ada2 | Aggregated narrative eval + CI95 |
+| File | Generator or source | Scope |
+|---|---|---|
+| `coldstart_60day_seed42.json` | `evaluation/run_coldstart.py` | Regenerated repaired SAPS and unchanged LinUCB transfer |
+| `coldstart_posteriors_saps.json` | `evaluation/run_coldstart.py` | Regenerated training posterior snapshot |
+| `coldstart_posteriors_linucb.json` | `evaluation/run_coldstart.py` | Regenerated training posterior snapshot |
+| `measurement_provenance.json` | `release validation` | Semantics, source/input hashes and validation scope |
+| `saps_60day_pre_wiring.json` | `retained historical run` | Excluded from current comparison; old implementation |
 
-## Cold-Start Transfer (§7.4)
-
-| File | Commit | Description |
-|------|--------|-------------|
-| `coldstart_60day_seed42.json` | (R2.7) | Main cold-start result |
-| `coldstart_posteriors_saps.json` | (R2.7) | SAPS frozen posteriors (100 arms) |
-| `coldstart_posteriors_linucb.json` | (R2.7) | LinUCB frozen posteriors (100 arms) |
-
-## Reproduction
+## Reproduction commands
 
 ```bash
-# Full reproduction (~5 min)
 bash scripts/reproduce_all.sh
-
-# Cold-start only (~30 sec)
 bash scripts/reproduce_coldstart.sh
-
-# LLM-as-Judge (requires OpenAI key, run in Colab)
-# See the header of evaluation/llm_judge_colab.py
+python evaluation/run_60day.py --method random
+python evaluation/run_60day.py --method linucb
 ```
 
-## Schema provenance
+The core script regenerates its experiment stages and compares 13 listed files,
+but Random/cold-start require the separate commands above. Two current paired
+comparisons use `evaluation/scripts/paired_t_test.py`; executable examples are
+in its module header. The NeuralUCB runner creates
+`evaluation/results/logs/NeuralUCB_60day_logs.json`, required by the second
+comparison. This generated log is excluded from Git and from the submission
+archive; run the producer before running that comparison.
 
-Two artifacts in this directory were originally hand-assembled from real
-pipeline outputs during the R2.6→R2.8 rapid-iteration phase, rather than
-written by their generator scripts:
+The repaired core passed 13/13 listed comparisons on successive local runs.
+Five comparisons are exact; eight strip `wall_time_s` only. This is not a
+cross-machine byte identity guarantee. A printed FAIL currently does not force
+a nonzero script exit, so inspect the summary. Random/cold-start comparison PASS
+alone does not mean regeneration. External judge scores are preserved rather
+than rerun; optional judging requires an API key, unlike the demos.
 
-- `saps_60day.json` (committed in `d6b0d22`): assembled from an ad-hoc
-  inline Python script that drove `NarraCarePipeline.run_simulation()`
-  and read posteriors directly off the model. Core metrics
-  (cum_reward=46.2927, posteriors 96-arm Beta values) were
-  cross-verified against an independent run dump in `smoke_saps_posterior`
-  (bit-identical). CI95 endpoints were refreshed by 2e-14 to match
-  the deterministic scipy output (original in-memory array was GC'd).
-- `robustness_grid_5row.json` (committed in `dd052f8`): post-hoc patched
-  to add `solo_hit_count` + `note` fields and to replace `NaN` with `null`.
-  The `solo_hit_count` values are exactly derivable from
-  `nosafety_svr_posthoc_full.json` via `per_rule_hits − overlap_matrix`.
-
-R2.8-rev2 ported both manual steps into the generator scripts
-(`run_saps_60day.py`, `robustness_grid.py`). `reproduce_all.sh` includes both generation steps. Cross-environment exact
-comparison can still detect floating-point differences around 1e-14; the
-verification code does not apply numeric tolerance. No core metric was altered.
-
-## Verification scope
-
-The script compares 13 listed files, but does not regenerate Random or cold-start
-in that invocation. Run cold-start separately. Paired-test artifacts and external
-judge scores are separate workflows. The audit observed 11/13 comparisons pass;
-the two SAPS differences were last-place floats with unchanged reported values.
-A printed FAIL does not force a nonzero shell exit code.
-
-Five-day legacy logs and an obsolete process log were removed. The 60-day
-NeuralUCB log is generated by its formal runner and remains required by the
-paired-test/historical comparison workflow. Frozen numerical JSON/CSV files
-were not changed by cleanup. See ../../docs/implementation_notes.md.
+The retained `saps_60day_pre_wiring.json` and initial narrator diagnostic are
+explicit historical references, not evidence for current SAPS performance.
+See ../../docs/implementation_notes.md for remaining implementation limits.

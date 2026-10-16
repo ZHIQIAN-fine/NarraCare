@@ -13,6 +13,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 logging.basicConfig(level=logging.WARNING)
 
 from src.pipeline import NarraCarePipeline
+from evaluation.metrics import safety_violation_rate
 
 N_DAYS = 60
 RESULTS_DIR = PROJECT_ROOT / "evaluation" / "results"
@@ -40,8 +41,7 @@ def run_and_save(label: str, algo: str, overrides: dict, filename_stem: str):
         acc = sum(1 for x in ul if x.get("action") == "accept") / n if n else 0
         ier_vals = [x.get("ier", 0) for x in ul if x.get("ier") is not None]
         ier = float(np.mean(ier_vals)) if ier_vals else 0.0
-        svr_cnt = sum(1 for x in ul if x.get("safety_violation", False))
-        svr = svr_cnt / n if n else 0.0
+        svr = safety_violation_rate(ul)
         ts = sum(
             1 for x in ul
             if x.get("action") == "accept"
