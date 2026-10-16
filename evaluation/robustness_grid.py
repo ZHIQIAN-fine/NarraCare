@@ -254,7 +254,7 @@ print(f"\n✓ Saved: {out_path}")
 # CSV for easy copy-paste into report table
 csv_path = RESULTS_DIR / "robustness_grid_5row.csv"
 with open(csv_path, "w", newline="") as f:
-    w = csv.DictWriter(f, fieldnames=grid_rows[0].keys())
+    w = csv.DictWriter(f, fieldnames=grid_rows[0].keys(), lineterminator="\n")
     w.writeheader()
     w.writerows(grid_rows)
 print(f"✓ Saved: {csv_path.name}")

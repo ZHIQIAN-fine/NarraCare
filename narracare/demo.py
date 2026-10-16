@@ -246,7 +246,7 @@ def print_trajectory(data: dict, policy: str) -> None:
     summary = data["summary"]
     print("=== Trajectory Summary ===")
     print(f"Cumulative reward: {summary['reward']:.2f}")
-    print(f"SVR: {summary['SVR']:.4f} ({summary['violations']} severe violations)")
+    print(f"SVR: {summary['SVR']:.4f} ({summary['violations']} five-rule violations)")
     print(f"IER: {summary['IER']:.4f}")
     # Retain actual transitions, including a repeated act after another act.
     progression = []

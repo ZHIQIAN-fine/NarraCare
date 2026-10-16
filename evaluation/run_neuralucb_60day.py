@@ -15,6 +15,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 logging.basicConfig(level=logging.WARNING)
 
 from src.pipeline import NarraCarePipeline
+from evaluation.metrics import safety_violation_rate
 
 N_DAYS = 60
 
@@ -93,6 +94,7 @@ result = {
     "cum_reward_mean": round(mean_cr, 2),
     "ier_mean": round(mean_ier, 4),
     "acceptance_rate_mean": round(mean_acc, 4),
+    "svr": safety_violation_rate(logs),
     "settings": {"hidden_dim": 32, "training_epochs": 5, "alpha": 0.01, "safety_lambda": 3.0},
     "verification": {"cum_reward_in_range": v1, "ier_below_threshold": v2},
 }

@@ -16,6 +16,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 logging.basicConfig(level=logging.WARNING)
 
 from src.pipeline import NarraCarePipeline
+from evaluation.metrics import safety_violation_rate
 
 N_DAYS = 60
 SEED = 42
@@ -46,8 +47,7 @@ def run_method(algo: str, extra_overrides: dict = None) -> dict:
         acc_vals.append(acc)
         ier_per = [ix.get("ier", 0) for ix in ulogs if ix.get("ier") is not None]
         ier_vals.append(np.mean(ier_per) if ier_per else 0)
-        svr_per = [1 for ix in ulogs if ix.get("safety_violation", False)]
-        svr_vals.append(len(svr_per) / n if n else 0)
+        svr_vals.append(safety_violation_rate(ulogs))
         tasks = set(ix.get("chosen_task_id", "") for ix in ulogs)
         div_vals.append(len(tasks) / n if n else 0)
 

@@ -4,13 +4,13 @@
   "n_users": 20,
   "n_interactions": 1200,
   "seed": 42,
-  "wall_time_s": 4.6,
+  "wall_time_s": 3.5,
   "aggregate_metrics": {
     "cum_reward_mean": 42.5884,
     "cum_reward_std": 2.7095,
     "ier_mean": 0.0148,
     "acceptance_rate": 0.6433,
-    "svr": 0.0,
+    "svr": 0.2181,
     "diversity_mean": 0.5917
   },
   "per_user_metrics": [
@@ -19,7 +19,7 @@
       "cum_reward": 45.1566,
       "ier": 0.0,
       "acceptance_rate": 0.75,
-      "svr": 0.0,
+      "svr": 0.1333,
       "task_success_rate": 0.75,
       "diversity": 0.7
     },
@@ -28,7 +28,7 @@
       "cum_reward": 41.6901,
       "ier": 0.0167,
       "acceptance_rate": 0.5667,
-      "svr": 0.0,
+      "svr": 0.3235,
       "task_success_rate": 0.55,
       "diversity": 0.55
     },
@@ -37,7 +37,7 @@
       "cum_reward": 44.9557,
       "ier": 0.0133,
       "acceptance_rate": 0.75,
-      "svr": 0.0,
+      "svr": 0.0889,
       "task_success_rate": 0.7,
       "diversity": 0.6167
     },
@@ -46,7 +46,7 @@
       "cum_reward": 41.3603,
       "ier": 0.0267,
       "acceptance_rate": 0.6167,
-      "svr": 0.0,
+      "svr": 0.4324,
       "task_success_rate": 0.5,
       "diversity": 0.5333
     },
@@ -55,7 +55,7 @@
       "cum_reward": 36.8496,
       "ier": 0.0067,
       "acceptance_rate": 0.4167,
-      "svr": 0.0,
+      "svr": 0.12,
       "task_success_rate": 0.4,
       "diversity": 0.6167
     },
@@ -64,7 +64,7 @@
       "cum_reward": 44.5586,
       "ier": 0.03,
       "acceptance_rate": 0.6833,
-      "svr": 0.0,
+      "svr": 0.2195,
       "task_success_rate": 0.65,
       "diversity": 0.55
     },
@@ -73,7 +73,7 @@
       "cum_reward": 42.6383,
       "ier": 0.0067,
       "acceptance_rate": 0.6833,
-      "svr": 0.0,
+      "svr": 0.1463,
       "task_success_rate": 0.65,
       "diversity": 0.7
     },
@@ -82,7 +82,7 @@
       "cum_reward": 43.5389,
       "ier": 0.0033,
       "acceptance_rate": 0.7167,
-      "svr": 0.0,
+      "svr": 0.2093,
       "task_success_rate": 0.7,
       "diversity": 0.7167
     },
@@ -91,7 +91,7 @@
       "cum_reward": 42.6743,
       "ier": 0.0467,
       "acceptance_rate": 0.6333,
-      "svr": 0.0,
+      "svr": 0.2895,
       "task_success_rate": 0.5667,
       "diversity": 0.55
     },
@@ -100,7 +100,7 @@
       "cum_reward": 43.7414,
       "ier": 0.01,
       "acceptance_rate": 0.7333,
-      "svr": 0.0,
+      "svr": 0.2273,
       "task_success_rate": 0.65,
       "diversity": 0.5833
     },
@@ -109,7 +109,7 @@
       "cum_reward": 42.3358,
       "ier": 0.0267,
       "acceptance_rate": 0.65,
-      "svr": 0.0,
+      "svr": 0.2051,
       "task_success_rate": 0.55,
       "diversity": 0.5333
     },
@@ -118,7 +118,7 @@
       "cum_reward": 35.3623,
       "ier": 0.0167,
       "acceptance_rate": 0.3667,
-      "svr": 0.0,
+      "svr": 0.0909,
       "task_success_rate": 0.3333,
       "diversity": 0.5667
     },
@@ -127,7 +127,7 @@
       "cum_reward": 42.3974,
       "ier": 0.0033,
       "acceptance_rate": 0.7,
-      "svr": 0.0,
+      "svr": 0.3333,
       "task_success_rate": 0.6667,
       "diversity": 0.7
     },
@@ -136,7 +136,7 @@
       "cum_reward": 46.6824,
       "ier": 0.04,
       "acceptance_rate": 0.6333,
-      "svr": 0.0,
+      "svr": 0.1579,
       "task_success_rate": 0.6333,
       "diversity": 0.4667
     },
@@ -145,7 +145,7 @@
       "cum_reward": 39.7896,
       "ier": 0.0133,
       "acceptance_rate": 0.6,
-      "svr": 0.0,
+      "svr": 0.1667,
       "task_success_rate": 0.5333,
       "diversity": 0.5333
     },
@@ -154,7 +154,7 @@
       "cum_reward": 44.3766,
       "ier": 0.01,
       "acceptance_rate": 0.7,
-      "svr": 0.0,
+      "svr": 0.1905,
       "task_success_rate": 0.7,
       "diversity": 0.55
     },
@@ -163,7 +163,7 @@
       "cum_reward": 42.6845,
       "ier": 0.01,
       "acceptance_rate": 0.5833,
-      "svr": 0.0,
+      "svr": 0.2286,
       "task_success_rate": 0.5833,
       "diversity": 0.5
     },
@@ -172,7 +172,7 @@
       "cum_reward": 46.2008,
       "ier": 0.0,
       "acceptance_rate": 0.7833,
-      "svr": 0.0,
+      "svr": 0.3191,
       "task_success_rate": 0.7333,
       "diversity": 0.6
     },
@@ -181,7 +181,7 @@
       "cum_reward": 42.4242,
       "ier": 0.0133,
       "acceptance_rate": 0.5833,
-      "svr": 0.0,
+      "svr": 0.2,
       "task_success_rate": 0.5667,
       "diversity": 0.55
     },
@@ -190,7 +190,7 @@
       "cum_reward": 42.3513,
       "ier": 0.0033,
       "acceptance_rate": 0.7167,
-      "svr": 0.0,
+      "svr": 0.2791,
       "task_success_rate": 0.6167,
       "diversity": 0.7167
     }

@@ -4,32 +4,32 @@
   "sample_size_users": 20,
   "seed": 42,
   "reward": {
-    "saps_mean": 46.292696,
+    "saps_mean": 42.018239,
     "linucb_mean": 41.939528,
-    "mean_diff": 4.353167,
-    "std_diff": 2.331122,
-    "t_statistic": 8.351322,
+    "mean_diff": 0.078711,
+    "std_diff": 1.057669,
+    "t_statistic": 0.332811,
     "df": 19,
-    "p_value_two_sided": 8.800358273420974e-08,
-    "ci_95_lower": 3.262168,
-    "ci_95_upper": 5.444166,
-    "cohen_d_paired": 1.867412
+    "p_value_two_sided": 0.7429209502722757,
+    "ci_95_lower": -0.416294,
+    "ci_95_upper": 0.573715,
+    "cohen_d_paired": 0.074419
   },
   "ier": {
-    "saps_mean": 0.0,
+    "saps_mean": 0.022333,
     "linucb_mean": 0.023333,
-    "mean_diff": -0.023333,
-    "std_diff": 0.01451,
-    "t_statistic": -7.191816,
+    "mean_diff": -0.001,
+    "std_diff": 0.009119,
+    "t_statistic": -0.490414,
     "df": 19,
-    "p_value_two_sided": 7.84964953369502e-07,
-    "ci_95_lower": -0.030124,
-    "ci_95_upper": -0.016543,
-    "cohen_d_paired": -1.608139
+    "p_value_two_sided": 0.6294562020426397,
+    "ci_95_lower": -0.005268,
+    "ci_95_upper": 0.003268,
+    "cohen_d_paired": -0.10966
   },
   "source_files": [
     "evaluation/results/saps_60day_per_user.json"
   ],
-  "computed_at": "2026-10-13T16:36:22.447963Z",
+  "computed_at": "2026-10-16T11:46:19.599911Z",
   "script": "evaluation/scripts/paired_t_test.py"
 }

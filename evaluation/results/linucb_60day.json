@@ -5,8 +5,8 @@
   "n_interactions": 1200,
   "seed": 42,
   "aggregate_metrics": {
-    "cum_reward_mean": 41.93952848883593,
-    "cum_reward_std": 3.001503049144294,
+    "cum_reward_mean": 41.939528488835926,
+    "cum_reward_std": 3.0015030491442967,
     "ier_mean": 0.02333333333333333,
     "acceptance_rate": 0.6191666666666666,
     "svr": 0.0,

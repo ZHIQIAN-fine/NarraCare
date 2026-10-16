@@ -92,6 +92,7 @@ _rec_mod._MODEL_REGISTRY["neural_ucb"] = _NeuralUCBModelPreFix
 
 # NOW import the pipeline (it will use the patched class)
 from src.pipeline import NarraCarePipeline
+from evaluation.metrics import safety_violation_rate
 
 # ═════════════════════════════════════════════════════════════════════════
 # Configuration — identical to post-fix run
@@ -154,8 +155,7 @@ for uid in sorted(user_logs.keys()):
     acc = sum(1 for ix in ulogs if ix.get("action") == "accept") / n if n else 0
     ier_per = [ix.get("ier", 0) for ix in ulogs if ix.get("ier") is not None]
     ier_mean = float(np.mean(ier_per)) if ier_per else 0.0
-    svr_count = sum(1 for ix in ulogs if ix.get("safety_violation", False))
-    svr = svr_count / n if n else 0.0
+    svr = safety_violation_rate(ulogs)
     task_success = sum(
         1 for ix in ulogs
         if ix.get("action") == "accept" and ix.get("feedback", {}).get("completed", False)
