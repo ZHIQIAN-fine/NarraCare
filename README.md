@@ -248,3 +248,32 @@ and weak reference policies; see the implementation notes.
 ## License and citation
 
 MIT; see [LICENSE](LICENSE). Software metadata: [CITATION.cff](CITATION.cff).
+
+## Live conversational agent
+
+The existing CLI and single-file HTML demo above remain unchanged. A separate
+LLM tool-calling agent adds natural-language check-ins, clarification, preference
+memory, catalogue retrieval, SAPS ranking, grounded explanations and actual
+reported feedback. Its Gradio interface combines a companion mountain trail,
+`ChatInterface`, and a live state/tool-activity panel.
+
+```bash
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-agent.txt
+# Set OPENAI_API_KEY securely in your environment, not in source.
+python -m narracare.agent --user U001 --seed 42
+python -m narracare.agent_app --port 7860
+```
+
+Default model: `gpt-4o-mini`. Optional `NARRACARE_LLM_MODEL` and
+`NARRACARE_LLM_BASE_URL` configure an OpenAI-compatible HTTPS endpoint.
+`NARRACARE_LLM_API_KEY` is an alternative secret variable for cloud environments.
+This **live agent requires network access and a provider key**; it never falls
+back to a scripted agent. The old benchmark demo remains offline. Use synthetic
+inputs only: chat and session context go to the configured provider. ACL/RC are
+postoperative profiles; BP is chronic back pain, not back surgery. This is not a
+clinical service. Gradio binds to loopback with public sharing disabled.
+
+See [agent architecture and Section 4 capability mapping](docs/conversational_agent.md)
+for tool contracts, feedback provenance, the demo dialogue and verification.
+No benchmark results are rewritten by this entry point.
