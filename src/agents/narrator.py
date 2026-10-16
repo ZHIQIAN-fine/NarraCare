@@ -1,5 +1,5 @@
 """
-NarraCare Narrator Agent — v1.3.1 Final
+NarraCare Narrator Agent — v1.3.2 Final
 ========================================
 
 Produces natural-language prompts that frame each pipeline step

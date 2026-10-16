@@ -96,7 +96,7 @@ NarraCare/
 ├── report/
 │   └── pf_rules_permalink.md  # PF_R1–R5 permanent reference
 ├── demo/
-│   └── app.py             # Streamlit demo (separate)
+│   └── index.html         # Static HTML trail viewer (open in browser)
 ├── tests/
 ├── .env.example
 ├── CITATION.cff
@@ -146,6 +146,21 @@ print(f"Sample: {logs[0]['user_id']}, day {logs[0]['day']}, "
 bash scripts/reproduce_all.sh     # ~5 min, seed 42
 bash scripts/reproduce_coldstart.sh   # ~30 sec
 ```
+
+### Run the demonstration
+
+**CLI demo** (requires `pip install -r requirements.txt`):
+
+```bash
+python -m narracare --user U001 --days 60 --policy saps   # single-policy walkthrough
+python -m narracare --compare saps,linucb,neuralucb        # frozen-artifact comparison
+python -m narracare --inspect                               # static system inspection
+```
+
+**HTML trail viewer** (no installation required):
+
+Open `demo/index.html` directly in any modern browser to inspect
+9 pre-embedded trajectories (3 users × 3 policies × 60 days).
 
 ---
 

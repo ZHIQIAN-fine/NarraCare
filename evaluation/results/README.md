@@ -40,7 +40,7 @@
 | `narrator_invariants_60day_seed42.json` | 965802c | Initial invariant check |
 | `narrator_invariants_v2_60day_seed42.json` | 37cd39f | Corrected I1/I3 invariants |
 | `narrative_samples_60.json` | aa8ada2 | 60 stratified narrative samples |
-| `narrative_llm_scores_60.json` | aa8ada2 | LLM-as-Judge scores (subagent) |
+| `narrative_eval_scores_run2_colab_3axis.json` | aa8ada2 | LLM-as-Judge per-sample scores (gpt-4o-mini, 3-axis) |
 | `narrative_eval_summary.json` | aa8ada2 | Aggregated narrative eval + CI95 |
 
 ## Cold-Start Transfer (§7.4)
