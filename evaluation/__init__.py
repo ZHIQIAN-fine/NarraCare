@@ -1,8 +1,6 @@
-"""Evaluation sub-package for the NarraCare rehabilitation recommender.
+"""Evaluation metrics, formal experiment runners and stored result artifacts.
 
-Exports
--------
-- ``metrics``    — offline / beyond-accuracy / interactive metric functions
-- ``llm_judge``  — LLM-as-judge quality evaluation
-- ``run_experiments`` — full experiment & ablation runner
+Main reproduction: scripts/reproduce_all.sh and scripts/reproduce_coldstart.sh.
+Reported paired comparisons: evaluation/scripts/paired_t_test.py.
+Optional external narrative scoring: evaluation/llm_judge_colab.py.
 """

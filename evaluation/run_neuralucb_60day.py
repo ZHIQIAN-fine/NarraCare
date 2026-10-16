@@ -101,6 +101,7 @@ with open(results_dir / "neuralucb_60day.json", "w") as f:
     json.dump(result, f, indent=2, default=lambda o: bool(o) if isinstance(o, (np.bool_,)) else float(o) if isinstance(o, (np.floating, np.integer)) else str(o))
 
 # Save logs
+(results_dir / "logs").mkdir(parents=True, exist_ok=True)
 with open(results_dir / "logs" / "NeuralUCB_60day_logs.json", "w") as f:
     json.dump(logs, f, default=lambda o: bool(o) if isinstance(o, (np.bool_,)) else float(o) if isinstance(o, (np.floating, np.integer)) else str(o))
 

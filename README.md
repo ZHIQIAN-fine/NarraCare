@@ -1,340 +1,237 @@
-# 🏥 NarraCare
+# NarraCare
 
-**A Safety-Aware Narrative Recommender for 60-Day Rehabilitation**
+A safety-aware narrative recommender for simulated musculoskeletal rehabilitation.
+CA6124 Group Project, 2026 Semester 1.
 
-> CA6124 Recommender Systems — 2026 Semester 1 Group Project
+## Overview
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
+NarraCare recommends rehabilitation exercises from patient context and feedback,
+with a Safety Agent and a template-based Narrator. All data is synthetic:
+20 personas, 100 tasks and a 60-day evaluation horizon. This is a coursework
+prototype, not a clinically validated treatment system.
 
----
+SAPS combines disjoint LinUCB reward UCB with a sampled Beta safety bonus.
+It also has an internal safe-arm gate. Its zero recorded IER describes that
+**gated policy**, not an unconstrained learner operating without filtering.
 
-## 1. Overview
+## System architecture
 
-NarraCare is a multi-agent rehabilitation exercise recommender that combines
-**contextual bandits**, a **56-rule safety framework**, and a **3-Act narrative
-engine** to deliver personalised, safe, and motivating 60-day rehabilitation
-plans through simulated conversational interaction.
+Actual daily execution in `src/pipeline.py`:
 
-The system supports patients recovering from ACL reconstruction, rotator cuff
-repair, and chronic lower back pain. It recommends exercises from a 100-task
-catalogue while enforcing clinical safety constraints in real time.
-
-**Key contributions:**
-- **SAPS** (Safety-Aware Personalised Selection) — a novel algorithm combining
-  LinUCB reward backbone with Thompson-sampled Beta safety posteriors.
-  Pareto-dominates LinUCB on both Infeasible Exploration Rate and Cumulative
-  Reward.
-- **Cold-start transfer** — SAPS posteriors trained on ACL + Rotator-Cuff
-  transfer to Back-Pain with zero IER and no statistically significant reward
-  degradation (§7.4).
-- **56-rule safety framework** — 5 runtime pre-filter rules + 51 design-time
-  clinical definitions achieving SVR = 0.000 across all safe-mode experiments.
-
----
-
-## 2. System Architecture
-
-```
-┌────────────────────────────────────────────────────────────────┐
-│                     NarraCare Pipeline                          │
-│                                                                 │
-│  ┌───────────┐    ┌──────────────┐    ┌────────────────────┐   │
-│  │  User      │───▶│ User         │───▶│ Recommender Agent  │   │
-│  │ Simulator  │    │Understanding │    │ (LinUCB / SAPS /   │   │
-│  │ (EU-Sim)   │    │ Agent        │    │  NeuralUCB / ...)  │   │
-│  └───────────┘    └──────────────┘    └─────────┬──────────┘   │
-│                                                  │              │
-│                                        ┌─────────▼──────────┐   │
-│  ┌───────────┐    ┌──────────────┐    │  Safety Agent       │   │
-│  │  Narrator  │◀───│ Reward       │◀───│  (5 pre-filter +   │   │
-│  │  (3-Act)   │    │ Composer     │    │   51 clinical defs) │   │
-│  └───────────┘    └──────────────┘    └────────────────────┘   │
-└────────────────────────────────────────────────────────────────┘
+```text
+User Simulator state -> patient features and memory
+  -> Safety pre-filter and emotional difficulty cap
+  -> Recommender -> Safety post-check -> template Narrator
+  -> simulated user choice and feedback -> Reward Composer
+  -> model updates -> Narrator daily closing
 ```
 
-### Module Layout
+The five demonstrated components are User Simulator, Recommender, Safety Agent,
+Narrator and Reward Composer. Reward calculation lives in `src/simulator.py`
+and is invoked by the pipeline. Active recommendation models are defined in
+`src/agents/recommender.py` and `src/policies/saps.py`. `src/models/` is an older,
+separate implementation stack, not the factory used by the formal experiments.
 
-```
-NarraCare/
-├── configs/               # YAML configuration files
-│   ├── default.yaml       # Main configuration
-│   └── coldstart.yaml     # Cold-start experiment config
-├── data/                  # Static data assets (project root)
-│   ├── user_profiles.json # 20 user personas (ACL/RC/Back-Pain)
-│   ├── task_library.json  # 100 rehabilitation tasks
-│   ├── safety_rules.json  # 51 clinical safety definitions
-│   ├── narrative_arcs.json
-│   └── narrator_tone_templates.json
-├── src/                   # Core source modules
-│   ├── pipeline.py        # Main orchestration
-│   ├── simulator.py       # EU-Sim v2 (Expected Utility)
-│   ├── memory.py          # Per-user state memory
-│   ├── agents/
-│   │   ├── safety_agent.py    # 5-rule pre-filter + crisis detection
-│   │   ├── recommender.py     # Bandit model wrapper (LinUCB, NeuralUCB, baselines)
-│   │   ├── narrator.py        # v1.3.2 Narrator (3-Act + tone templates)
-│   │   ├── narrator_agent.py  # Legacy narrator (v1)
-│   │   └── user_understanding.py  # Feature extraction
-│   ├── policies/
-│   │   └── saps.py        # SAPS algorithm (novel)
-│   └── models/
-│       ├── linucb.py      # Disjoint LinUCB
-│       ├── neural_ucb.py  # NeuralUCB (fixed per-arm stats)
-│       └── baselines.py   # Random, Popularity, RuleBased, ε-Greedy
-├── evaluation/            # Experiment scripts + results
-│   ├── run_coldstart.py   # §7.4 cold-start transfer
-│   ├── run_saps_60day.py  # SAPS formal verification
-│   ├── run_baselines_60day.py
-│   ├── robustness_grid.py # Safety one-drop ablation
-│   ├── narrative_sampler.py
-│   ├── llm_judge_colab.py # LLM-as-Judge (Colab / CLI)
-│   └── results/           # JSON/CSV artefacts (see results/README.md)
-├── scripts/
-│   ├── reproduce_all.sh   # Full reproduction pipeline
-│   └── reproduce_coldstart.sh
-├── report/
-│   └── pf_rules_permalink.md  # PF_R1–R5 permanent reference
-├── demo/
-│   └── index.html         # Static HTML trail viewer (open in browser)
-├── tests/
-├── .env.example
-├── CITATION.cff
-├── LICENSE                # MIT
-├── README.md
-└── requirements.txt
-```
+## Installation and data preparation
 
-> **Note on `data/` placement**: Data assets live at project root (`data/`)
-> rather than `src/data/` to keep `src/` as a pure Python package. All module
-> references use `Path(__file__).parent.parent / "data"`.
-
----
-
-## 3. Quick Start
-
-### Prerequisites
-
-- Python 3.10+
-- No GPU required (all models are numpy-based)
-
-### Installation
+Use Python 3.10 or later; CPU execution is supported. NeuralUCB uses PyTorch.
+The review environment used Python 3.12, NumPy 2.0.2, SciPy 1.14.1 and
+PyTorch 2.4.1+cpu. Dependency pins are in `requirements.txt`.
 
 ```bash
-git clone <repository-url> NarraCare
+git clone https://github.com/ZHIQIAN-fine/NarraCare.git
 cd NarraCare
-pip install -r requirements.txt
-cp .env.example .env   # Only needed for LLM-as-Judge
+python -m pip install -r requirements.txt
 ```
 
-### Run the full 60-day simulation
+All inputs are included under `data/`; no download or preprocessing is needed.
+See [data/README.md](data/README.md). These are authored static JSON files;
+experiment scripts regenerate outputs, not the static catalogue or profiles.
+The refreshed submission archive `narracare_submission.tar.gz` extracts into
+`narracare_final/`. The earlier `narracare_1eb927a.tar.gz` predates this cleanup.
+
+## Run the demonstration
+
+Run from the repository root after installation:
+
+```bash
+# Real end-to-end pipeline, with component-labelled daily output
+python -m narracare.demo --user U001 --days 60 --policy saps --seed 42
+
+# Inspect source/config/data definitions without running a simulation
+python -m narracare.demo --inspect
+
+# Live traces followed by a separately labelled frozen aggregate table
+python -m narracare.demo --user U001 --days 7 --compare saps,linucb,neuralucb
+
+# No list means all seven policies
+python -m narracare.demo --days 7 --compare
+```
+
+`python -m narracare` is equivalent. Defaults: U001, 60 days, saps, seed 42.
+Days must be 1–60. Policies: `saps`, `linucb`, `neuralucb`, `random`,
+`popularity`, `rule_based`, `epsilon_greedy`.
+
+The CLI prints state, filtering counts, a proposed task and score, post-check
+outcome, original narrator text/tone, simulated choice, reward and closing.
+It runs the pipeline in a temporary-directory subprocess and does not overwrite
+frozen results. **No OpenAI API key or network is needed after installation.**
+
+With `--compare`, daily traces use the selected user/days/seed, but the final
+table reads the stored **20-persona, 60-day aggregate artifacts**. The selected
+arguments do not change those frozen metrics. Missing fields such as Act
+distribution display `N/A (not in frozen artifacts)`. Demo defaults are separate
+from policy-specific formal experiment settings.
+
+For the visual demo, open **[demo/index.html](demo/index.html)** in a modern
+browser. It is one self-contained file: no Python, server, installation, network
+or API key. It embeds U001/U008/U014 x SAPS/LinUCB/NeuralUCB x 60 recorded days.
+Replies change the trail presentation, not the saved choices/rewards. It is an
+interactive replay; use the CLI to verify runtime component integration.
+
+### Mapping to CA6124 Section 6
+
+One CLI invocation integrates simulation, recommendation, safety, narrative
+rendering and feedback. `--inspect` exposes source definitions. The HTML replay
+makes the recorded state, safety counts, task, tone and reward accessible without
+installing the backend.
+
+## Methods and implementation boundaries
+
+| Policy | Implementation used by the pipeline |
+|---|---|
+| SAPS | LinUCB reward UCB + sampled Beta safety bonus, with internal safe-arm gate |
+| LinUCB | Disjoint linear UCB on 15-dimensional patient context |
+| NeuralUCB | Modified arm-mean/noise heuristic plus a shared neural context prediction; that shared term cancels in arm ranking |
+| Random | Random candidate scores |
+| Popularity | Historical mean reward per task, not acceptance count |
+| RuleBased | Identical context-dependent score for every task; stable candidate order resolves ties |
+| EpsilonGreedy | Epsilon 0.1 exploration; otherwise historical mean reward |
+
+NeuralUCB is not Zhou et al.'s original gradient-UCB algorithm. RuleBased is an
+order-based reference, not a strong task-aware clinical rule ranker.
+
+SAPS: `S(a) = r_ucb(a) + tau_safe * s`, where
+`s ~ Beta(alpha_a, beta_a)` and `tau_safe = 2.0`. Only safety is Thompson sampled.
+The chosen arm receives a Beta update from `pain_change <= 1.0`; blocked arms
+have no post-hoc outcome. Beta parameters are indexed by task and shared across
+users. LinUCB reward parameters are per task, with patient context as input.
+
+Safety Layer A has five runtime pre-filter checks: contraindication overlap,
+stage mismatch, high pain/high difficulty, severe fatigue/non-gentle category,
+and low ROM/demanding or cardio task. Layer B has 51 design definitions:
+16 contraindication, 9 dosage, 6 fatigue, 10 crisis, 10 progression. These are
+not 51 additional predicates all executed on each recommendation.
+
+## Training and hyperparameter settings
+
+Learning occurs online inside rollouts; no pretrained download is required.
+One learner is shared across personas. Formal runner overrides take precedence
+over `configs/default.yaml` and policy YAML defaults.
+
+| Setting | Formal experiment value |
+|---|---|
+| Seed / days / personas | 42 / 60 / 20 |
+| Context dimension / shortlist | 15 / 3 |
+| SAPS alpha_ucb / tau_safe / Beta priors | 1.0 / 2.0 / (1, 1) |
+| LinUCB alpha | 1.0 |
+| NeuralUCB hidden width / epochs / alpha | 32 / 5 / 0.01 |
+| NeuralUCB reward safety_lambda | 3.0 |
+| Other policies' base safety_lambda | 1.0 |
+| EpsilonGreedy epsilon | 0.1 |
+| Reward completion / safety / difficulty / pain / dropout / category weights | 0.35 / 0.25 / 0.20 / 0.10 / 0.05 / 0.05 |
+
+Exploratory configurations can use `config_overrides`:
 
 ```python
 from src.pipeline import NarraCarePipeline
 
-pipe = NarraCarePipeline("configs/default.yaml")
+pipe = NarraCarePipeline("configs/default.yaml", config_overrides={
+    "recommender": {"algorithm": "saps", "saps": {"tau_safe": 2.0}},
+    "system": {"seed": 42},
+})
 logs = pipe.run_simulation(n_days=60)
-
-print(f"Total interactions: {len(logs)}")
-print(f"Sample: {logs[0]['user_id']}, day {logs[0]['day']}, "
-      f"task={logs[0]['chosen_task_id']}, reward={logs[0]['reward']:.2f}")
 ```
 
-### Reproduce all experiments
+Keep exploratory runs separate from frozen results. No completed tau grid
+search or extra seeds 43/44 are claimed by this submission.
+
+## Reproduce experiments
+
+Experiments intentionally write `evaluation/results/`; use a disposable clone
+if preserving the original artifacts byte-for-byte is required.
 
 ```bash
-bash scripts/reproduce_all.sh     # ~5 min, seed 42
-bash scripts/reproduce_coldstart.sh   # ~30 sec
+bash scripts/reproduce_all.sh
+bash scripts/reproduce_coldstart.sh
 ```
 
-### Run the demonstration
+The first script executes SAPS/LinUCB, four baseline/NoSafety runs, NeuralUCB
+and its historical variant, safety diagnostics, robustness and narrative
+sampling. **Random and cold-start appear in its comparison list but are not
+regenerated by that script.** Cold-start has the separate command above.
+Random can be rerun with the pipeline's `random` policy. Paired-test commands
+are in `evaluation/scripts/paired_t_test.py`.
 
-**CLI demo** (requires `pip install -r requirements.txt`):
+Verification uses exact comparison for five files and removes only
+`wall_time_s` before comparing eight others. There is no numeric tolerance.
+The review run returned **11/13 PASS, 2 FAIL, 0 SKIP**: the two SAPS failures
+were last-place floating differences around 1e-14, with no effect at reported
+precision. Inspect the printed summary; the script can exit zero despite
+comparison failures. An existing-file PASS does not establish regeneration.
+The historical `reward_gap_lt_1` check also fails because SAPS's reward lead
+is 4.35; this is not a numerical reproduction criterion.
 
-```bash
-python -m narracare --user U001 --days 60 --policy saps   # single-policy walkthrough
-python -m narracare --compare saps,linucb,neuralucb        # frozen-artifact comparison
-python -m narracare --inspect                               # static system inspection
-```
+See [artifact index](evaluation/results/README.md) and
+[implementation notes](docs/implementation_notes.md) for coverage and caveats.
 
-**HTML trail viewer** (no installation required):
+### Optional narrative scoring
 
-Open `demo/index.html` directly in any modern browser to inspect
-9 pre-embedded trajectories (3 users × 3 policies × 60 days).
+The Narrator is template-based and offline. Only optional external LLM judging
+uses a key. The supported scoring script is `evaluation/llm_judge_colab.py`;
+its header describes local/Colab use. Export `OPENAI_API_KEY` or use Colab
+secrets; copying `.env.example` does not automatically load environment variables.
+Later remote model responses are not guaranteed byte-identical. Save new scores
+separately from committed scores. Offline aggregation instructions are in
+[evaluation/results/README_narrative_eval.md](evaluation/results/README_narrative_eval.md).
 
----
+## Recorded results and interpretation
 
-## 4. Algorithms
+Unchanged seed-42, 20-persona, 60-day summaries:
 
-### SAPS (Safety-Aware Personalised Selection) — Novel
+| Policy | Cumulative reward | Recorded IER |
+|---|---|---|
+| SAPS | 46.2927 +/- 2.1700 | 0.0000 |
+| LinUCB | 41.9395 +/- 3.0015 | 0.0233 |
+| NeuralUCB modified | 38.31 | 0.0022 |
+| Random | 45.94 | 0.4082 |
+| Popularity | 39.03 | 0.0127 |
+| RuleBased | 43.33 | 0.3257 |
+| EpsilonGreedy | 40.95 | 0.0503 |
 
-Composite score: `S(a) = UCB_reward(a) + τ_safe · s_a`, where `s_a ~ Beta(α_a, β_a)`.
+IER is the logged top-5 infeasible fraction; SAPS's measurement still includes
+its internal gate, so these are not uniformly unconstrained learner scores.
 
-- **Reward backbone**: Disjoint LinUCB with per-arm `(A, b)` matrices
-- **Safety posterior**: Per-arm Beta distribution updated by Safety Agent verdicts
-- **Action space**: Full catalogue scored; unsafe arms filtered by pre-filter before output
-- **Guarantee**: SVR = 0 under the 51 design-time clinical rules evaluated by the Safety Agent; this is a conditional guarantee tied to the current rule set, not a universal safety claim
+Stored per-person paired reward comparisons give SAPS minus LinUCB `+4.3532`,
+t(19)=8.3513, p=8.8e-8; versus modified NeuralUCB `+7.9790`, t(19)=10.855,
+p=1.38e-9. NeuralUCB's IER raw p=0.0497 does not survive the retained
+seven-comparison threshold 0.00714. Shared online training and one seed limit
+independent-replicate inference; these are exploratory fixed-cohort results.
 
-**Online Update Rule** (per-interaction, chosen arm only):
+Main summary runners default missing `safety_violation` to false; their zero
+SVR field is not an independent safety check. Dedicated post-hoc artifacts
+show LinUCB with safety at 0/743 accepted tasks, versus NoSafety 171/772
+(0.2215), against the five runtime predicates. The CLI SVR helper checks four
+predicates and omits low ROM. None establishes enforcement of all 51 design
+rules or safety outside the simulated distribution.
 
-1. Issue action `a_t` → observe outcome tuple `(reward, pain_change, acceptance, ...)`
-2. **Reward backbone update**: `A_a ← A_a + x_t x_tᵀ`, `b_a ← b_a + r_t x_t` (standard LinUCB disjoint)
-3. **Safety posterior update** (S2 signal):
-   - `safe_t = 1` iff `pain_change ≤ SAPS_PAIN_SAFE_THRESHOLD` (default `1.0`, see §7)
-   - `α_a ← α_a + safe_t`, `β_a ← β_a + (1 − safe_t)`
-4. **Only the chosen arm's `(A_a, b_a, α_a, β_a)` is updated**; non-chosen arms retain priors.
+Cold-start SAPS reward is 45.83 on training users, 47.84 on the BP reward-frozen
+rollout and 46.66 when retrained on BP. `+1.18, p=0.1807` compares **frozen
+versus retrained on the same five BP users**. Beta still updates in the
+reward-frozen variant: this is not fully frozen transfer or evidence of
+statistical equivalence. Other limits include Narrator condition/day fallback,
+simulator bookkeeping and weak baselines; see the implementation notes.
 
-**Runtime Safety Wiring** (per-recommendation, before scoring):
+## License and citation
 
-- 5 pre-filter rules `PF_R1 … PF_R5` (hard-coded clinical gates: contraindication overlap, stage mismatch, high pain + high difficulty, severe fatigue, low ROM + demanding task) evaluated on each candidate arm
-- Arms failing any `PF_R*` are removed from the candidate set **before** the composite score `S(a)` is computed
-- This is what delivers the SVR = 0 guarantee under the 51 design-time rules (Layer B in `data/safety_rules.json`)
-
-### Baselines
-
-| Algorithm | Description |
-|-----------|-------------|
-| LinUCB | Disjoint linear UCB (Li et al. 2010) |
-| NeuralUCB | Neural contextual bandit with per-arm running stats |
-| ε-Greedy | ε=0.1 exploration with reward-based exploitation |
-| Popularity | Rank by historical acceptance count |
-| RuleBased | Stage-matched difficulty + category preference |
-| Random | Uniform random from safe candidate set |
-
----
-
-## 5. Safety Framework
-
-**56 rules** in a two-layer architecture:
-
-- **Layer A — Runtime pre-filter** (5 rules, `PF_R1`–`PF_R5`): Evaluated at
-  recommendation time on every `(user, task)` pair. See
-  [`report/pf_rules_permalink.md`](report/pf_rules_permalink.md) for the full
-  condition table and solo-hit analysis.
-
-- **Layer B — Design-time clinical definitions** (51 rules in
-  `data/safety_rules.json`): Contraindications (16), dosage (9), fatigue (6),
-  crisis (10), progression gates (10). Inform the task catalogue metadata and
-  Safety Agent crisis detection logic.
-
----
-
-## 6. Evaluation Protocol
-
-All experiments use **seed 42, 60 days, 20 users** unless otherwise noted.
-
-| Experiment | Script | Report Section |
-|-----------|--------|----------------|
-| SAPS vs LinUCB | `run_saps_60day.py` | §5.2 |
-| 7 baselines | `run_baselines_60day.py` | §5.2 Table 5.1 |
-| NeuralUCB fix ablation | `run_neuralucb_prefix_60day.py` | §5.4 |
-| Safety robustness grid | `robustness_grid.py` | §5.4.2 |
-| Post-hoc SVR replay | `nosafety_svr_full.py` | §5.4.2 |
-| Narrator invariants | `svr_narrator_invariants.py` | §5.5 |
-| LLM-as-Judge | `llm_judge_colab.py` | §5.5 |
-| Cold-start transfer | `run_coldstart.py` | §7.4 |
-
-See [`evaluation/results/README.md`](evaluation/results/README.md) for the
-full artefact index.
-
----
-
-## 7. Hyperparameter Settings
-
-All key hyperparameters are set in `configs/*.yaml`. The table below summarises
-the values used in the main 60-day experiments (seed 42). See the report §4.6
-for the full design rationale.
-
-| Policy | Parameter | Value | Source / rationale |
-|--------|-----------|-------|--------------------|
-| **SAPS** | `alpha_ucb` (exploration) | 1.0 | Same as LinUCB for fair comparison |
-| | `tau_safe` (safety-explore weight) | 2.0 | Grid-searched {0.5, 1, 2, 5}; 2.0 balances IER elimination vs reward |
-| | `alpha_prior` / `beta_prior` (Beta init) | 1.0 / 1.0 | Uniform prior — no arm is presumed safe/unsafe before data |
-| | `SAPS_PAIN_SAFE_THRESHOLD` | 1.0 | S2 signal: `pain_change ≤ 1.0` → safe; see `src/policies/saps.py` |
-| **LinUCB** | `alpha` (exploration) | 1.0 | Li et al. (2010) default |
-| | `feature_dim` | 15 | Matches user-understanding feature vector length |
-| **NeuralUCB** | `hidden_dim` | 32 | Reduced from default 64 for stability (see §5.4) |
-| | `training_epochs` | 5 | Reduced from 10 to avoid overfitting on small per-arm data |
-| | `alpha` (exploration) | 0.01 | Low exploration — network confidence used instead |
-| | `safety_lambda` | 3.0 | Stronger Lagrangian penalty for unsafe arms |
-| **ε-Greedy** | `epsilon` | 0.1 | Standard value (Sutton & Barto 2018) |
-| **Popularity** | — | — | No tuneable parameter; ranks by historical acceptance count |
-| **RuleBased** | `top_k` | 3 | Stage-matched + category-preference scoring |
-| **Random** | — | — | Uniform random from safe candidate set |
-
-**Reward composer weights** (in `configs/default.yaml → reward:`):
-
-| Weight | Value | Component |
-|--------|-------|-----------|
-| `w_completed` | 0.35 | Task completion signal |
-| `w_safety` | 0.25 | Safety compliance bonus |
-| `w_difficulty_match` | 0.20 | Difficulty-fit to user state |
-| `w_pain_penalty` | 0.10 | Pain increase penalty |
-| `w_dropout_penalty` | 0.05 | Session dropout penalty |
-| `w_category` | 0.05 | Category preference match |
-| `safety_lambda` | 1.0 | Lagrangian multiplier (base; scaled by narrative arc) |
-
-**Narrative arc safety multiplier**: `safety_lambda_multiplier` =
-{1.5, 1.0, 0.7} for {Act 1, Act 2, Act 3} respectively
-(configured in `data/narrative_arcs.json`).
-
----
-
-## 8. Key Results
-
-### §5.2 — SAPS vs LinUCB (60-day, 20 users)
-
-Statistical test: paired-t over per-user trajectories, n = 20, df = 19.
-
-| Metric | SAPS | LinUCB | Δ | t(19) | p | 95% CI |
-|--------|------|--------|---|-------|---|--------|
-| Cum. Reward | **46.29 ± 2.17** | 41.94 ± 3.00 | +4.35 | 8.35 | 8.8 × 10⁻⁸ | [3.26, 5.44] |
-| IER | **0.0000** | 0.0233 | −0.023 | −7.19 | 7.9 × 10⁻⁷ | [−0.030, −0.017] |
-| SVR | 0.0000 | 0.0000 | 0 | — | — | — |
-
-Cohen's d: reward = 1.87, IER = −1.61 (both large effect).
-
-**SAPS vs NeuralUCB-postfix**: reward Δ = +7.23, t(19) = 9.44,
-p = 1.3 × 10⁻⁸, d = 2.11. IER Δ = −0.002, p = 0.079 (ns at α = 0.05) —
-the two methods achieve comparable near-term engagement despite SAPS's
-cumulative reward lead.
-
-SAPS significantly outperforms LinUCB on both reward (p < 10⁻⁷) and IER
-(p < 10⁻⁶) with large effect sizes (|d| > 1.6). Against NeuralUCB-postfix,
-SAPS shows a substantial reward advantage (Δ +7.23, p < 10⁻⁷, d = 2.11),
-while the IER difference does not reach statistical significance at α = 0.05
-(p = 0.079), suggesting the two methods achieve comparable near-term
-engagement despite SAPS's cumulative reward lead.
-
-### §7.4 — Cold-Start Transfer (Back-Pain)
-
-| Method | Condition | Reward | IER | Acceptance |
-|--------|-----------|--------|-----|------------|
-| SAPS | Frozen → BP | **47.84** | **0.0000** | 0.733 |
-| SAPS | Retrained BP | **46.66** | **0.0000** | 0.733 |
-| LinUCB | Frozen → BP | 41.90 | 0.0213 | 0.603 |
-| LinUCB | Retrained BP | 43.22 | 0.0640 | 0.630 |
-
-SAPS posteriors transfer successfully to the unseen Back-Pain cohort;
-frozen model reward (47.84) exceeds even the full-cohort retrained result
-(46.66), suggesting robust generalisation.
-
----
-
-## 9. Citation
-
-```bibtex
-@software{narracare2026,
-  title     = {NarraCare: A Safety-Aware Narrative Recommender for 60-Day Rehabilitation},
-  author    = {{NarraCare Group, CA6124 2026S1}},
-  year      = {2026},
-  version   = {1.0.0},
-  license   = {MIT},
-}
-```
-
----
-
-## License
-
-[MIT](LICENSE)
+MIT; see [LICENSE](LICENSE). Software metadata: [CITATION.cff](CITATION.cff).

@@ -29,7 +29,7 @@ Does the message correctly describe the task and avoid clinically inappropriate 
 ## Scoring Protocol
 
 - **Model**: gpt-4o-mini
-- **Temperature**: 0 (deterministic)
+- **Temperature**: 0 (requested setting; remote responses are not guaranteed byte-identical)
 - **Seed**: 42
 - **Response format**: JSON object with `{axis: {score, reason}}`
 - **Retry**: API bucket cap = 2, format bucket cap = 1

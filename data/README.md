@@ -47,7 +47,7 @@ No real patient data is used. No external data licence is required.
 | `preference` | dict | Category preferences |
 | `contraindications` | list[str] | Patient-specific contraindications |
 
-**Condition split**: U001–U010 ACL (10), U011–U015 Back-Pain (5), U016–U020 Rotator-Cuff (5).
+**Condition split**: U001–U005 and U016–U020 ACL (10), U006–U010 Rotator-Cuff (5), U011–U015 Back-Pain (5).
 
 ### `safety_rules.json` — 51 design-time clinical rule definitions
 
@@ -59,8 +59,9 @@ No real patient data is used. No external data licence is required.
 | `crisis_rules` | 10 | Halt or escalate when pain/fatigue spike |
 | `progression_gates` | 10 | Gate stage transitions on ROM/pain criteria |
 
-These 51 rules form Layer B of the safety framework (Layer A = 5 runtime
-pre-filter rules `PF_R1`–`PF_R5` in `src/agents/safety_agent.py`).
+These 51 authored definitions form Layer B. They are not all executed as
+runtime predicates; see `docs/implementation_notes.md`. Layer A = 5 runtime
+pre-filter rules `PF_R1`–`PF_R5` in `src/agents/safety_agent.py`.
 
 ### `narrative_arcs.json` — 3-Act narrative metadata
 
@@ -85,5 +86,6 @@ bash scripts/reproduce_all.sh          # SAPS, LinUCB, baselines (~5 min)
 bash scripts/reproduce_coldstart.sh    # Cold-start transfer (~30 sec)
 ```
 
-All data files are consumed directly by `src/pipeline.py` via
-`Path(__file__).parent.parent / "data"`. No pre-processing step is required.
+Static assets are read by the pipeline and its components from root `data/`.
+No preprocessing is required. Reproduction generates experiment outputs, not
+these static assets.
