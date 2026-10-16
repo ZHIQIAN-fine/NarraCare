@@ -1,7 +1,20 @@
 # NarraCare
 
-A safety-aware narrative recommender for simulated musculoskeletal rehabilitation.
+An LLM tool-calling rehabilitation recommender with a companion trail, backed by a separate synthetic benchmark.
 CA6124 Group Project, 2026 Semester 1.
+
+## Choose a version
+
+| Version | Purpose | Entry |
+|---|---|---|
+| **[main](https://github.com/ZHIQIAN-fine/NarraCare/tree/main)** | Current agent source and unchanged benchmark | `python -m narracare.agent_app` |
+| **[agent](https://github.com/ZHIQIAN-fine/NarraCare/tree/agent)** | Reviewed agent submission bundle and presentation files | [Downloads](https://github.com/ZHIQIAN-fine/NarraCare/tree/agent/deliverables/agent) |
+| **[benchmark](https://github.com/ZHIQIAN-fine/NarraCare/tree/benchmark)** | Preserved pre-agent benchmark at `da833fd` | `python -m narracare.demo` |
+
+The **live Gradio agent is interactive**: user messages change symptoms,
+preferences, retrieval and reported-feedback updates. The single-file HTML
+is an **offline recorded replay**. They are different demonstrations.
+See [version guide](docs/versions.md) for branch roles and preserved history.
 
 ## Overview
 
@@ -48,12 +61,46 @@ python -m pip install -r requirements.txt
 All inputs are included under `data/`; no download or preprocessing is needed.
 See [data/README.md](data/README.md). These are authored static JSON files;
 experiment scripts regenerate outputs, not the static catalogue or profiles.
-The refreshed submission archive `narracare_submission.tar.gz` extracts into
-`narracare_final/`. The earlier `narracare_1eb927a.tar.gz` predates this cleanup.
+The agent submission archive `narracare_agent_submission.tar.gz` extracts into
+`narracare_agent/`. Download it from the `agent` branch linked above. Earlier
+`narracare_submission.tar.gz` / `narracare_1eb927a.tar.gz` archives predate the live agent.
 
 ## Run the demonstration
 
-Run from the repository root after installation:
+Run from the repository root after installation. Use the live agent for the
+interactive presentation, or the benchmark CLI / HTML for offline inspection.
+
+### Live conversational agent
+
+The benchmark CLI and single-file HTML replay remain unchanged. A separate
+LLM tool-calling agent adds natural-language check-ins, clarification, preference
+memory, catalogue retrieval, SAPS ranking, grounded explanations and actual
+reported feedback. Its Gradio interface combines a companion mountain trail,
+`ChatInterface`, and a live state/tool-activity panel.
+
+```bash
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-agent.txt
+# Set OPENAI_API_KEY securely in your environment, not in source.
+python -m narracare.agent --user U001 --seed 42
+python -m narracare.agent_app --port 7860
+```
+
+Default model: `gpt-4o-mini`. Optional `NARRACARE_LLM_MODEL` and
+`NARRACARE_LLM_BASE_URL` configure an OpenAI-compatible HTTPS endpoint.
+`NARRACARE_LLM_API_KEY` is an alternative secret variable for cloud environments.
+This **live agent requires network access and a provider key**; it never falls
+back to a scripted agent. The old benchmark demo remains offline. Use synthetic
+inputs only: chat and session context go to the configured provider. ACL/RC are
+postoperative profiles; BP is chronic back pain, not back surgery. This is not a
+clinical service. Gradio binds to loopback with public sharing disabled.
+
+See [agent architecture and Section 4 capability mapping](docs/conversational_agent.md)
+for tool contracts, feedback provenance, the demo dialogue and verification.
+No benchmark results are rewritten by this entry point.
+
+### Offline benchmark CLI and recorded HTML
+
 
 ```bash
 # Real end-to-end pipeline, with component-labelled daily output
@@ -92,8 +139,10 @@ interactive replay; use the CLI to verify runtime component integration.
 
 ### Mapping to CA6124 Section 6
 
-One CLI invocation integrates simulation, recommendation, safety, narrative
-rendering and feedback. `--inspect` exposes source definitions. The HTML replay
+The live agent integrates understanding/clarification, preferences, safe retrieval,
+SAPS ranking, template narration, explanation and actual reported feedback. Its
+right panel exposes state and observed tools. The benchmark CLI separately
+integrates simulation, recommendation, safety, narrative rendering and feedback. `--inspect` exposes source definitions. The HTML replay
 makes the recorded state, safety counts, task, tone and reward accessible without
 installing the backend.
 
@@ -248,32 +297,3 @@ and weak reference policies; see the implementation notes.
 ## License and citation
 
 MIT; see [LICENSE](LICENSE). Software metadata: [CITATION.cff](CITATION.cff).
-
-## Live conversational agent
-
-The existing CLI and single-file HTML demo above remain unchanged. A separate
-LLM tool-calling agent adds natural-language check-ins, clarification, preference
-memory, catalogue retrieval, SAPS ranking, grounded explanations and actual
-reported feedback. Its Gradio interface combines a companion mountain trail,
-`ChatInterface`, and a live state/tool-activity panel.
-
-```bash
-python -m pip install -r requirements.txt
-python -m pip install -r requirements-agent.txt
-# Set OPENAI_API_KEY securely in your environment, not in source.
-python -m narracare.agent --user U001 --seed 42
-python -m narracare.agent_app --port 7860
-```
-
-Default model: `gpt-4o-mini`. Optional `NARRACARE_LLM_MODEL` and
-`NARRACARE_LLM_BASE_URL` configure an OpenAI-compatible HTTPS endpoint.
-`NARRACARE_LLM_API_KEY` is an alternative secret variable for cloud environments.
-This **live agent requires network access and a provider key**; it never falls
-back to a scripted agent. The old benchmark demo remains offline. Use synthetic
-inputs only: chat and session context go to the configured provider. ACL/RC are
-postoperative profiles; BP is chronic back pain, not back surgery. This is not a
-clinical service. Gradio binds to loopback with public sharing disabled.
-
-See [agent architecture and Section 4 capability mapping](docs/conversational_agent.md)
-for tool contracts, feedback provenance, the demo dialogue and verification.
-No benchmark results are rewritten by this entry point.
