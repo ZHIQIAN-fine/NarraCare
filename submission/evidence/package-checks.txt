@@ -1,8 +1,7 @@
 Report narrative revision: all 8 result/data/configuration tables unchanged
 Word: Arial 11pt, A4, prescribed margins; cloud layout proof 11 pages
-Fresh extraction: 77 packaged files match SUBMISSION_MANIFEST.json
-Source snapshot: 66fc8fede1ca547c26d1ae938c42512ba106c735
-Packaged report bytes match the revised Word: PASS
+Rebuilt archive: 77 packaged files match SUBMISSION_MANIFEST.json
+Source snapshot: 7a72b89ff2159d89efa4851c49ea6c1b8554a224
+Packaged report matches revised Word; packaged README retains the concurrent owner edit: PASS
 Runtime source, inputs and experimental artifacts unchanged from d995a21: PASS
-Experimental protocol fingerprints match packaged runtime and inputs: PASS
 Existing runtime validation remains 88 tests and 7/7 artifact reproduction; no experiment rerun for this report-only revision
