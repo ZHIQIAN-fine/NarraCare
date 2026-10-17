@@ -142,10 +142,9 @@ def test_raw_ranking_replaces_gated_call_without_extra_rng_draws():
     assert a.rng.bit_generator.state == b.rng.bit_generator.state
 
 
-def test_formal_runner_uses_accepted_svr_denominator(monkeypatch):
-    from evaluation import run_60day
+def test_formal_runner_uses_accepted_svr_denominator():
+    from evaluation.run_submission import mean_user_svr
     rows = [{"user_id": "U001", "action": action, "safety_violation": violation,
              "reward": 0., "ier": 0., "chosen_task_id": "T001"}
             for action, violation in [("accept", True), ("accept", False), ("skip", False)]]
-    monkeypatch.setattr(run_60day.NarraCarePipeline, "run_simulation", lambda *a, **kw: rows)
-    assert run_60day.run_method("linucb")["aggregate_metrics"]["svr"] == .5
+    assert mean_user_svr(rows) == .5

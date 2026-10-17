@@ -30,6 +30,7 @@ TERMINAL = {
     "explain_recommendation",
     "record_feedback",
     "rest_today",
+    "pause_due_to_pain",
     "show_state",
     "end_session",
 }
@@ -81,6 +82,11 @@ def tool_schemas():
         "description": "Exact quote copied from the current user message, never invented.",
     }
     return [
+        schema(
+            "pause_due_to_pain",
+            "Only when the user explicitly says pain prevents any task and the task has not been performed. Pause the day without a task, physical outcome, reward or learning. Never infer inability from a numeric pain threshold. Ends turn.",
+            {"evidence": evidence}, ["evidence"],
+        ),
         schema(
             "update_checkin",
             "Extract ONLY explicitly reported current symptoms. Never fill omitted fields from a profile. ROM may be null only if explicitly unknown. Updates invalidate old recommendations.",
@@ -142,7 +148,7 @@ def tool_schemas():
         ),
         schema(
             "record_feedback",
-            "Record an explicitly completed/partial task, NOT an intention to try. Requires actual AFTER pain/fatigue and satisfaction (0-1). Updates reward, SAPS and memory once. For skip use rest_today. Ends turn.",
+            "Record an explicitly completed/partial task, NOT an intention to try. Requires actual AFTER pain/fatigue and satisfaction (0-1). Evidence must be the ENTIRE current user message verbatim, containing BOTH the completion statement and ALL numeric outcome labels, not just one sentence. Updates reward, SAPS and memory once. For skip use rest_today. Ends turn.",
             {
                 "action": {"type": "string", "enum": ["completed", "partial"]},
                 "post_pain": {"type": "number"},
@@ -171,9 +177,9 @@ class SessionTools:
         if not 1 <= day <= 60:
             raise ValueError("day must be in [1, 60]")
         self.config = yaml.safe_load((ROOT / "configs/default.yaml").read_text())
-        self.config["recommender"] = yaml.safe_load(
+        self.config["recommender"].update(yaml.safe_load(
             (ROOT / "configs/saps.yaml").read_text()
-        )["recommender"]
+        )["recommender"])
         self.config["system"]["seed"] = seed
         self.reward_composer = UserSimulator(
             self.config
@@ -220,6 +226,7 @@ class SessionTools:
         self.last_question = ""
         self.features = None
         self.presented = False
+        self.preference_message = None
 
     @property
     def arc_profile(self):
@@ -347,6 +354,7 @@ class SessionTools:
             list(dict.fromkeys(avoid_categories)),
         )
         self.profile["preference"] = self.preferred
+        self.preference_message = self.current_message
         self.memory.set_profile(self.user, self.profile)
         return {
             "preferred_categories": self.preferred,
@@ -369,6 +377,9 @@ class SessionTools:
         return {"revised": True, "learning_update": False, "day": self.day}
 
     def retrieve_candidates(self):
+        if (re.search(r"\b(?:prefer(?:red|ences?)?|avoid(?:ances?)?)\b", self.current_message.lower())
+                and self.preference_message != self.current_message):
+            raise ToolError("This message states category preferences or avoidances. Call set_preferences with this message's evidence before retrieval; do not silently use profile defaults.")
         if self.missing():
             raise ToolError("Missing current check-in: " + ", ".join(self.missing()))
         if self.pending and self.presented:
@@ -554,7 +565,7 @@ class SessionTools:
             raise ToolError("Unknown clarification topic.")
         return {"message": text, "missing": self.missing()}
 
-    def _close_day(self, action, reward, pain_delta=0):
+    def _close_day(self, action, reward, pain_delta=0, feedback=None):
         old_day = self.day
         context = {
             "name": self.profile["name"],
@@ -569,8 +580,8 @@ class SessionTools:
         self.closing, meta = self.narrator.say_daily_closing(
             {
                 "day": old_day,
-                "user_skipped": action == "skipped",
-                "user_accepted": action != "skipped",
+                "user_skipped": action in {"skipped", "paused"},
+                "user_accepted": action in {"completed", "partial"},
                 "pain_delta": pain_delta,
                 "fatigue_level": self.state.get("fatigue_level", 0),
             },
@@ -586,6 +597,7 @@ class SessionTools:
                 "closing": self.closing,
                 "variant": meta["daily_closing_variant"],
                 "source": "user_report",
+                "feedback": copy.deepcopy(feedback),
             }
         )
         self.day += 1
@@ -670,7 +682,9 @@ class SessionTools:
         )
         self.last_reported_state = dict(self.state)
         self.streak = self.streak + 1 if action == "completed" else 0
-        closed_day = self._close_day(action, reward, delta)
+        closed_day = self._close_day(action, reward, delta, feedback={
+            **values, "source": "user_report", "satisfaction_used_in_reward": False,
+        })
         return {
             "message": f"Day {closed_day} recorded from your report. Reward Composer = {reward:.4f}. SAPS reward and Beta safety posteriors updated.\n\n{self.closing}\n\nNext day starts with a fresh check-in.",
             "reward": reward,
@@ -700,6 +714,16 @@ class SessionTools:
             "reward": None,
             "source": "user_report",
         }
+
+    def pause_due_to_pain(self, evidence):
+        text = self.quote(evidence)
+        if ("pain prevents me from doing any task" not in text
+                or "not performed" not in text):
+            raise ToolError("Please explicitly confirm pain prevents any task and today's task has not been performed. A numeric pain score alone cannot pause the day.")
+        self.streak = 0
+        day = self._close_day("paused", None)
+        return {"message": f"Day {day} paused because you reported pain prevents any task. No task outcome or learning was created. Contact your healthcare provider for guidance; this demo cannot assess the cause.",
+                "source": "user_report", "reward": None}
 
     def show_state(self):
         return {

@@ -1,0 +1,545 @@
+--- Day 1 ---
+[C1 UserSimulator] state: pain=3.5 fatigue=0.9 mood=8.8 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T016 (score=3.87)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Standing Calf Raises today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T016
+[C5 RewardComposer] reward=0.8537
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 2 ---
+[C1 UserSimulator] state: pain=4.7 fatigue=3.9 mood=6.1 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T013 (score=4.14)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Stationary Bike (Low Resistance) today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T013
+[C5 RewardComposer] reward=0.9122
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 3 ---
+[C1 UserSimulator] state: pain=3.8 fatigue=3.7 mood=6.7 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T099 (score=3.80)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Guided Meditation for Pain Management today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T099
+[C5 RewardComposer] reward=0.8299
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 4 ---
+[C1 UserSimulator] state: pain=3.9 fatigue=4.5 mood=5.1 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T057 (score=3.79)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Upper Trap Stretch today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T057
+[C5 RewardComposer] reward=0.8405
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 5 ---
+[C1 UserSimulator] state: pain=0.7 fatigue=2.4 mood=7.8 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T023 (score=3.88)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Patellar Mobilization today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T023
+[C5 RewardComposer] reward=0.7958
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 6 ---
+[C1 UserSimulator] state: pain=4.1 fatigue=2.3 mood=7.7 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T017 (score=3.91)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending IT Band Foam Rolling today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T017
+[C5 RewardComposer] reward=0.8836
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 7 ---
+[C1 UserSimulator] state: pain=3.8 fatigue=2.4 mood=6.2 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T029 (score=4.11)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Retro Walking (Backward Walking) today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 3/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T029
+[C5 RewardComposer] reward=0.9559
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 8 ---
+[C1 UserSimulator] state: pain=2.7 fatigue=2.2 mood=5.9 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T036 (score=4.01)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Shoulder Isometric Internal Rotation today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T036
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 9 ---
+[C1 UserSimulator] state: pain=1.5 fatigue=2.2 mood=7.8 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T030 (score=3.79)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Quad Foam Rolling today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T030
+[C5 RewardComposer] reward=0.8443
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 10 ---
+[C1 UserSimulator] state: pain=1.9 fatigue=0.1 mood=8.5 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T005 (score=3.77)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Standing Hamstring Curls today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T005
+[C5 RewardComposer] reward=0.8245
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 11 ---
+[C1 UserSimulator] state: pain=3.3 fatigue=5.9 mood=4.7 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T043 (score=3.81)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Sleeper Stretch today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T043
+[C5 RewardComposer] reward=0.5763
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 12 ---
+[C1 UserSimulator] state: pain=1.3 fatigue=3.6 mood=9.6 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T028 (score=3.81)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Tandem Walking today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T028
+[C5 RewardComposer] reward=0.8608
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 13 ---
+[C1 UserSimulator] state: pain=4.4 fatigue=3.3 mood=5.1 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T088 (score=3.72)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Pallof Press (Anti-Rotation). It's a 3/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T088
+[C5 RewardComposer] reward=0.9600
+[C4 Narrator/closing=concern] "Today took something out of you, Alex Chen. Pain was at 4.9, fatigue at 3.9. I'll make tomorrow's plan lighter — rest tonight."
+--- Day 14 ---
+[C1 UserSimulator] state: pain=1.7 fatigue=7.3 mood=6.4 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T070 (score=3.77)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Knee-to-Chest Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T070
+[C5 RewardComposer] reward=0.8382
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 15 ---
+[C1 UserSimulator] state: pain=0.8 fatigue=3.3 mood=8.1 act=act1
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T074 (score=3.77)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Supine Spinal Twist. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T074
+[C5 RewardComposer] reward=0.8496
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 16 ---
+[C1 UserSimulator] state: pain=0.9 fatigue=0.3 mood=10.0 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T040 (score=3.91)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=doctor] "I'm recommending Scapular Wall Push-Ups today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T040
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 17 ---
+[C1 UserSimulator] state: pain=4.8 fatigue=1.2 mood=6.6 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T093 (score=3.75)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T093
+[C5 RewardComposer] reward=0.8150
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 18 ---
+[C1 UserSimulator] state: pain=0.8 fatigue=1.2 mood=9.9 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T072 (score=3.84)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T072
+[C5 RewardComposer] reward=0.7912
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 19 ---
+[C1 UserSimulator] state: pain=2.3 fatigue=3.5 mood=6.0 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T027 (score=3.78)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T027
+[C5 RewardComposer] reward=0.8133
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 20 ---
+[C1 UserSimulator] state: pain=4.4 fatigue=1.5 mood=4.9 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T060 (score=3.74)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Prone Shoulder Extension. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T060
+[C5 RewardComposer] reward=0.8758
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 21 ---
+[C1 UserSimulator] state: pain=0.7 fatigue=0.8 mood=10.0 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T041 (score=4.14)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Supine Shoulder Abduction Passive ROM. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T041
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 22 ---
+[C1 UserSimulator] state: pain=1.1 fatigue=2.5 mood=8.6 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T097 (score=3.74)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Recumbent Bike Cardio. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T097
+[C5 RewardComposer] reward=0.8430
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 23 ---
+[C1 UserSimulator] state: pain=2.8 fatigue=3.7 mood=6.8 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T038 (score=3.77)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Internal Rotation with Resistance Band. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T038
+[C5 RewardComposer] reward=0.8852
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 24 ---
+[C1 UserSimulator] state: pain=2.9 fatigue=4.0 mood=7.5 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T067 (score=3.86)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Bridges (Glute Bridge). It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T067
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 25 ---
+[C1 UserSimulator] state: pain=2.6 fatigue=2.4 mood=7.2 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T073 (score=3.73)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Side Plank (Modified). It's a 3/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T073
+[C5 RewardComposer] reward=0.9347
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 26 ---
+[C1 UserSimulator] state: pain=5.1 fatigue=0.0 mood=7.1 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T077 (score=3.78)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Walking Program (Level Surface). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T077
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 27 ---
+[C1 UserSimulator] state: pain=3.4 fatigue=6.5 mood=5.5 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T080 (score=3.76)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Seated Lumbar Rotation. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T080
+[C5 RewardComposer] reward=0.9287
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 28 ---
+[C1 UserSimulator] state: pain=2.2 fatigue=5.3 mood=8.1 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T002 (score=4.04)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Straight Leg Raises. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T002
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 29 ---
+[C1 UserSimulator] state: pain=1.7 fatigue=6.0 mood=5.5 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T037 (score=3.70)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: External Rotation with Resistance Band. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T037
+[C5 RewardComposer] reward=0.9045
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 30 ---
+[C1 UserSimulator] state: pain=2.9 fatigue=3.1 mood=8.6 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T015 (score=3.76)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Prone Hang Knee Extension Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T015
+[C5 RewardComposer] reward=0.8150
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 31 ---
+[C1 UserSimulator] state: pain=4.0 fatigue=3.5 mood=6.5 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T077 (score=3.69)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Walking Program (Level Surface). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T077
+[C5 RewardComposer] reward=0.8299
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 32 ---
+[C1 UserSimulator] state: pain=1.1 fatigue=3.4 mood=7.7 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T002 (score=3.76)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Straight Leg Raises. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T002
+[C5 RewardComposer] reward=0.8551
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 33 ---
+[C1 UserSimulator] state: pain=2.5 fatigue=5.6 mood=4.7 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T085 (score=3.64)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Superman Exercise. It's a 3/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T085
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 34 ---
+[C1 UserSimulator] state: pain=2.8 fatigue=0.2 mood=8.6 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T078 (score=3.80)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Hip Flexor Stretch (Half-Kneeling). It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T078
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 35 ---
+[C1 UserSimulator] state: pain=1.3 fatigue=3.3 mood=7.9 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T088 (score=4.07)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Pallof Press (Anti-Rotation). It's a 3/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T088
+[C5 RewardComposer] reward=0.9343
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 36 ---
+[C1 UserSimulator] state: pain=3.5 fatigue=0.0 mood=6.7 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T081 (score=3.67)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Stability Ball Seated Marching. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T081
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 37 ---
+[C1 UserSimulator] state: pain=2.6 fatigue=5.2 mood=6.1 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T075 (score=3.67)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Plank Hold (Forearm). It's a 3/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T075
+[C5 RewardComposer] reward=0.9716
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 38 ---
+[C1 UserSimulator] state: pain=3.5 fatigue=6.4 mood=5.4 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T049 (score=3.70)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Shoulder Shrugs. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T049
+[C5 RewardComposer] reward=0.8508
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 39 ---
+[C1 UserSimulator] state: pain=2.9 fatigue=2.6 mood=7.6 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T014 (score=3.71)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Knee Flexion Passive ROM Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = reject; chosen_task_id=T014
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 40 ---
+[C1 UserSimulator] state: pain=1.7 fatigue=5.2 mood=6.4 act=act2
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T083 (score=3.68)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Aquatic Walking for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T083
+[C5 RewardComposer] reward=0.8235
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 41 ---
+[C1 UserSimulator] state: pain=2.7 fatigue=1.3 mood=5.9 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T041 (score=3.62)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Supine Shoulder Abduction Passive ROM. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T041
+[C5 RewardComposer] reward=0.8005
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 42 ---
+[C1 UserSimulator] state: pain=2.5 fatigue=4.2 mood=7.7 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T062 (score=3.73)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=coach] "Today's challenge: Ball Squeezes (Isometric Adduction). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state."
+[C1 UserSimulator] user = accept; chosen_task_id=T062
+[C5 RewardComposer] reward=0.8215
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 43 ---
+[C1 UserSimulator] state: pain=1.0 fatigue=3.9 mood=8.2 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T004 (score=3.76)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Prone Knee Flexion for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T004
+[C5 RewardComposer] reward=0.8608
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 44 ---
+[C1 UserSimulator] state: pain=0.0 fatigue=5.7 mood=6.4 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T095 (score=3.83)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Tai Chi Basic Movements for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = reject; chosen_task_id=T095
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 45 ---
+[C1 UserSimulator] state: pain=2.8 fatigue=1.9 mood=6.1 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T035 (score=3.63)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Shoulder Isometric External Rotation for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T035
+[C5 RewardComposer] reward=0.8050
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 46 ---
+[C1 UserSimulator] state: pain=0.6 fatigue=1.2 mood=8.9 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T042 (score=3.82)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Cross-Body Shoulder Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T042
+[C5 RewardComposer] reward=0.8225
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 47 ---
+[C1 UserSimulator] state: pain=2.8 fatigue=0.0 mood=8.1 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T026 (score=3.81)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Standing Quad Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T026
+[C5 RewardComposer] reward=0.8333
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 48 ---
+[C1 UserSimulator] state: pain=2.4 fatigue=1.0 mood=9.0 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T003 (score=3.88)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Heel Slides for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = reject; chosen_task_id=T003
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 49 ---
+[C1 UserSimulator] state: pain=1.9 fatigue=2.4 mood=6.8 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T086 (score=3.74)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Single-Leg Bridge for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T086
+[C5 RewardComposer] reward=0.9242
+[C4 Narrator/closing=concern] "Today took something out of you, Alex Chen. Pain was at 2.2, fatigue at 3.2. I'll make tomorrow's plan lighter — rest tonight."
+--- Day 50 ---
+[C1 UserSimulator] state: pain=3.1 fatigue=2.7 mood=7.6 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T009 (score=3.78)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Terminal Knee Extensions for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T009
+[C5 RewardComposer] reward=0.8743
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 51 ---
+[C1 UserSimulator] state: pain=1.6 fatigue=3.7 mood=6.2 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T061 (score=3.71)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Wand-Assisted Shoulder ER Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T061
+[C5 RewardComposer] reward=0.8667
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 52 ---
+[C1 UserSimulator] state: pain=2.4 fatigue=6.6 mood=4.2 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T048 (score=3.77)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Doorway Pec Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T048
+[C5 RewardComposer] reward=0.9152
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 53 ---
+[C1 UserSimulator] state: pain=1.0 fatigue=4.1 mood=7.9 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T033 (score=3.80)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Passive Shoulder Flexion (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = reject; chosen_task_id=T033
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 54 ---
+[C1 UserSimulator] state: pain=0.0 fatigue=3.9 mood=6.8 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T081 (score=3.68)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Stability Ball Seated Marching for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T081
+[C5 RewardComposer] reward=0.8469
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 55 ---
+[C1 UserSimulator] state: pain=1.1 fatigue=2.2 mood=7.3 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T079 (score=3.69)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Piriformis Stretch (Figure-4) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T079
+[C5 RewardComposer] reward=0.8392
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 56 ---
+[C1 UserSimulator] state: pain=2.8 fatigue=4.0 mood=7.3 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T094 (score=3.85)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Gentle Full-Body Stretching Routine for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T094
+[C5 RewardComposer] reward=0.8225
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 57 ---
+[C1 UserSimulator] state: pain=1.6 fatigue=6.3 mood=6.6 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T071 (score=4.08)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Prone Press-Up (McKenzie Extension) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T071
+[C5 RewardComposer] reward=0.8978
+[C4 Narrator/closing=safety_followup] "Today the safety rule had the last word, Alex Chen. That's okay — this phase is about protection. We'll push again when the body says yes."
+--- Day 58 ---
+[C1 UserSimulator] state: pain=1.7 fatigue=0.0 mood=9.6 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T092 (score=3.90)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T092
+[C5 RewardComposer] reward=0.7902
+[C4 Narrator/closing=celebration] "Done for today, Alex Chen. 0-day streak intact. You showed up when it would've been easier not to. Tomorrow we go again."
+--- Day 59 ---
+[C1 UserSimulator] state: pain=2.5 fatigue=3.8 mood=7.7 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T068 (score=3.85)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Bird-Dog Exercise for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = reject; chosen_task_id=T068
+[C5 RewardComposer] reward=0.0000
+[C4 Narrator/closing=skip_recovery] "Rest day today, Alex Chen. Bodies ask for them. Tomorrow we see where you're at — no plan locked in yet."
+--- Day 60 ---
+[C1 UserSimulator] state: pain=1.1 fatigue=2.1 mood=9.2 act=act3
+[C3 SafetyAgent/pre_filter] 100 → 77 (filtered 23)
+[C2 Recommender/saps] top-1 = T054 (score=3.83)
+[C3 SafetyAgent/post_check] verdict = ALLOW
+[C4 Narrator/tone=companion] "I thought of Sidelying External Rotation for you today, Alex Chen. It reminds me of what helped around this time. Up for it?"
+[C1 UserSimulator] user = accept; chosen_task_id=T054
+[C5 RewardComposer] reward=0.8334
+[C4 Narrator/closing=concern] "Today took something out of you, Alex Chen. Pain was at 1.3, fatigue at 1.9. I'll make tomorrow's plan lighter — rest tonight."
+=== Trajectory Summary ===
+Cumulative reward: 39.25
+SVR: 0.0000 (0 five-rule violations)
+IER: 0.0933
+Narrator arc progression: act1→act2→act3

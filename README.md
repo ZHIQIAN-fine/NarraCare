@@ -1,299 +1,173 @@
-# NarraCare
+# NarraCare — final coursework submission
 
-An LLM tool-calling rehabilitation recommender with a companion trail, backed by a separate synthetic benchmark.
-CA6124 Group Project, 2026 Semester 1.
+A conversational rehabilitation recommender with a narrative companion: an LLM
+interprets check-ins and chooses guarded tools; SAPS ranks catalogue tasks;
+independent runtime constraints check delivery; a template Narrator presents the
+result. A separate online benchmark evaluates recommendation behavior.
 
-## Choose a version
+**Start here:** [final report and source archive](submission/README.md) ·
+[agent architecture](docs/conversational_agent.md) ·
+[data provenance](data/README.md) · [experiment protocol](evaluation/README.md).
+Historical reports, results, replay and runners are under [archive/](archive/README.md).
+They are not the final experimental evidence. No clinical effectiveness or
+patient-safety claim follows from this synthetic coursework prototype.
 
-| Version | Purpose | Entry |
-|---|---|---|
-| **[main](https://github.com/ZHIQIAN-fine/NarraCare/tree/main)** | Current agent source and unchanged benchmark | `python -m narracare.agent_app` |
-| **[agent](https://github.com/ZHIQIAN-fine/NarraCare/tree/agent)** | Reviewed agent submission bundle and presentation files | [Downloads](https://github.com/ZHIQIAN-fine/NarraCare/tree/agent/deliverables/agent) |
-| **[benchmark](https://github.com/ZHIQIAN-fine/NarraCare/tree/benchmark)** | Preserved pre-agent benchmark at `da833fd` | `python -m narracare.demo` |
+## Objective and architecture
 
-The **live Gradio agent is interactive**: user messages change symptoms,
-preferences, retrieval and reported-feedback updates. The single-file HTML
-is an **offline recorded replay**. They are different demonstrations.
-See [version guide](docs/versions.md) for branch roles and preserved history.
-
-## Overview
-
-NarraCare recommends rehabilitation exercises from patient context and feedback,
-with a Safety Agent and a template-based Narrator. All data is synthetic:
-20 personas, 100 tasks and a 60-day evaluation horizon. This is a coursework
-prototype, not a clinically validated treatment system.
-
-SAPS combines disjoint LinUCB reward UCB with a sampled Beta safety bonus.
-Its recommendation output retains an internal safe-arm gate. IER uses a
-separate ungated top-5 ranking, which also drives the existing negative reward
-updates. The current SAPS IER is 0.0223, not a gate-guaranteed zero.
-
-## System architecture
-
-Actual daily execution in `src/pipeline.py`:
+The practical aim is to make personalized task selection, feasibility constraints
+and feedback adaptation inspectable together. ACL/rotator-cuff profiles describe
+postoperative rehabilitation; BP describes chronic back pain, not back surgery.
+There is no medical-record importer. Profiles are synthetic, current symptoms
+are explicitly self-reported, and unknown ROM is clearly marked.
 
 ```text
-User Simulator state -> patient features and memory
-  -> Safety pre-filter and emotional difficulty cap
-  -> Recommender -> Safety post-check -> template Narrator
-  -> simulated user choice and feedback -> Reward Composer
-  -> model updates -> Narrator daily closing
+Live: English check-in → LLM/tool controller → state and preference memory
+      → catalogue retrieval + Safety → SAPS → final Safety checks
+      → template Narrator → reported outcome → Reward Composer/model update
+Benchmark: simulated state → Safety → policy → Safety → template Narrator
+           → simulated choice/outcome → Reward Composer/update → daily closing
 ```
 
-The five demonstrated components are User Simulator, Recommender, Safety Agent,
-Narrator and Reward Composer. Reward calculation lives in `src/simulator.py`
-and is invoked by the pipeline. Active recommendation models are defined in
-`src/agents/recommender.py` and `src/policies/saps.py`. `src/models/` is an older,
-separate implementation stack, not the factory used by the formal experiments.
+SAPS adapts disjoint LinUCB reward estimates with a sampled per-task Beta bonus:
+`S(a) = r_ucb(a) + tau_safe * s`, `s ~ Beta(alpha_a, beta_a)`, `tau_safe = 2.0`.
+The bonus affects ranking; independent predicates constrain delivered tasks.
+It is not a clinical safety probability. Only attempted tasks produce physical
+outcomes and Beta observations. Skips produce no invented recovery or satisfaction.
 
 ## Installation and data preparation
 
-Use Python 3.10 or later; CPU execution is supported. NeuralUCB uses PyTorch.
-The review environment used Python 3.12, NumPy 2.0.2, SciPy 1.14.1 and
-PyTorch 2.4.1+cpu. Dependency pins are in `requirements.txt`.
+Python 3.10+ and CPU PyTorch are supported. The verification environment used
+Python 3.12, NumPy 2.0.2, SciPy 1.14.1 and PyTorch 2.4.1+cpu.
 
 ```bash
 git clone https://github.com/ZHIQIAN-fine/NarraCare.git
 cd NarraCare
 python -m pip install -r requirements.txt
+# Optional live graphical interface:
+python -m pip install -r requirements-agent.txt
+# Regression checks:
+python -m pip install pytest
 ```
 
-All inputs are included under `data/`; no download or preprocessing is needed.
-See [data/README.md](data/README.md). These are authored static JSON files;
-experiment scripts regenerate outputs, not the static catalogue or profiles.
-The agent submission archive `narracare_agent_submission.tar.gz` extracts into
-`narracare_agent/`. Download it from the `agent` branch linked above. Earlier
-`narracare_submission.tar.gz` / `narracare_1eb927a.tar.gz` archives predate the live agent.
+All static inputs are included in `data/`: 20 synthetic personas, 100 authored
+tasks, 51 design-rule definitions and narrative templates/arcs. There is no
+public patient dataset, offline interaction-training set or pretrained download.
+See the provenance and limitations in [data/README.md](data/README.md).
 
 ## Run the demonstration
 
-Run from the repository root after installation. Use the live agent for the
-interactive presentation, or the benchmark CLI / HTML for offline inspection.
+### Interactive LLM agent — recommended system demonstration
 
-### Live conversational agent
-
-The benchmark CLI and single-file HTML replay remain unchanged. A separate
-LLM tool-calling agent adds natural-language check-ins, clarification, preference
-memory, catalogue retrieval, SAPS ranking, grounded explanations and actual
-reported feedback. Its Gradio interface combines a companion mountain trail,
-`ChatInterface`, and a live state/tool-activity panel.
+Configure `OPENAI_API_KEY` or `NARRACARE_LLM_API_KEY` securely in your environment.
+Do not put credentials in source. Default model: `gpt-4o-mini`; optional
+`NARRACARE_LLM_MODEL` and `NARRACARE_LLM_BASE_URL` select a compatible HTTPS provider.
 
 ```bash
-python -m pip install -r requirements.txt
-python -m pip install -r requirements-agent.txt
-# Set OPENAI_API_KEY securely in your environment, not in source.
-python -m narracare.agent --user U001 --seed 42
 python -m narracare.agent_app --port 7860
+# Terminal interface to the same agent:
+python -m narracare.agent --user U001 --seed 42
 ```
 
-Default model: `gpt-4o-mini`. Optional `NARRACARE_LLM_MODEL` and
-`NARRACARE_LLM_BASE_URL` configure an OpenAI-compatible HTTPS endpoint.
-`NARRACARE_LLM_API_KEY` is an alternative secret variable for cloud environments.
-This **live agent requires network access and a provider key**; it never falls
-back to a scripted agent. The old benchmark demo remains offline. Use synthetic
-inputs only: chat and session context go to the configured provider. ACL/RC are
-postoperative profiles; BP is chronic back pain, not back surgery. This is not a
-clinical service. Gradio binds to loopback with public sharing disabled.
+The Gradio ChatInterface has a companion mountain trail and right-hand state/tool
+panel. Guided forms prepare messages for review; **Send** still calls the LLM.
+Try a check-in, a category preference, a preference revision and actual completion
+feedback. “I'll try” does not earn reward. Skipping creates camp without a model
+outcome update; explicitly reporting pain prevents all activity permits a pause.
+Ordinary days aim to offer a suitable task, including recovery tasks.
 
-See [agent architecture and Section 4 capability mapping](docs/conversational_agent.md)
-for tool contracts, feedback provenance, the demo dialogue and verification.
-No benchmark results are rewritten by this entry point.
+The live agent requires a provider key and network, never substitutes a scripted
+planner, and sends synthetic demo messages/context to the provider. It keeps
+session learning in RAM and does not write benchmark results. Unknown ROM uses
+an explicitly labelled conservative filtering proxy, not a measured value.
+Satisfaction is recorded descriptively and does not enter the reward formula.
 
-### Offline benchmark CLI and recorded HTML
-
+### Offline five-component benchmark CLI
 
 ```bash
-# Real end-to-end pipeline, with component-labelled daily output
 python -m narracare.demo --user U001 --days 60 --policy saps --seed 42
-
-# Inspect source/config/data definitions without running a simulation
 python -m narracare.demo --inspect
-
-# Live traces followed by a separately labelled frozen aggregate table
 python -m narracare.demo --user U001 --days 7 --compare saps,linucb,neuralucb
-
-# No list means all seven policies
+# No list selects all seven policies:
 python -m narracare.demo --days 7 --compare
 ```
 
-`python -m narracare` is equivalent. Defaults: U001, 60 days, saps, seed 42.
-Days must be 1–60. Policies: `saps`, `linucb`, `neuralucb`, `random`,
-`popularity`, `rule_based`, `epsilon_greedy`.
-
-The CLI prints state, filtering counts, a proposed task and score, post-check
-outcome, original narrator text/tone, simulated choice, reward and closing.
-It runs the pipeline in a temporary-directory subprocess and does not overwrite
-frozen results. **No OpenAI API key or network is needed after installation.**
-
-With `--compare`, daily traces use the selected user/days/seed, but the final
-table reads the stored **20-persona, 60-day aggregate artifacts**. The selected
-arguments do not change those frozen metrics. Missing fields such as Act
-distribution display `N/A (not in frozen artifacts)`. Demo defaults are separate
-from policy-specific formal experiment settings.
-
-For the visual demo, open **[demo/index.html](demo/index.html)** in a modern
-browser. It is one self-contained file: no Python, server, installation, network
-or API key. It embeds U001/U008/U014 x SAPS/LinUCB/NeuralUCB x 60 recorded days.
-Replies change the trail presentation, not the saved choices/rewards. It is an
-interactive replay; use the CLI to verify runtime component integration.
+No API key/network is needed after installation. Defaults are U001 / 60 days /
+SAPS / seed 42; days range 1–60. The CLI runs real components in temporary
+storage and prints state, counts, task, tone, choice, reward and closing.
+The comparison table reads **final top-1, 20-persona, 60-day, seeds 52–61 means**;
+it does not describe the selected user's short trace. The historical standalone
+HTML replay is in `archive/pre-submission/demo/`, not the interactive agent.
 
 ### Mapping to CA6124 Section 6
 
-The live agent integrates understanding/clarification, preferences, safe retrieval,
-SAPS ranking, template narration, explanation and actual reported feedback. Its
-right panel exposes state and observed tools. The benchmark CLI separately
-integrates simulation, recommendation, safety, narrative rendering and feedback. `--inspect` exposes source definitions. The HTML replay
-makes the recorded state, safety counts, task, tone and reward accessible without
-installing the backend.
+The live agent demonstrates natural-language understanding, clarification,
+preference memory, retrieval, ranking, grounded presentation/explanation and
+reported-feedback adaptation. The CLI separately exposes the five benchmark
+components and their actual execution order. The trail/companion is an application
+design: its effect on adherence or recovery has not been measured.
 
-## Methods and implementation boundaries
+## Training, evaluation and reproduction
 
-| Policy | Implementation used by the pipeline |
-|---|---|
-| SAPS | LinUCB reward UCB + sampled Beta safety bonus, with internal safe-arm gate |
-| LinUCB | Disjoint linear UCB on 15-dimensional patient context |
-| NeuralUCB | Modified arm-mean/noise heuristic plus a shared neural context prediction; that shared term cancels in arm ranking |
-| Random | Random candidate scores |
-| Popularity | Historical mean reward per task, not acceptance count |
-| RuleBased | Identical context-dependent score for every task; stable candidate order resolves ties |
-| EpsilonGreedy | Epsilon 0.1 exploration; otherwise historical mean reward |
-
-NeuralUCB is not Zhou et al.'s original gradient-UCB algorithm. RuleBased is an
-order-based reference, not a strong task-aware clinical rule ranker.
-
-SAPS: `S(a) = r_ucb(a) + tau_safe * s`, where
-`s ~ Beta(alpha_a, beta_a)` and `tau_safe = 2.0`. Only safety is Thompson sampled.
-The chosen arm receives a Beta update from `pain_change <= 1.0`; blocked arms
-have no post-hoc outcome. Beta parameters are indexed by task and shared across
-users. LinUCB reward parameters are per task, with patient context as input.
-
-Safety Layer A has five runtime pre-filter checks: contraindication overlap,
-stage mismatch, high pain/high difficulty, severe fatigue/non-gentle category,
-and low ROM/demanding or cardio task. Layer B has 51 design definitions:
-16 contraindication, 9 dosage, 6 fatigue, 10 crisis, 10 progression. These are
-not 51 additional predicates all executed on each recommendation.
-
-## Training and hyperparameter settings
-
-Learning occurs online inside rollouts; no pretrained download is required.
-One learner is shared across personas. Formal runner overrides take precedence
-over `configs/default.yaml` and policy YAML defaults.
-
-| Setting | Formal experiment value |
-|---|---|
-| Seed / days / personas | 42 / 60 / 20 |
-| Context dimension / shortlist | 15 / 3 |
-| SAPS alpha_ucb / tau_safe / Beta priors | 1.0 / 2.0 / (1, 1) |
-| LinUCB alpha | 1.0 |
-| NeuralUCB hidden width / epochs / alpha | 32 / 5 / 0.01 |
-| NeuralUCB reward safety_lambda | 3.0 |
-| Other policies' base safety_lambda | 1.0 |
-| EpsilonGreedy epsilon | 0.1 |
-| Reward completion / safety / difficulty / pain / dropout / category weights | 0.35 / 0.25 / 0.20 / 0.10 / 0.05 / 0.05 |
-
-Exploratory configurations can use `config_overrides`:
-
-```python
-from src.pipeline import NarraCarePipeline
-
-pipe = NarraCarePipeline("configs/default.yaml", config_overrides={
-    "recommender": {"algorithm": "saps", "saps": {"tau_safe": 2.0}},
-    "system": {"seed": 42},
-})
-logs = pipe.run_simulation(n_days=60)
-```
-
-Keep exploratory runs separate from frozen results. No completed tau grid
-search or extra seeds 43/44 are claimed by this submission.
-
-## Reproduce experiments
-
-Experiments intentionally write `evaluation/results/`; use a disposable clone
-if preserving the original artifacts byte-for-byte is required.
+Learning is online, predicting before observed feedback, with one learner shared
+across the 20 simulated users in each run. **Top-1** matches the one-task live
+interface. Top-1 versus Top-3 is a separate development diagnostic (seeds 42–51).
+Final seven-policy results use seeds **52–61**, the same personas, 60 days each.
+These are independent seeded runs, not held-out real patients. The experiment
+runner trains by online rollout; it needs no separate offline training command.
+For exploratory settings, use `NarraCarePipeline(config_overrides=...)` or a
+versioned runner override and a separate output directory. Formal overrides
+are listed in evaluation/README.md and take precedence over YAML defaults;
+changing YAML alone does not tune every formal policy. No tau search or
+performance-based setting selection was performed.
 
 ```bash
+# Regenerate all final evidence into temporary storage and compare references:
 bash scripts/reproduce_all.sh
-bash scripts/reproduce_coldstart.sh
+# Generate a separate experiment directory explicitly:
+python -m evaluation.run_submission --output-dir /tmp/narracare-new-results
+python -m pytest -q
+# Optional real-provider engineering smoke (network/key/billing required):
+python -m narracare.agent_check
 ```
 
-The first script executes SAPS/LinUCB, four baseline/NoSafety runs, NeuralUCB
-and its historical variant, safety diagnostics, robustness and narrative
-sampling. **Random and cold-start appear in its comparison list but are not
-regenerated by that script.** Cold-start has the separate command above.
-Regenerate Random explicitly with `python evaluation/run_60day.py --method random`.
-Regenerate the separate LinUCB summary with `python evaluation/run_60day.py --method linucb`.
-Paired-test commands
-are in `evaluation/scripts/paired_t_test.py`.
+The reproducer regenerates all seven top-level artifacts, compares every field
+with numeric `rtol=1e-10, atol=1e-12`, changes no committed reference, and exits
+nonzero on mismatch. The protocol records source/data/config SHA256 values.
+See [evaluation/README.md](evaluation/README.md) for exact settings and metrics.
 
-Verification uses exact comparison for five files and removes only
-`wall_time_s` before comparing eight others. There is no numeric tolerance.
-A repeated run against regenerated references passed **13/13 comparisons,
-0 FAIL, 0 SKIP** in the review environment. This is a same-environment result:
-cross-machine BLAS differences around 1e-14 can still fail exact comparison.
-Inspect the printed summary because comparison failures do not currently force
-a nonzero script exit. Random and cold-start PASS lines compare existing files;
-those policies were also regenerated separately for this release.
+## Final results and interpretation
 
-See [artifact index](evaluation/results/README.md) and
-[implementation notes](docs/implementation_notes.md) for coverage and caveats.
+Mean per-person 60-day reward, then mean across ten final seeds:
 
-### Optional narrative scoring
+| Policy | Cumulative reward | SVR | IER |
+|---|---:|---:|---:|
+| SAPS | 27.6085 | 0.0000 | 0.01535 |
+| LinUCB | 27.3975 | 0.0000 | 0.01528 |
+| Modified NeuralUCB | 22.1994 | 0.0000 | 0.00035 |
+| Random | 32.2533 | 0.0000 | 0.41082 |
+| Popularity | 22.9922 | 0.0000 | 0.01060 |
+| RuleBased | 22.0204 | 0.0000 | 0.32597 |
+| EpsilonGreedy | 24.7411 | 0.0000 | 0.05245 |
 
-The Narrator is template-based and offline. Only optional external LLM judging
-uses a key. The supported scoring script is `evaluation/llm_judge_colab.py`;
-its header describes local/Colab use. Export `OPENAI_API_KEY` or use Colab
-secrets; copying `.env.example` does not automatically load environment variables.
-Later remote model responses are not guaranteed byte-identical. Save new scores
-separately from committed scores. Offline aggregation instructions are in
-[evaluation/results/README_narrative_eval.md](evaluation/results/README_narrative_eval.md).
+Reward is simulated utility, not recovery. SVR audits accepted tasks against five
+implemented predicates; IER measures raw ungated top-5 proposals against the
+current feasible set. Low IER does not prove clinical safety or bonus efficacy.
+All seven filtered policies had zero recorded violations; LinUCB without runtime
+filtering had 1,090/6,834 accepted-task violations (pooled 0.1595; macro SVR 0.1556).
 
-## Recorded results and interpretation
+SAPS minus LinUCB reward is +0.2110, 95% seed-paired CI [-0.2159, 0.6378],
+adjusted p=0.5850. Random has higher reward and broader task coverage. The fixed
+bonus on/off comparison does not establish benefit in reward, IER or acceptance.
+Top-3 raises reward for all three diagnostic policies; coverage is descriptive
+and has not been established as the cause of Random's advantage.
 
-Current results after the ungated-IER and five-rule SVR repair, seed 42,
-20 personas and 60 days. Reward is mean per-person cumulative reward.
-
-| Policy | Cumulative reward | Ungated IER |
-|---|---|---|
-| SAPS | 42.0182 +/- 3.0136 | 0.0223 |
-| LinUCB | 41.9395 +/- 3.0015 | 0.0233 |
-| NeuralUCB modified | 38.31 | 0.0022 |
-| Random | 45.94 | 0.4082 |
-| Popularity | 39.03 | 0.0127 |
-| RuleBased | 43.33 | 0.3257 |
-| EpsilonGreedy | 40.95 | 0.0503 |
-
-IER measures the second, ungated all-candidate top-5 against the current feasible
-set, including the emotional difficulty cap. The SAPS measurement bypasses its
-output gate. Its infeasible proposals also receive the existing negative reward
-updates, so repairing the path changes learning and reward, not just a column.
-
-SAPS minus LinUCB reward is +0.0787, t(19)=0.3328, p=0.7429,
-95% CI [-0.4163, 0.5737]. The IER difference is -0.0010, p=0.6295.
-Neither supports a significant advantage over LinUCB. Random has higher reward.
-Against the limited modified NeuralUCB reference, reward difference is +3.7046
-(p=1.01e-6), but SAPS has higher IER by 0.02017 (p=1.88e-6).
-All tests describe a fixed cohort with shared online learning and one seed,
-not independent repeated-run or clinical evidence. The two current paired
-comparison artifacts supersede the old gated-IER comparisons.
-
-Every interaction now carries `safety_violation`. Only accepted tasks count,
-audited against the full five pre-filter predicates using configured thresholds,
-even in NoSafety/one-drop runs. Legacy logs are replayed through SafetyAgent,
-including ROM. The seven filtered policies have zero accepted-task violations.
-Dedicated pooled replay gives LinUCB WithSafety 0/743 versus NoSafety 171/772
-(0.2215). Main formal summaries retain per-person macro averaging, giving
-NoSafety 0.2181. Both divide by accepted tasks but weight users differently.
-None establishes enforcement of all 51 design rules or clinical safety.
-
-Cold-start SAPS reward is 41.55 on training users, 42.01 on BP reward-frozen
-rollout and 43.35 when retrained on BP. Frozen minus Retrained is -1.3420
-(raw p=0.0350, n=5). Their IERs are 0.0267 / 0.0080 / 0.0627 respectively.
-The lower frozen IER accompanies lower reward, not a reward transfer advantage.
-Beta still adapts in the reward-frozen variant, so it is not fully frozen transfer.
-These are small, exploratory comparisons without a clinical interpretation.
-Other limits include Narrator condition/day fallback, simulator bookkeeping
-and weak reference policies; see the implementation notes.
+Modified NeuralUCB has a shared neural context term that cancels in arm ranking;
+RuleBased assigns identical scores, with catalogue order breaking ties. These
+are limited references. Popularity uses mean reward, not interaction counts.
+The strongest evidence is end-to-end integration and inspectable execution of
+specified constraints; clinical validation and narrative adherence studies remain
+future work. [Archived versions](docs/versions.md) preserve earlier evidence.
 
 ## License and citation
 
-MIT; see [LICENSE](LICENSE). Software metadata: [CITATION.cff](CITATION.cff).
+MIT: [LICENSE](LICENSE). Project metadata: [CITATION.cff](CITATION.cff).

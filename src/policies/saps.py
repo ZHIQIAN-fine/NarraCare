@@ -6,11 +6,14 @@ A BanditModel subclass that combines:
   * Per-arm Beta(α, β) posterior for safety probability
   * Thompson sampling of safety score in the composite selection
 
-Design (R2 T4 spec + user patch):
-  * `was_safe` ≡ Safety Agent pre-filter verdict (NOT user accept/reject)
-  * Action space: composite-score the FULL catalog; output only safe arms
-  * SVR = 0 guaranteed (unsafe arms never in final recommendation)
-  * SAPS learns to avoid unsafe arms through (α, β) decay
+Runtime contract:
+  * The benchmark/live caller supplies `was_safe` from an attempted task's
+    pain_change <= SAPS_PAIN_SAFE_THRESHOLD; this is an outcome proxy.
+  * Composite-score the supplied candidates; select() retains only feasible
+    IDs supplied by the caller. select_raw_topk() intentionally bypasses it.
+  * The sampled bonus changes ranking, not the hard feasibility predicates.
+    This interface does not establish complete clinical safety.
+  * Beta counts increase with observed outcomes; there is no posterior decay.
 
 Composite score:
   S(a) = UCB_reward(a) + τ_safe · s_a,   s_a ~ Beta(α_a, β_a)
@@ -131,7 +134,7 @@ class SAPSModel:
 
         scored.sort(key=lambda t: t[1], reverse=True)
 
-        # SVR guarantee: only return safe arms
+        # Delivery gate for the caller's current feasible IDs, not clinical proof.
         safe_scored = [
             (aid, sc) for aid, sc in scored if aid in self._current_safe_ids
         ]
@@ -169,7 +172,8 @@ class SAPSModel:
         ----------
         arm_id : str
         was_safe : bool
-            True = Safety Agent pre-filter did NOT block this arm.
+            Caller-supplied outcome label. The active benchmark/live path uses
+            pain_change <= 1.0 after an actual attempt, never user acceptance alone.
         """
         a, b = self._get_safety(arm_id)
         if was_safe:
@@ -186,8 +190,9 @@ class SAPSModel:
     ) -> None:
         """Update safety posteriors for a batch of candidates.
 
-        Called by pipeline after each recommendation round with the
-        raw top-K candidates and the set blocked by Safety Agent.
+        Legacy rule-label helper, not called by the active benchmark/live path.
+        It labels feasibility rather than observed physical outcomes; do not
+        substitute it for attempted-task pain feedback.
         """
         for arm_id in candidate_ids:
             self.update_safety(arm_id, arm_id not in blocked_ids)

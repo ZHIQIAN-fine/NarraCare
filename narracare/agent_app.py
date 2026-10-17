@@ -25,6 +25,7 @@ body,.gradio-container{background:#0d1821!important;color:#e4ede8!important;font
 .state-panel progress{appearance:none;border:0;border-radius:8px;overflow:hidden;background:#344950}
 .state-panel progress::-webkit-progress-bar{background:#344950;border-radius:8px}.state-panel progress::-webkit-progress-value{background:#b0d392;border-radius:8px}
 #chat .prose p,#chat .prose strong,#chat .prose code{color:#2b4048!important}
+#guided-checkin .prose p,#guided-checkin .prose strong,#guided-feedback .prose p,#guided-feedback .prose strong{color:#2b4048!important}
 footer{display:none!important}button{border-radius:12px!important}#controls{padding:4px 0 14px}
 """
 
@@ -94,7 +95,7 @@ def render_panels(agent=None):
     reaction = "A manageable step is enough."
     if s["on_hold"]:
         reaction = "Safety hold. The journey pauses for clinical support."
-    elif s["reward_history"] and s["reward_history"][-1]["action"] == "skipped":
+    elif s["reward_history"] and s["reward_history"][-1]["action"] in {"skipped", "paused"}:
         reaction = "Camp together. Rest belongs on this journey."
     elif current.get("fatigue_level", 0) >= 8:
         reaction = "Pip signals a pause and stays close."
@@ -115,8 +116,8 @@ def render_panels(agent=None):
     if not task and c:
         safety_line = "Last computed plan: " + safety_line
     scene = f"""<div class="scene"><small>DAY {s["day"]} / 60 · {escape(s["act"].upper())} · {s["streak"]}-DAY COMPLETION STREAK</small>
-    <div class="scene-top"><div><h2>{place}</h2><p>{formation}</p></div><div class="companions">{companion_art(bool(s["reward_history"] and s["reward_history"][-1]["action"] == "skipped"))}</div></div>
-    <p>{escape(reaction)}</p>{trail_art(s["trail_steps"], s["act"], bool(s["reward_history"] and s["reward_history"][-1]["action"] == "skipped"))}<div class="legend"><span>Forest 1–15</span><span>Canyon 16–40</span><span>Summit 41–60</span></div>
+    <div class="scene-top"><div><h2>{place}</h2><p>{formation}</p></div><div class="companions">{companion_art(bool(s["reward_history"] and s["reward_history"][-1]["action"] in {"skipped", "paused"}))}</div></div>
+    <p>{escape(reaction)}</p>{trail_art(s["trail_steps"], s["act"], bool(s["reward_history"] and s["reward_history"][-1]["action"] in {"skipped", "paused"}))}<div class="legend"><span>Forest 1–15</span><span>Canyon 16–40</span><span>Summit 41–60</span></div>
     <p class="note">{s["trail_steps"]} completed trail steps. Skips close a day without moving the trail. Narrative day never promotes clinical stage.</p>
     {task_html}<p>🛡 {escape(safety_line)}</p></div>"""
     vitals = ""
@@ -153,7 +154,7 @@ def render_panels(agent=None):
         else "Last report. A fresh check-in is required."
     )
     collectibles = "First step ✓" if s["trail_steps"] else "First step pending"
-    if any(r["action"] == "skipped" for r in s["reward_history"]):
+    if any(r["action"] in {"skipped", "paused"} for r in s["reward_history"]):
         collectibles += " · Rest counts ✓"
     if s["streak"] >= 3:
         collectibles += " · Three-day rhythm ✓"
@@ -176,6 +177,13 @@ def build_demo(planner_factory=OpenAIPlanner.from_env):
     import json
 
     from .conversation.tools import ROOT
+    from .checkin import CATEGORIES, compose_checkin, compose_feedback
+
+    def prepare(builder, *values):
+        try:
+            return builder(*values)
+        except ValueError as exc:
+            raise gr.Error(str(exc)) from None
 
     users = json.loads((ROOT / "data/user_profiles.json").read_text())
     scene0, panel0, activity0 = render_panels()
@@ -265,7 +273,38 @@ def build_demo(planner_factory=OpenAIPlanner.from_env):
                     submit_btn="Send",
                     stop_btn=True,
                     max_length=4000,
+                    elem_id="patient-message",
                 )
+                with gr.Accordion("Guided daily check-in and preferences", open=False, elem_id="guided-checkin"):
+                    gr.Markdown("Enter your own ratings; no symptom is filled from the synthetic profile. Prepare a message, review it, then press **Send**. The same LLM and guarded tools handle it. Each day aims to offer a feasible task, including an appropriate recovery task; you can decline it.")
+                    pain_prevents_task = gr.Checkbox(value=False, label="Pain prevents any task today; I have not performed today's task")
+                    with gr.Row():
+                        pain_input = gr.Textbox(value="", label="Current pain (0–10)", elem_id="checkin-pain")
+                        fatigue_input = gr.Textbox(value="", label="Current fatigue (0–10)", elem_id="checkin-fatigue")
+                        mood_input = gr.Textbox(value="", label="Current mood (0–10)", elem_id="checkin-mood")
+                    with gr.Row():
+                        rom_status = gr.Radio(["Unknown / not measured", "Measured"], value="Unknown / not measured", label="ROM source")
+                        rom_input = gr.Textbox(value="", label="ROM in degrees, only if measured", elem_id="checkin-rom")
+                    preferred_input = gr.CheckboxGroup(CATEGORIES, label="Preferred categories (optional)")
+                    avoided_input = gr.CheckboxGroup(CATEGORIES, label="Avoid categories (optional)")
+                    gr.Button("Prepare check-in message").click(
+                        lambda *v: prepare(compose_checkin, *v),
+                        inputs=[pain_input, fatigue_input, mood_input, rom_status, rom_input, preferred_input, avoided_input, pain_prevents_task],
+                        outputs=message, queue=False, api_name=False,
+                    )
+                    gr.Markdown("Unknown ROM stays unknown in the record; the existing filter uses a conservative proxy. No medical-record import or clinical measurement is performed. If pain prevents any task, tell Pip rather than inventing a rating or outcome.")
+                with gr.Accordion("Report an actual task outcome", open=False, elem_id="guided-feedback"):
+                    outcome_action = gr.Radio(["Completed", "Partial"], value="Completed", label="What actually happened?")
+                    with gr.Row():
+                        after_pain = gr.Textbox(value="", label="After-task pain", elem_id="outcome-pain")
+                        after_fatigue = gr.Textbox(value="", label="After-task fatigue", elem_id="outcome-fatigue")
+                        satisfaction = gr.Textbox(value="", label="Satisfaction (0–1; descriptive, not used in reward)", elem_id="outcome-satisfaction")
+                    gr.Button("Prepare outcome message").click(
+                        lambda *v: prepare(compose_feedback, *v),
+                        inputs=[outcome_action, after_pain, after_fatigue, satisfaction],
+                        outputs=message, queue=False, api_name=False,
+                    )
+                    gr.Markdown("Report only after performing the task. 'I'll try' and skip never create a physical outcome. Review the message and press **Send**.")
                 gr.ChatInterface(
                     fn=respond,
                     chatbot=chatbot,
@@ -317,13 +356,13 @@ def build_demo(planner_factory=OpenAIPlanner.from_env):
                 session["agent"].tools.ended = True
             session["generation"] += 1
             session["agent"] = None
-            return session, [], scene0, panel0, activity0
+            return session, [], scene0, panel0, activity0, None, None, None, None, None, None, None, [], [], "Unknown / not measured", False
 
         for trigger in [reset.click, user.change, start_day.change]:
             trigger(
                 fresh,
                 inputs=session,
-                outputs=[session, chatbot, scene, panel, activity],
+                outputs=[session, chatbot, scene, panel, activity, pain_input, fatigue_input, mood_input, rom_input, after_pain, after_fatigue, satisfaction, preferred_input, avoided_input, rom_status, pain_prevents_task],
                 queue=False,
             )
         gr.Markdown(

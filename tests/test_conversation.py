@@ -167,7 +167,8 @@ def test_safety_precedes_llm_and_persists_as_hold():
 def test_fabricated_task_cannot_escape_safety_or_catalogue(monkeypatch):
     t = SessionTools()
     t.current_message = CHECKIN
-    t.dispatch("update_checkin", {"fields": FIELDS, "evidence": CHECKIN})
+    for name, args in plan_actions()[:2]:
+        t.dispatch(name, args)
     t.dispatch("retrieve_candidates", {})
     original = dict(t.candidates[0])
     fake = {**original, "task_id": "invented"}
@@ -182,7 +183,8 @@ def test_fabricated_task_cannot_escape_safety_or_catalogue(monkeypatch):
 def test_empty_candidates_abstain_without_any_fallback(monkeypatch):
     t = SessionTools()
     t.current_message = CHECKIN
-    t.dispatch("update_checkin", {"fields": FIELDS, "evidence": CHECKIN})
+    for name, args in plan_actions()[:2]:
+        t.dispatch(name, args)
     monkeypatch.setattr(t.safety, "pre_filter", lambda *a, **k: [])
     assert t.dispatch("retrieve_candidates", {})["retrieved"] == 0
     with pytest.raises(ToolError):
@@ -195,7 +197,8 @@ def test_empty_candidates_abstain_without_any_fallback(monkeypatch):
 def test_post_check_rejection_has_no_fallback(monkeypatch):
     t = SessionTools()
     t.current_message = CHECKIN
-    t.dispatch("update_checkin", {"fields": FIELDS, "evidence": CHECKIN})
+    for name, args in plan_actions()[:2]:
+        t.dispatch(name, args)
     t.dispatch("retrieve_candidates", {})
     monkeypatch.setattr(t.safety, "post_check", lambda *a, **k: [])
     assert t.dispatch("rank_candidates", {})["post_check"] == "ABSTAIN"

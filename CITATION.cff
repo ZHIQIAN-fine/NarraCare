@@ -6,7 +6,8 @@ abstract: >
   contextual recommendation, five runtime safety pre-filters, a template-based
   narrator and reward composition. SAPS combines LinUCB reward UCB with a Beta
   safety bonus and an internal safe-arm gate. Evaluation uses 20 synthetic
-  personas over 60 days; recorded IER describes policy output with that gate.
+  personas over 60 days; final top-1 evaluation reports ungated proposal IER and executed-rule SVR
+  across ten seeds. A separate LLM tool-calling agent provides live dialogue.
 authors:
   - family-names: "NarraCare Group"
     given-names: "CA6124 2026S1"

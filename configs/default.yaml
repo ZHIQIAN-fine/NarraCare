@@ -17,7 +17,7 @@ llm:
 # Recommender
 recommender:
   algorithm: "linucb"  # linucb | neural_ucb | random | popularity | rule_based | epsilon_greedy
-  top_k: 3
+  top_k: 1  # One delivered task, matching the live agent. Top-3 is diagnostic only.
   
   linucb:
     alpha: 1.0  # exploration parameter

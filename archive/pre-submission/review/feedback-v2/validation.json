@@ -1,0 +1,48 @@
+{
+  "base_commit": "660e85aa2929ffa1c8a1a7fcbd05506a571945b9",
+  "changes_committed": false,
+  "pushed": false,
+  "regression_tests": {
+    "passed": 84,
+    "warnings": 19,
+    "note": "Dependency deprecations; no tests skipped."
+  },
+  "baseline_tests": {
+    "passed": 67
+  },
+  "real_provider_smoke": {
+    "passed": 8,
+    "note": "One synthetic scripted sequence; not a patient study. Initial failures on evidence fragments and omitted preference application were diagnosed, guarded and retested."
+  },
+  "browser": {
+    "guided_unknown_rom_checkin": true,
+    "live_recommendation": true,
+    "guided_actual_outcome": true,
+    "reset_clears_input": true,
+    "explicit_pain_pause": true,
+    "page_errors": [],
+    "blank_checkin_rejected_without_default_zero": true
+  },
+  "safety_boundary_checks": 240,
+  "seed42_main_assigned": 8400,
+  "seed42_main_expected": 8400,
+  "bonus_runs": 20,
+  "bonus_assigned": 24000,
+  "historical_artifacts_sha256_unchanged": 35,
+  "historical_diff_empty": true,
+  "corrected_saps_runner_reproduced": true,
+  "cli_60day_stdout_identical": true,
+  "cli_stdout_sha256": "3794d44cb1ebe65cb2532fbed37d29376233735774a410818578b9beee6c7106",
+  "requirements_unchanged": true,
+  "numerical_inputs_unchanged": true,
+  "initial_gradio_empty_value_issue": "Number widgets supplied 0 for blank inputs; replaced with blank-preserving text fields and numeric validation, then verified in the real browser.",
+  "working_source_sha256": {
+    "src/pipeline.py": "16e19ea2e16e0a3ff60fba49c95d17ee7290c587da1e72c2157afa229d110a82",
+    "src/policies/saps.py": "a69b17ad836011060445184a20516f32e7cdafa1b257e32ec4de06bd1a5426d3",
+    "narracare/checkin.py": "b0811d142fbdf8d149e7953be4693d1a02ecf54fdbc24da8808a0a2b9e64f486",
+    "narracare/agent_app.py": "75fdad86d281c3dfbf6aa9c75164cc949420910d6b02748cfe96be7279c218a3",
+    "narracare/conversation/controller.py": "252f4140f2b75df4ce605ffd0610dd2bc0af69d9c8589e647c395e2b801b5792",
+    "narracare/conversation/tools.py": "70be897ae8478754760211e45d49dedf08744e1eb7633171851e2afe2f5e6c1e",
+    "evaluation/review_feedback.py": "ebb580972161e10e58b068ca2ce4318b11b39bc50b52fac04f35c693813438c0"
+  }
+}

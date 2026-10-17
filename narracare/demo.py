@@ -1,7 +1,7 @@
-"""Offline system demonstration; the frozen pipeline owns all simulation logic.
+"""Offline system demonstration; the current pipeline owns all simulation logic.
 
 Daily traces are generated in an isolated temporary subprocess. Comparison
-metrics are read verbatim from frozen 60-day, 20-persona aggregate artifacts;
+metrics are read from final top-1, 60-day, 20-persona, ten-seed artifacts;
 they do not describe the selected user's shorter demonstration trajectory.
 """
 
@@ -19,7 +19,6 @@ import tempfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MISSING = "N/A (not in frozen artifacts)"
 
 
 def read_json(relative: str) -> dict:
@@ -102,7 +101,7 @@ def inspect_system() -> None:
 
 
 class Delegate:
-    """Transparent instance composition, without patching frozen classes."""
+    """Transparent instance composition, without patching component classes."""
 
     def __init__(self, target):
         self.target = target
@@ -126,7 +125,7 @@ def _worker() -> None:
     class ObservedSafety(Delegate):
         def pre_filter(self, candidates, user_state, user_profile):
             result = self.target.pre_filter(candidates, user_state, user_profile)
-            if pipe.current is not None:
+            if pipe.current is not None and "pre_filter" not in pipe.current:
                 pipe.current["pre_filter"] = [len(candidates), len(result)]
             return result
 
@@ -152,7 +151,7 @@ def _worker() -> None:
             self.current = {"state": dict(user_input_or_state), "day": kwargs["day"]}
             self.trace.append(self.current)
             result = super().run_single_turn(user_id, user_input_or_state, **kwargs)
-            act, _ = self.narrator._get_arc_context(result["profile"], kwargs["day"])
+            act, _ = self.narrator._get_arc_context(result["profile"], kwargs["day"] + 1)
             self.current.update({
                 "act": act,
                 "recommended": result["recommended"],
@@ -206,7 +205,7 @@ def trajectory(user: str, days: int, policy: str, seed: int) -> dict:
              user, str(days), policy, str(seed), str(output)],
             cwd=directory, env=env, capture_output=True, text=True)
         if process.returncode:
-            raise RuntimeError(process.stderr.strip() or "Frozen pipeline subprocess failed")
+            raise RuntimeError(process.stderr.strip() or "Pipeline subprocess failed")
         if process.stderr:
             print(process.stderr, file=sys.stderr, end="")
         return json.loads(output.read_text(encoding="utf-8"))
@@ -222,7 +221,7 @@ def print_trajectory(data: dict, policy: str) -> None:
         print(f"--- Day {row['day'] + 1} ---")
         print(f"[C1 UserSimulator] state: pain={state['pain_level']:.1f} "
               f"fatigue={state['fatigue_level']:.1f} mood={state['mood']:.1f} "
-              f"act={row['act']} day={row['day']}")
+              f"act={row['act']}")
         before, after = row["pre_filter"]
         print(f"[C3 SafetyAgent/pre_filter] {before} → {after} (filtered {before-after})")
         recommended = row["ranked"]
@@ -256,13 +255,7 @@ def print_trajectory(data: dict, policy: str) -> None:
     print("Narrator arc progression: " + "→".join(progression))
 
 
-ARTIFACTS = {
-    "saps": "saps_60day.json", "linucb": "linucb_60day.json",
-    "neuralucb": "neuralucb_60day.json", "random": "random_60day.json",
-    "popularity": "popularity_60day_seed42.json",
-    "rule_based": "rule_based_60day_seed42.json",
-    "epsilon_greedy": "epsilon_greedy_60day_seed42.json",
-}
+
 
 
 def print_comparison(selected: list[str], trajectories: dict) -> None:
@@ -277,16 +270,15 @@ def print_comparison(selected: list[str], trajectories: dict) -> None:
             verdict = "BLOCK" if row["post_check_removed"] else "ALLOW"
             cells.append(f"top-1={top}; filter={before}→{after}; {verdict}; action={row['action']}")
         print(f"{index + 1} | " + " | ".join(cells))
-    print("=== Frozen artifact comparison (60 days, 20 personas; aggregate means) ===")
-    print("Selected --user/--days/--seed do not change these frozen metrics.")
+    print("=== Final benchmark comparison (top-1; 60 days; 20 personas; seeds 52–61) ===")
+    print("Selected --user/--days/--seed do not change these stored benchmark means.")
     print("Policy | Cumulative Reward | SVR | IER | Act distribution")
     for policy in selected:
-        artifact = read_json("evaluation/results/" + ARTIFACTS[policy])
-        metrics = artifact.get("aggregate_metrics", artifact)
-        values = [metrics.get(key, MISSING) for key in
-                  ("cum_reward_mean", "svr", "ier_mean", "act_distribution")]
+        metrics = read_json("evaluation/results/final/main.json")["aggregate"][policies()[policy]]
+        values = [metrics[key]["mean"] for key in ("reward", "SVR", "IER")]
+        values.append("act1:15 → act2:25 → act3:20 (scheduled narrative days)")
         print(policy + " | " + " | ".join(str(value) for value in values))
-        print(f"Source: evaluation/results/{ARTIFACTS[policy]}")
+        print("Source: evaluation/results/final/main.json")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -309,7 +301,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.add_argument("--days", type=int, default=60)
         parser.add_argument("--policy", default="saps", choices=available)
         parser.add_argument("--seed", type=int, default=42)
-        parser.add_argument("--compare", nargs="?", const=",".join(ARTIFACTS),
+        parser.add_argument("--compare", nargs="?", const=",".join(available),
                             help="comma-separated policies; no value selects all seven")
         parser.add_argument("--inspect", action="store_true", help="inspect static system sources")
         args = parser.parse_args(argv)

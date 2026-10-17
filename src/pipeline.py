@@ -335,19 +335,14 @@ class NarraCarePipeline:
             safe_candidates = self.safety_agent.pre_filter(all_candidates, state, profile)
         else:
             safe_candidates = list(all_candidates)
-        if not safe_candidates:
-            safe_candidates = [t for t in self.task_library if t.get("category") == "rest"]
-        if not safe_candidates:
-            safe_candidates = self.task_library[:3]
-
         # 3b. Emotional override — cap difficulty if pain/fatigue is high (P2)
         safe_candidates, emotional_level = self._apply_emotional_override(
             state, profile, safe_candidates, day,
         )
         if not safe_candidates:
-            safe_candidates = [t for t in self.task_library if t.get("category") == "rest"][:3]
-            if not safe_candidates:
-                safe_candidates = self.task_library[:3]
+            # A catalogue gap is an implementation/data error, not permission
+            # to bypass constraints or silently omit a daily assignment.
+            raise RuntimeError("Daily task coverage gap: no feasible catalogue task; review constraints and catalogue coverage.")
 
         # 4. Recommender — rank on safe candidates
         #    SAPS needs to know which arms passed pre-filter so its internal
@@ -381,7 +376,14 @@ class NarraCarePipeline:
                 recommended, state, consecutive_high_intensity=consec_high,
             )
         if not recommended:
-            recommended = safe_candidates[: self.recommender.top_k]
+            # Recovery fallbacks must pass BOTH safety checks too.
+            recovery = [t for t in safe_candidates if t.get("category") == "rest"]
+            recommended = self.safety_agent.post_check(
+                recovery or safe_candidates, state, consecutive_high_intensity=consec_high,
+            )[: self.recommender.top_k]
+        recommended = self.safety_agent.pre_filter(recommended, state, profile)
+        if not recommended:
+            raise RuntimeError("Daily task coverage gap: final safety checks rejected every task.")
 
         # 6. Narrator (old — backward compatibility)
         narrative = ""
@@ -409,7 +411,7 @@ class NarraCarePipeline:
                 narrator_scenario = "recommendation_framing"
                 speak_context = {
                     "name": profile.get("name", "friend"),
-                    "day": day,
+                    "day": day + 1,
                     "task_name": chosen_task.get(
                         "name", chosen_task.get("task_id", "")
                     ),
@@ -424,7 +426,7 @@ class NarraCarePipeline:
                     scenario=narrator_scenario,
                     context=speak_context,
                     user_profile=profile,
-                    day=day,
+                    day=day + 1,
                     user_state=narrator_user_state,
                     user_history=user_history,
                 )
@@ -495,6 +497,16 @@ class NarraCarePipeline:
         """
         if state is None:
             state = self.memory.get_state(user_id)
+
+        if feedback.get("action") == "skipped":
+            # Zero is aggregate bookkeeping, not an observed physical reward.
+            # Refusal enters memory without pain, ROM or chosen-arm updates.
+            self.memory.record_interaction(
+                user_id, chosen_task_id, "skipped", 0.0,
+                {**state, "task_intensity": "none"}, day=day,
+                context_state=dict(state),
+            )
+            return 0.0
 
         task = self.task_lookup.get(chosen_task_id, {})
         reward = self.simulator.compute_reward(feedback, state, task)
@@ -646,10 +658,12 @@ class NarraCarePipeline:
                         _day_skipped = True
 
                     # Feedback
-                    feedback = self.simulator.simulate_feedback(uid, chosen_task, state)
                     if action_raw == "skipped":
-                        feedback["completed"] = False
-                        feedback["action"] = "skipped"
+                        feedback = {"completed": False, "action": "skipped",
+                                    "executed": False, "source": "simulated_choice"}
+                    else:
+                        feedback = self.simulator.simulate_feedback(uid, chosen_task, state)
+                        feedback.update(executed=True, source="simulated_execution")
 
                     ctx = result["feature_vector"].to_numpy()
                     reward = self.process_feedback(
@@ -663,7 +677,8 @@ class NarraCarePipeline:
                     # filter layer handles blocked arms separately.
                     # Two-layer safety division is explicit by design.
                     _model = getattr(self.recommender, "model", None)
-                    if _model is not None and hasattr(_model, "update_safety"):
+                    if (feedback.get("executed") and _model is not None
+                            and hasattr(_model, "update_safety")):
                         _pain_change = feedback.get("pain_change", 0)
                         _was_safe = _pain_change <= SAPS_PAIN_SAFE_THRESHOLD
                         _model.update_safety(chosen_id, _was_safe)
@@ -674,7 +689,7 @@ class NarraCarePipeline:
                     safety_lambda = self.config.get("reward", {}).get("safety_lambda", 1.0)
                     try:
                         _act_key, _arc_meta = self.narrator._get_arc_context(
-                            profile, day,
+                            profile, day + 1,
                         )
                         arc_multiplier = _arc_meta.get("safety_lambda_multiplier", 1.0)
                         effective_lambda = safety_lambda * arc_multiplier
@@ -747,7 +762,7 @@ class NarraCarePipeline:
 
                         # P7 — day_log for variant selection
                         day_log_closing: Dict[str, Any] = {
-                            "day": day,
+                            "day": day + 1,
                             "no_interaction": no_interaction,
                             "user_skipped": user_skipped,
                             "user_accepted": user_accepted,
@@ -860,6 +875,7 @@ class NarraCarePipeline:
             "action": action,
             "safety_violation": safety_violation,
             "reward": reward,
+            "reward_observed": action == "accept" and bool(feedback),
             "post_state": dict(post_state),
             "feedback": dict(feedback) if feedback else {},
             "narrative": narrative,

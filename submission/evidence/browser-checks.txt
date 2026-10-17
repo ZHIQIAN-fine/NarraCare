@@ -1,0 +1,6 @@
+prepared My current pain 3, fatigue 2, mood 7, ROM unknown. I prefer flexibility. I have no category avoidances. Please recommend today's manageable task.
+prepared outcome Completed. After pain 3, fatigue 3, satisfaction 0.8.
+PASS actual completion updates day true
+reset pain
+PASS explicit pain pause
+pageErrors []

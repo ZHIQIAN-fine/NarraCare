@@ -373,7 +373,7 @@ class UserSimulator:
         ----------
         user_id : str
         task : dict
-            The task that was performed (or skipped).
+            The task that was actually attempted. Do not call for a skipped task.
         state : dict
             State *before* the task.
 

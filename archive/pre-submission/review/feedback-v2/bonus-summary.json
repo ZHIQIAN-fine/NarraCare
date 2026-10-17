@@ -1,0 +1,58 @@
+{
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "n_independent_runs": 10,
+  "inference": "Exploratory paired differences across seed runs, conditional on this authored cohort and simulator. No multi-seed common realized noise or external validity claim. Three comparisons; raw p-values are not multiplicity-adjusted. No parameter search or model selection performed.",
+  "comparison": {
+    "cumulative_reward": {
+      "bonus_off_mean": 31.13347511984436,
+      "bonus_on_mean": 31.248275904322526,
+      "on_minus_off": 0.11480078447817199,
+      "ci95": [
+        -0.45657779910447616,
+        0.6861793680608201
+      ],
+      "raw_p": 0.6602253165297893,
+      "bonferroni_p_for_three_metrics": 1.0
+    },
+    "IER": {
+      "bonus_off_mean": 0.0187,
+      "bonus_on_mean": 0.018016666666666667,
+      "on_minus_off": -0.0006833333333333341,
+      "ci95": [
+        -0.0012659306456703915,
+        -0.0001007360209962768
+      ],
+      "raw_p": 0.02633323348858627,
+      "bonferroni_p_for_three_metrics": 0.07899970046575881
+    },
+    "acceptance": {
+      "bonus_off_mean": 0.61575,
+      "bonus_on_mean": 0.6164166666666666,
+      "on_minus_off": 0.0006666666666666488,
+      "ci95": [
+        -0.011504397077235178,
+        0.012837730410568475
+      ],
+      "raw_p": 0.9041105108488248,
+      "bonferroni_p_for_three_metrics": 1.0
+    }
+  },
+  "checks": {
+    "all_runs_1200_tasks": true,
+    "all_runs_SVR_zero": true,
+    "all_skips_without_pain_outcome": true,
+    "all_completion_counters_exact": true,
+    "all_beta_observations_match_attempted_tasks": true
+  }
+}

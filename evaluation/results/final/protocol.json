@@ -1,0 +1,79 @@
+{
+  "protocol": {
+    "version": "submission-v1",
+    "days": 60,
+    "primary_top_k": 1,
+    "ier_k": 5,
+    "diagnostic_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "final_seeds": [
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "rationale": "Top-1 chosen from the one-task live interaction before inspecting diagnostic outcomes. No parameter search.",
+    "reward": "Existing six-term reward on attempted tasks; skipped-task reward 0 is bookkeeping, not an observed physical outcome.",
+    "independence": "One shared learner per run. Seed runs are repeated experimental units; personas are not independent replicates. Same seed does not align realized simulator noise.",
+    "models": {
+      "saps": {
+        "alpha_ucb": 1.0,
+        "tau_safe": 2.0,
+        "alpha_prior": 1.0,
+        "beta_prior": 1.0
+      },
+      "linucb": {
+        "alpha": 1.0
+      },
+      "neural_ucb": {
+        "hidden_dim": 32,
+        "training_epochs": 5,
+        "alpha": 0.01,
+        "safety_lambda": 3.0
+      }
+    }
+  },
+  "source_fingerprint": "e84bbc179b50a92a5229c0f1f2f71c7aab5f050373cd3fe2c98d6bcd3390c193",
+  "source_files": {
+    "configs/coldstart.yaml": "b0581aa30b36a8475f2da94c9c56957b7bf6fd48b69dbb2208e3f1d766802266",
+    "configs/default.yaml": "135ac24a6995b4044bf40101029cea2b353d24fcfac0e76d0060854558d50c82",
+    "configs/linucb.yaml": "5592af83ba48491f265b9dacbd69045ac25fadb4a25859161419b5445fb32118",
+    "configs/neuralucb.yaml": "8bccb9b141dbbcfb362a1114384bc4324bb8db20ccc55949966bc9f171dba4e8",
+    "configs/saps.yaml": "d3fe05d42c72fa2eed22208c5bafe4259b010e4def91bc068139c6d571c0d0a0",
+    "data/narrative_arcs.json": "d9dd87e952c620f6296e00a4796b912aab39fd36d40c92c0da3c3f50092d2fde",
+    "data/narrator_tone_templates.json": "a8ea5f6188a4abe5965d2f19fc1d966e9b8714c55b901444f0cd21167f99f844",
+    "data/safety_rules.json": "d21e746aef848852d3cc0d8d0ac81a0fff008600e085396b5da672ada339b38c",
+    "data/task_library.json": "d879e3f269e71b2a8f5aa31c334f382496f15e2d7d9d43603b42d694c2cd033b",
+    "data/user_profiles.json": "dd11a5b8e64de9fbdf9f337a5978862d0e89dcb7af25b6b4e88f42c1aaeaeb52",
+    "evaluation/metrics.py": "d98e1ff92951b374b7197d577de7890ea771e44b55ebdc5d9a3260823accb20a",
+    "evaluation/run_submission.py": "221e3380c2cab25d218db34e05bed8b72d0f227ce650f9d600fb20102a0dfdb4",
+    "src/__init__.py": "2a999d2765ffff44b264443106bad7de7f90cbcd58ce2fe8f3b422c8bb18391a",
+    "src/agents/__init__.py": "69a1a141efba5ea2b9e4b662183e5e3f5c8145c6a0dbe06d4fa7b2ed9ac93fc3",
+    "src/agents/narrator.py": "762aee1fb480096f0ba4a790ace47679fb4a689fe79aad9c957c28cc663fc3d8",
+    "src/agents/narrator_agent.py": "6d275d251be19157229f7261832bfacd49abc2f454c3060accfdc74c07c6da13",
+    "src/agents/recommender.py": "ca3c7a65f1cfc4e10b2cb70a7b70f0867c631569feac24142972d1e232c8d031",
+    "src/agents/safety_agent.py": "cc548cd33c2ab68dbb4abaa77fbe3ef3580236f995f98156eee059c16032b667",
+    "src/agents/user_understanding.py": "0010ef81b96327c34882e8ff02f84daf1e23999d01be75b166d45be02d2f21d4",
+    "src/memory.py": "256995a73c667ea3fc081c461d64735b64647e867cdec253eacf9953d1677aa3",
+    "src/pipeline.py": "f37b2c42a8c7af2caf8f12722f41a6ef6488681ba6114fe3c147022ef9759ebe",
+    "src/policies/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/policies/saps.py": "a69b17ad836011060445184a20516f32e7cdafa1b257e32ec4de06bd1a5426d3",
+    "src/simulator.py": "15104f76eb45aadea4938081813c20fee4d11b5d17f5b29685d11d0969c52abd"
+  }
+}

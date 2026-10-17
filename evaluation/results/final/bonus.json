@@ -1,0 +1,95 @@
+{
+  "setting": "Fixed tau=2 versus tau=0; no grid or parameter selection. Top-1 final seeds.",
+  "on": {
+    "reward": {
+      "mean": 27.6084737577027,
+      "seed_std": 0.6028116393637136
+    },
+    "IER": {
+      "mean": 0.015349999999999999,
+      "seed_std": 0.00039635686626082224
+    },
+    "SVR": {
+      "mean": 0.0,
+      "seed_std": 0.0
+    },
+    "acceptance": {
+      "mean": 0.5491666666666666,
+      "seed_std": 0.012656428610993904
+    },
+    "completion": {
+      "mean": 0.5208333333333333,
+      "seed_std": 0.009170874455121786
+    },
+    "assigned": {
+      "mean": 1.0,
+      "seed_std": 0.0
+    },
+    "unique_tasks_per_user": {
+      "mean": 17.6,
+      "seed_std": 1.063014581273465
+    }
+  },
+  "off": {
+    "reward": {
+      "mean": 27.39751197467366,
+      "seed_std": 0.6903264151559393
+    },
+    "IER": {
+      "mean": 0.015283333333333333,
+      "seed_std": 0.00041611074024609015
+    },
+    "SVR": {
+      "mean": 0.0,
+      "seed_std": 0.0
+    },
+    "acceptance": {
+      "mean": 0.5455,
+      "seed_std": 0.013506971222481281
+    },
+    "completion": {
+      "mean": 0.51775,
+      "seed_std": 0.012784116785109104
+    },
+    "assigned": {
+      "mean": 1.0,
+      "seed_std": 0.0
+    },
+    "unique_tasks_per_user": {
+      "mean": 16.605,
+      "seed_std": 0.9906367200498426
+    }
+  },
+  "comparisons": {
+    "reward": {
+      "a_minus_b": 0.21096178302904356,
+      "ci95": [
+        -0.21586273214702895,
+        0.6377862982051161
+      ],
+      "raw_p": 0.2924831751369176,
+      "bonferroni_p": 0.8774495254107527,
+      "n_seed_pairs": 10
+    },
+    "IER": {
+      "a_minus_b": 6.666666666666713e-05,
+      "ci95": [
+        -0.00033940297138697106,
+        0.0004727363047203053
+      ],
+      "raw_p": 0.7189389518330667,
+      "bonferroni_p": 1,
+      "n_seed_pairs": 10
+    },
+    "acceptance": {
+      "a_minus_b": 0.0036666666666666514,
+      "ci95": [
+        -0.004066200924174833,
+        0.011399534257508136
+      ],
+      "raw_p": 0.3113508369424396,
+      "bonferroni_p": 0.9340525108273188,
+      "n_seed_pairs": 10
+    }
+  }
+}

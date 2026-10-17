@@ -1,0 +1,11 @@
+saps PASS exit=0; two seeded stdout byte-identical; 37112ffaa3825b5edf9dc75fac67b3bf94958501551c785867e0fda6f0905f9d
+linucb PASS exit=0; two seeded stdout byte-identical; c83bcdcfac7676685ae88a43ca76be39bd755144d3296ea3d3affb2684ef4222
+neuralucb PASS exit=0; two seeded stdout byte-identical; fcc702c31db06241ad1d2186fec0437cd29ef6beb5e7bf0470a85ac254eb55ad
+random PASS exit=0; two seeded stdout byte-identical; 58f1cd89b73182db4e98cc3c06bacb71b427c04bb003b7e44c3d0365ebf51cd0
+popularity PASS exit=0; two seeded stdout byte-identical; d3437e72850181e170ab2883aba285a19885fd68d6948bbf1d82726e619a3fd1
+rule_based PASS exit=0; two seeded stdout byte-identical; 983821fbb82621ea7f0d9eb59565ea9fafe9c9593cf8b384a8f4e0b1cd7edd5d
+epsilon_greedy PASS exit=0; two seeded stdout byte-identical; d0e2ade973e1ef46065d5c39d905dc341968f2242f5ea4365c094237518c025a
+--user U999 PASS exit=2
+--policy foo PASS exit=2
+--days 0 PASS exit=2
+No API credentials: offline CLI PASS exit=0

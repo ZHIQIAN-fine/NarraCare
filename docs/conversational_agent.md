@@ -1,5 +1,12 @@
 # Conversational NarraCare agent
 
+The guided forms prepare user-reviewable messages; Send invokes the real LLM.
+Unknown ROM is explicit, and a pain-prevents-task statement permits an unperformed
+pause. Ordinary days aim to offer a feasible task, including suitable recovery
+activity. Preferences are processed before retrieval. Only actual reported
+execution creates reward/Beta updates. Satisfaction is retained descriptively,
+not used in reward. See [final evaluation](../evaluation/README.md).
+
 The new entry points add an **LLM-controlled, tool-using recommender agent** to the existing benchmark. They use OpenAI-compatible tool calling, default model `gpt-4o-mini`. The model interprets English and chooses tools. Python tools enforce valid state, catalogue membership, hard filtering, action order and feedback provenance. The template Narrator renders the recommendation and daily closing. Free-form model text is not an approved exercise plan.
 
 This is a coursework prototype using synthetic profiles, not a validated patient-care service. ACL reconstruction and rotator-cuff repair profiles are postoperative. BP profiles are **chronic lower-back pain**, with no surgery date. The app does not change that distinction or infer a new diagnosis or rehabilitation stage.
@@ -26,7 +33,7 @@ python -m narracare.agent_app --port 7860
 
 Open the local URL printed by Gradio on your own computer. The server binds to loopback, with `share=False`. Do not expose it publicly with a shared API key. UI dependencies are separate; benchmark `requirements.txt` remains unchanged. The GUI loads without a key, but chat reports **LLM not connected** and does not substitute a deterministic agent. The CLI exits 1 without a key. Optional CLI `--transcript /tmp/new-agent-session.json` explicitly saves a new file outside the repository; otherwise state stays in RAM. Quit with `quit` or Ctrl+C.
 
-The live agent requires network access and provider credentials. Existing `python -m narracare.demo` and `demo/index.html` remain offline and retain their previous semantics. The HTML file is recorded replay. The new Gradio app executes live tools and does **not** load its recommendations or outcomes from the HTML trajectories.
+The live agent requires network access and provider credentials. Existing `python -m narracare.demo` and `archive/pre-submission/demo/index.html` remain offline (the CLI uses the current final protocol; the HTML is historical). The HTML file is recorded replay. The new Gradio app executes live tools and does **not** load its recommendations or outcomes from the HTML trajectories.
 
 ## Architecture
 
@@ -68,7 +75,7 @@ The assignment describes these as examples, not mandatory steps or a guaranteed 
 | Explain recommendations | The response exposes task ID, category, body part, difficulty, real candidate counts, preference handling and composite S. | `explain_recommendation`, `explanation` |
 | Adapt from feedback | Actual completion/partial outcome updates the existing reward model, per-task Beta safety posterior and user interaction memory. A revised preference changes the actual candidate set. | `record_feedback`, `revise_plan`; regression tests |
 
-The LLM controls which tool to call; it cannot write profile contraindications, medical stage or task definitions. Category matching is structured catalogue retrieval, not embedding/RAG retrieval. Explanations describe the actual selection path, not a causal decomposition of private score terms. Composite S is not a clinical probability. Preference narrowing is explicitly an agent-layer adaptation, not the unchanged benchmark protocol.
+The LLM controls which tool to call; it cannot write profile contraindications, medical stage or task definitions. Category matching is structured catalogue retrieval, not embedding/RAG retrieval. Explanations describe the actual selection path, not a causal decomposition of private score terms. Composite S is not a clinical probability. Preference narrowing is explicitly an agent-layer adaptation, not the simulated benchmark retrieval protocol.
 
 ## Live tool contracts
 
@@ -85,7 +92,7 @@ The live path replaces the benchmark's behavioral User Simulator with actual use
 
 ## Companion adventure
 
-Gradio uses the requested **ChatInterface plus right-hand state panel**. Forest (days 1–15), Canyon (16–40) and Summit (41–60) use a one-based narrative day. The new adapter maps the existing profile condition to authored arc keys solely for the new Narrator calls. It does not change benchmark day indexing or data. Starting at a later narrative day creates no synthetic history, clinical stage promotion or earned achievements.
+Gradio uses the requested **ChatInterface plus right-hand state panel**. Forest (days 1–15), Canyon (16–40) and Summit (41–60) use a one-based narrative day. The new adapter maps the existing profile condition to authored arc keys solely for the new Narrator calls. The benchmark now uses the same one-based narrator day and condition normalization; simulator log indices remain zero-based. Starting at a later narrative day creates no synthetic history, clinical stage promotion or earned achievements.
 
 Pip scouts, walks alongside or steps back with the act. Pain/fatigue affect presentation and actual filtering; high mood changes the companion reaction. An explicit skip creates camp. Trail progress and collectibles derive from recorded session actions, not prerecorded acceptance. The reward curve sums actual computed feedback rewards, holding its value on unobserved skip days. The quick reply buttons only fill the message box, so the user can edit and submit deliberately. “I'll try” requests feedback instructions instead of awarding completion.
 
@@ -93,9 +100,11 @@ The right panel shows current/last reported symptoms with freshness labels, prof
 
 ## Isolation from benchmark evidence
 
-No changes are needed in `src/`, `evaluation/`, `configs/`, `scripts/`, `data/`, `narracare/demo.py`, `narracare/__main__.py`, `narracare/__init__.py` or `demo/index.html`. Components are composed directly. No benchmark pipeline rollout is invoked, and no result directory, config symlink or monkey patch is used. Session-local models are new learners, not pretrained benchmark posteriors. Their scores/rewards must not be compared as if they were the 20-user benchmark results.
-
-New code and optional requirements are separate from the benchmark. The agent has its own interaction tests. A nonsecret environment template is `docs/agent.env.example`; use actual environment settings for secrets. Clinical contraindications and stage come from the selected synthetic profile and remain fixed. A future real patient profile would need approved input and clinical review.
+Live sessions do not run benchmark rollouts or write evaluation/results. The
+runtime components are composed directly; each session has a new learner, not a
+pretrained benchmark posterior. Its session rewards cannot be interpreted as the
+20-user benchmark. The final benchmark protocol and corrected runtime are
+versioned separately in evaluation/results/final. No symlink workaround is used.
 
 ## Rehearsal dialogue
 
@@ -127,10 +136,11 @@ python -m narracare.agent_app --port 7860
 
 LLM extraction may misunderstand or omit facts. Quote/range/sequence guards reduce obvious fabrication but do not prove semantic understanding or clinical safety. Keyword crisis screening has false positives (including negated phrases) and can miss concerns. All five predicates are implementation constraints, not a complete clinical guideline engine. No conversational effectiveness, adherence gain or clinical outcome claim follows from these engineering tests. No blanket guarantee of tool order or deterministic LLM output is made.
 
-## Verified cloud run
+## Verification evidence
 
-On 17 October 2026 (Singapore time), the configured `gpt-4o-mini` provider passed all eight real smoke cases: clarification, retrieval/ranking/template narration, grounded explanation, preference revision, intention-versus-completion, reported feedback updates, camp without invented reward, and red-flag hold. A first live run exposed an unhelpful rejection message during preference revision; the valid `revise_plan` recovery route is now explicit, with a regression test. This changes the new orchestration hints, not the safety rules.
-
-The production Gradio app also passed a real browser dialogue with no page errors. In that run, clarification took 3.407 seconds, recommendation 4.868 seconds and explanation 0.853 seconds. These are individual observations, not latency guarantees. The full test suite passed 67 tests (with five dependency deprecation warnings). All 91 protected source/data/config/script/evaluation files, including 36 result files, matched their pre-agent checksums; the legacy demo entry points and benchmark requirements were unchanged. These engineering checks do not establish clinical or conversational effectiveness.
-
-If pytest is not already installed, install it separately before running the verification commands: `python -m pip install pytest`.
+Final automated and real-provider checks are recorded in
+[submission verification](../submission/verification.md). Scripted planner tests,
+real provider smoke tests and browser interaction are distinct evidence. None
+establishes clinical effectiveness, complete language understanding or improved
+adherence. Run the optional real-provider smoke before a live presentation;
+provider wording and tool decisions can vary.

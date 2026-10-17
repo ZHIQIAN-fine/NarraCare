@@ -1,0 +1,69 @@
+{
+  "setting": "LinUCB with/without runtime safety; emotional difficulty cap retained. SVR uses full five-rule audit; feasibility labels are authored, not clinical ground truth.",
+  "on": {
+    "reward": {
+      "mean": 27.39751197467366,
+      "seed_std": 0.6903264151559393
+    },
+    "IER": {
+      "mean": 0.015283333333333333,
+      "seed_std": 0.00041611074024609015
+    },
+    "SVR": {
+      "mean": 0.0,
+      "seed_std": 0.0
+    },
+    "acceptance": {
+      "mean": 0.5455,
+      "seed_std": 0.013506971222481281
+    },
+    "completion": {
+      "mean": 0.51775,
+      "seed_std": 0.012784116785109104
+    },
+    "assigned": {
+      "mean": 1.0,
+      "seed_std": 0.0
+    },
+    "unique_tasks_per_user": {
+      "mean": 16.605,
+      "seed_std": 0.9906367200498426
+    }
+  },
+  "off": {
+    "reward": {
+      "mean": 28.609712864101983,
+      "seed_std": 0.429404578248163
+    },
+    "IER": {
+      "mean": 0.011800000000000001,
+      "seed_std": 0.00026988795114424736
+    },
+    "SVR": {
+      "mean": 0.1556083677591324,
+      "seed_std": 0.011692760193778292
+    },
+    "acceptance": {
+      "mean": 0.5695,
+      "seed_std": 0.008232726023485687
+    },
+    "completion": {
+      "mean": 0.5393333333333333,
+      "seed_std": 0.009708720783875675
+    },
+    "assigned": {
+      "mean": 1.0,
+      "seed_std": 0.0
+    },
+    "unique_tasks_per_user": {
+      "mean": 31.450000000000006,
+      "seed_std": 1.0749676997731403
+    }
+  },
+  "pooled": {
+    "on_violations": 0,
+    "on_attempted": 6546,
+    "off_violations": 1090,
+    "off_attempted": 6834
+  }
+}

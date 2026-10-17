@@ -1,0 +1,39 @@
+=== NarraCare System Inspection ===
+SAPS composite score: composite = r_ucb + self.tau_safe * s
+  Source: src/policies/saps.py:132
+tau_safe: 2.0
+  Source: configs/saps.yaml:6
+Safety signal: SAPS_PAIN_SAFE_THRESHOLD = 1.0; _was_safe = _pain_change <= SAPS_PAIN_SAFE_THRESHOLD
+  Source: src/pipeline.py:57
+  Source: src/pipeline.py:683
+
+Safety Layer A (runtime pre-filter, 5 rules PF_R1..PF_R5):
+  PF_R1  # Rule 1: Contraindication match
+  Source: src/agents/safety_agent.py:144
+  PF_R2  # Rule 2: Stage mismatch
+  Source: src/agents/safety_agent.py:151
+  PF_R3  # Rule 3: High pain → block high difficulty
+  Source: src/agents/safety_agent.py:157
+  PF_R4  # Rule 4: Severe fatigue → only rest/flexibility
+  Source: src/agents/safety_agent.py:163
+  PF_R5  # Rule 5: Limited ROM → block difficult/high-impact tasks
+  Source: src/agents/safety_agent.py:169
+
+Safety Layer B (design-time clinical rules):
+  contraindication_rules: 16
+  dosage_rules: 9
+  fatigue_rules: 6
+  crisis_rules: 10
+  progression_gates: 10
+  Total: 51 rules
+  Source: data/safety_rules.json:2
+
+Narrator tones:
+  doctor, coach, companion
+  Source: data/narrator_tone_templates.json:4
+
+Narrator arcs (condition → act keys):
+  ACL: act1 → act2 → act3
+  RotatorCuff: act1 → act2 → act3
+  BackPain: act1 → act2 → act3
+  Source: data/narrative_arcs.json:4

@@ -1,0 +1,4429 @@
+{
+  "setting": "Current top-1 primary runs. Template execution checks, not a narrative-quality or patient study.",
+  "results": {
+    "saps": [
+      {
+        "seed": 52,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 912,
+          "companion": 1217,
+          "doctor": 271
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T070",
+            "text": "I'm recommending Knee-to-Chest Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T070",
+            "text": "I'm recommending Knee-to-Chest Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T070",
+            "text": "Today's challenge: Knee-to-Chest Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T057",
+            "text": "Today's challenge: Upper Trap Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T057",
+            "text": "I thought of Upper Trap Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T094",
+            "text": "I thought of Gentle Full-Body Stretching Routine for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 884,
+          "companion": 1255,
+          "doctor": 261
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T074",
+            "text": "I'm recommending Supine Spinal Twist today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T094",
+            "text": "I'm recommending Gentle Full-Body Stretching Routine today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T051",
+            "text": "I'm recommending Shoulder Ice Application today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T067",
+            "text": "Today's challenge: Bridges (Glute Bridge). It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T027",
+            "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T072",
+            "text": "I thought of Child's Pose for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 898,
+          "companion": 1233,
+          "doctor": 269
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T035",
+            "text": "I'm recommending Shoulder Isometric External Rotation today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T029",
+            "text": "I'm recommending Retro Walking (Backward Walking) today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 3/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T084",
+            "text": "Today's challenge: Lower Back Ice/Heat Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T070",
+            "text": "Today's challenge: Knee-to-Chest Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T084",
+            "text": "I thought of Lower Back Ice/Heat Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 55,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 923,
+          "companion": 1217,
+          "doctor": 260
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T079",
+            "text": "I'm recommending Piriformis Stretch (Figure-4) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T077",
+            "text": "Today's challenge: Walking Program (Level Surface). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 56,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 929,
+          "companion": 1208,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T077",
+            "text": "I'm recommending Walking Program (Level Surface) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T093",
+            "text": "I'm recommending Progressive Muscle Relaxation today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T051",
+            "text": "I'm recommending Shoulder Ice Application today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T027",
+            "text": "I thought of Hamstring Stretch (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 57,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 902,
+          "companion": 1235,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T076",
+            "text": "I'm recommending Clamshells today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T051",
+            "text": "Today's challenge: Shoulder Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T066",
+            "text": "Today's challenge: Pelvic Tilts (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T093",
+            "text": "I thought of Progressive Muscle Relaxation for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T034",
+            "text": "Today's challenge: Table Slides (Shoulder Flexion). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T099",
+            "text": "I thought of Guided Meditation for Pain Management for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 58,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 928,
+          "companion": 1207,
+          "doctor": 265
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T064",
+            "text": "I'm recommending Shoulder Blade Clocks today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T070",
+            "text": "I'm recommending Knee-to-Chest Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T068",
+            "text": "I thought of Bird-Dog Exercise for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 59,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 913,
+          "companion": 1221,
+          "doctor": 266
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T099",
+            "text": "Today's challenge: Guided Meditation for Pain Management. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T072",
+            "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T070",
+            "text": "Today's challenge: Knee-to-Chest Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T039",
+            "text": "Today's challenge: Scapular Retraction (Squeeze). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T051",
+            "text": "I thought of Shoulder Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 60,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 907,
+          "companion": 1231,
+          "doctor": 262
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T077",
+            "text": "I'm recommending Walking Program (Level Surface) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T027",
+            "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T072",
+            "text": "I'm recommending Child's Pose today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T066",
+            "text": "I thought of Pelvic Tilts (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T027",
+            "text": "I thought of Hamstring Stretch (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 61,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 920,
+          "companion": 1227,
+          "doctor": 253
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T027",
+            "text": "I'm recommending Hamstring Stretch (Supine) today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T049",
+            "text": "I'm recommending Shoulder Shrugs today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T070",
+            "text": "Today's challenge: Knee-to-Chest Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T066",
+            "text": "Today's challenge: Pelvic Tilts (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T071",
+            "text": "I thought of Prone Press-Up (McKenzie Extension) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      }
+    ],
+    "linucb": [
+      {
+        "seed": 52,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 918,
+          "companion": 1211,
+          "doctor": 271
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T099",
+            "text": "Today's challenge: Guided Meditation for Pain Management. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T070",
+            "text": "Today's challenge: Knee-to-Chest Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T077",
+            "text": "Today's challenge: Walking Program (Level Surface). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T084",
+            "text": "I thought of Lower Back Ice/Heat Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 917,
+          "companion": 1220,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T070",
+            "text": "I'm recommending Knee-to-Chest Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T065",
+            "text": "I'm recommending Cat-Cow Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T057",
+            "text": "Today's challenge: Upper Trap Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T072",
+            "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T048",
+            "text": "I thought of Doorway Pec Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 905,
+          "companion": 1221,
+          "doctor": 274
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T093",
+            "text": "I'm recommending Progressive Muscle Relaxation today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T049",
+            "text": "I'm recommending Shoulder Shrugs today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T084",
+            "text": "Today's challenge: Lower Back Ice/Heat Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T070",
+            "text": "I thought of Knee-to-Chest Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 55,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 924,
+          "companion": 1213,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T089",
+            "text": "I'm recommending Seated Hamstring Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 56,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 941,
+          "companion": 1196,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T049",
+            "text": "I'm recommending Shoulder Shrugs today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T066",
+            "text": "I'm recommending Pelvic Tilts (Supine) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T057",
+            "text": "I thought of Upper Trap Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T093",
+            "text": "I thought of Progressive Muscle Relaxation for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T072",
+            "text": "I thought of Child's Pose for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 57,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 897,
+          "companion": 1238,
+          "doctor": 265
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T099",
+            "text": "I'm recommending Guided Meditation for Pain Management today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T066",
+            "text": "I'm recommending Pelvic Tilts (Supine) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T027",
+            "text": "I thought of Hamstring Stretch (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T070",
+            "text": "I thought of Knee-to-Chest Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 58,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 924,
+          "companion": 1215,
+          "doctor": 261
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T065",
+            "text": "I'm recommending Cat-Cow Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T089",
+            "text": "I'm recommending Seated Hamstring Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T077",
+            "text": "Today's challenge: Walking Program (Level Surface). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T051",
+            "text": "Today's challenge: Shoulder Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T072",
+            "text": "I thought of Child's Pose for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T084",
+            "text": "I thought of Lower Back Ice/Heat Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 59,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 862,
+          "companion": 1266,
+          "doctor": 272
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T027",
+            "text": "I'm recommending Hamstring Stretch (Supine) today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T065",
+            "text": "I'm recommending Cat-Cow Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T084",
+            "text": "Today's challenge: Lower Back Ice/Heat Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T077",
+            "text": "I thought of Walking Program (Level Surface) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T027",
+            "text": "I thought of Hamstring Stretch (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 60,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 927,
+          "companion": 1218,
+          "doctor": 255
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T065",
+            "text": "I'm recommending Cat-Cow Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T099",
+            "text": "Today's challenge: Guided Meditation for Pain Management. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T072",
+            "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T027",
+            "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T051",
+            "text": "Today's challenge: Shoulder Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T027",
+            "text": "I thought of Hamstring Stretch (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 61,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 928,
+          "companion": 1216,
+          "doctor": 256
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T065",
+            "text": "Today's challenge: Cat-Cow Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T099",
+            "text": "I'm recommending Guided Meditation for Pain Management today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T076",
+            "text": "Today's challenge: Clamshells. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T072",
+            "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T093",
+            "text": "I thought of Progressive Muscle Relaxation for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      }
+    ],
+    "neural_ucb": [
+      {
+        "seed": 52,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 840,
+          "companion": 1299,
+          "doctor": 261
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T027",
+            "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T027",
+            "text": "I'm recommending Hamstring Stretch (Supine) today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T027",
+            "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T027",
+            "text": "I thought of Hamstring Stretch (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T027",
+            "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T027",
+            "text": "I thought of Hamstring Stretch (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 811,
+          "companion": 1326,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T094",
+            "text": "I'm recommending Gentle Full-Body Stretching Routine today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T094",
+            "text": "I'm recommending Gentle Full-Body Stretching Routine today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T094",
+            "text": "I'm recommending Gentle Full-Body Stretching Routine today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T094",
+            "text": "I thought of Gentle Full-Body Stretching Routine for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T094",
+            "text": "I thought of Gentle Full-Body Stretching Routine for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 863,
+          "companion": 1271,
+          "doctor": 266
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T071",
+            "text": "I'm recommending Prone Press-Up (McKenzie Extension) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 55,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 769,
+          "companion": 1372,
+          "doctor": 259
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T089",
+            "text": "I'm recommending Seated Hamstring Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T089",
+            "text": "I'm recommending Seated Hamstring Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T089",
+            "text": "I'm recommending Seated Hamstring Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T089",
+            "text": "Today's challenge: Seated Hamstring Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T089",
+            "text": "Today's challenge: Seated Hamstring Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T089",
+            "text": "Today's challenge: Seated Hamstring Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T089",
+            "text": "I thought of Seated Hamstring Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 56,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 812,
+          "companion": 1325,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T057",
+            "text": "I'm recommending Upper Trap Stretch today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T057",
+            "text": "I'm recommending Upper Trap Stretch today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T057",
+            "text": "Today's challenge: Upper Trap Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T057",
+            "text": "Today's challenge: Upper Trap Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T057",
+            "text": "Today's challenge: Upper Trap Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T057",
+            "text": "I thought of Upper Trap Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 57,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 876,
+          "companion": 1257,
+          "doctor": 267
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 58,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 890,
+          "companion": 1248,
+          "doctor": 262
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 59,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 809,
+          "companion": 1321,
+          "doctor": 270
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T079",
+            "text": "I'm recommending Piriformis Stretch (Figure-4) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T072",
+            "text": "I'm recommending Child's Pose today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T072",
+            "text": "I'm recommending Child's Pose today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T072",
+            "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T072",
+            "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T072",
+            "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T072",
+            "text": "I thought of Child's Pose for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 60,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 822,
+          "companion": 1318,
+          "doctor": 260
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 61,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 857,
+          "companion": 1282,
+          "doctor": 261
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T093",
+            "text": "I'm recommending Progressive Muscle Relaxation today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T093",
+            "text": "I'm recommending Progressive Muscle Relaxation today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T093",
+            "text": "I thought of Progressive Muscle Relaxation for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T093",
+            "text": "I thought of Progressive Muscle Relaxation for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      }
+    ],
+    "random": [
+      {
+        "seed": 52,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 530,
+          "companion": 1609,
+          "doctor": 261
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T041",
+            "text": "I'm recommending Supine Shoulder Abduction Passive ROM today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T072",
+            "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T086",
+            "text": "I'm recommending Single-Leg Bridge today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 3/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T040",
+            "text": "Today's challenge: Scapular Wall Push-Ups. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T030",
+            "text": "Today's challenge: Quad Foam Rolling. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T075",
+            "text": "Today's challenge: Plank Hold (Forearm). It's a 3/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T065",
+            "text": "I thought of Cat-Cow Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 525,
+          "companion": 1609,
+          "doctor": 266
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T011",
+            "text": "I'm recommending Single-Leg Balance on Flat Surface today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T010",
+            "text": "I'm recommending Lateral Band Walks today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 3/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T063",
+            "text": "I'm recommending Walk with Arm Swing Coordination today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T084",
+            "text": "I thought of Lower Back Ice/Heat Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T038",
+            "text": "I thought of Internal Rotation with Resistance Band for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 507,
+          "companion": 1620,
+          "doctor": 273
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T054",
+            "text": "I'm recommending Sidelying External Rotation today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T034",
+            "text": "Today's challenge: Table Slides (Shoulder Flexion). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T094",
+            "text": "I'm recommending Gentle Full-Body Stretching Routine today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T074",
+            "text": "Today's challenge: Supine Spinal Twist. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T077",
+            "text": "I thought of Walking Program (Level Surface) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T034",
+            "text": "Today's challenge: Table Slides (Shoulder Flexion). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T072",
+            "text": "I thought of Child's Pose for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 55,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 487,
+          "companion": 1658,
+          "doctor": 255
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T084",
+            "text": "I'm recommending Lower Back Ice/Heat Application today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T066",
+            "text": "I'm recommending Pelvic Tilts (Supine) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T079",
+            "text": "I'm recommending Piriformis Stretch (Figure-4) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T089",
+            "text": "I thought of Seated Hamstring Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T076",
+            "text": "I thought of Clamshells for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T077",
+            "text": "Today's challenge: Walking Program (Level Surface). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T082",
+            "text": "I thought of Stability Ball Back Extension for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 56,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 510,
+          "companion": 1631,
+          "doctor": 259
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T088",
+            "text": "I'm recommending Pallof Press (Anti-Rotation) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 3/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T049",
+            "text": "Today's challenge: Shoulder Shrugs. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T007",
+            "text": "I'm recommending Step-Ups today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 3/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T054",
+            "text": "Today's challenge: Sidelying External Rotation. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T003",
+            "text": "Today's challenge: Heel Slides. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T038",
+            "text": "Today's challenge: Internal Rotation with Resistance Band. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T042",
+            "text": "I thought of Cross-Body Shoulder Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 57,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 521,
+          "companion": 1616,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T043",
+            "text": "I'm recommending Sleeper Stretch today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T009",
+            "text": "Today's challenge: Terminal Knee Extensions. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T015",
+            "text": "I'm recommending Prone Hang Knee Extension Stretch today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T039",
+            "text": "Today's challenge: Scapular Retraction (Squeeze). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T032",
+            "text": "Today's challenge: Pendulum Exercises (Codman's). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T053",
+            "text": "I thought of Resisted Rows with Band for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 58,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 522,
+          "companion": 1622,
+          "doctor": 256
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T075",
+            "text": "I'm recommending Plank Hold (Forearm) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 3/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T050",
+            "text": "I'm recommending Shoulder Pulley Exercises today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T095",
+            "text": "Today's challenge: Tai Chi Basic Movements. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T002",
+            "text": "Today's challenge: Straight Leg Raises. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T043",
+            "text": "Today's challenge: Sleeper Stretch. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T011",
+            "text": "I thought of Single-Leg Balance on Flat Surface for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 59,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 491,
+          "companion": 1638,
+          "doctor": 271
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T049",
+            "text": "I'm recommending Shoulder Shrugs today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T014",
+            "text": "I'm recommending Knee Flexion Passive ROM Stretch today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T074",
+            "text": "Today's challenge: Supine Spinal Twist. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T063",
+            "text": "Today's challenge: Walk with Arm Swing Coordination. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T064",
+            "text": "Today's challenge: Shoulder Blade Clocks. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T034",
+            "text": "I thought of Table Slides (Shoulder Flexion) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T099",
+            "text": "I thought of Guided Meditation for Pain Management for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 60,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 510,
+          "companion": 1632,
+          "doctor": 258
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T065",
+            "text": "I'm recommending Cat-Cow Stretch today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T097",
+            "text": "I'm recommending Recumbent Bike Cardio today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T027",
+            "text": "I thought of Hamstring Stretch (Supine) for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T078",
+            "text": "Today's challenge: Hip Flexor Stretch (Half-Kneeling). It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T003",
+            "text": "I thought of Heel Slides for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T050",
+            "text": "I thought of Shoulder Pulley Exercises for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T061",
+            "text": "I thought of Wand-Assisted Shoulder ER Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 61,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 503,
+          "companion": 1639,
+          "doctor": 258
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T009",
+            "text": "I'm recommending Terminal Knee Extensions today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T088",
+            "text": "I'm recommending Pallof Press (Anti-Rotation) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 3/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T013",
+            "text": "I'm recommending Stationary Bike (Low Resistance) today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T002",
+            "text": "Today's challenge: Straight Leg Raises. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T077",
+            "text": "Today's challenge: Walking Program (Level Surface). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T090",
+            "text": "Today's challenge: Standing Balance with Eyes Closed. It's a 3/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T048",
+            "text": "I thought of Doorway Pec Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      }
+    ],
+    "popularity": [
+      {
+        "seed": 52,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 828,
+          "companion": 1300,
+          "doctor": 272
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 839,
+          "companion": 1298,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 817,
+          "companion": 1314,
+          "doctor": 269
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 55,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 838,
+          "companion": 1309,
+          "doctor": 253
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 56,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 846,
+          "companion": 1287,
+          "doctor": 267
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 57,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 863,
+          "companion": 1271,
+          "doctor": 266
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 58,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 870,
+          "companion": 1271,
+          "doctor": 259
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 59,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 806,
+          "companion": 1320,
+          "doctor": 274
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 60,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 834,
+          "companion": 1298,
+          "doctor": 268
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 61,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 851,
+          "companion": 1287,
+          "doctor": 262
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      }
+    ],
+    "rule_based": [
+      {
+        "seed": 52,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 571,
+          "companion": 1562,
+          "doctor": 267
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 570,
+          "companion": 1567,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 558,
+          "companion": 1578,
+          "doctor": 264
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 55,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 565,
+          "companion": 1571,
+          "doctor": 264
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 56,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 569,
+          "companion": 1569,
+          "doctor": 262
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 57,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 539,
+          "companion": 1593,
+          "doctor": 268
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 58,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 568,
+          "companion": 1571,
+          "doctor": 261
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 59,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 562,
+          "companion": 1577,
+          "doctor": 261
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 60,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 562,
+          "companion": 1575,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 61,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 579,
+          "companion": 1568,
+          "doctor": 253
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T001",
+            "text": "Today's challenge: Seated Quad Sets. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T001",
+            "text": "I thought of Seated Quad Sets for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      }
+    ],
+    "epsilon_greedy": [
+      {
+        "seed": 52,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 852,
+          "companion": 1272,
+          "doctor": 276
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T051",
+            "text": "Today's challenge: Shoulder Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T051",
+            "text": "I'm recommending Shoulder Ice Application today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T051",
+            "text": "Today's challenge: Shoulder Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 826,
+          "companion": 1300,
+          "doctor": 274
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T072",
+            "text": "I'm recommending Child's Pose today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T067",
+            "text": "I'm recommending Bridges (Glute Bridge) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 838,
+          "companion": 1294,
+          "doctor": 268
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T027",
+            "text": "I'm recommending Hamstring Stretch (Supine) today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T077",
+            "text": "I'm recommending Walking Program (Level Surface) today. This targets back and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T027",
+            "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T051",
+            "text": "I thought of Shoulder Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T027",
+            "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T051",
+            "text": "I thought of Shoulder Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 55,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 819,
+          "companion": 1330,
+          "doctor": 251
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T043",
+            "text": "I'm recommending Sleeper Stretch today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T092",
+            "text": "I'm recommending Diaphragmatic Breathing today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T092",
+            "text": "Today's challenge: Diaphragmatic Breathing. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T092",
+            "text": "I thought of Diaphragmatic Breathing for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 56,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 836,
+          "companion": 1304,
+          "doctor": 260
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 57,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 796,
+          "companion": 1347,
+          "doctor": 257
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 58,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 836,
+          "companion": 1303,
+          "doctor": 261
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T051",
+            "text": "I'm recommending Shoulder Ice Application today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T051",
+            "text": "I'm recommending Shoulder Ice Application today. This targets shoulder and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T094",
+            "text": "Today's challenge: Gentle Full-Body Stretching Routine. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T057",
+            "text": "I thought of Upper Trap Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T051",
+            "text": "I thought of Shoulder Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 59,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 786,
+          "companion": 1341,
+          "doctor": 273
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T051",
+            "text": "Today's challenge: Shoulder Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 60,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 821,
+          "companion": 1312,
+          "doctor": 267
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T014",
+            "text": "I'm recommending Knee Flexion Passive ROM Stretch today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T018",
+            "text": "I'm recommending Knee Ice Application today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T018",
+            "text": "Today's challenge: Knee Ice Application. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T018",
+            "text": "I thought of Knee Ice Application for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      },
+      {
+        "seed": 61,
+        "render_calls": 2400,
+        "fallbacks": {},
+        "speak_calls": 1200,
+        "closing_calls": 1200,
+        "tones": {
+          "coach": 857,
+          "companion": 1280,
+          "doctor": 263
+        },
+        "samples": [
+          {
+            "user_id": "U001",
+            "day": 1,
+            "task": "T001",
+            "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 15,
+            "task": "T093",
+            "text": "I'm recommending Progressive Muscle Relaxation today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 16,
+            "task": "T093",
+            "text": "I'm recommending Progressive Muscle Relaxation today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+            "tone": "doctor"
+          },
+          {
+            "user_id": "U001",
+            "day": 30,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 40,
+            "task": "T093",
+            "text": "Today's challenge: Progressive Muscle Relaxation. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+            "tone": "coach"
+          },
+          {
+            "user_id": "U001",
+            "day": 41,
+            "task": "T065",
+            "text": "I thought of Cat-Cow Stretch for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          },
+          {
+            "user_id": "U001",
+            "day": 60,
+            "task": "T076",
+            "text": "I thought of Clamshells for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+            "tone": "companion"
+          }
+        ]
+      }
+    ]
+  }
+}

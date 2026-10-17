@@ -161,6 +161,8 @@ class Narrator:
     ) -> Tuple[str, Dict[str, Any]]:
         """Resolve (act_key, arc_meta) by day. Falls back to act3 if OOR."""
         condition = user_profile.get("condition", "ACL")
+        condition = {"ACL_reconstruction": "ACL", "rotator_cuff_repair": "RotatorCuff",
+                     "chronic_lower_back_pain": "BackPain"}.get(condition, condition)
         arc = self.arcs.get(condition, self.arcs["ACL"])
         for act_key in ("act1", "act2", "act3"):
             start, end = arc[act_key]["day_range"]

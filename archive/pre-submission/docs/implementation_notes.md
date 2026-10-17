@@ -1,5 +1,8 @@
 # Implementation boundaries and submission notes
 
+These notes describe the historical ungated-IER/SVR release. The unpublished
+feedback correction and its separate results are in [feedback_review.md](feedback_review.md).
+
 This version repairs the ungated IER path and accepted-task five-rule SVR logs.
 Related experiments, comparisons, demo traces and presentation results were
 regenerated. Static input data, safety predicates, narrator templates, baseline

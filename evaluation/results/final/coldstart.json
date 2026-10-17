@@ -1,0 +1,1276 @@
+{
+  "setting": "Exploratory seed42; train 15 ACL/RC users, evaluate five unseen BP personas. Reward updates frozen in transfer; SAPS Beta adapts. No validation cohort.",
+  "train_ids": [
+    "U001",
+    "U002",
+    "U003",
+    "U004",
+    "U005",
+    "U006",
+    "U007",
+    "U008",
+    "U009",
+    "U010",
+    "U016",
+    "U017",
+    "U018",
+    "U019",
+    "U020"
+  ],
+  "rollout_ids": [
+    "U011",
+    "U012",
+    "U013",
+    "U014",
+    "U015"
+  ],
+  "results": {
+    "saps": {
+      "train": {
+        "metrics": {
+          "reward": 27.088603374307045,
+          "IER": 0.020666666666666667,
+          "SVR": 0.0,
+          "acceptance": 0.5444444444444444,
+          "completion": 0.5133333333333333,
+          "assigned": 1.0,
+          "unique_tasks_per_user": 20.333333333333332
+        },
+        "per_user": {
+          "U001": {
+            "reward": 31.450772071171663,
+            "IER": 0.010000000000000002,
+            "SVR": 0.0,
+            "acceptance": 0.6333333333333333,
+            "completion": 0.6333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 21
+          },
+          "U002": {
+            "reward": 26.251979889785048,
+            "IER": 0.029999999999999995,
+            "SVR": 0.0,
+            "acceptance": 0.5,
+            "completion": 0.5,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 17
+          },
+          "U003": {
+            "reward": 29.232198614850486,
+            "IER": 0.030000000000000002,
+            "SVR": 0.0,
+            "acceptance": 0.6166666666666667,
+            "completion": 0.5666666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 23
+          },
+          "U004": {
+            "reward": 32.2273277829595,
+            "IER": 0.04666666666666667,
+            "SVR": 0.0,
+            "acceptance": 0.65,
+            "completion": 0.55,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 20
+          },
+          "U005": {
+            "reward": 16.318016384030994,
+            "IER": 0.0033333333333333335,
+            "SVR": 0.0,
+            "acceptance": 0.3333333333333333,
+            "completion": 0.3,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 21
+          },
+          "U006": {
+            "reward": 22.38740365779471,
+            "IER": 0.043333333333333335,
+            "SVR": 0.0,
+            "acceptance": 0.43333333333333335,
+            "completion": 0.4166666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 20
+          },
+          "U007": {
+            "reward": 27.247652524008732,
+            "IER": 0.0033333333333333335,
+            "SVR": 0.0,
+            "acceptance": 0.55,
+            "completion": 0.55,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 19
+          },
+          "U008": {
+            "reward": 28.960284461130186,
+            "IER": 0.023333333333333334,
+            "SVR": 0.0,
+            "acceptance": 0.5833333333333334,
+            "completion": 0.5666666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 25
+          },
+          "U009": {
+            "reward": 27.983610700655834,
+            "IER": 0.04000000000000001,
+            "SVR": 0.0,
+            "acceptance": 0.5666666666666667,
+            "completion": 0.48333333333333334,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 22
+          },
+          "U010": {
+            "reward": 28.748153967746696,
+            "IER": 0.013333333333333334,
+            "SVR": 0.0,
+            "acceptance": 0.5833333333333334,
+            "completion": 0.5333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 24
+          },
+          "U016": {
+            "reward": 32.309705419196824,
+            "IER": 0.02666666666666667,
+            "SVR": 0.0,
+            "acceptance": 0.65,
+            "completion": 0.6166666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 15
+          },
+          "U017": {
+            "reward": 21.86547368651032,
+            "IER": 0.013333333333333334,
+            "SVR": 0.0,
+            "acceptance": 0.4166666666666667,
+            "completion": 0.4166666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 18
+          },
+          "U018": {
+            "reward": 30.038111561714075,
+            "IER": 0.006666666666666667,
+            "SVR": 0.0,
+            "acceptance": 0.6166666666666667,
+            "completion": 0.6,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 21
+          },
+          "U019": {
+            "reward": 24.163609069256513,
+            "IER": 0.010000000000000002,
+            "SVR": 0.0,
+            "acceptance": 0.4666666666666667,
+            "completion": 0.45,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 20
+          },
+          "U020": {
+            "reward": 27.144750823794144,
+            "IER": 0.010000000000000002,
+            "SVR": 0.0,
+            "acceptance": 0.5666666666666667,
+            "completion": 0.5166666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 19
+          }
+        },
+        "correctness": {
+          "interactions": 900,
+          "skips": 410,
+          "skips_with_physical_outcome": 0,
+          "completed_counter": 462,
+          "completed_feedback": 462,
+          "attempted": 490,
+          "violations": 0,
+          "beta_positive": 489.0,
+          "beta_negative": 1.0
+        },
+        "diagnostics": {
+          "chosen_task_counts": {
+            "T001": 3,
+            "T002": 3,
+            "T003": 1,
+            "T004": 4,
+            "T009": 10,
+            "T016": 5,
+            "T018": 50,
+            "T023": 1,
+            "T024": 1,
+            "T026": 1,
+            "T027": 57,
+            "T029": 2,
+            "T032": 3,
+            "T035": 3,
+            "T036": 2,
+            "T039": 21,
+            "T043": 4,
+            "T049": 18,
+            "T051": 44,
+            "T057": 56,
+            "T061": 1,
+            "T062": 2,
+            "T065": 52,
+            "T066": 2,
+            "T069": 26,
+            "T070": 62,
+            "T071": 1,
+            "T072": 71,
+            "T074": 4,
+            "T075": 1,
+            "T076": 1,
+            "T077": 15,
+            "T079": 21,
+            "T080": 1,
+            "T083": 18,
+            "T084": 64,
+            "T089": 48,
+            "T092": 33,
+            "T093": 43,
+            "T094": 65,
+            "T099": 80
+          },
+          "recommended_task_counts": {
+            "T001": 3,
+            "T002": 3,
+            "T003": 1,
+            "T004": 4,
+            "T009": 10,
+            "T016": 5,
+            "T018": 50,
+            "T023": 1,
+            "T024": 1,
+            "T026": 1,
+            "T027": 57,
+            "T029": 2,
+            "T032": 3,
+            "T035": 3,
+            "T036": 2,
+            "T039": 21,
+            "T043": 4,
+            "T049": 18,
+            "T051": 44,
+            "T057": 56,
+            "T061": 1,
+            "T062": 2,
+            "T065": 52,
+            "T066": 2,
+            "T069": 26,
+            "T070": 62,
+            "T071": 1,
+            "T072": 71,
+            "T074": 4,
+            "T075": 1,
+            "T076": 1,
+            "T077": 15,
+            "T079": 21,
+            "T080": 1,
+            "T083": 18,
+            "T084": 64,
+            "T089": 48,
+            "T092": 33,
+            "T093": 43,
+            "T094": 65,
+            "T099": 80
+          },
+          "chosen_categories": {
+            "balance": 3,
+            "cardio": 33,
+            "flexibility": 453,
+            "rest": 314,
+            "strength": 97
+          },
+          "chosen_difficulties": {
+            "1": 814,
+            "2": 82,
+            "3": 3,
+            "4": 1
+          },
+          "nonfirst_choice_rate": 0.0,
+          "global_unique_chosen": 41
+        },
+        "narrative": {
+          "render_calls": 1800,
+          "fallbacks": {},
+          "speak_calls": 900,
+          "closing_calls": 900,
+          "tones": {
+            "coach": 689,
+            "companion": 899,
+            "doctor": 212
+          },
+          "samples": [
+            {
+              "user_id": "U001",
+              "day": 1,
+              "task": "T016",
+              "text": "I'm recommending Standing Calf Raises today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 2/5. Clinical rationale: matched to your current recovery state.",
+              "tone": "doctor"
+            },
+            {
+              "user_id": "U001",
+              "day": 15,
+              "task": "T099",
+              "text": "I'm recommending Guided Meditation for Pain Management today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+              "tone": "doctor"
+            },
+            {
+              "user_id": "U001",
+              "day": 16,
+              "task": "T099",
+              "text": "I'm recommending Guided Meditation for Pain Management today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+              "tone": "doctor"
+            },
+            {
+              "user_id": "U001",
+              "day": 30,
+              "task": "T027",
+              "text": "Today's challenge: Hamstring Stretch (Supine). It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+              "tone": "coach"
+            },
+            {
+              "user_id": "U001",
+              "day": 40,
+              "task": "T099",
+              "text": "I thought of Guided Meditation for Pain Management for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+              "tone": "companion"
+            },
+            {
+              "user_id": "U001",
+              "day": 41,
+              "task": "T009",
+              "text": "Today's challenge: Terminal Knee Extensions. It's a 2/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+              "tone": "coach"
+            },
+            {
+              "user_id": "U001",
+              "day": 60,
+              "task": "T072",
+              "text": "I thought of Child's Pose for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+              "tone": "companion"
+            }
+          ]
+        },
+        "policy": "saps",
+        "seed": 42,
+        "top_k": 1,
+        "tau_safe": 2.0,
+        "safety_enabled": true
+      },
+      "reward_frozen_safety_adaptive": {
+        "metrics": {
+          "reward": 25.88085255940989,
+          "IER": 0.007333333333333333,
+          "SVR": 0.0,
+          "acceptance": 0.5133333333333333,
+          "completion": 0.4733333333333333,
+          "assigned": 1.0,
+          "unique_tasks_per_user": 12.6
+        },
+        "per_user": {
+          "U011": {
+            "reward": 21.115226277569555,
+            "IER": 0.0033333333333333335,
+            "SVR": 0.0,
+            "acceptance": 0.4166666666666667,
+            "completion": 0.36666666666666664,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 13
+          },
+          "U012": {
+            "reward": 18.440447257332064,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.36666666666666664,
+            "completion": 0.36666666666666664,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 14
+          },
+          "U013": {
+            "reward": 28.788359928027404,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.6,
+            "completion": 0.5666666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 14
+          },
+          "U014": {
+            "reward": 35.87208674535146,
+            "IER": 0.03333333333333333,
+            "SVR": 0.0,
+            "acceptance": 0.65,
+            "completion": 0.6333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 10
+          },
+          "U015": {
+            "reward": 25.188142588768997,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.5333333333333333,
+            "completion": 0.43333333333333335,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 12
+          }
+        },
+        "correctness": {
+          "interactions": 300,
+          "skips": 146,
+          "skips_with_physical_outcome": 0,
+          "completed_counter": 142,
+          "completed_feedback": 142,
+          "attempted": 154,
+          "violations": 0,
+          "beta_positive": 154.0,
+          "beta_negative": 0.0
+        },
+        "diagnostics": {
+          "chosen_task_counts": {
+            "T004": 1,
+            "T018": 21,
+            "T027": 32,
+            "T035": 10,
+            "T049": 7,
+            "T051": 19,
+            "T057": 14,
+            "T065": 14,
+            "T069": 8,
+            "T070": 46,
+            "T072": 3,
+            "T080": 1,
+            "T083": 1,
+            "T084": 20,
+            "T089": 38,
+            "T092": 4,
+            "T093": 4,
+            "T094": 28,
+            "T099": 29
+          },
+          "recommended_task_counts": {
+            "T004": 1,
+            "T018": 21,
+            "T027": 32,
+            "T035": 10,
+            "T049": 7,
+            "T051": 19,
+            "T057": 14,
+            "T065": 14,
+            "T069": 8,
+            "T070": 46,
+            "T072": 3,
+            "T080": 1,
+            "T083": 1,
+            "T084": 20,
+            "T089": 38,
+            "T092": 4,
+            "T093": 4,
+            "T094": 28,
+            "T099": 29
+          },
+          "chosen_categories": {
+            "cardio": 1,
+            "flexibility": 177,
+            "rest": 97,
+            "strength": 25
+          },
+          "chosen_difficulties": {
+            "1": 290,
+            "2": 10
+          },
+          "nonfirst_choice_rate": 0.0,
+          "global_unique_chosen": 19
+        },
+        "narrative": {
+          "render_calls": 600,
+          "fallbacks": {},
+          "speak_calls": 300,
+          "closing_calls": 300,
+          "tones": {
+            "coach": 214,
+            "companion": 322,
+            "doctor": 64
+          },
+          "samples": []
+        },
+        "policy": "saps",
+        "seed": 42,
+        "top_k": 1,
+        "tau_safe": 2.0,
+        "safety_enabled": true
+      },
+      "fresh_online": {
+        "metrics": {
+          "reward": 29.41489850729072,
+          "IER": 0.06000000000000001,
+          "SVR": 0.0,
+          "acceptance": 0.5800000000000001,
+          "completion": 0.5433333333333333,
+          "assigned": 1.0,
+          "unique_tasks_per_user": 22.4
+        },
+        "per_user": {
+          "U011": {
+            "reward": 31.48444062567029,
+            "IER": 0.10666666666666667,
+            "SVR": 0.0,
+            "acceptance": 0.6333333333333333,
+            "completion": 0.5333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 22
+          },
+          "U012": {
+            "reward": 22.39456781305974,
+            "IER": 0.013333333333333334,
+            "SVR": 0.0,
+            "acceptance": 0.45,
+            "completion": 0.43333333333333335,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 24
+          },
+          "U013": {
+            "reward": 29.971881653415128,
+            "IER": 0.04000000000000001,
+            "SVR": 0.0,
+            "acceptance": 0.6166666666666667,
+            "completion": 0.6,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 22
+          },
+          "U014": {
+            "reward": 35.92068412182627,
+            "IER": 0.12000000000000002,
+            "SVR": 0.0,
+            "acceptance": 0.65,
+            "completion": 0.6333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 20
+          },
+          "U015": {
+            "reward": 27.302918322482157,
+            "IER": 0.020000000000000004,
+            "SVR": 0.0,
+            "acceptance": 0.55,
+            "completion": 0.5166666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 24
+          }
+        },
+        "correctness": {
+          "interactions": 300,
+          "skips": 126,
+          "skips_with_physical_outcome": 0,
+          "completed_counter": 163,
+          "completed_feedback": 163,
+          "attempted": 174,
+          "violations": 0,
+          "beta_positive": 173.0,
+          "beta_negative": 1.0
+        },
+        "diagnostics": {
+          "chosen_task_counts": {
+            "T001": 2,
+            "T002": 1,
+            "T003": 1,
+            "T004": 1,
+            "T005": 1,
+            "T009": 3,
+            "T014": 1,
+            "T018": 19,
+            "T023": 1,
+            "T027": 17,
+            "T028": 1,
+            "T033": 3,
+            "T034": 3,
+            "T035": 1,
+            "T039": 5,
+            "T041": 2,
+            "T049": 14,
+            "T051": 22,
+            "T057": 20,
+            "T065": 22,
+            "T066": 6,
+            "T067": 5,
+            "T068": 1,
+            "T069": 1,
+            "T070": 12,
+            "T072": 21,
+            "T076": 2,
+            "T082": 1,
+            "T083": 8,
+            "T084": 17,
+            "T089": 14,
+            "T092": 16,
+            "T093": 19,
+            "T094": 12,
+            "T095": 2,
+            "T097": 1,
+            "T099": 22
+          },
+          "recommended_task_counts": {
+            "T001": 2,
+            "T002": 1,
+            "T003": 1,
+            "T004": 1,
+            "T005": 1,
+            "T009": 3,
+            "T014": 1,
+            "T018": 19,
+            "T023": 1,
+            "T027": 17,
+            "T028": 1,
+            "T033": 3,
+            "T034": 3,
+            "T035": 1,
+            "T039": 5,
+            "T041": 2,
+            "T049": 14,
+            "T051": 22,
+            "T057": 20,
+            "T065": 22,
+            "T066": 6,
+            "T067": 5,
+            "T068": 1,
+            "T069": 1,
+            "T070": 12,
+            "T072": 21,
+            "T076": 2,
+            "T082": 1,
+            "T083": 8,
+            "T084": 17,
+            "T089": 14,
+            "T092": 16,
+            "T093": 19,
+            "T094": 12,
+            "T095": 2,
+            "T097": 1,
+            "T099": 22
+          },
+          "chosen_categories": {
+            "balance": 4,
+            "cardio": 9,
+            "flexibility": 130,
+            "rest": 115,
+            "strength": 42
+          },
+          "chosen_difficulties": {
+            "1": 280,
+            "2": 19,
+            "3": 1
+          },
+          "nonfirst_choice_rate": 0.0,
+          "global_unique_chosen": 37
+        },
+        "narrative": {
+          "render_calls": 600,
+          "fallbacks": {},
+          "speak_calls": 300,
+          "closing_calls": 300,
+          "tones": {
+            "coach": 219,
+            "companion": 321,
+            "doctor": 60
+          },
+          "samples": []
+        },
+        "policy": "saps",
+        "seed": 42,
+        "top_k": 1,
+        "tau_safe": 2.0,
+        "safety_enabled": true
+      }
+    },
+    "linucb": {
+      "train": {
+        "metrics": {
+          "reward": 27.268997864716958,
+          "IER": 0.02044444444444445,
+          "SVR": 0.0,
+          "acceptance": 0.5466666666666667,
+          "completion": 0.5166666666666667,
+          "assigned": 1.0,
+          "unique_tasks_per_user": 16.133333333333333
+        },
+        "per_user": {
+          "U001": {
+            "reward": 26.337436378733067,
+            "IER": 0.0033333333333333335,
+            "SVR": 0.0,
+            "acceptance": 0.5333333333333333,
+            "completion": 0.5333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 15
+          },
+          "U002": {
+            "reward": 24.09564902437476,
+            "IER": 0.020000000000000004,
+            "SVR": 0.0,
+            "acceptance": 0.4666666666666667,
+            "completion": 0.45,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 15
+          },
+          "U003": {
+            "reward": 33.121028043765904,
+            "IER": 0.02,
+            "SVR": 0.0,
+            "acceptance": 0.6833333333333333,
+            "completion": 0.65,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 20
+          },
+          "U004": {
+            "reward": 30.7015770949997,
+            "IER": 0.04000000000000001,
+            "SVR": 0.0,
+            "acceptance": 0.6166666666666667,
+            "completion": 0.5333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 17
+          },
+          "U005": {
+            "reward": 18.07078678600136,
+            "IER": 0.010000000000000002,
+            "SVR": 0.0,
+            "acceptance": 0.36666666666666664,
+            "completion": 0.35,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 17
+          },
+          "U006": {
+            "reward": 26.32439742298923,
+            "IER": 0.02,
+            "SVR": 0.0,
+            "acceptance": 0.5,
+            "completion": 0.48333333333333334,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 15
+          },
+          "U007": {
+            "reward": 30.21293244881705,
+            "IER": 0.013333333333333334,
+            "SVR": 0.0,
+            "acceptance": 0.6166666666666667,
+            "completion": 0.6,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 17
+          },
+          "U008": {
+            "reward": 28.76542798014604,
+            "IER": 0.010000000000000002,
+            "SVR": 0.0,
+            "acceptance": 0.5833333333333334,
+            "completion": 0.5833333333333334,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 17
+          },
+          "U009": {
+            "reward": 25.33286789235351,
+            "IER": 0.03666666666666667,
+            "SVR": 0.0,
+            "acceptance": 0.5166666666666667,
+            "completion": 0.4166666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 15
+          },
+          "U010": {
+            "reward": 20.07239779900617,
+            "IER": 0.03666666666666667,
+            "SVR": 0.0,
+            "acceptance": 0.4166666666666667,
+            "completion": 0.36666666666666664,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 16
+          },
+          "U016": {
+            "reward": 37.72398325128969,
+            "IER": 0.04666666666666667,
+            "SVR": 0.0,
+            "acceptance": 0.7333333333333333,
+            "completion": 0.7333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 16
+          },
+          "U017": {
+            "reward": 24.107504759562868,
+            "IER": 0.02,
+            "SVR": 0.0,
+            "acceptance": 0.4666666666666667,
+            "completion": 0.43333333333333335,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 13
+          },
+          "U018": {
+            "reward": 33.53816597165755,
+            "IER": 0.010000000000000002,
+            "SVR": 0.0,
+            "acceptance": 0.6833333333333333,
+            "completion": 0.6833333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 18
+          },
+          "U019": {
+            "reward": 23.546730399484478,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.45,
+            "completion": 0.43333333333333335,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 14
+          },
+          "U020": {
+            "reward": 27.084082717573075,
+            "IER": 0.02,
+            "SVR": 0.0,
+            "acceptance": 0.5666666666666667,
+            "completion": 0.5,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 17
+          }
+        },
+        "correctness": {
+          "interactions": 900,
+          "skips": 408,
+          "skips_with_physical_outcome": 0,
+          "completed_counter": 465,
+          "completed_feedback": 465,
+          "attempted": 492,
+          "violations": 0
+        },
+        "diagnostics": {
+          "chosen_task_counts": {
+            "T001": 7,
+            "T006": 2,
+            "T014": 11,
+            "T017": 3,
+            "T018": 68,
+            "T023": 1,
+            "T027": 54,
+            "T039": 13,
+            "T051": 81,
+            "T054": 1,
+            "T057": 57,
+            "T065": 76,
+            "T066": 16,
+            "T068": 11,
+            "T069": 14,
+            "T070": 55,
+            "T071": 19,
+            "T072": 66,
+            "T076": 16,
+            "T077": 1,
+            "T084": 62,
+            "T089": 66,
+            "T092": 54,
+            "T093": 44,
+            "T094": 58,
+            "T099": 44
+          },
+          "recommended_task_counts": {
+            "T001": 7,
+            "T006": 2,
+            "T014": 11,
+            "T017": 3,
+            "T018": 68,
+            "T023": 1,
+            "T027": 54,
+            "T039": 13,
+            "T051": 81,
+            "T054": 1,
+            "T057": 57,
+            "T065": 76,
+            "T066": 16,
+            "T068": 11,
+            "T069": 14,
+            "T070": 55,
+            "T071": 19,
+            "T072": 66,
+            "T076": 16,
+            "T077": 1,
+            "T084": 62,
+            "T089": 66,
+            "T092": 54,
+            "T093": 44,
+            "T094": 58,
+            "T099": 44
+          },
+          "chosen_categories": {
+            "balance": 11,
+            "cardio": 1,
+            "flexibility": 466,
+            "rest": 353,
+            "strength": 69
+          },
+          "chosen_difficulties": {
+            "1": 834,
+            "2": 64,
+            "3": 2
+          },
+          "nonfirst_choice_rate": 0.0,
+          "global_unique_chosen": 26
+        },
+        "narrative": {
+          "render_calls": 1800,
+          "fallbacks": {},
+          "speak_calls": 900,
+          "closing_calls": 900,
+          "tones": {
+            "coach": 673,
+            "companion": 927,
+            "doctor": 200
+          },
+          "samples": [
+            {
+              "user_id": "U001",
+              "day": 1,
+              "task": "T001",
+              "text": "I'm recommending Seated Quad Sets today. This targets knee and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+              "tone": "doctor"
+            },
+            {
+              "user_id": "U001",
+              "day": 15,
+              "task": "T099",
+              "text": "Today's challenge: Guided Meditation for Pain Management. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+              "tone": "coach"
+            },
+            {
+              "user_id": "U001",
+              "day": 16,
+              "task": "T093",
+              "text": "I'm recommending Progressive Muscle Relaxation today. This targets full_body and is appropriate for your current mid_rehab phase. Difficulty: 1/5. Clinical rationale: matched to your current recovery state.",
+              "tone": "doctor"
+            },
+            {
+              "user_id": "U001",
+              "day": 30,
+              "task": "T072",
+              "text": "Today's challenge: Child's Pose. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+              "tone": "coach"
+            },
+            {
+              "user_id": "U001",
+              "day": 40,
+              "task": "T070",
+              "text": "Today's challenge: Knee-to-Chest Stretch. It's a 1/5 — tougher than Monday, but you're ready. matched to your current recovery state.",
+              "tone": "coach"
+            },
+            {
+              "user_id": "U001",
+              "day": 41,
+              "task": "T072",
+              "text": "I thought of Child's Pose for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+              "tone": "companion"
+            },
+            {
+              "user_id": "U001",
+              "day": 60,
+              "task": "T099",
+              "text": "I thought of Guided Meditation for Pain Management for you today, Alex Chen. It reminds me of what helped around this time. Up for it?",
+              "tone": "companion"
+            }
+          ]
+        },
+        "policy": "linucb",
+        "seed": 42,
+        "top_k": 1,
+        "tau_safe": null,
+        "safety_enabled": true
+      },
+      "reward_frozen_safety_adaptive": {
+        "metrics": {
+          "reward": 22.807529470242628,
+          "IER": 0.0,
+          "SVR": 0.0,
+          "acceptance": 0.4533333333333333,
+          "completion": 0.4133333333333334,
+          "assigned": 1.0,
+          "unique_tasks_per_user": 9.6
+        },
+        "per_user": {
+          "U011": {
+            "reward": 28.392526314488496,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.55,
+            "completion": 0.5166666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 9
+          },
+          "U012": {
+            "reward": 12.831704144195136,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.26666666666666666,
+            "completion": 0.25,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 11
+          },
+          "U013": {
+            "reward": 22.481210338934357,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.4666666666666667,
+            "completion": 0.45,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 11
+          },
+          "U014": {
+            "reward": 32.85108093866748,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.6,
+            "completion": 0.5666666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 8
+          },
+          "U015": {
+            "reward": 17.481125614927656,
+            "IER": 0.0,
+            "SVR": 0.0,
+            "acceptance": 0.38333333333333336,
+            "completion": 0.2833333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 9
+          }
+        },
+        "correctness": {
+          "interactions": 300,
+          "skips": 164,
+          "skips_with_physical_outcome": 0,
+          "completed_counter": 124,
+          "completed_feedback": 124,
+          "attempted": 136,
+          "violations": 0
+        },
+        "diagnostics": {
+          "chosen_task_counts": {
+            "T001": 1,
+            "T014": 7,
+            "T018": 33,
+            "T027": 2,
+            "T039": 16,
+            "T051": 4,
+            "T057": 39,
+            "T065": 62,
+            "T066": 16,
+            "T069": 1,
+            "T070": 13,
+            "T071": 1,
+            "T072": 15,
+            "T084": 4,
+            "T089": 71,
+            "T092": 3,
+            "T093": 1,
+            "T094": 9,
+            "T099": 2
+          },
+          "recommended_task_counts": {
+            "T001": 1,
+            "T014": 7,
+            "T018": 33,
+            "T027": 2,
+            "T039": 16,
+            "T051": 4,
+            "T057": 39,
+            "T065": 62,
+            "T066": 16,
+            "T069": 1,
+            "T070": 13,
+            "T071": 1,
+            "T072": 15,
+            "T084": 4,
+            "T089": 71,
+            "T092": 3,
+            "T093": 1,
+            "T094": 9,
+            "T099": 2
+          },
+          "chosen_categories": {
+            "flexibility": 219,
+            "rest": 47,
+            "strength": 34
+          },
+          "chosen_difficulties": {
+            "1": 298,
+            "2": 2
+          },
+          "nonfirst_choice_rate": 0.0,
+          "global_unique_chosen": 19
+        },
+        "narrative": {
+          "render_calls": 600,
+          "fallbacks": {},
+          "speak_calls": 300,
+          "closing_calls": 300,
+          "tones": {
+            "coach": 198,
+            "companion": 340,
+            "doctor": 62
+          },
+          "samples": []
+        },
+        "policy": "linucb",
+        "seed": 42,
+        "top_k": 1,
+        "tau_safe": null,
+        "safety_enabled": true
+      },
+      "fresh_online": {
+        "metrics": {
+          "reward": 26.784916455181722,
+          "IER": 0.058666666666666666,
+          "SVR": 0.0,
+          "acceptance": 0.5333333333333333,
+          "completion": 0.49000000000000005,
+          "assigned": 1.0,
+          "unique_tasks_per_user": 17.6
+        },
+        "per_user": {
+          "U011": {
+            "reward": 26.447195425333373,
+            "IER": 0.07333333333333333,
+            "SVR": 0.0,
+            "acceptance": 0.5166666666666667,
+            "completion": 0.4666666666666667,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 18
+          },
+          "U012": {
+            "reward": 19.21770979788122,
+            "IER": 0.016666666666666666,
+            "SVR": 0.0,
+            "acceptance": 0.38333333333333336,
+            "completion": 0.38333333333333336,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 18
+          },
+          "U013": {
+            "reward": 33.19175309347062,
+            "IER": 0.056666666666666664,
+            "SVR": 0.0,
+            "acceptance": 0.7,
+            "completion": 0.6333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 18
+          },
+          "U014": {
+            "reward": 29.786803790469307,
+            "IER": 0.12333333333333334,
+            "SVR": 0.0,
+            "acceptance": 0.5333333333333333,
+            "completion": 0.5333333333333333,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 16
+          },
+          "U015": {
+            "reward": 25.28112016875409,
+            "IER": 0.023333333333333334,
+            "SVR": 0.0,
+            "acceptance": 0.5333333333333333,
+            "completion": 0.43333333333333335,
+            "assigned": 1.0,
+            "unique_tasks_per_user": 18
+          }
+        },
+        "correctness": {
+          "interactions": 300,
+          "skips": 140,
+          "skips_with_physical_outcome": 0,
+          "completed_counter": 147,
+          "completed_feedback": 147,
+          "attempted": 160,
+          "violations": 0
+        },
+        "diagnostics": {
+          "chosen_task_counts": {
+            "T001": 1,
+            "T002": 1,
+            "T006": 6,
+            "T014": 3,
+            "T015": 1,
+            "T018": 26,
+            "T023": 3,
+            "T027": 17,
+            "T035": 2,
+            "T036": 1,
+            "T039": 1,
+            "T048": 1,
+            "T049": 2,
+            "T050": 1,
+            "T051": 16,
+            "T057": 27,
+            "T065": 10,
+            "T066": 4,
+            "T070": 11,
+            "T072": 19,
+            "T083": 7,
+            "T084": 28,
+            "T089": 25,
+            "T092": 19,
+            "T093": 24,
+            "T094": 18,
+            "T099": 26
+          },
+          "recommended_task_counts": {
+            "T001": 1,
+            "T002": 1,
+            "T006": 6,
+            "T014": 3,
+            "T015": 1,
+            "T018": 26,
+            "T023": 3,
+            "T027": 17,
+            "T035": 2,
+            "T036": 1,
+            "T039": 1,
+            "T048": 1,
+            "T049": 2,
+            "T050": 1,
+            "T051": 16,
+            "T057": 27,
+            "T065": 10,
+            "T066": 4,
+            "T070": 11,
+            "T072": 19,
+            "T083": 7,
+            "T084": 28,
+            "T089": 25,
+            "T092": 19,
+            "T093": 24,
+            "T094": 18,
+            "T099": 26
+          },
+          "chosen_categories": {
+            "cardio": 7,
+            "flexibility": 136,
+            "rest": 139,
+            "strength": 18
+          },
+          "chosen_difficulties": {
+            "1": 291,
+            "2": 3,
+            "3": 6
+          },
+          "nonfirst_choice_rate": 0.0,
+          "global_unique_chosen": 27
+        },
+        "narrative": {
+          "render_calls": 600,
+          "fallbacks": {},
+          "speak_calls": 300,
+          "closing_calls": 300,
+          "tones": {
+            "coach": 214,
+            "companion": 321,
+            "doctor": 65
+          },
+          "samples": []
+        },
+        "policy": "linucb",
+        "seed": 42,
+        "top_k": 1,
+        "tau_safe": null,
+        "safety_enabled": true
+      }
+    }
+  }
+}

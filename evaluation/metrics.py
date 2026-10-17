@@ -356,8 +356,9 @@ def infeasible_exploration_rate(interactions: List[dict]) -> float:
 
     IER(t) = |infeasible items in bandit top-K| / |bandit top-K|
 
-    A lower IER means the recommender has *learned* to avoid unsafe tasks on
-    its own, without relying on the Safety Agent as a crutch.
+    A lower IER indicates greater agreement between this proposal ranking and
+    the current feasible set. It alone does not establish learning, clinical
+    safety or causal benefit from a safety bonus.
     """
     if not interactions:
         return 0.0
