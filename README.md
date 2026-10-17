@@ -95,7 +95,9 @@ No API key/network is needed after installation. Defaults are U001 / 60 days /
 SAPS / seed 42; days range 1–60. The CLI runs real components in temporary
 storage and prints state, counts, task, tone, choice, reward and closing.
 The comparison table reads **final top-1, 20-persona, 60-day, seeds 52–61 means**;
-it does not describe the selected user's short trace. The historical standalone
+it does not describe the selected user's short trace. Daily CLI traces use
+base/policy configuration; the formal runner's NeuralUCB overrides are separate
+and documented in evaluation/README.md. The historical standalone
 HTML replay is in `archive/pre-submission/demo/`, not the interactive agent.
 
 ### Mapping to CA6124 Section 6

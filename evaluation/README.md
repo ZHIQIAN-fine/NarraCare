@@ -61,8 +61,9 @@ conditional simulator comparisons, not evidence of clinical generalization.
 
 Context dimension 15; SAPS alpha_ucb=1, tau=2, Beta(1,1); LinUCB alpha=1;
 epsilon=0.1. Modified NeuralUCB uses hidden width32, 5 epochs, alpha0.01 and
-reward safety_lambda3; other policies use safety_lambda1. This inherited reward
-setting means NeuralUCB reward is not a perfectly identical-utility comparison.
+reward safety_lambda3; other policies use safety_lambda1. This inherited learning-penalty
+setting means the comparison is not an otherwise matched architecture-only
+experiment; the reported six-term attempted-task reward formula is shared.
 The original task-aware gradient-UCB algorithm is not implemented. RuleBased
 ties every candidate; Popularity means mean reward. See the final report.
 
