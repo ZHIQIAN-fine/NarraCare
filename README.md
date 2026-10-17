@@ -1,4 +1,4 @@
-# NarraCare — final coursework submission
+# NarraCare 
 
 A conversational rehabilitation recommender with a narrative companion: an LLM
 interprets check-ins and chooses guarded tools; SAPS ranks catalogue tasks;
