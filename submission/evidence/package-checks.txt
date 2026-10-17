@@ -1,0 +1,6 @@
+Fresh extraction into a separate directory: PASS
+SUBMISSION_MANIFEST.json: 77 packaged files verified; no .git or historical payload
+Source commit: 82e8a805f526e89e81b6e89bff30e9a90f0408b7
+python -m pytest -q: 88 passed, 19 warnings in 6.68s
+U001/SAPS/60 days/seed42 stdout byte-identical to original checkout: PASS
+stdout SHA256: 6f61a2ade5e3f8543c08b29342edcca06e2e44953d06a78a3403ba078e30a172
