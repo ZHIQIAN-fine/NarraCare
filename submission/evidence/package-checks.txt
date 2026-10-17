@@ -1,6 +1,8 @@
-Fresh extraction into a separate directory: PASS
-SUBMISSION_MANIFEST.json: 77 packaged files verified; no .git or historical payload
-Source commit: 82e8a805f526e89e81b6e89bff30e9a90f0408b7
-python -m pytest -q: 88 passed, 19 warnings in 6.68s
-U001/SAPS/60 days/seed42 stdout byte-identical to original checkout: PASS
-stdout SHA256: 6f61a2ade5e3f8543c08b29342edcca06e2e44953d06a78a3403ba078e30a172
+Report narrative revision: all 8 result/data/configuration tables unchanged
+Word: Arial 11pt, A4, prescribed margins; cloud layout proof 11 pages
+Fresh extraction: 77 packaged files match SUBMISSION_MANIFEST.json
+Source snapshot: 66fc8fede1ca547c26d1ae938c42512ba106c735
+Packaged report bytes match the revised Word: PASS
+Runtime source, inputs and experimental artifacts unchanged from d995a21: PASS
+Experimental protocol fingerprints match packaged runtime and inputs: PASS
+Existing runtime validation remains 88 tests and 7/7 artifact reproduction; no experiment rerun for this report-only revision
